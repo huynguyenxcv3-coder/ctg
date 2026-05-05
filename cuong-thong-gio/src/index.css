@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import "tailwindcss";
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+#root { min-height: 100vh; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #0f4c81 0%, #1565c0 60%, #e85d04 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-bg {
+  background: linear-gradient(135deg, #071e34 0%, #0f4c81 50%, #0d3a6b 100%);
+}
+
+.section-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(15,76,129,0.08) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.anim-fade-up { animation: fadeInUp 0.7s ease both; }
+.anim-fade { animation: fadeIn 0.6s ease both; }
+.anim-scale { animation: scaleIn 0.6s ease both; }
+.anim-float { animation: float 4s ease-in-out infinite; }
+
+.d100 { animation-delay: 0.1s; }
+.d200 { animation-delay: 0.2s; }
+.d300 { animation-delay: 0.3s; }
+.d400 { animation-delay: 0.4s; }
+.d500 { animation-delay: 0.5s; }
+.d600 { animation-delay: 0.6s; }
