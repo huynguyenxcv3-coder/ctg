@@ -1,8 +1,25 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import {
   Wind, Shield, Award, Users, ChevronRight, ArrowRight,
-  CheckCircle, Star, Wrench, Factory, Building2, Zap
+  Star, Wrench, Factory, Building2, Zap
 } from 'lucide-react'
+import { Button } from '../components/ui/Button'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/Card'
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+}
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+}
 
 const stats = [
   { value: '15+', label: 'Năm Kinh Nghiệm' },
@@ -40,21 +57,21 @@ const products = [
     name: 'Quạt Công Nghiệp',
     desc: 'Quạt hướng trục, ly tâm công suất lớn cho nhà máy, xưởng sản xuất.',
     tag: 'Phổ biến',
-    color: 'from-blue-500 to-blue-700',
+    color: 'bg-blue-50 text-blue-600',
   },
   {
     icon: Factory,
     name: 'Hệ Thống Hút Bụi',
     desc: 'Thiết bị lọc và hút bụi công nghiệp, đảm bảo môi trường làm việc sạch sẽ.',
     tag: 'Mới',
-    color: 'from-orange-500 to-red-600',
+    color: 'bg-orange-50 text-orange-600',
   },
   {
     icon: Building2,
     name: 'Thông Gió Tòa Nhà',
-    desc: 'Giải pháp thông gió toàn diện cho văn phòng, tòa nhà thương mại, trung tâm mua sắm.',
+    desc: 'Giải pháp thông gió toàn diện cho văn phòng, tòa nhà thương mại.',
     tag: 'Cao cấp',
-    color: 'from-emerald-500 to-teal-600',
+    color: 'bg-emerald-50 text-emerald-600',
   },
 ]
 
@@ -81,232 +98,241 @@ const testimonials = [
 
 export function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="hero-bg min-h-screen flex items-center relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-3xl" />
-          {/* Grid lines */}
-          <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
+      <section className="relative min-h-screen flex items-center pt-20 bg-white">
+        {/* Background elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 skew-x-12 translate-x-1/4" />
+          <div className="absolute inset-0 section-grid opacity-40" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-200 text-sm font-medium px-4 py-2 rounded-full mb-8 anim-fade border border-blue-400/20">
-              <Wind className="w-4 h-4" />
-              Công ty TNHH MTV Cường Thống Gió
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 lg:py-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial="initial"
+              animate="animate"
+              variants={stagger}
+            >
+              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+                </span>
+                Giải Pháp Kỹ Thuật Hàng Đầu
+              </motion.div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 anim-fade-up d100">
-              Giải Pháp{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-orange-400">
-                Thông Gió
-              </span>{' '}
-              Chuyên Nghiệp
-            </h1>
+              <motion.h1 variants={fadeInUp} className="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6 text-balance">
+                Giải Pháp <span className="text-blue-600">Thông Gió</span> Toàn Diện Cho Công Nghiệp
+              </motion.h1>
 
-            <p className="text-lg sm:text-xl text-blue-100/80 leading-relaxed mb-10 max-w-2xl anim-fade-up d200">
-              Chúng tôi cung cấp giải pháp thông gió, hút bụi và điều hòa không khí công nghiệp toàn diện — hiệu quả, tiết kiệm năng lượng và bền vững.
-            </p>
+              <motion.p variants={fadeInUp} className="text-lg lg:text-xl text-slate-600 mb-10 max-w-xl leading-relaxed">
+                Nâng cao năng suất lao động và bảo vệ sức khỏe công nhân với hệ thống thông gió, hút bụi đạt chuẩn quốc tế.
+              </motion.p>
 
-            <div className="flex flex-wrap gap-4 mb-16 anim-fade-up d300">
-              <Link
-                to="/san-pham"
-                className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-7 py-4 rounded-2xl transition-all duration-200 shadow-xl shadow-orange-900/30 hover:shadow-orange-900/50 hover:-translate-y-0.5"
-              >
-                Xem Sản Phẩm
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                to="/lien-he"
-                className="flex items-center gap-2 border border-white/30 hover:border-white/60 text-white font-semibold px-7 py-4 rounded-2xl transition-all duration-200 hover:bg-white/10"
-              >
-                Yêu Cầu Báo Giá
-                <ChevronRight className="w-5 h-5" />
-              </Link>
-            </div>
+              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mb-12">
+                <Button asChild size="lg" className="rounded-xl px-8 h-14 text-base font-bold shadow-lg shadow-blue-200">
+                  <Link to="/san-pham">Khám Phá Sản Phẩm</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="rounded-xl px-8 h-14 text-base font-bold bg-white/50 backdrop-blur-sm">
+                  <Link to="/lien-he">Yêu Cầu Báo Giá</Link>
+                </Button>
+              </motion.div>
 
-            {/* Quick checks */}
-            <div className="flex flex-wrap gap-x-8 gap-y-3 anim-fade-up d400">
-              {['Bảo hành 5 năm', 'Lắp đặt miễn phí', 'Hỗ trợ 24/7', 'Tư vấn trực tiếp'].map(item => (
-                <div key={item} className="flex items-center gap-2 text-blue-200 text-sm">
-                  <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                  {item}
+              <motion.div variants={fadeInUp} className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-10 border-t border-slate-100">
+                {stats.map((s) => (
+                  <div key={s.label}>
+                    <div className="text-2xl font-bold text-slate-900">{s.value}</div>
+                    <div className="text-xs text-slate-500 font-medium uppercase tracking-tight">{s.label}</div>
+                  </div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-white/20">
+                <div className="aspect-[4/5] bg-slate-200 relative">
+                  {/* Decorative mesh/pattern or actual image placeholder */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 to-transparent" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Wind className="w-40 h-40 text-white/20 animate-pulse" />
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Decorative wind icon */}
-        <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:block anim-float opacity-10">
-          <Wind className="w-96 h-96 text-blue-300" strokeWidth={0.5} />
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((s, i) => (
-              <div key={s.label} className={`text-center p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-blue-50/50 border border-blue-100 anim-scale d${(i+1)*100}`}>
-                <div className="text-4xl font-bold text-blue-700 mb-2">{s.value}</div>
-                <div className="text-slate-500 text-sm font-medium">{s.label}</div>
+                {/* Floating Info Box */}
+                <div className="absolute bottom-8 left-8 right-8 glass p-6 rounded-2xl shadow-xl border border-white/40">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
+                      <Zap className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-slate-900 font-bold">Tiết kiệm 40%</div>
+                      <div className="text-slate-500 text-sm">Điện năng tiêu thụ hàng tháng</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            ))}
+              {/* Background Glow */}
+              <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-400/20 rounded-full blur-[100px]" />
+              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-orange-400/10 rounded-full blur-[100px]" />
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="py-24 section-pattern bg-slate-50">
+      <section className="py-24 bg-slate-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-2 rounded-full mb-5">
-              <Shield className="w-4 h-4" />
-              Tại Sao Chọn Chúng Tôi
-            </div>
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              Cam Kết Chất Lượng Hàng Đầu
-            </h2>
-            <p className="text-slate-500 max-w-xl mx-auto text-lg">
-              Chúng tôi không chỉ bán sản phẩm — chúng tôi cung cấp giải pháp hoàn chỉnh từ tư vấn đến lắp đặt và bảo trì.
-            </p>
+          <div className="text-center mb-20">
+            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">Tại Sao Chọn Cường Thống Gió?</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto text-lg">Chúng tôi không chỉ cung cấp thiết bị, chúng tôi mang đến giải pháp kỹ thuật tối ưu và dịch vụ hậu mãi tận tâm.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((f, i) => (
-              <div
+              <motion.div
                 key={f.title}
-                className={`bg-white p-7 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 anim-fade-up d${(i+1)*100}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
               >
-                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5">
-                  <f.icon className="w-6 h-6 text-blue-700" />
-                </div>
-                <h3 className="font-bold text-slate-800 mb-3">{f.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
-              </div>
+                <Card className="h-full border-none shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 text-blue-600">
+                      <f.icon className="w-6 h-6" />
+                    </div>
+                    <CardTitle className="text-xl">{f.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Products Preview */}
+      {/* Products */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-14">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 text-sm font-semibold px-4 py-2 rounded-full mb-5">
-                <Wind className="w-4 h-4" />
-                Sản Phẩm Nổi Bật
-              </div>
-              <h2 className="text-4xl font-bold text-slate-900">
-                Danh Mục Sản Phẩm
-              </h2>
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-4">Sản Phẩm Nổi Bật</h2>
+              <p className="text-slate-500 text-lg">Khám phá các dòng sản phẩm chất lượng cao, đáp ứng mọi nhu cầu thông gió công nghiệp.</p>
             </div>
-            <Link
-              to="/san-pham"
-              className="flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition-colors group"
-            >
-              Xem tất cả
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <Button asChild variant="outline" className="rounded-lg group">
+              <Link to="/san-pham" className="flex items-center gap-2">
+                Xem tất cả sản phẩm
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {products.map((p, i) => (
-              <div
+              <motion.div
                 key={p.name}
-                className={`group relative rounded-2xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-300 shadow-sm hover:shadow-xl anim-fade-up d${(i+1)*100}`}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
               >
-                <div className={`h-52 bg-gradient-to-br ${p.color} flex items-center justify-center relative`}>
-                  <p.icon className="w-20 h-20 text-white/30 absolute" strokeWidth={0.8} />
-                  <p.icon className="w-16 h-16 text-white relative z-10" />
-                  <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">
-                    {p.tag}
+                <div className="group relative bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                  <div className={`h-64 ${p.color} flex items-center justify-center relative overflow-hidden`}>
+                    <p.icon className="w-24 h-24 opacity-20 absolute -right-4 -bottom-4 rotate-12" />
+                    <p.icon className="w-20 h-20 relative z-10" />
+                    <div className="absolute top-4 left-4 glass px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-900 border-white/20">
+                      {p.tag}
+                    </div>
+                  </div>
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">{p.name}</h3>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-8">{p.desc}</p>
+                    <Link
+                      to="/san-pham"
+                      className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:gap-3 transition-all"
+                    >
+                      Tìm hiểu thêm
+                      <ChevronRight className="w-4 h-4" />
+                    </Link>
                   </div>
                 </div>
-                <div className="p-6 bg-white border-x border-b border-slate-100">
-                  <h3 className="font-bold text-slate-800 text-lg mb-2">{p.name}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-5">{p.desc}</p>
-                  <Link
-                    to="/san-pham"
-                    className="inline-flex items-center gap-1.5 text-blue-700 font-semibold text-sm group-hover:gap-2.5 transition-all"
-                  >
-                    Xem Chi Tiết
-                    <ChevronRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="py-20 bg-gradient-to-r from-blue-800 to-blue-900 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl" />
-          <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl" />
+      {/* CTA */}
+      <section className="py-24 relative overflow-hidden bg-slate-900">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.1)_0%,transparent_70%)]" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <Users className="w-12 h-12 text-blue-300 mx-auto mb-6" />
-          <h2 className="text-4xl font-bold text-white mb-5">
-            Bạn Cần Tư Vấn Miễn Phí?
-          </h2>
-          <p className="text-blue-200 text-lg mb-10 max-w-2xl mx-auto">
-            Đội ngũ chuyên gia của chúng tôi sẵn sàng hỗ trợ bạn lựa chọn giải pháp thông gió phù hợp nhất với nhu cầu và ngân sách.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              to="/lien-he"
-              className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-2xl transition-all shadow-lg shadow-orange-900/30 hover:-translate-y-0.5"
-            >
-              Liên Hệ Ngay
-            </Link>
-            <a
-              href="tel:0123456789"
-              className="border border-white/40 hover:border-white text-white font-bold px-8 py-4 rounded-2xl transition-all hover:bg-white/10"
-            >
-              Gọi 0123 456 789
-            </a>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Users className="w-16 h-16 text-blue-500 mx-auto mb-8" />
+            <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8">Bạn Cần Tư Vấn Kỹ Thuật?</h2>
+            <p className="text-slate-400 text-lg lg:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+              Đội ngũ kỹ sư của chúng tôi sẵn sàng khảo sát và tư vấn giải pháp tối ưu nhất cho nhà xưởng của bạn hoàn toàn miễn phí.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6">
+              <Button asChild size="lg" className="rounded-xl h-16 px-10 text-lg font-bold">
+                <Link to="/lien-he">Liên Hệ Ngay</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-xl h-16 px-10 text-lg font-bold text-white border-slate-700 hover:bg-slate-800">
+                <a href="tel:0123456789">Gọi 0123 456 789</a>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 text-sm font-semibold px-4 py-2 rounded-full mb-5">
-              <Star className="w-4 h-4" />
-              Đánh Giá Khách Hàng
-            </div>
-            <h2 className="text-4xl font-bold text-slate-900">
-              Khách Hàng Nói Gì Về Chúng Tôi
-            </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900">Khách Hàng Nói Gì</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
-              <div
+              <motion.div
                 key={t.name}
-                className={`bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 anim-fade-up d${(i+1)*100}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
               >
-                <div className="flex gap-1 mb-5">
-                  {Array.from({ length: t.stars }).map((_, j) => (
-                    <Star key={j} className="w-4 h-4 text-amber-400 fill-amber-400" />
-                  ))}
-                </div>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
-                <div>
-                  <div className="font-bold text-slate-800">{t.name}</div>
-                  <div className="text-slate-400 text-xs mt-0.5">{t.role}</div>
-                </div>
-              </div>
+                <Card className="h-full border-slate-100 hover:border-blue-100 transition-colors">
+                  <CardHeader>
+                    <div className="flex gap-1 mb-4">
+                      {Array.from({ length: t.stars }).map((_, j) => (
+                        <Star key={j} className="w-4 h-4 text-amber-400 fill-amber-400" />
+                      ))}
+                    </div>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
+                  </CardHeader>
+                  <CardContent className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 font-bold">
+                      {t.name[0]}
+                    </div>
+                    <div>
+                      <div className="font-bold text-slate-900 text-sm">{t.name}</div>
+                      <div className="text-slate-500 text-xs">{t.role}</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
