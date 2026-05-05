@@ -39,7 +39,13 @@ class ModelRouter:
         self._settings = settings
 
     def resolve(self, claude_model_name: str) -> ResolvedModel:
-        provider_model_ref = self._settings.resolve_model(claude_model_name)
+        from config.provider_catalog import SUPPORTED_PROVIDER_IDS
+
+        if "/" in claude_model_name and claude_model_name.split("/", 1)[0] in SUPPORTED_PROVIDER_IDS:
+            provider_model_ref = claude_model_name
+        else:
+            provider_model_ref = self._settings.resolve_model(claude_model_name)
+
         thinking_enabled = self._settings.resolve_thinking(claude_model_name)
         provider_id = Settings.parse_provider_type(provider_model_ref)
         provider_model = Settings.parse_model_name(provider_model_ref)

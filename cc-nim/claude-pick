@@ -7,7 +7,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MODELS_FILE="$SCRIPT_DIR/nvidia_nim_models.json"
 ENV_FILE="${CLAUDE_PICK_ENV_FILE:-$SCRIPT_DIR/.env}"
-PORT="${CLAUDE_PICK_PORT:-8082}"
+PORT="${CLAUDE_PICK_PORT:-3001}"
 BASE_URL="http://localhost:$PORT"
 OPENROUTER_MODELS_URL="https://openrouter.ai/api/v1/models"
 DEFAULT_LM_STUDIO_BASE_URL="http://localhost:1234/v1"
@@ -178,9 +178,9 @@ if [[ -z "$auth_token" ]]; then
     auth_token="freecc"
 fi
 
-# If auth_token doesn't contain a colon, append ":$model"
+# If auth_token doesn't contain a colon, append ":$provider/$model"
 if [[ "$auth_token" != *:* ]]; then
-    auth_token="$auth_token:$model"
+    auth_token="$auth_token:$provider/$model"
 fi
 
 echo "Launching Claude with provider: $provider, model: $model" >&2

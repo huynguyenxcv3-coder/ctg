@@ -112,12 +112,18 @@ def require_api_key(
     if header.lower().startswith("bearer "):
         token = header.split(" ", 1)[1]
 
-    # Strip anything after the first colon to handle tokens with appended model names
+    # Extract model name from token (e.g. "freecc:nvidia/llama-3.1-405b-instruct")
+    selected_model: str | None = None
     if token and ":" in token:
-        token = token.split(":", 1)[0]
+        parts = token.split(":", 1)
+        token = parts[0]
+        selected_model = parts[1]
 
     if token != anthropic_auth_token:
         raise HTTPException(status_code=401, detail="Invalid API key")
+
+    # Store for use in model routing
+    request.state.selected_model = selected_model
 
 
 def get_provider() -> BaseProvider:

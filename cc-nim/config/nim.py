@@ -16,7 +16,7 @@ class NimSettings(BaseModel):
     )
     top_k: int = -1
     max_tokens: int = Field(
-        ANTHROPIC_DEFAULT_MAX_OUTPUT_TOKENS,
+        4096,
         ge=1,
         description="Maximum number of tokens in output.",
     )

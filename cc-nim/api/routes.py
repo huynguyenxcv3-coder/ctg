@@ -78,11 +78,18 @@ def _probe_response(allow: str) -> Response:
 # =============================================================================
 @router.post("/v1/messages")
 async def create_message(
+    request: Request,
     request_data: MessagesRequest,
     service: ClaudeProxyService = Depends(get_proxy_service),
     _auth=Depends(require_api_key),
 ):
     """Create a message (always streaming)."""
+    # Apply model override from token (via require_api_key)
+    selected_model = getattr(request.state, "selected_model", None)
+    if selected_model:
+        request_data.model = selected_model
+        logger.info("MODEL_OVERRIDE: token selected model='{}'", selected_model)
+
     return service.create_message(request_data)
 
 
@@ -94,11 +101,17 @@ async def probe_messages(_auth=Depends(require_api_key)):
 
 @router.post("/v1/messages/count_tokens")
 async def count_tokens(
+    request: Request,
     request_data: TokenCountRequest,
     service: ClaudeProxyService = Depends(get_proxy_service),
     _auth=Depends(require_api_key),
 ):
     """Count tokens for a request."""
+    # Apply model override from token (via require_api_key)
+    selected_model = getattr(request.state, "selected_model", None)
+    if selected_model:
+        request_data.model = selected_model
+
     return service.count_tokens(request_data)
 
 
