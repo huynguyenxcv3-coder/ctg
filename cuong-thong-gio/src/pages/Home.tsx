@@ -6,6 +6,8 @@ import {
 } from 'lucide-react'
 import { Button } from '../components/ui/Button'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/Card'
+import SplitText from '../components/ui/SplitText'
+import TiltedCard from '../components/ui/TiltedCard'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -122,9 +124,12 @@ export function Home() {
                 Giải Pháp Kỹ Thuật Hàng Đầu
               </motion.div>
 
-              <motion.h1 variants={fadeInUp} className="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6 text-balance">
-                Giải Pháp <span className="text-blue-600">Thông Gió</span> Toàn Diện Cho Công Nghiệp
-              </motion.h1>
+              <SplitText
+                text="Giải Pháp Thông Gió Toàn Diện Cho Công Nghiệp"
+                className="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6 text-balance text-left"
+                delay={40}
+                textAlign="left"
+              />
 
               <motion.p variants={fadeInUp} className="text-lg lg:text-xl text-slate-600 mb-10 max-w-xl leading-relaxed">
                 Nâng cao năng suất lao động và bảo vệ sức khỏe công nhân với hệ thống thông gió, hút bụi đạt chuẩn quốc tế.
@@ -155,30 +160,32 @@ export function Home() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               className="relative hidden lg:block"
             >
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-white/20">
-                <div className="aspect-[4/5] bg-slate-200 relative">
-                  {/* Decorative mesh/pattern or actual image placeholder */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 to-transparent" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Wind className="w-40 h-40 text-white/20 animate-pulse" />
-                  </div>
-                </div>
-                {/* Floating Info Box */}
-                <div className="absolute bottom-8 left-8 right-8 glass p-6 rounded-2xl shadow-xl border border-white/40">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
-                      <Zap className="w-6 h-6 text-white" />
+              <TiltedCard
+                imageSrc=""
+                altText="Industrial Ventilation"
+                captionText="Hệ Thống Thông Gió 4.0"
+                containerHeight="600px"
+                imageHeight="500px"
+                rotateAmplitude={12}
+                scaleOnHover={1.05}
+                displayOverlayContent={true}
+                overlayContent={
+                    <div className="p-8 h-full flex flex-col justify-end">
+                        <div className="glass p-6 rounded-2xl shadow-xl border border-white/40 flex items-center gap-4">
+                            <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
+                                <Zap className="w-6 h-6 text-white" />
+                            </div>
+                            <div>
+                                <div className="text-slate-900 font-bold">Tiết kiệm 40%</div>
+                                <div className="text-slate-500 text-sm">Điện năng tiêu thụ</div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                      <div className="text-slate-900 font-bold">Tiết kiệm 40%</div>
-                      <div className="text-slate-500 text-sm">Điện năng tiêu thụ hàng tháng</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                }
+              />
               {/* Background Glow */}
-              <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-400/20 rounded-full blur-[100px]" />
-              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-orange-400/10 rounded-full blur-[100px]" />
+              <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-400/20 rounded-full blur-[100px] -z-10" />
+              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-orange-400/10 rounded-full blur-[100px] -z-10" />
             </motion.div>
           </div>
         </div>
