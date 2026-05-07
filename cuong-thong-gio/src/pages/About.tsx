@@ -25,7 +25,7 @@ export function About() {
                 Câu chuyện của chúng tôi
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-zinc-900 mb-6 leading-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 mb-6 leading-tight">
               Từ xưởng gia công cơ khí <br className="hidden md:block" />
               <span className="text-zinc-400">đến nhà thầu M&E uy tín.</span>
             </h1>
@@ -56,11 +56,11 @@ export function About() {
               
               <div className="grid grid-cols-2 gap-8 pt-8 mt-8 border-t border-zinc-200/60">
                 <div>
-                  <div className="text-4xl md:text-5xl font-semibold text-zinc-900 mb-2 tracking-tight">13+</div>
+                  <div className="text-3xl md:text-4xl font-semibold text-zinc-900 mb-2 tracking-tight">13+</div>
                   <div className="text-sm font-medium text-zinc-500">Năm kinh nghiệm</div>
                 </div>
                 <div>
-                  <div className="text-4xl md:text-5xl font-semibold text-zinc-900 mb-2 tracking-tight">2,145</div>
+                  <div className="text-3xl md:text-4xl font-semibold text-zinc-900 mb-2 tracking-tight">2,145</div>
                   <div className="text-sm font-medium text-zinc-500">Dự án hoàn thành</div>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export function About() {
             transition={{ duration: 0.5 }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-5xl font-semibold mb-8 tracking-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-8 tracking-tight">
               Hợp tác cùng chúng tôi <br className="hidden sm:block" />
               <span className="text-zinc-400">để kiến tạo giá trị bền vững.</span>
             </h2>

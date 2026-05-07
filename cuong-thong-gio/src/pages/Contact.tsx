@@ -43,7 +43,7 @@ export function Contact() {
                 Liên hệ chúng tôi
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-zinc-900 mb-6">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 mb-6">
               Tư vấn giải pháp <br className="hidden md:block" />
               <span className="text-zinc-400">kỹ thuật chuyên sâu.</span>
             </h1>

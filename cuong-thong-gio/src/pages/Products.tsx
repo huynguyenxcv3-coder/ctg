@@ -13,22 +13,19 @@ const danhSachSanpham: SanPham[] = [
   {
     title: 'Quạt Công Nghiệp Hiệu Suất Cao',
     description: 'Chúng tôi trực tiếp gia công và lắp đặt các dòng quạt ly tâm, hướng trục và quạt thông gió mái. Sản phẩm sử dụng động cơ dây đồng tiêu chuẩn, cánh quạt được cân bằng động kỹ thuật số đảm bảo vận hành êm ái, bền bỉ và không rung lắc.',
-    imageUrl: 'https://images.unsplash.com/photo-1611078516086-455b85a1104e?q=80&w=1000&auto=format&fit=crop',
-    modelType: 'box-fan',
+    imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000&auto=format&fit=crop',
     specs: ['Công suất: 1.1kW - 200kW', 'Lưu lượng: lên đến 150.000 m³/h', 'Áp suất cao, hiệu suất tối ưu', 'Vật liệu: Thép CT3 hoặc Inox 304']
   },
   {
     title: 'Gia Công Ống Gió & Phụ Kiện',
     description: 'Sở hữu dây chuyền cắt Plasma CNC hiện đại, chúng tôi sản xuất ống gió vuông, tròn xoắn theo tiêu chuẩn quốc tế (SMACNA). Ngoài ra, chúng tôi cung cấp đầy đủ phụ kiện như van VCD, FD và cửa gió nhôm định hình cao cấp.',
     imageUrl: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1000&auto=format&fit=crop',
-    modelType: 'centrifugal',
     specs: ['Tôn mạ kẽm độ dày 0.48 - 1.15mm', 'Cửa gió nhôm sơn tĩnh điện', 'Sản xuất nhanh, chính xác', 'Kết nối kín khít, giảm tổn thất áp suất']
   },
   {
     title: 'Hệ Thống Xử Lý Bụi & Khí Thải',
     description: 'Thiết kế và thi công hệ thống lọc bụi túi vải với công nghệ giũ bụi khí nén tự động. Đối với các khu vực phát sinh mùi hóa chất, chúng tôi cung cấp giải pháp tháp hấp thụ sử dụng than hoạt tính chuyên dụng.',
-    imageUrl: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000&auto=format&fit=crop',
-    modelType: 'filter',
+    imageUrl: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1000&auto=format&fit=crop',
     specs: ['Hiệu quả lọc bụi > 99%', 'Túi lọc chống ẩm, chịu nhiệt', 'Hệ thống điều khiển PLC thông minh', 'Đạt quy chuẩn xả thải môi trường']
   },
 ]
@@ -51,7 +48,7 @@ export function Products() {
                 Sản phẩm & Giải pháp
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-zinc-900 mb-6">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 mb-6">
               Sản xuất trực tiếp, <br className="hidden md:block" />
               kiểm soát chất lượng tuyệt đối.
             </h1>
@@ -75,18 +72,20 @@ export function Products() {
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center"
               >
-                {/* 3D Model Visualization */}
-                <div className={`h-[400px] lg:h-[500px] w-full rounded-2xl overflow-hidden bg-white border border-zinc-200 shadow-xl relative group ${soThuTu % 2 === 1 ? 'lg:order-2' : ''}`}>
-                   <div className="absolute top-4 left-4 z-20">
-                      <span className="bg-zinc-900 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Mô phỏng 3D</span>
-                   </div>
-                   <DuctModel3D type={hangMuc.modelType} />
+                {/* Product Image */}
+                <div className={`h-[320px] lg:h-[420px] w-full rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 shadow-xl relative group ${soThuTu % 2 === 1 ? 'lg:order-2' : ''}`}>
+                   <img
+                     src={hangMuc.imageUrl}
+                     alt={hangMuc.title}
+                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
 
                 {/* Nội dung mô tả */}
                 <div className="space-y-8 lg:py-6">
                   <div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4 tracking-tight">{hangMuc.title}</h2>
+                    <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-zinc-900 mb-4 tracking-tight">{hangMuc.title}</h2>
                     <p className="text-zinc-600 text-lg leading-relaxed font-normal">{hangMuc.description}</p>
                   </div>
                   
@@ -124,7 +123,7 @@ export function Products() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-8">
                   Tiêu chuẩn kỹ thuật <br className="hidden sm:block" /> minh bạch & tin cậy.
                 </h2>
                 <div className="space-y-8">

@@ -88,7 +88,7 @@ export function Home() {
             <div className="mb-8">
               <motion.h1 
                 variants={fadeUp}
-                className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 leading-[1.1] justify-center"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 leading-[1.15] justify-center"
               >
                 Hệ thống thông gió chuyên nghiệp cho công trình công nghiệp.
               </motion.h1>
@@ -149,7 +149,7 @@ export function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="flex flex-col items-center pt-12 md:pt-0"
               >
-                <div className="text-5xl md:text-7xl font-bold text-zinc-900 mb-4 tracking-tighter">{s.value}</div>
+                <div className="text-4xl md:text-5xl font-bold text-zinc-900 mb-4 tracking-tighter">{s.value}</div>
                 <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em]">{s.label}</div>
               </motion.div>
             ))}
@@ -165,7 +165,7 @@ export function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-zinc-900 mb-6 tracking-tight"
             >
               Năng Lực Cốt Lõi
             </motion.h2>
@@ -220,7 +220,7 @@ export function Home() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">Đội ngũ kỹ thuật <br/><span className="text-zinc-500">giàu kinh nghiệm.</span></h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 tracking-tighter">Đội ngũ kỹ thuật <br/><span className="text-zinc-500">giàu kinh nghiệm.</span></h2>
               <p className="text-zinc-400 text-lg mb-10 leading-relaxed font-normal">
                 Sự chính xác trong từng hệ thống được đảm bảo bởi những kỹ sư và thợ lành nghề. Chúng tôi tự hào về đội ngũ nhân sự tận tâm, am hiểu sâu sắc về kỹ thuật cơ khí và thông gió.
               </p>
@@ -254,7 +254,7 @@ export function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-6"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 mb-6"
             >
               Đánh giá từ đối tác
             </motion.h2>
@@ -312,7 +312,7 @@ export function Home() {
                 transition={{ duration: 0.5 }}
                 className="max-w-3xl mx-auto relative z-10"
               >
-                <h2 className="text-3xl md:text-6xl font-bold mb-8 tracking-tighter text-white uppercase">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 tracking-tighter text-white uppercase">
                   Tư vấn khảo sát trực tiếp
                 </h2>
                 <p className="text-zinc-400 mb-12 text-lg font-normal leading-relaxed">Đội ngũ kỹ sư của Cường Thông Gió luôn sẵn sàng hỗ trợ khảo sát và tư vấn phương án thi công tối ưu nhất cho doanh nghiệp của bạn.</p>
