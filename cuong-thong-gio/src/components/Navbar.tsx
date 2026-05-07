@@ -1,140 +1,134 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Wind, Phone } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '../lib/utils'
 import { Button } from './ui/Button'
 
 const navLinks = [
-  { href: '/', label: 'Trang Chủ' },
-  { href: '/san-pham', label: 'Sản Phẩm' },
-  { href: '/gioi-thieu', label: 'Giới Thiệu' },
-  { href: '/lien-he', label: 'Liên Hệ' },
+  { href: '/', label: 'Trang chủ' },
+  { href: '/gioi-thieu', label: 'Về chúng tôi' },
+  { href: '/san-pham', label: 'Giải pháp & Thiết bị' },
+  { href: '/lien-he', label: 'Liên hệ' },
 ]
 
 export function Navbar() {
-  const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    const onScroll = () => setScrolled(window.scrollY > 10)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Lock scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
+
+  // Close menu on navigation
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsOpen(false)
+  }, [location.pathname])
+
   return (
     <header className={cn(
-      'fixed top-4 inset-x-0 z-50 transition-all duration-500 flex justify-center px-4',
+      'fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b',
+      scrolled || isOpen ? 'bg-white/90 backdrop-blur-md border-zinc-200 py-0' : 'bg-transparent border-transparent py-2'
     )}>
-      <div className={cn(
-        'w-full max-w-7xl px-6 py-3 transition-all duration-500 rounded-2xl',
-        scrolled
-          ? 'glass shadow-lg border border-slate-200/50 scale-[0.98]'
-          : 'bg-transparent border-transparent'
-      )}>
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-md shadow-blue-200/50 group-hover:scale-105 transition-transform">
-              <Wind className="w-5 h-5 text-white" />
-            </div>
-            <div className="hidden sm:block">
-              <div className={cn(
-                'font-bold text-lg leading-tight transition-colors',
-                scrolled ? 'text-slate-900' : 'text-slate-900 md:text-white'
-              )}>Cường Thống Gió</div>
-              <div className={cn(
-                'text-[10px] font-semibold uppercase tracking-wider transition-colors',
-                scrolled ? 'text-blue-600' : 'text-blue-600 md:text-blue-100/70'
-              )}>Engineering Solutions</div>
-            </div>
-          </Link>
+      <div className="container-custom h-14 flex items-center justify-between">
+        <Link to="/" className="text-sm font-bold tracking-tighter text-zinc-900 z-50 uppercase">
+          Cường Thông Gió<span className="text-zinc-400">.</span>
+        </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map(link => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={cn(
-                  'px-4 py-2 rounded-md text-sm font-medium transition-all duration-200',
-                  location.pathname === link.href
-                    ? scrolled
-                      ? 'text-blue-600 bg-blue-50/50'
-                      : 'text-white bg-white/20'
-                    : scrolled
-                      ? 'text-slate-600 hover:text-blue-600 hover:bg-slate-50'
-                      : 'text-white/80 hover:text-white hover:bg-white/10'
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* CTA */}
-          <div className="hidden md:flex items-center gap-6">
-            <a
-              href="tel:0123456789"
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map(link => (
+            <Link
+              key={link.href}
+              to={link.href}
               className={cn(
-                'flex items-center gap-2 text-sm font-semibold transition-colors',
-                scrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'
+                'text-[13px] font-semibold uppercase tracking-wider transition-colors hover:text-zinc-900',
+                location.pathname === link.href ? 'text-zinc-900' : 'text-zinc-400'
               )}
             >
-              <Phone className="w-4 h-4" />
-              0123 456 789
-            </a>
-            <Button asChild size="sm" className="rounded-lg px-6 font-bold shadow-blue-500/20">
-              <Link to="/lien-he">Báo Giá</Link>
-            </Button>
-          </div>
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setOpen(!open)}
-            className={cn(
-              'md:hidden p-2 rounded-lg transition-colors',
-              scrolled ? 'text-slate-900 hover:bg-slate-100' : 'text-slate-900 md:text-white hover:bg-white/10'
-            )}
-          >
-            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+        <div className="hidden md:flex items-center gap-4">
+          <Button asChild variant="default" size="sm" className="rounded-full px-5 text-[12px] uppercase tracking-widest font-bold">
+            <Link to="/lien-he">Báo giá ngay</Link>
+          </Button>
         </div>
+
+        {/* Mobile toggle */}
+        <button 
+          className="md:hidden p-2 -mr-2 z-50 text-zinc-900"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
 
-      {/* Mobile menu */}
-      {open && (
-        <div className="absolute top-20 inset-x-4 md:hidden glass border border-slate-200 shadow-2xl rounded-2xl overflow-hidden p-2 anim-fade-up">
-          <nav className="flex flex-col gap-1">
-            {navLinks.map(link => (
-              <Link
-                key={link.href}
-                to={link.href}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  'block px-5 py-4 rounded-xl text-base font-semibold transition-colors',
-                  location.pathname === link.href
-                    ? 'bg-blue-600 text-white'
-                    : 'text-slate-700 hover:bg-blue-50 hover:text-blue-600'
-                )}
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-white flex flex-col justify-center px-10 md:hidden"
+          >
+            <div className="flex flex-col gap-8">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <Link
+                    to={link.href}
+                    className={cn(
+                      'text-3xl font-bold tracking-tighter transition-colors',
+                      location.pathname === link.href ? 'text-zinc-900' : 'text-zinc-300'
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+                className="pt-10 border-t border-zinc-100 mt-4"
               >
-                {link.label}
-              </Link>
-            ))}
-            <div className="mt-2 pt-2 border-t border-slate-100 flex flex-col gap-2">
-              <a href="tel:0123456789" className="flex items-center gap-3 px-5 py-4 text-base font-semibold text-slate-700">
-                <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
-                  <Phone className="w-4 h-4 text-blue-600" />
-                </div>
-                0123 456 789
-              </a>
-              <Button asChild onClick={() => setOpen(false)} className="mx-2 mb-2 py-6 rounded-xl text-base font-bold">
-                <Link to="/lien-he">Yêu Cầu Báo Giá</Link>
-              </Button>
+                <Button asChild size="lg" className="w-full rounded-full uppercase tracking-widest font-bold text-xs">
+                  <Link to="/lien-he">Liên hệ báo giá</Link>
+                </Button>
+              </motion.div>
             </div>
-          </nav>
-        </div>
-      )}
+            
+            <div className="absolute bottom-12 left-10 right-10">
+               <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Kết nối</p>
+               <a href="tel:0905001224" className="text-lg font-bold text-zinc-900 block mb-1">0905 001 224</a>
+               <p className="text-sm text-zinc-500">phantrongcuong77@gmail.com</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }
+

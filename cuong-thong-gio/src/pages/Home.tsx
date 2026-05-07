@@ -1,272 +1,211 @@
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import {
-  Wind, Shield, Award, Users, ChevronRight, ArrowRight,
-  Star, Wrench, Factory, Building2, Zap
-} from 'lucide-react'
+import type { Variants } from 'framer-motion'
+import { useRef } from 'react'
 import { Button } from '../components/ui/Button'
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/Card'
-import SplitText from '../components/ui/SplitText'
-import TiltedCard from '../components/ui/TiltedCard'
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut" }
-}
 
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
+const stats = [
+  { value: '13', label: 'Năm hoạt động' },
+  { value: '2,145', label: 'Dự án bàn giao' },
+  { value: '500m²', label: 'Diện tích xưởng' },
+]
+
+const services = [
+  {
+    title: 'Sản xuất Quạt Công Nghiệp',
+    desc: 'Gia công trực tiếp các dòng quạt ly tâm, hướng trục bằng vật liệu tiêu chuẩn. Hệ thống cánh quạt được cân bằng động kỹ thuật số đảm bảo độ chính xác tuyệt đối.',
+    imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2000&auto=format&fit=crop'
+  },
+  {
+    title: 'Giải pháp Xử lý Khí & Bụi',
+    desc: 'Thi công hệ thống lọc bụi túi vải, tháp hấp thụ khí thải cho các khu công nghiệp và nhà xưởng, cam kết hiệu quả xử lý đạt chuẩn môi trường.',
+    imageUrl: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=2000&auto=format&fit=crop'
+  }
+]
+
+const projects = [
+  {
+    name: 'Hệ thống hút bụi xưởng Gỗ Xuất Khẩu',
+    text: 'Cường Thông Gió đã giải quyết triệt để tình trạng bụi mịn trong không gian sản xuất. Hệ thống vận hành ổn định, giúp chúng tôi đáp ứng các tiêu chuẩn khắt khe về an toàn lao động.',
+    author: 'Anh Tuấn - Giám đốc Sản xuất',
+    location: 'Nhà máy Gỗ Tân Phát, KCN Hòa Khánh'
+  },
+  {
+    name: 'Thông gió sự cố tầng hầm Tòa nhà',
+    text: 'Đội ngũ kỹ thuật làm việc chuyên nghiệp, bám sát bản vẽ thiết kế. Hệ thống thông gió tươi hoạt động hiệu quả, giúp dự án nghiệm thu PCCC thuận lợi ngay từ lần đầu.',
+    author: 'KS. Hoàng Nam',
+    location: 'Dự án Chung cư Nam Cẩm Lệ'
+  }
+]
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
   }
 }
 
-const stats = [
-  { value: '15+', label: 'Năm Kinh Nghiệm' },
-  { value: '2.000+', label: 'Dự Án Hoàn Thành' },
-  { value: '500+', label: 'Khách Hàng Tin Tưởng' },
-  { value: '98%', label: 'Tỷ Lệ Hài Lòng' },
-]
-
-const features = [
-  {
-    icon: Shield,
-    title: 'Chất Lượng Đảm Bảo',
-    desc: 'Tất cả sản phẩm được kiểm định chất lượng nghiêm ngặt, đạt chuẩn ISO và các tiêu chuẩn quốc tế.',
-  },
-  {
-    icon: Zap,
-    title: 'Tiết Kiệm Năng Lượng',
-    desc: 'Các giải pháp thông gió hiện đại giúp tiết kiệm điện năng lên đến 40% so với hệ thống truyền thống.',
-  },
-  {
-    icon: Wrench,
-    title: 'Lắp Đặt Chuyên Nghiệp',
-    desc: 'Đội ngũ kỹ thuật viên giàu kinh nghiệm, lắp đặt nhanh chóng và đúng tiến độ yêu cầu.',
-  },
-  {
-    icon: Award,
-    title: 'Bảo Hành Dài Hạn',
-    desc: 'Chế độ bảo hành lên đến 5 năm cùng dịch vụ hậu mãi và bảo trì định kỳ tận tâm.',
-  },
-]
-
-const products = [
-  {
-    icon: Wind,
-    name: 'Quạt Công Nghiệp',
-    desc: 'Quạt hướng trục, ly tâm công suất lớn cho nhà máy, xưởng sản xuất.',
-    tag: 'Phổ biến',
-    color: 'bg-blue-50 text-blue-600',
-  },
-  {
-    icon: Factory,
-    name: 'Hệ Thống Hút Bụi',
-    desc: 'Thiết bị lọc và hút bụi công nghiệp, đảm bảo môi trường làm việc sạch sẽ.',
-    tag: 'Mới',
-    color: 'bg-orange-50 text-orange-600',
-  },
-  {
-    icon: Building2,
-    name: 'Thông Gió Tòa Nhà',
-    desc: 'Giải pháp thông gió toàn diện cho văn phòng, tòa nhà thương mại.',
-    tag: 'Cao cấp',
-    color: 'bg-emerald-50 text-emerald-600',
-  },
-]
-
-const testimonials = [
-  {
-    name: 'Nguyễn Văn Minh',
-    role: 'Giám đốc Nhà Máy Dệt May ABC',
-    text: 'Sau khi lắp hệ thống thông gió của Cường Thống Gió, nhiệt độ nhà xưởng giảm rõ rệt, công nhân làm việc hiệu quả hơn nhiều.',
-    stars: 5,
-  },
-  {
-    name: 'Trần Thị Lan',
-    role: 'Chủ Doanh Nghiệp TL Group',
-    text: 'Dịch vụ chuyên nghiệp, đúng tiến độ. Đội ngũ kỹ thuật tư vấn nhiệt tình và am hiểu sản phẩm. Rất hài lòng!',
-    stars: 5,
-  },
-  {
-    name: 'Lê Quốc Bảo',
-    role: 'Trưởng Phòng Kỹ Thuật - KCN Tân Bình',
-    text: 'Thiết bị chất lượng cao, tiết kiệm điện đáng kể. Đã hợp tác 5 năm và luôn tin tưởng Cường Thống Gió.',
-    stars: 5,
-  },
-]
+const stagger: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+}
 
 export function Home() {
+  const containerRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  })
+  
+  const y = useTransform(scrollYProgress, [0, 1], [0, 120])
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.5])
+
   return (
-    <div className="overflow-x-hidden">
-      {/* Hero */}
-      <section className="relative min-h-screen flex items-center pt-20 bg-white">
-        {/* Background elements */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 skew-x-12 translate-x-1/4" />
-          <div className="absolute inset-0 section-grid opacity-40" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 lg:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial="initial"
-              animate="animate"
-              variants={stagger}
-            >
-              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
-                </span>
-                Giải Pháp Kỹ Thuật Hàng Đầu
-              </motion.div>
-
-              <SplitText
-                text="Giải Pháp Thông Gió Toàn Diện Cho Công Nghiệp"
-                className="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6 text-balance text-left"
-                delay={40}
-                textAlign="left"
-              />
-
-              <motion.p variants={fadeInUp} className="text-lg lg:text-xl text-slate-600 mb-10 max-w-xl leading-relaxed">
-                Nâng cao năng suất lao động và bảo vệ sức khỏe công nhân với hệ thống thông gió, hút bụi đạt chuẩn quốc tế.
-              </motion.p>
-
-              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mb-12">
-                <Button asChild size="lg" className="rounded-xl px-8 h-14 text-base font-bold shadow-lg shadow-blue-200">
-                  <Link to="/san-pham">Khám Phá Sản Phẩm</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-xl px-8 h-14 text-base font-bold bg-white/50 backdrop-blur-sm">
-                  <Link to="/lien-he">Yêu Cầu Báo Giá</Link>
-                </Button>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-10 border-t border-slate-100">
-                {stats.map((s) => (
-                  <div key={s.label}>
-                    <div className="text-2xl font-bold text-slate-900">{s.value}</div>
-                    <div className="text-xs text-slate-500 font-medium uppercase tracking-tight">{s.label}</div>
-                  </div>
-                ))}
-              </motion.div>
+    <div ref={containerRef} className="bg-zinc-50 min-h-screen selection:bg-zinc-200 selection:text-zinc-900 relative font-sans text-zinc-900">
+      
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative z-10 bg-white border-b border-zinc-200">
+        <div className="container-custom text-center">
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            animate="visible"
+            className="max-w-4xl mx-auto"
+          >
+            <motion.div variants={fadeUp} className="mb-6 flex justify-center">
+              <span className="inline-flex items-center gap-2 rounded-full bg-zinc-100 border border-zinc-300 px-3 py-1 text-[10px] font-bold text-zinc-700 shadow-sm uppercase tracking-[0.2em]">
+                <span className="flex h-2 w-2 rounded-full bg-zinc-900 animate-pulse" />
+                Xưởng sản xuất trực tiếp tại Đà Nẵng
+              </span>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="relative hidden lg:block"
+            
+            <div className="mb-8">
+              <motion.h1 
+                variants={fadeUp}
+                className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 leading-[1.1] justify-center"
+              >
+                Hệ thống thông gió chuyên nghiệp cho công trình công nghiệp.
+              </motion.h1>
+            </div>
+            
+            <motion.p 
+              variants={fadeUp}
+              className="text-lg md:text-xl text-zinc-500 mb-12 leading-relaxed max-w-2xl mx-auto font-normal"
             >
-              <TiltedCard
-                imageSrc=""
-                altText="Industrial Ventilation"
-                captionText="Hệ Thống Thông Gió 4.0"
-                containerHeight="600px"
-                imageHeight="500px"
-                rotateAmplitude={12}
-                scaleOnHover={1.05}
-                displayOverlayContent={true}
-                overlayContent={
-                    <div className="p-8 h-full flex flex-col justify-end">
-                        <div className="glass p-6 rounded-2xl shadow-xl border border-white/40 flex items-center gap-4">
-                            <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
-                                <Zap className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                                <div className="text-slate-900 font-bold">Tiết kiệm 40%</div>
-                                <div className="text-slate-500 text-sm">Điện năng tiêu thụ</div>
-                            </div>
-                        </div>
-                    </div>
-                }
-              />
-              {/* Background Glow */}
-              <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-400/20 rounded-full blur-[100px] -z-10" />
-              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-orange-400/10 rounded-full blur-[100px] -z-10" />
+              Không chỉ là đơn vị thi công, Cường Thông Gió sở hữu năng lực sản xuất độc lập, kiểm soát hoàn toàn chất lượng thiết bị và tiến độ dự án.
+            </motion.p>
+            
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button asChild size="lg" className="rounded-full font-bold uppercase tracking-widest text-xs">
+                <Link to="/lien-he">Yêu cầu tư vấn kỹ thuật</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full font-bold uppercase tracking-widest text-xs">
+                <a href="#xuong-san-xuat">Năng lực sản xuất</a>
+              </Button>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-24 bg-slate-50 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">Tại Sao Chọn Cường Thống Gió?</h2>
-            <p className="text-slate-500 max-w-2xl mx-auto text-lg">Chúng tôi không chỉ cung cấp thiết bị, chúng tôi mang đến giải pháp kỹ thuật tối ưu và dịch vụ hậu mãi tận tâm.</p>
+      {/* Realistic Factory Image Section */}
+      <section id="xuong-san-xuat" className="px-4 sm:px-6 relative z-20 -mt-10 md:-mt-16 mb-24 md:mb-32 scroll-mt-24">
+        <motion.div 
+          style={{ y, opacity }}
+          className="max-w-6xl mx-auto rounded-2xl overflow-hidden bg-zinc-900 shadow-2xl aspect-[16/9] relative group border-4 border-white"
+        >
+          <img 
+            src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2000&auto=format&fit=crop" 
+            alt="Xưởng sản xuất quạt công nghiệp Cường Thông Gió" 
+            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8 md:p-12">
+             <div className="text-white">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="bg-white text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Thực tế</span>
+                  <span className="text-sm font-medium opacity-80 uppercase tracking-widest">Dây chuyền sản xuất tại xưởng</span>
+                </div>
+                <h3 className="text-2xl md:text-4xl font-bold tracking-tighter">Làm chủ công nghệ và kỹ thuật</h3>
+             </div>
           </div>
+        </motion.div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((f, i) => (
-              <motion.div
-                key={f.title}
-                initial={{ opacity: 0, y: 20 }}
+      {/* Concrete Stats Section */}
+      <section className="py-24 bg-white border-y border-zinc-100 relative z-30">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-zinc-100">
+            {stats.map((s, i) => (
+              <motion.div 
+                key={s.label} 
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex flex-col items-center pt-12 md:pt-0"
               >
-                <Card className="h-full border-none shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 text-blue-600">
-                      <f.icon className="w-6 h-6" />
-                    </div>
-                    <CardTitle className="text-xl">{f.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
-                  </CardContent>
-                </Card>
+                <div className="text-5xl md:text-7xl font-bold text-zinc-900 mb-4 tracking-tighter">{s.value}</div>
+                <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em]">{s.label}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Products */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-4">Sản Phẩm Nổi Bật</h2>
-              <p className="text-slate-500 text-lg">Khám phá các dòng sản phẩm chất lượng cao, đáp ứng mọi nhu cầu thông gió công nghiệp.</p>
-            </div>
-            <Button asChild variant="outline" className="rounded-lg group">
-              <Link to="/san-pham" className="flex items-center gap-2">
-                Xem tất cả sản phẩm
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+      {/* Practical Solutions */}
+      <section className="py-24 md:py-32 relative bg-zinc-50">
+        <div className="container-custom">
+          <div className="mb-16 md:mb-20 text-center md:text-left">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight"
+            >
+              Năng Lực Cốt Lõi
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-zinc-500 text-lg max-w-2xl font-normal leading-relaxed"
+            >
+              Chúng tôi khẳng định uy tín bằng chất lượng sản phẩm thực tế và quy trình nghiệm thu khắt khe, đảm bảo hiệu quả vận hành tối ưu cho khách hàng.
+            </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {products.map((p, i) => (
-              <motion.div
-                key={p.name}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+            {services.map((service, i) => (
+              <motion.div 
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group bg-white rounded-2xl overflow-hidden border border-zinc-100 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col"
               >
-                <div className="group relative bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
-                  <div className={`h-64 ${p.color} flex items-center justify-center relative overflow-hidden`}>
-                    <p.icon className="w-24 h-24 opacity-20 absolute -right-4 -bottom-4 rotate-12" />
-                    <p.icon className="w-20 h-20 relative z-10" />
-                    <div className="absolute top-4 left-4 glass px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-900 border-white/20">
-                      {p.tag}
-                    </div>
-                  </div>
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">{p.name}</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed mb-8">{p.desc}</p>
-                    <Link
-                      to="/san-pham"
-                      className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:gap-3 transition-all"
-                    >
-                      Tìm hiểu thêm
-                      <ChevronRight className="w-4 h-4" />
+                <div className="h-72 overflow-hidden relative">
+                  <img 
+                    src={service.imageUrl} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale hover:grayscale-0"
+                  />
+                </div>
+                <div className="p-10 flex-1 flex flex-col">
+                  <h3 className="text-2xl font-bold text-zinc-900 mb-4 tracking-tight">{service.title}</h3>
+                  <p className="text-zinc-500 mb-8 leading-relaxed font-normal">{service.desc}</p>
+                  <div className="mt-auto pt-8 border-t border-zinc-50">
+                    <Link to="/san-pham" className="inline-flex items-center text-[11px] font-bold text-zinc-900 hover:text-zinc-500 transition-colors uppercase tracking-[0.2em]">
+                      Xem chi tiết thiết bị
+                      <svg className="w-4 h-4 ml-3 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
                     </Link>
                   </div>
                 </div>
@@ -276,72 +215,117 @@ export function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 relative overflow-hidden bg-slate-900">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.1)_0%,transparent_70%)]" />
-        </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Users className="w-16 h-16 text-blue-500 mx-auto mb-8" />
-            <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8">Bạn Cần Tư Vấn Kỹ Thuật?</h2>
-            <p className="text-slate-400 text-lg lg:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-              Đội ngũ kỹ sư của chúng tôi sẵn sàng khảo sát và tư vấn giải pháp tối ưu nhất cho nhà xưởng của bạn hoàn toàn miễn phí.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <Button asChild size="lg" className="rounded-xl h-16 px-10 text-lg font-bold">
-                <Link to="/lien-he">Liên Hệ Ngay</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-xl h-16 px-10 text-lg font-bold text-white border-slate-700 hover:bg-slate-800">
-                <a href="tel:0123456789">Gọi 0123 456 789</a>
-              </Button>
+      {/* Human/Team Section */}
+      <section className="py-24 bg-zinc-900 text-white overflow-hidden">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">Đội ngũ kỹ thuật <br/><span className="text-zinc-500">giàu kinh nghiệm.</span></h2>
+              <p className="text-zinc-400 text-lg mb-10 leading-relaxed font-normal">
+                Sự chính xác trong từng hệ thống được đảm bảo bởi những kỹ sư và thợ lành nghề. Chúng tôi tự hào về đội ngũ nhân sự tận tâm, am hiểu sâu sắc về kỹ thuật cơ khí và thông gió.
+              </p>
+              <ul className="space-y-6 mb-12">
+                {['Kỹ thuật viên chứng chỉ chuyên ngành', 'Kỹ sư thiết kế hệ thống chuyên sâu', 'Giám sát thi công 10+ năm kinh nghiệm'].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-4">
+                    <div className="w-5 h-5 rounded-full border border-zinc-700 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                    </div>
+                    <span className="font-semibold uppercase text-xs tracking-widest">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </motion.div>
+            <div className="relative">
+               <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1000&auto=format&fit=crop" alt="Đội ngũ kỹ thuật Cường Thông Gió" className="rounded-2xl shadow-2xl filter grayscale" />
+               <div className="absolute -bottom-10 -left-10 bg-white text-zinc-900 p-8 rounded-2xl shadow-2xl border border-zinc-100 max-w-xs">
+                  <p className="font-bold text-xl mb-2 tracking-tight">Cam kết An toàn</p>
+                  <p className="text-zinc-500 text-sm leading-relaxed">Tuân thủ nghiêm ngặt các quy định về an toàn lao động và bảo hộ tại công trường.</p>
+               </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900">Khách Hàng Nói Gì</h2>
+      {/* Detailed Reviews */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="container-custom">
+          <div className="mb-20 text-center">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-6"
+            >
+              Đánh giá từ đối tác
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-zinc-500 text-lg max-w-2xl mx-auto font-normal"
+            >
+              Chúng tôi luôn trân trọng sự tin tưởng và những phản hồi tích cực từ phía chủ đầu tư sau mỗi dự án hoàn thiện.
+            </motion.p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={t.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+            
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            {projects.map((p, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, scale: 0.98 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="bg-zinc-50/50 p-10 rounded-2xl border border-zinc-100 flex flex-col hover:bg-white hover:shadow-xl transition-all duration-500"
               >
-                <Card className="h-full border-slate-100 hover:border-blue-100 transition-colors">
-                  <CardHeader>
-                    <div className="flex gap-1 mb-4">
-                      {Array.from({ length: t.stars }).map((_, j) => (
-                        <Star key={j} className="w-4 h-4 text-amber-400 fill-amber-400" />
-                      ))}
-                    </div>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
-                  </CardHeader>
-                  <CardContent className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 font-bold">
-                      {t.name[0]}
-                    </div>
-                    <div>
-                      <div className="font-bold text-slate-900 text-sm">{t.name}</div>
-                      <div className="text-slate-500 text-xs">{t.role}</div>
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className="mb-8 flex-1">
+                  <div className="inline-flex items-center rounded-full bg-zinc-100 px-4 py-1 text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-6">
+                    {p.location}
+                  </div>
+                  <p className="text-zinc-900 leading-relaxed font-medium text-lg">"{p.text}"</p>
+                </div>
+                <div className="flex items-center gap-5 pt-8 border-t border-zinc-100">
+                  <div className="w-14 h-14 rounded-full bg-zinc-900 flex items-center justify-center text-white font-bold text-xl">
+                    {p.author.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="text-base font-bold text-zinc-900 uppercase tracking-wider">{p.author}</div>
+                    <div className="text-xs font-bold text-zinc-400 uppercase tracking-widest mt-1">{p.name}</div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Industrial CTA */}
+      <section className="py-24 bg-white">
+        <div className="container-custom">
+           <div className="bg-zinc-900 rounded-[2rem] p-12 md:p-24 text-center relative overflow-hidden">
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_0,transparent_100%)] pointer-events-none" />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="max-w-3xl mx-auto relative z-10"
+              >
+                <h2 className="text-3xl md:text-6xl font-bold mb-8 tracking-tighter text-white uppercase">
+                  Tư vấn khảo sát trực tiếp
+                </h2>
+                <p className="text-zinc-400 mb-12 text-lg font-normal leading-relaxed">Đội ngũ kỹ sư của Cường Thông Gió luôn sẵn sàng hỗ trợ khảo sát và tư vấn phương án thi công tối ưu nhất cho doanh nghiệp của bạn.</p>
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+                  <Button asChild size="lg" className="w-full sm:w-auto rounded-full font-bold uppercase tracking-widest text-xs h-14 px-12">
+                    <Link to="/lien-he">Đặt lịch khảo sát ngay</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full font-bold uppercase tracking-widest text-xs h-14 px-12 bg-transparent text-white border-white hover:bg-white hover:text-black">
+                    <a href="tel:0905001224">Hotline: 0905 001 224</a>
+                  </Button>
+                </div>
+              </motion.div>
+           </div>
         </div>
       </section>
     </div>

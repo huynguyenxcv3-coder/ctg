@@ -5,6 +5,7 @@ import { Home } from './pages/Home'
 import { Products } from './pages/Products'
 import { About } from './pages/About'
 import { Contact } from './pages/Contact'
+import { NotFound } from './pages/NotFound'
 import './index.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/san-pham" element={<Products />} />
             <Route path="/gioi-thieu" element={<About />} />
             <Route path="/lien-he" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

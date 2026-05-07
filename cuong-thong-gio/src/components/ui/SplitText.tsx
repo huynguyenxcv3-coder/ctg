@@ -72,17 +72,23 @@ const SplitText: React.FC<SplitTextProps> = ({
     <p
       ref={containerRef}
       className={`split-text ${className}`}
-      style={{ textAlign: textAlign as any, display: 'flex', flexWrap: 'wrap', justifyContent: textAlign === 'center' ? 'center' : 'flex-start' }}
+      style={{ textAlign: textAlign as React.CSSProperties['textAlign'], display: 'flex', flexWrap: 'wrap', justifyContent: textAlign === 'center' ? 'center' : 'flex-start' }}
     >
-      {words.map((word, wordIndex) => (
-        <span key={wordIndex} style={{ display: 'inline-block', whiteSpace: 'nowrap', marginRight: '0.3em' }}>
-          {word.split('').map((char, charIndex) => (
-            <span key={charIndex} className="split-item" style={{ display: 'inline-block' }}>
-              {char}
-            </span>
-          ))}
-        </span>
-      ))}
+      {words.map((word, wordIndex) => {
+        // Use Intl.Segmenter to safely split words containing combining characters and emojis
+        const segmenter = new Intl.Segmenter('vi', { granularity: 'grapheme' });
+        const characters = Array.from(segmenter.segment(word)).map(s => s.segment);
+        
+        return (
+          <span key={wordIndex} style={{ display: 'inline-block', whiteSpace: 'nowrap', marginRight: '0.3em' }}>
+            {characters.map((char, charIndex) => (
+              <span key={charIndex} className="split-item" style={{ display: 'inline-block' }}>
+                {char}
+              </span>
+            ))}
+          </span>
+        );
+      })}
     </p>
   );
 };

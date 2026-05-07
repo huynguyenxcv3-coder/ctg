@@ -104,6 +104,7 @@ def require_api_key(
         or request.headers.get("authorization")
         or request.headers.get("anthropic-auth-token")
     )
+    logger.debug(f"Auth header: {header}")
     if not header:
         raise HTTPException(status_code=401, detail="Missing API key")
 
@@ -111,6 +112,8 @@ def require_api_key(
     token = header
     if header.lower().startswith("bearer "):
         token = header.split(" ", 1)[1]
+    
+    logger.debug(f"Token: {token}, Expected: {anthropic_auth_token}")
 
     # Extract model name from token (e.g. "freecc:nvidia/llama-3.1-405b-instruct")
     selected_model: str | None = None
