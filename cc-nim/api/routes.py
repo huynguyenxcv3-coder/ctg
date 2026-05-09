@@ -51,6 +51,16 @@ SUPPORTED_CLAUDE_MODELS = [
         display_name="Claude 3.5 Haiku",
         created_at="2024-10-22T00:00:00Z",
     ),
+    ModelResponse(
+        id="pro",
+        display_name="Pro (gpt-oss-120b)",
+        created_at="2026-05-08T00:00:00Z",
+    ),
+    ModelResponse(
+        id="fast",
+        display_name="Fast (gpt-oss-20b)",
+        created_at="2026-05-08T00:00:00Z",
+    ),
 ]
 
 

@@ -7,8 +7,8 @@ import puppeteer from 'puppeteer';
   page.on('console', msg => console.log('BROWSER CONSOLE:', msg.text()));
   page.on('pageerror', err => console.log('BROWSER ERROR:', err.message));
 
-  await page.setViewport({ width: 1280, height: 800 });
-  await page.goto('http://localhost:5000', { waitUntil: 'networkidle0' });
+  await page.setViewport({ width: 375, height: 667 }); // Mobile first check
+  await page.goto('http://localhost:4173', { waitUntil: 'networkidle0' });
   
   // Check for horizontal overflow
   const layoutCheck = await page.evaluate(() => {
@@ -16,23 +16,28 @@ import puppeteer from 'puppeteer';
     const html = document.documentElement;
     const body = document.body;
     
-    // get all elements that are wider than viewport
+    // get all elements that are wider than viewport or shifted right
     const overflowingElements = Array.from(document.querySelectorAll('*')).filter(el => {
       const rect = el.getBoundingClientRect();
-      return rect.width > window.innerWidth || rect.right > window.innerWidth;
+      const isOverflowing = rect.width > window.innerWidth + 1 || rect.right > window.innerWidth + 1 || rect.left < -1;
+      return isOverflowing;
     }).map(el => ({
       tag: el.tagName,
       className: el.className,
-      width: el.getBoundingClientRect().width,
-      right: el.getBoundingClientRect().right,
+      id: el.id,
+      rect: {
+        width: el.getBoundingClientRect().width,
+        right: el.getBoundingClientRect().right,
+        left: el.getBoundingClientRect().left
+      },
       viewportWidth: window.innerWidth
     }));
 
     return {
-      rootWidth: root?.scrollWidth,
+      viewport: { width: window.innerWidth, height: window.innerHeight },
       htmlWidth: html.scrollWidth,
       bodyWidth: body.scrollWidth,
-      overflowingElements: overflowingElements.slice(0, 10) // top 10
+      overflowingElements: overflowingElements
     };
   });
 

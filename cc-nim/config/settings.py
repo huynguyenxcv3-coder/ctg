@@ -146,6 +146,8 @@ class Settings(BaseSettings):
     model_opus: str | None = Field(default=None, validation_alias="MODEL_OPUS")
     model_sonnet: str | None = Field(default=None, validation_alias="MODEL_SONNET")
     model_haiku: str | None = Field(default=None, validation_alias="MODEL_HAIKU")
+    model_pro: str | None = Field(default=None, validation_alias="MODEL_PRO")
+    model_fast: str | None = Field(default=None, validation_alias="MODEL_FAST")
 
     # ==================== Per-Provider Proxy ====================
     nvidia_nim_proxy: str = Field(default="", validation_alias="NVIDIA_NIM_PROXY")
@@ -431,7 +433,7 @@ class Settings(BaseSettings):
     def resolve_model(self, claude_model_name: str) -> str:
         """Resolve a Claude model name to the configured provider/model string.
 
-        Classifies the incoming Claude model (opus/sonnet/haiku) and
+        Classifies the incoming Claude model (opus/sonnet/haiku/pro/fast) and
         returns the model-specific override if configured, otherwise the fallback MODEL.
         """
         name_lower = claude_model_name.lower()
@@ -441,6 +443,10 @@ class Settings(BaseSettings):
             return self.model_haiku
         if "sonnet" in name_lower and self.model_sonnet is not None:
             return self.model_sonnet
+        if "pro" in name_lower and self.model_pro is not None:
+            return self.model_pro
+        if "fast" in name_lower and self.model_fast is not None:
+            return self.model_fast
         return self.model
 
     def resolve_thinking(self, claude_model_name: str) -> bool:
@@ -451,6 +457,10 @@ class Settings(BaseSettings):
         if "haiku" in name_lower and self.enable_haiku_thinking is not None:
             return self.enable_haiku_thinking
         if "sonnet" in name_lower and self.enable_sonnet_thinking is not None:
+            return self.enable_sonnet_thinking
+        if "pro" in name_lower and self.enable_sonnet_thinking is not None:
+            # Fallback to sonnet thinking for pro if not explicitly specified?
+            # Or just use enable_model_thinking.
             return self.enable_sonnet_thinking
         return self.enable_model_thinking
 

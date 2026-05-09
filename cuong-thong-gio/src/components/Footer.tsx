@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom'
 
 export function Footer() {
   return (
-    <footer className="bg-white border-t border-zinc-200 pt-16 pb-8">
+    <footer className="bg-white border-t border-zinc-200 pt-16 pb-8 relative z-10">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 text-center md:text-left">
           <div className="md:col-span-2">
-            <Link to="/" className="text-sm font-bold tracking-tight text-zinc-900 mb-4 block uppercase">
+            <Link to="/" className="text-xl font-bold tracking-tight text-zinc-900 mb-4 block uppercase">
               Cường Thông Gió<span className="text-zinc-400">.</span>
             </Link>
-            <p className="text-zinc-500 text-sm leading-relaxed max-w-sm">
+            <p className="text-zinc-500 text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
               Chuyên tư vấn, thiết kế và thi công hệ thống quạt công nghiệp, ống gió tại Đà Nẵng và khu vực Miền Trung. Chúng tôi cam kết chất lượng sản phẩm trực tiếp từ xưởng với chi phí tối ưu nhất và chế độ bảo hành tận tâm.
             </p>
           </div>
@@ -29,7 +29,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-zinc-500">
               <li className="leading-relaxed">101 Trần Quý Khoách,<br/>P. Hoà Minh, Q. Liên Chiểu,<br/>TP. Đà Nẵng</li>
               <li>Hotline/Zalo: <a href="tel:0905001224" className="text-zinc-900 font-bold hover:underline">0905 001 224</a></li>
-              <li>Email: <a href="mailto:phantrongcuong77@gmail.com" className="hover:text-zinc-900 transition-colors">phantrongcuong77@gmail.com</a></li>
+              <li>Email: <a href="mailto:phantrongcuong77@gmail.com" className="hover:text-zinc-900 transition-colors break-all">phantrongcuong77@gmail.com</a></li>
             </ul>
           </div>
         </div>

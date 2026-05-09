@@ -30,21 +30,27 @@ export function Navbar() {
     } else {
       document.body.style.overflow = 'unset'
     }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
   }, [isOpen])
 
   // Close menu on navigation
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsOpen(false)
   }, [location.pathname])
 
   return (
     <header className={cn(
-      'fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b',
-      scrolled || isOpen ? 'bg-white/90 backdrop-blur-md border-zinc-200 py-0' : 'bg-transparent border-transparent py-2'
+      'sticky top-0 inset-x-0 z-50 transition-all duration-300 border-b',
+      scrolled || isOpen ? 'bg-white/95 backdrop-blur-md border-zinc-200 shadow-sm' : 'bg-white/50 backdrop-blur-sm border-zinc-100'
     )}>
       <div className="container-custom h-14 flex items-center justify-between">
-        <Link to="/" className="text-sm font-bold tracking-tighter text-zinc-900 z-50 uppercase">
+        <Link 
+          to="/" 
+          onClick={() => setIsOpen(false)}
+          className="text-lg md:text-xl font-bold tracking-tighter text-zinc-900 z-50 uppercase"
+        >
           Cường Thông Gió<span className="text-zinc-400">.</span>
         </Link>
 
@@ -65,7 +71,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <Button asChild variant="default" size="sm" className="rounded-full px-5 text-[12px] uppercase tracking-widest font-bold">
+          <Button asChild variant="default" size="sm" className="px-8 min-w-[180px] h-10 rounded-full text-[12px] uppercase tracking-widest font-bold">
             <Link to="/lien-he">Báo giá ngay</Link>
           </Button>
         </div>
@@ -74,6 +80,8 @@ export function Navbar() {
         <button 
           className="md:hidden p-2 -mr-2 z-50 text-zinc-900"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -99,6 +107,7 @@ export function Navbar() {
                 >
                   <Link
                     to={link.href}
+                    onClick={() => setIsOpen(false)}
                     className={cn(
                       'text-3xl font-bold tracking-tighter transition-colors',
                       location.pathname === link.href ? 'text-zinc-900' : 'text-zinc-300'
@@ -114,7 +123,7 @@ export function Navbar() {
                 transition={{ delay: 0.4 }}
                 className="pt-10 border-t border-zinc-100 mt-4"
               >
-                <Button asChild size="lg" className="w-full rounded-full uppercase tracking-widest font-bold text-xs">
+                <Button asChild size="lg" className="w-full h-14 rounded-full uppercase tracking-widest font-bold text-xs">
                   <Link to="/lien-he">Liên hệ báo giá</Link>
                 </Button>
               </motion.div>
@@ -123,7 +132,7 @@ export function Navbar() {
             <div className="absolute bottom-12 left-10 right-10">
                <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Kết nối</p>
                <a href="tel:0905001224" className="text-lg font-bold text-zinc-900 block mb-1">0905 001 224</a>
-               <p className="text-sm text-zinc-500">phantrongcuong77@gmail.com</p>
+               <p className="text-sm text-zinc-500 break-all">phantrongcuong77@gmail.com</p>
             </div>
           </motion.div>
         )}

@@ -18,11 +18,11 @@ export function NotFound() {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <h1 className="text-[12rem] font-black text-zinc-100 leading-none select-none">404</h1>
+          <h1 className="text-[8rem] sm:text-[12rem] font-black text-zinc-100 leading-none select-none">404</h1>
         </motion.div>
         
         <motion.h2 
-          className="text-2xl md:text-3xl font-bold text-zinc-900 mb-6 max-w-xl mx-auto"
+          className="text-3xl md:text-3xl font-bold text-zinc-900 mb-6 max-w-xl mx-auto"
         >
           Đường ống dẫn đến trang này đã bị ngắt kết nối.
         </motion.h2>

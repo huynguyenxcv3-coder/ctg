@@ -13,7 +13,7 @@ interface SplitTextProps {
   threshold?: number;
   rootMargin?: string;
   textAlign?: 'left' | 'center' | 'right' | string;
-  onLetterAnimationComplete?: () => void;
+  onAnimationComplete?: () => void;
 }
 
 const SplitText: React.FC<SplitTextProps> = ({
@@ -22,12 +22,12 @@ const SplitText: React.FC<SplitTextProps> = ({
   delay = 50,
   duration = 0.5,
   ease = 'power3.out',
-  from = { opacity: 0, y: 40 },
+  from = { opacity: 0, y: 20 },
   to = { opacity: 1, y: 0 },
   threshold = 0.1,
-  rootMargin = '-100px',
+  rootMargin = '-50px',
   textAlign = 'center',
-  onLetterAnimationComplete,
+  onAnimationComplete,
 }) => {
   const containerRef = useRef<HTMLParagraphElement>(null);
   const [inView, setInView] = useState(false);
@@ -50,7 +50,7 @@ const SplitText: React.FC<SplitTextProps> = ({
   useGSAP(() => {
     if (!inView || !containerRef.current) return;
 
-    const elements = containerRef.current.querySelectorAll('.split-item');
+    const elements = containerRef.current.querySelectorAll('.split-word');
     
     gsap.fromTo(elements, 
       { ...from },
@@ -60,7 +60,7 @@ const SplitText: React.FC<SplitTextProps> = ({
         ease,
         stagger: delay / 1000,
         onComplete: () => {
-          if (onLetterAnimationComplete) onLetterAnimationComplete();
+          if (onAnimationComplete) onAnimationComplete();
         }
       }
     );
@@ -72,23 +72,29 @@ const SplitText: React.FC<SplitTextProps> = ({
     <p
       ref={containerRef}
       className={`split-text ${className}`}
-      style={{ textAlign: textAlign as React.CSSProperties['textAlign'], display: 'flex', flexWrap: 'wrap', justifyContent: textAlign === 'center' ? 'center' : 'flex-start' }}
+      style={{ 
+        textAlign: textAlign as React.CSSProperties['textAlign'], 
+        display: 'flex', 
+        flexWrap: 'wrap', 
+        justifyContent: textAlign === 'center' ? 'center' : (textAlign === 'right' ? 'flex-end' : 'flex-start'), 
+        width: '100%' 
+      }}
     >
-      {words.map((word, wordIndex) => {
-        // Use Intl.Segmenter to safely split words containing combining characters and emojis
-        const segmenter = new Intl.Segmenter('vi', { granularity: 'grapheme' });
-        const characters = Array.from(segmenter.segment(word)).map(s => s.segment);
-        
-        return (
-          <span key={wordIndex} style={{ display: 'inline-block', whiteSpace: 'nowrap', marginRight: '0.3em' }}>
-            {characters.map((char, charIndex) => (
-              <span key={charIndex} className="split-item" style={{ display: 'inline-block' }}>
-                {char}
-              </span>
-            ))}
-          </span>
-        );
-      })}
+      {words.map((word, wordIndex) => (
+        <span 
+          key={wordIndex} 
+          className="split-word"
+          style={{ 
+            display: 'inline-block', 
+            whiteSpace: 'nowrap', 
+            marginRight: wordIndex === words.length - 1 ? '0' : '0.25em',
+            willChange: 'transform, opacity',
+            opacity: inView ? undefined : 0
+          }}
+        >
+          {word}
+        </span>
+      ))}
     </p>
   );
 };

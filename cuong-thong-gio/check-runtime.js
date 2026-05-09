@@ -1,10 +1,15 @@
-const { JSDOM } = require('jsdom');
-JSDOM.fromURL("http://localhost:5000", { runScripts: "dangerously", resources: "usable" }).then(dom => {
-  dom.window.onerror = function(message, source, lineno, colno, error) {
-    console.log("RUNTIME ERROR:", message);
-  };
-  setTimeout(() => {
-    console.log("ROOT CONTENT LENGTH:", dom.window.document.getElementById('root').innerHTML.length);
-    console.log("ROOT HTML (start):", dom.window.document.getElementById('root').innerHTML.substring(0, 500));
-  }, 5000);
+import { JSDOM } from 'jsdom';
+
+const dom = new JSDOM('<!DOCTYPE html><html><body><div id="root"></div></body></html>', {
+  url: "http://localhost",
 });
+
+global.window = dom.window;
+global.document = dom.window.document;
+global.navigator = dom.window.navigator;
+
+dom.window.onerror = function(message, source, lineno, colno, error) {
+  console.log("RUNTIME ERROR:", message);
+};
+
+console.log("Runtime check environment initialized.");
