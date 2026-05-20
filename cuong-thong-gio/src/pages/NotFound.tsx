@@ -1,51 +1,20 @@
-import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import { Button } from '../components/ui/Button'
-import { PremiumGraphic } from '../components/ui/PremiumPlaceholders'
-
+import { NavLink } from 'react-router-dom';
+import { ArrowLeft, Construction } from 'lucide-react';
 
 export function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center relative overflow-hidden">
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-        <PremiumGraphic type="abstract" className="w-full h-full" />
-      </div>
-      
-      <div className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="mb-8"
-        >
-          <h1 className="text-[8rem] sm:text-[12rem] font-black text-zinc-100 leading-none select-none">404</h1>
-        </motion.div>
-        
-        <motion.h2 
-          className="text-3xl md:text-3xl font-bold text-zinc-900 mb-6 max-w-xl mx-auto"
-        >
-          Đường ống dẫn đến trang này đã bị ngắt kết nối.
-        </motion.h2>
-        
-        <motion.p 
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="text-zinc-500 mb-10 max-w-md mx-auto"
-        >
-          Có vẻ như bạn đã đi lạc vào khu vực đang bảo trì hoặc địa chỉ này không tồn tại.
-        </motion.p>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-        >
-          <Button asChild size="lg">
-            <Link to="/">Quay lại Trang chủ</Link>
-          </Button>
-        </motion.div>
+    <div className="min-h-screen flex items-center justify-center bg-industrial-silver visible-grid p-4">
+      <div className="text-center max-w-xl bg-white p-16 industrial-shadow border border-industrial-border">
+         <div className="w-20 h-20 bg-industrial-black text-white flex items-center justify-center rounded-sm mx-auto mb-8 animate-pulse">
+            <Construction className="w-10 h-10" />
+         </div>
+         <h1 className="text-8xl font-display font-bold text-industrial-black mb-4 tracking-tighter">404</h1>
+         <h2 className="text-2xl font-display font-bold mb-6 italic uppercase">KHÔNG TÌM THẤY TRANG</h2>
+         <p className="text-gray-500 mb-10 italic">Có vẻ như đường dẫn bạn đang truy cập không tồn tại hoặc đang được chúng tôi nâng cấp hệ thống.</p>
+         <NavLink to="/" className="inline-flex items-center gap-2 bg-industrial-black text-white px-8 py-4 rounded-sm font-bold hover:bg-industrial-blue transition-all uppercase tracking-widest text-sm">
+           <ArrowLeft className="w-4 h-4" /> Về trang chủ
+         </NavLink>
       </div>
     </div>
-  )
+  );
 }

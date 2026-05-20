@@ -25,7 +25,7 @@ const SplitText: React.FC<SplitTextProps> = ({
   from = { opacity: 0, y: 20 },
   to = { opacity: 1, y: 0 },
   threshold = 0.1,
-  rootMargin = '-50px',
+  rootMargin = '0px',
   textAlign = 'center',
   onAnimationComplete,
 }) => {
@@ -33,17 +33,18 @@ const SplitText: React.FC<SplitTextProps> = ({
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
+    const currentContainer = containerRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
-          observer.unobserve(containerRef.current!);
+          if (currentContainer) observer.unobserve(currentContainer);
         }
       },
       { threshold, rootMargin }
     );
 
-    if (containerRef.current) observer.observe(containerRef.current);
+    if (currentContainer) observer.observe(currentContainer);
     return () => observer.disconnect();
   }, [threshold, rootMargin]);
 

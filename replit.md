@@ -7,7 +7,7 @@ Website e-commerce/giới thiệu doanh nghiệp cho **Công Ty TNHH MTV Cườn
 
 **Tech stack:**
 - React 19 + TypeScript
-- Vite 8 (port 5000)
+- Vite 8 (port 3000)
 - Tailwind CSS v4 (via @tailwindcss/vite)
 - React Router DOM v7
 - Lucide React (icons)
@@ -26,7 +26,8 @@ Scripts lưu và khôi phục credentials Gemini CLI (tránh mất khi restart):
 - `gemini-save.sh` — Lưu credentials vào `.gemini_backup/`
 - `gemini-restore.sh` — Khôi phục credentials
 - `gemini-login.sh` — Hướng dẫn đăng nhập lần đầu
-- `.profile` — Tự động khôi phục mỗi khi mở shell
+- `.profile` — Tự động khôi phục mỗi khi mở shell (Đã cấu hình tự động)
+- **Replit Workflow** — Có thể chạy thủ công từ tab Workflows (nút "Restore Gemini")
 
 ### 3. cc-nim
 Thư mục dự án cũ (giữ nguyên).

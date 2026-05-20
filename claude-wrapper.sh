@@ -14,7 +14,7 @@ if ! curl -s "$PROXY_URL/health" > /dev/null; then
     > /home/runner/workspace/proxy.log
     
     # Khởi động proxy với đầy đủ biến môi trường
-    nohup uv run --python 3.13 uvicorn server:app --host 0.0.0.0 --port 3001 --log-level info >> /home/runner/workspace/proxy.log 2>&1 &
+    nohup uv run --python 3.11 uvicorn server:app --host 0.0.0.0 --port 3001 --log-level info >> /home/runner/workspace/proxy.log 2>&1 &
     
     # Chờ proxy khởi động (tối đa 15s)
     for i in {1..15}; do
@@ -29,8 +29,9 @@ fi
 # Chạy lệnh claude với các biến môi trường cần thiết
 # Thử cả hai biến môi trường phổ biến
 export ANTHROPIC_AUTH_TOKEN="freecc"
-export ANTHROPIC_API_KEY="sk-ant-freecc"
+export ANTHROPIC_API_KEY="freecc"
 export ANTHROPIC_BASE_URL="$PROXY_URL"
+export CLAUDE_CONFIG_DIR="/home/runner/workspace/.config/claude"
 
 # Chuyển hướng đến lệnh claude gốc
 CLAUDE_BIN="/home/runner/workspace/.config/npm/node_global/bin/claude"

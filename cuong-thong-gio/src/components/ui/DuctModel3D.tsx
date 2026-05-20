@@ -1,6 +1,6 @@
 import { useRef, useMemo, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Environment, ContactShadows, Float, Preload } from '@react-three/drei'
+import { OrbitControls, Environment, ContactShadows, Float } from '@react-three/drei'
 import * as THREE from 'three'
 
 type ModelProps = React.ComponentPropsWithoutRef<'group'>
@@ -184,6 +184,7 @@ export function DuctModel3D({ type = 'box-fan' }: DuctModelProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentContainer = containerRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting);
@@ -191,13 +192,13 @@ export function DuctModel3D({ type = 'box-fan' }: DuctModelProps) {
       { rootMargin: '100px', threshold: 0.01 }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    if (currentContainer) {
+      observer.observe(currentContainer);
     }
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (currentContainer) {
+        observer.unobserve(currentContainer);
       }
     };
   }, []);
@@ -237,7 +238,6 @@ export function DuctModel3D({ type = 'box-fan' }: DuctModelProps) {
           />
           
           <ContactShadows resolution={128} scale={15} blur={2} opacity={0.1} far={10} color="#000000" position={[0, -2.5, 0]} />
-          <Preload all />
         </Canvas>
       ) : (
         <div className="w-full h-full flex items-center justify-center bg-zinc-50/50 rounded-2xl">

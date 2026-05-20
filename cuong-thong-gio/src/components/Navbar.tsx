@@ -1,143 +1,125 @@
-import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { cn } from '../lib/utils'
-import { Button } from './ui/Button'
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { NavLink, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { cn } from '@/src/lib/utils';
+import { Logo } from './Logo';
 
-const navLinks = [
-  { href: '/', label: 'Trang chủ' },
-  { href: '/gioi-thieu', label: 'Về chúng tôi' },
-  { href: '/san-pham', label: 'Giải pháp & Thiết bị' },
-  { href: '/lien-he', label: 'Liên hệ' },
-]
+const navItems = [
+  { name: 'TRANG CHỦ', path: '/' },
+  { name: 'VỀ CHÚNG TÔI', path: '/gioi-thieu' },
+  { name: 'GIẢI PHÁP & THIẾT BỊ', path: '/san-pham' },
+  { name: 'LIÊN HỆ', path: '/lien-he' },
+];
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
-  const location = useLocation()
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  // Lock scroll when menu is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
-    }
-    return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen])
-
-  // Close menu on navigation
-  useEffect(() => {
-    setIsOpen(false)
-  }, [location.pathname])
+    setIsOpen(false);
+  }, [location]);
 
   return (
-    <header className={cn(
-      'sticky top-0 inset-x-0 z-50 transition-all duration-300 border-b',
-      scrolled || isOpen ? 'bg-white/95 backdrop-blur-md border-zinc-200 shadow-sm' : 'bg-white/50 backdrop-blur-sm border-zinc-100'
-    )}>
-      <div className="container-custom h-14 flex items-center justify-between">
-        <Link 
-          to="/" 
-          onClick={() => setIsOpen(false)}
-          className="text-lg md:text-xl font-bold tracking-tighter text-zinc-900 z-50 uppercase"
-        >
-          Cường Thông Gió<span className="text-zinc-400">.</span>
-        </Link>
+    <nav
+      className={cn(
+        'fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b',
+        scrolled 
+          ? 'bg-white/95 backdrop-blur-md py-4 border-gray-100 shadow-sm' 
+          : 'bg-white py-6 border-transparent'
+      )}
+    >
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center">
+        {/* Logo Section */}
+        <NavLink to="/" className="flex items-center gap-3 group whitespace-nowrap">
+          <Logo size={44} />
+          <div className="flex flex-col">
+            <span className="font-bold text-xl tracking-tighter text-industrial-black">
+              CƯỜNG THÔNG GIÓ.
+            </span>
+          </div>
+        </NavLink>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map(link => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className={cn(
-                'text-[13px] font-semibold uppercase tracking-wider transition-colors hover:text-zinc-900',
-                location.pathname === link.href ? 'text-zinc-900' : 'text-zinc-400'
-              )}
+        {/* Desktop Nav - Centered */}
+        <div className="hidden md:flex flex-1 items-center justify-center gap-10">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({ isActive }) =>
+                cn(
+                  'text-[13px] font-bold transition-colors tracking-wide uppercase',
+                  isActive ? 'text-industrial-black' : 'text-gray-500 hover:text-industrial-black'
+                )
+              }
             >
-              {link.label}
-            </Link>
+              {item.name}
+            </NavLink>
           ))}
-        </nav>
-
-        <div className="hidden md:flex items-center gap-4">
-          <Button asChild variant="default" size="sm" className="px-8 min-w-[180px] h-10 rounded-full text-[12px] uppercase tracking-widest font-bold">
-            <Link to="/lien-he">Báo giá ngay</Link>
-          </Button>
         </div>
 
-        {/* Mobile toggle */}
-        <button 
-          className="md:hidden p-2 -mr-2 z-50 text-zinc-900"
+        {/* Right Action Button */}
+        <div className="hidden md:block">
+          <NavLink
+            to="/lien-he"
+            className="bg-[#18181b] text-white px-8 py-3.5 rounded-full hover:bg-industrial-blue transition-all text-[12px] font-bold uppercase tracking-[0.1em] shadow-lg shadow-zinc-200"
+          >
+            BÁO GIÁ NGAY
+          </NavLink>
+        </div>
+
+        {/* Mobile Toggle */}
+        <button
+          className="md:hidden ml-auto p-2 text-industrial-black"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={isOpen}
         >
-          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-white flex flex-col justify-center px-10 md:hidden"
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
           >
-            <div className="flex flex-col gap-8">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
+            <div className="px-4 py-8 flex flex-col gap-6">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  className={({ isActive }) =>
+                    cn(
+                      'text-lg font-bold tracking-tight py-2 border-b border-gray-50 uppercase shadow-none',
+                      isActive ? 'text-industrial-black' : 'text-gray-400'
+                    )
+                  }
                 >
-                  <Link
-                    to={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={cn(
-                      'text-3xl font-bold tracking-tighter transition-colors',
-                      location.pathname === link.href ? 'text-zinc-900' : 'text-zinc-300'
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
+                  {item.name}
+                </NavLink>
               ))}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
-                className="pt-10 border-t border-zinc-100 mt-4"
+              <NavLink
+                to="/lien-he"
+                className="bg-zinc-900 text-white p-4 rounded-full text-center font-bold uppercase tracking-[0.2em] mt-4"
               >
-                <Button asChild size="lg" className="w-full h-14 rounded-full uppercase tracking-widest font-bold text-xs">
-                  <Link to="/lien-he">Liên hệ báo giá</Link>
-                </Button>
-              </motion.div>
-            </div>
-            
-            <div className="absolute bottom-12 left-10 right-10">
-               <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Kết nối</p>
-               <a href="tel:0905001224" className="text-lg font-bold text-zinc-900 block mb-1">0905 001 224</a>
-               <p className="text-sm text-zinc-500 break-all">phantrongcuong77@gmail.com</p>
+                BÁO GIÁ NGAY
+              </NavLink>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
-  )
+    </nav>
+  );
 }
-

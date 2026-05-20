@@ -1,6 +1,53 @@
 modules = ["nodejs-20", "python-3.11"]
+run = "bash run-web.sh"
+
 [agent]
 expertMode = true
 
 [nix]
-packages = ["nano"]
+packages = ["fltk", "nano", "plan9port", "wget"]
+
+[[ports]]
+localPort = 2222
+externalPort = 22
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[[ports]]
+localPort = 5000
+externalPort = 5000
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Restore Gemini"
+author = "user"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash gemini-restore.sh"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash /home/runner/workspace/gemini-restore.sh ; cd cuong-thong-gio && pnpm dev"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
