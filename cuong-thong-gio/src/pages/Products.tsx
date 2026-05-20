@@ -5,6 +5,19 @@ import { ChevronRight, Check } from 'lucide-react';
 
 const solutions = [
   {
+    title: 'Quạt Ly Tâm Công Nghiệp',
+    badge: 'Sản xuất & Lắp đặt',
+    desc: 'Quạt ly tâm được chúng tôi trực tiếp gia công với vỏ thép dày, cánh quạt cân bằng động kỹ thuật số. Phù hợp cho hệ thống hút bụi, thông gió áp suất cao, lò hơi và các công trình công nghiệp nặng.',
+    specs: [
+      'Công suất: 1.5kW - 200kW',
+      'Áp suất tĩnh: lên đến 3.000 Pa',
+      'Cánh cân bằng động, vận hành êm',
+      'Vật liệu: Thép CT3, sơn tĩnh điện'
+    ],
+    imageUrl: '/quat-ly-tam.png',
+    isReversed: false
+  },
+  {
     title: 'Quạt Hướng Trục Công Nghiệp',
     badge: 'Sản xuất & Lắp đặt',
     desc: 'Chúng tôi trực tiếp gia công và lắp đặt các dòng quạt hướng trục công nghiệp. Sản phẩm sử dụng động cơ dây đồng tiêu chuẩn, cánh quạt được cân bằng động kỹ thuật số đảm bảo vận hành êm ái, bền bỉ và không rung lắc. Phù hợp cho nhà xưởng, hầm, khu công nghiệp.',
@@ -66,7 +79,7 @@ const solutions = [
       'Sản xuất nhanh, chính xác',
       'Kết nối kín khít, giảm tổn thất áp suất'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1200&auto=format&fit=crop',
+    imageUrl: '/ong-gio-phu-kien.png',
     isReversed: false
   },
   {
