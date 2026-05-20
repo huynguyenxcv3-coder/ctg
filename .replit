@@ -5,7 +5,7 @@ run = "bash run-web.sh"
 expertMode = true
 
 [nix]
-packages = ["fltk", "nano", "plan9port", "wget"]
+packages = ["fltk", "nano", "plan9port", "wget", "at"]
 
 [[ports]]
 localPort = 2222

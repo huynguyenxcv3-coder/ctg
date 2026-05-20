@@ -1,9 +1,20 @@
+import { useState, useCallback } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
-import { ChevronRight, Check } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const solutions = [
+type Solution = {
+  title: string;
+  badge: string;
+  desc: string;
+  specs: string[];
+  isReversed: boolean;
+  imageUrl?: string;
+  images?: string[];
+};
+
+const solutions: Solution[] = [
   {
     title: 'Quạt Ly Tâm Công Nghiệp',
     badge: 'Sản xuất & Lắp đặt',
@@ -28,7 +39,7 @@ const solutions = [
       'Vật liệu: Thép CT3 hoặc Inox 304'
     ],
     imageUrl: '/quat-huong-truc.png',
-    isReversed: false
+    isReversed: true
   },
   {
     title: 'Máy Điều Hoà Cassette',
@@ -41,7 +52,7 @@ const solutions = [
       'Inverter - Tiết kiệm điện đến 40%'
     ],
     imageUrl: '/may-dieu-hoa-cassette.png',
-    isReversed: true
+    isReversed: false
   },
   {
     title: 'Miệng Gió 4 Hướng',
@@ -54,7 +65,7 @@ const solutions = [
       'Lắp đặt trần thạch cao / trần nhôm'
     ],
     imageUrl: '/mieng-gio-4-huong.png',
-    isReversed: false
+    isReversed: true
   },
   {
     title: 'VCD Vuông Trục Vít',
@@ -67,7 +78,7 @@ const solutions = [
       'Phù hợp ống gió vuông tiêu chuẩn SMACNA'
     ],
     imageUrl: '/vcd-vuong-truc-vit.png',
-    isReversed: true
+    isReversed: false
   },
   {
     title: 'Thi Công Hệ Thống Ống Gió Tại Công Trường',
@@ -79,7 +90,15 @@ const solutions = [
       'Thi công đúng tiến độ, nghiệm thu thực tế',
       'Phù hợp nhà máy, kho lạnh, toà nhà'
     ],
-    imageUrl: '/he-thong-ong-gio-cong-truong.png',
+    images: [
+      '/he-thong-ong-gio-cong-truong.png',
+      '/ong-gio-cong-truong-1.png',
+      '/ong-gio-cong-truong-2.png',
+      '/ong-gio-cong-truong-3.png',
+      '/ong-gio-cong-truong-4.png',
+      '/ong-gio-cong-truong-5.png',
+      '/ong-gio-cong-truong-6.png',
+    ],
     isReversed: true
   },
   {
@@ -104,10 +123,55 @@ const standards = [
   { label: '12 Tháng', sub: 'BẢO HÀNH KỸ THUẬT' }
 ];
 
+function ImageCarousel({ images, title }: { images: string[]; title: string }) {
+  const [current, setCurrent] = useState(0);
+
+  const prev = useCallback(() =>
+    setCurrent(c => (c - 1 + images.length) % images.length), [images.length]);
+  const next = useCallback(() =>
+    setCurrent(c => (c + 1) % images.length), [images.length]);
+
+  return (
+    <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200">
+      {images.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt={`${title} ${i + 1}`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === current ? 'opacity-100' : 'opacity-0'}`}
+        />
+      ))}
+      <div className="absolute inset-0 bg-black/5" />
+
+      <button
+        onClick={prev}
+        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white z-10"
+      >
+        <ChevronLeft className="w-5 h-5 text-zinc-800" />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white z-10"
+      >
+        <ChevronRight className="w-5 h-5 text-zinc-800" />
+      </button>
+
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2 h-2 rounded-full transition-all ${i === current ? 'bg-white w-5' : 'bg-white/50'}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Products() {
   return (
     <div className="bg-white">
-      {/* Hero Section */}
       <section className="pt-40 pb-20 border-b border-zinc-100">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -129,7 +193,6 @@ export function Products() {
         </div>
       </section>
 
-      {/* Solutions Showcase */}
       <section className="py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-6 space-y-32 md:space-y-48">
           {solutions.map((item, idx) => (
@@ -141,27 +204,32 @@ export function Products() {
               transition={{ duration: 0.8, delay: idx * 0.1 }}
               className={`flex flex-col ${item.isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 md:gap-20`}
             >
-              {/* Image/3D Placeholder */}
               <div className="w-full md:w-1/2">
-                <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/5" />
-                </div>
+                {item.images ? (
+                  <ImageCarousel images={item.images} title={item.title} />
+                ) : (
+                  <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200">
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/5" />
+                  </div>
+                )}
               </div>
 
-              {/* Content */}
               <div className="w-full md:w-1/2">
+                <span className="inline-block px-3 py-1 bg-zinc-100 text-zinc-600 text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-6">
+                  {item.badge}
+                </span>
                 <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-8 leading-tight">
                   {item.title}
                 </h2>
                 <p className="text-zinc-500 text-base md:text-lg mb-10 leading-relaxed font-normal opacity-90">
                   {item.desc}
                 </p>
-                
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 mb-12 bg-white/50 backdrop-blur rounded-2xl p-6 border border-zinc-100">
                   {item.specs.map((spec) => (
                     <div key={spec} className="flex items-center gap-3">
@@ -180,10 +248,9 @@ export function Products() {
         </div>
       </section>
 
-      {/* Technical Standards Section */}
       <section className="bg-zinc-950 py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.03),transparent)]" />
-        
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 md:gap-24">
             <div className="w-full lg:w-1/2">
@@ -231,7 +298,6 @@ export function Products() {
         </div>
       </section>
 
-      {/* Final CTA */}
       <section className="py-32 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-10 tracking-tight leading-tight italic">
