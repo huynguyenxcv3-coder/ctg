@@ -31,6 +31,32 @@ const solutions = [
     isReversed: true
   },
   {
+    title: 'Miệng Gió 4 Hướng',
+    badge: 'Phụ kiện & Phân phối',
+    desc: 'Cung cấp miệng gió 4 hướng dạng âm trần, phân phối luồng không khí đều theo 4 chiều. Sản phẩm làm từ nhôm sơn tĩnh điện trắng, tương thích với hệ thống điều hoà trung tâm và thông gió dân dụng, thương mại.',
+    specs: [
+      'Vật liệu: Nhôm sơn tĩnh điện trắng',
+      'Kích thước: 300x300 đến 600x600mm',
+      'Phân phối gió đồng đều 4 hướng',
+      'Lắp đặt trần thạch cao / trần nhôm'
+    ],
+    imageUrl: '/mieng-gio-4-huong.png',
+    isReversed: false
+  },
+  {
+    title: 'VCD Vuông Trục Vít',
+    badge: 'Van điều tiết gió',
+    desc: 'Van điều tiết lưu lượng VCD (Volume Control Damper) dạng vuông cơ cấu trục vít, dùng để điều chỉnh và cân bằng lưu lượng gió trong hệ thống ống gió. Sản xuất từ tôn mạ kẽm dày, chịu lực tốt, vận hành bền bỉ.',
+    specs: [
+      'Vật liệu: Tôn mạ kẽm dày 1.0mm',
+      'Kích thước: theo yêu cầu thực tế',
+      'Cơ cấu điều chỉnh trục vít chắc chắn',
+      'Phù hợp ống gió vuông tiêu chuẩn SMACNA'
+    ],
+    imageUrl: '/vcd-vuong-truc-vit.png',
+    isReversed: true
+  },
+  {
     title: 'Gia Công Ống Gió & Phụ Kiện',
     badge: 'Cơ khí chính xác',
     desc: 'Sở hữu dây chuyền cắt Plasma CNC hiện đại, chúng tôi sản xuất ống gió vuông, tròn xoắn theo tiêu chuẩn quốc tế (SMACNA). Ngoài ra, chúng tôi cung cấp đầy đủ phụ kiện như van VCD, FD và cửa gió nhôm định hình cao cấp.',
