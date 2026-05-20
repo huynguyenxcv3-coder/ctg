@@ -70,6 +70,19 @@ const solutions = [
     isReversed: true
   },
   {
+    title: 'Thi Công Hệ Thống Ống Gió Tại Công Trường',
+    badge: 'Thi công trực tiếp',
+    desc: 'Đội ngũ kỹ thuật Cường Thông Gió trực tiếp lắp đặt hệ thống ống gió tại công trình nhà máy, kho xưởng và toà nhà thương mại. Ống gió được bọc cách nhiệt đúng tiêu chuẩn, đảm bảo hiệu suất và thẩm mỹ công trình.',
+    specs: [
+      'Ống gió bọc bông thuỷ tinh cách nhiệt',
+      'Lắp đặt theo bản vẽ thiết kế ME',
+      'Thi công đúng tiến độ, nghiệm thu thực tế',
+      'Phù hợp nhà máy, kho lạnh, toà nhà'
+    ],
+    imageUrl: '/he-thong-ong-gio-cong-truong.png',
+    isReversed: true
+  },
+  {
     title: 'Gia Công Ống Gió & Phụ Kiện',
     badge: 'Cơ khí chính xác',
     desc: 'Sở hữu dây chuyền cắt Plasma CNC hiện đại, chúng tôi sản xuất ống gió vuông, tròn xoắn theo tiêu chuẩn quốc tế (SMACNA). Ngoài ra, chúng tôi cung cấp đầy đủ phụ kiện như van VCD, FD và cửa gió nhôm định hình cao cấp.',
