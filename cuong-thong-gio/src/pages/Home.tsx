@@ -130,7 +130,7 @@ export function Home() {
           >
             <motion.img 
               style={{ y: imgY, scale: imgScale }}
-              src="/thi-cong-ong-gio.png" 
+              src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1200&auto=format&fit=crop" 
               alt="Xưởng sản xuất quạt công nghiệp Cường Thông Gió" 
               loading="lazy"
               decoding="async"
@@ -254,11 +254,11 @@ export function Home() {
             </div>
             <div className="relative max-w-2xl mx-auto lg:max-w-none w-full">
                <img 
-                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1000&auto=format&fit=crop" 
+                 src="/thi-cong-ong-gio.png" 
                  alt="Đội ngũ kỹ thuật Cường Thông Gió" 
                  loading="lazy"
                  decoding="async"
-                 className="rounded-[1.5rem] md:rounded-[2rem] shadow-2xl filter grayscale w-full object-cover h-[350px] md:h-[500px]" 
+                 className="rounded-[1.5rem] md:rounded-[2rem] shadow-2xl w-full object-cover h-[350px] md:h-[500px]" 
                />
             </div>
           </div>
