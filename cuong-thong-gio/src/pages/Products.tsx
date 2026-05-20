@@ -5,17 +5,30 @@ import { ChevronRight, Check } from 'lucide-react';
 
 const solutions = [
   {
-    title: 'Quạt Công Nghiệp Hiệu Suất Cao',
+    title: 'Quạt Hướng Trục Công Nghiệp',
     badge: 'Sản xuất & Lắp đặt',
-    desc: 'Chúng tôi trực tiếp gia công và lắp đặt các dòng quạt ly tâm, hướng trục và quạt thông gió mái. Sản phẩm sử dụng động cơ dây đồng tiêu chuẩn, cánh quạt được cân bằng động kỹ thuật số đảm bảo vận hành êm ái, bền bỉ và không rung lắc.',
+    desc: 'Chúng tôi trực tiếp gia công và lắp đặt các dòng quạt hướng trục công nghiệp. Sản phẩm sử dụng động cơ dây đồng tiêu chuẩn, cánh quạt được cân bằng động kỹ thuật số đảm bảo vận hành êm ái, bền bỉ và không rung lắc. Phù hợp cho nhà xưởng, hầm, khu công nghiệp.',
     specs: [
       'Công suất: 1.1kW - 200kW',
       'Lưu lượng: lên đến 150.000 m³/h',
       'Áp suất cao, hiệu suất tối ưu',
       'Vật liệu: Thép CT3 hoặc Inox 304'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop',
+    imageUrl: '/quat-huong-truc.png',
     isReversed: false
+  },
+  {
+    title: 'Máy Điều Hoà Cassette',
+    badge: 'Cung cấp & Lắp đặt',
+    desc: 'Cung cấp và lắp đặt máy điều hoà dạng cassette âm trần cho văn phòng, trung tâm thương mại, nhà hàng và khu công nghiệp. Phân phối từ các hãng uy tín, đảm bảo hiệu suất làm lạnh tối ưu và tiết kiệm điện năng.',
+    specs: [
+      'Công suất: 1.5HP - 5HP',
+      'Gas R32 / R410A tiết kiệm năng lượng',
+      'Phân phối gió 4 chiều đồng đều',
+      'Inverter - Tiết kiệm điện đến 40%'
+    ],
+    imageUrl: '/may-dieu-hoa-cassette.png',
+    isReversed: true
   },
   {
     title: 'Gia Công Ống Gió & Phụ Kiện',
@@ -28,7 +41,7 @@ const solutions = [
       'Kết nối kín khít, giảm tổn thất áp suất'
     ],
     imageUrl: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1200&auto=format&fit=crop',
-    isReversed: true
+    isReversed: false
   },
   {
     title: 'Hệ Thống Xử Lý Bụi & Khí Thải',
@@ -41,7 +54,7 @@ const solutions = [
       'Đạt quy chuẩn xả thải môi trường'
     ],
     imageUrl: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200&auto=format&fit=crop',
-    isReversed: false
+    isReversed: true
   }
 ];
 
@@ -98,9 +111,6 @@ export function Products() {
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/5" />
-                  <div className="absolute bottom-8 right-8 bg-white/90 backdrop-blur px-4 py-2 rounded-lg text-[10px] font-bold text-zinc-400 uppercase tracking-widest border border-zinc-200">
-                    Mô hình 3D tương tác
-                  </div>
                 </div>
               </div>
 
