@@ -15,22 +15,22 @@ const services = [
   {
     title: 'Quạt Công Nghiệp',
     desc: 'Gia công trực tiếp các dòng quạt ly tâm, hướng trục, hút mái bằng vật liệu tiêu chuẩn. Cân bằng động kỹ thuật số chính xác tuyệt đối.',
-    imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop'
+    imageUrl: '/quat-ly-tam.png'
   },
   {
     title: 'Hệ Thống Xử Lý Khí & Bụi',
     desc: 'Thi công hệ thống lọc bụi túi vải, tháp hấp thụ khí thải cho khu công nghiệp, nhà xưởng, cam kết đạt chuẩn môi trường.',
-    imageUrl: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop'
+    imageUrl: '/ong-gio-cong-truong-1.png'
   },
   {
     title: 'Hệ Thống Thông Gió & Làm Mát',
     desc: 'Thiết kế & thi công hệ thống thông gió tươi, làm mát nhà xưởng bằng tấm cooling pad, máy làm mát công nghiệp hiệu suất cao.',
-    imageUrl: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop'
+    imageUrl: '/ong-gio-cong-truong-2.png'
   },
   {
     title: 'Cơ Khí & Inox Dân Dụng',
     desc: 'Gia công ống gió xoắn, máng hút khói bếp, bồn chứa inox và các thiết bị phụ trợ cơ khí theo yêu cầu kỹ thuật riêng.',
-    imageUrl: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop'
+    imageUrl: '/ong-gio-phu-kien.png'
   }
 ]
 
