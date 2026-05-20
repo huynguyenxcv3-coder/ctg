@@ -82,19 +82,6 @@ const solutions = [
     imageUrl: '/ong-gio-phu-kien.png',
     isReversed: false
   },
-  {
-    title: 'Hệ Thống Xử Lý Bụi & Khí Thải',
-    badge: 'Giải pháp môi trường',
-    desc: 'Thiết kế và thi công hệ thống lọc bụi túi vải với công nghệ giũ bụi khí nén tự động. Đối với các khu vực phát sinh mùi hóa chất, chúng tôi cung cấp giải pháp tháp hấp thụ sử dụng than hoạt tính chuyên dụng.',
-    specs: [
-      'Hiệu quả lọc bụi > 99%',
-      'Túi lọc chống ẩm, chịu nhiệt',
-      'Hệ thống điều khiển PLC thông minh',
-      'Đạt quy chuẩn xả thải môi trường'
-    ],
-    imageUrl: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200&auto=format&fit=crop',
-    isReversed: true
-  }
 ];
 
 const standards = [
