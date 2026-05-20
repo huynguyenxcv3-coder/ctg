@@ -130,7 +130,7 @@ export function Home() {
           >
             <motion.img 
               style={{ y: imgY, scale: imgScale }}
-              src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1200&auto=format&fit=crop" 
+              src="/thi-cong-ong-gio.png" 
               alt="Xưởng sản xuất quạt công nghiệp Cường Thông Gió" 
               loading="lazy"
               decoding="async"
