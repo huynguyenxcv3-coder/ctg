@@ -338,7 +338,7 @@ export function Home() {
                   Đội ngũ kỹ sư của Cường Thông Gió luôn sẵn sàng hỗ trợ khảo sát và tư vấn phương án thi công tối ưu nhất cho doanh nghiệp của bạn.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 mx-auto w-full sm:w-auto">
-                  <Button asChild size="lg" className="w-full sm:w-[260px] font-bold uppercase tracking-wider text-[13px] h-14 md:h-16 px-8 rounded-full shadow-lg transition-all duration-300 bg-white text-zinc-900 hover:bg-zinc-100">
+                  <Button asChild size="lg" className="w-full sm:w-auto font-bold uppercase tracking-wider text-[13px] h-14 md:h-16 px-10 rounded-full shadow-lg transition-all duration-300 bg-white text-zinc-900 hover:bg-zinc-100 whitespace-nowrap">
                     <Link to="/lien-he" className="flex items-center justify-center w-full h-full">Gửi yêu cầu tư vấn kỹ thuật</Link>
                   </Button>
                 </div>

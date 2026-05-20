@@ -21,6 +21,7 @@ OPENROUTER_DEFAULT_BASE = "https://openrouter.ai/api/v1"
 LMSTUDIO_DEFAULT_BASE = "http://localhost:1234/v1"
 LLAMACPP_DEFAULT_BASE = "http://localhost:8080/v1"
 OLLAMA_DEFAULT_BASE = "http://localhost:11434"
+CAPY_DEFAULT_BASE = "https://capy.ai/api/v1"
 
 
 @dataclass(frozen=True, slots=True)
@@ -101,6 +102,17 @@ PROVIDER_CATALOG: dict[str, ProviderDescriptor] = {
             "native_anthropic",
             "local",
         ),
+    ),
+    "capy": ProviderDescriptor(
+        provider_id="capy",
+        transport_type="anthropic_messages",
+        credential_env="CAPY_API_KEY",
+        credential_url="https://capy.ai",
+        credential_attr="capy_api_key",
+        default_base_url=CAPY_DEFAULT_BASE,
+        base_url_attr="capy_base_url",
+        proxy_attr="capy_proxy",
+        capabilities=("chat", "streaming", "tools", "thinking", "native_anthropic"),
     ),
 }
 
