@@ -134,4 +134,4 @@ async def test_stream_uses_post_messages_path(capy_provider):
     capy_provider._client.send = fake_send
     _ = [x async for x in capy_provider.stream_response(request, request_id="r1")]
 
-    assert called["path"] == "/messages"
+    assert called["path"] == "/api/v1/messages"

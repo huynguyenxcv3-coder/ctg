@@ -116,7 +116,7 @@ class MessageNode:
         }
 
     @classmethod
-    def from_dict(cls, data: dict) -> MessageNode:
+    def from_dict(cls, data: dict) -> "MessageNode":
         """Create from dictionary (JSON deserialization)."""
         incoming_data = data["incoming"]
         incoming = IncomingMessage(
@@ -402,7 +402,7 @@ class MessageTree:
         self._status_to_node[node.status_message_id] = node.node_id
 
     @classmethod
-    def from_dict(cls, data: dict) -> MessageTree:
+    def from_dict(cls, data: dict) -> "MessageTree":
         """Deserialize tree from dictionary."""
         root_id = data["root_id"]
         nodes_data = data["nodes"]

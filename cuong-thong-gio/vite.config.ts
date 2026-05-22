@@ -34,9 +34,6 @@ export default defineConfig({
             if (id.includes('framer-motion') || id.includes('gsap') || id.includes('lucide-react')) {
               return 'vendor-ui';
             }
-            if (id.includes('three') || id.includes('@react-three')) {
-              return 'vendor-3d';
-            }
             return 'vendor';
           }
         }

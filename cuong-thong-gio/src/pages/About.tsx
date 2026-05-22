@@ -1,6 +1,51 @@
+import { SEO, makeBreadcrumbSchema } from '../components/SEO';
+
 export function About() {
+  const breadcrumb = makeBreadcrumbSchema([
+    { name: 'Trang chủ', url: 'https://cuongthonggio.com/' },
+    { name: 'Giới thiệu', url: 'https://cuongthonggio.com/gioi-thieu' }
+  ]);
+
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Giới thiệu Cường Thông Gió",
+    "description": "Công ty TNHH MTV Cường Thông Gió — 13+ năm kinh nghiệm sản xuất quạt công nghiệp, thi công hệ thống thông gió tại Đà Nẵng.",
+    "url": "https://cuongthonggio.com/gioi-thieu",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Cường Thông Gió",
+      "foundingDate": "2015",
+      "foundingLocation": "Đà Nẵng, Việt Nam",
+      "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 20 },
+      "areaServed": [
+        { "@type": "City", "name": "Đà Nẵng" },
+        { "@type": "AdministrativeArea", "name": "Liên Chiểu, Đà Nẵng" },
+        { "@type": "AdministrativeArea", "name": "Hải Châu, Đà Nẵng" },
+        { "@type": "AdministrativeArea", "name": "Thanh Khê, Đà Nẵng" },
+        { "@type": "AdministrativeArea", "name": "Sơn Trà, Đà Nẵng" },
+        { "@type": "AdministrativeArea", "name": "Ngũ Hành Sơn, Đà Nẵng" },
+        { "@type": "AdministrativeArea", "name": "Cẩm Lệ, Đà Nẵng" },
+        { "@type": "AdministrativeArea", "name": "Hòa Vang, Đà Nẵng" },
+        { "@type": "AdministrativeArea", "name": "KCN Hòa Khánh" },
+        { "@type": "AdministrativeArea", "name": "KCN An Đồn" },
+        { "@type": "AdministrativeArea", "name": "KCN Hòa Cầm" },
+        { "@type": "AdministrativeArea", "name": "KCN Điện Nam - Điện Ngọc" },
+        { "@type": "AdministrativeArea", "name": "KCN Thọ Quang" },
+        { "@type": "State", "name": "Miền Trung, Việt Nam" }
+      ]
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#f8f9fa] py-20 px-6">
+    <div className="min-h-screen bg-[#f8f9fa] pt-32 pb-20 px-6">
+      <SEO
+        title="Giới Thiệu — Nhà Thầu M&E Uy Tín Đà Nẵng"
+        description="Công ty TNHH MTV Cường Thông Gió — 13+ năm kinh nghiệm, 2000+ dự án hoàn thành. Chuyên sản xuất quạt công nghiệp, thi công hệ thống thông gió & xử lý khí thải tại Đà Nẵng, Liên Chiểu, Hải Châu, Sơn Trà, Cẩm Lệ và các KCN Miền Trung."
+        keywords="giới thiệu Cường Thông Gió, công ty thông gió Đà Nẵng, nhà thầu M&E, quạt công nghiệp, thông gió công nghiệp, thông gió Liên Chiểu, quạt công nghiệp Hải Châu, KCN Hòa Khánh, KCN An Đồn, KCN Hòa Cầm, thông gió Sơn Trà, xử lý khí thải Cẩm Lệ"
+        structuredData={[breadcrumb, aboutSchema]}
+      />
+
       <div className="max-w-[1200px] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16 px-4">
@@ -49,8 +94,10 @@ export function About() {
                 <div className="relative">
                   <div className="aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl shadow-zinc-200 border border-zinc-100">
                     <img 
-                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" 
-                      alt="Workforce" 
+                      src="/thi-cong-ong-gio.png" 
+                      alt="Đội ngũ kỹ thuật Cường Thông Gió thi công hệ thống ống gió tại công trình" 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                     />
                   </div>
@@ -113,9 +160,102 @@ export function About() {
 
           </div>
         </div>
+
+        {/* Khu vực phục vụ tại Đà Nẵng */}
+        <div className="bg-white rounded-2xl shadow-[0_2px_30px_rgba(0,0,0,0.04)] p-12 md:p-16 mt-12">
+          <h2 className="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-400 mb-3">
+            PHẠM VI HOẠT ĐỘNG
+          </h2>
+          <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-10 tracking-tight">
+            Khu vực phục vụ tại Đà Nẵng
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {/* KCN Hòa Khánh */}
+            <div className="rounded-xl border border-zinc-100 p-6 hover:border-zinc-300 hover:shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 rounded-lg bg-zinc-50 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h4 className="font-bold text-zinc-900 text-base">KCN Hòa Khánh</h4>
+              </div>
+              <p className="text-xs font-medium text-zinc-400 uppercase tracking-wider">Q. Liên Chiểu</p>
+            </div>
+
+            {/* KCN An Đồn */}
+            <div className="rounded-xl border border-zinc-100 p-6 hover:border-zinc-300 hover:shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 rounded-lg bg-zinc-50 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h4 className="font-bold text-zinc-900 text-base">KCN An Đồn</h4>
+              </div>
+              <p className="text-xs font-medium text-zinc-400 uppercase tracking-wider">Q. Sơn Trà</p>
+            </div>
+
+            {/* KCN Hòa Cầm */}
+            <div className="rounded-xl border border-zinc-100 p-6 hover:border-zinc-300 hover:shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 rounded-lg bg-zinc-50 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h4 className="font-bold text-zinc-900 text-base">KCN Hòa Cầm</h4>
+              </div>
+              <p className="text-xs font-medium text-zinc-400 uppercase tracking-wider">Q. Cẩm Lệ</p>
+            </div>
+
+            {/* KCN Điện Nam - Điện Ngọc */}
+            <div className="rounded-xl border border-zinc-100 p-6 hover:border-zinc-300 hover:shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 rounded-lg bg-zinc-50 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h4 className="font-bold text-zinc-900 text-base">KCN Điện Nam - Điện Ngọc</h4>
+              </div>
+              <p className="text-xs font-medium text-zinc-400 uppercase tracking-wider">Quảng Nam</p>
+            </div>
+
+            {/* KCN Thọ Quang */}
+            <div className="rounded-xl border border-zinc-100 p-6 hover:border-zinc-300 hover:shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 rounded-lg bg-zinc-50 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h4 className="font-bold text-zinc-900 text-base">KCN Thọ Quang</h4>
+              </div>
+              <p className="text-xs font-medium text-zinc-400 uppercase tracking-wider">Q. Sơn Trà</p>
+            </div>
+
+            {/* Các quận nội thành */}
+            <div className="rounded-xl border border-zinc-100 p-6 hover:border-zinc-300 hover:shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 rounded-lg bg-zinc-50 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h4 className="font-bold text-zinc-900 text-base">Các quận nội thành</h4>
+              </div>
+              <p className="text-xs font-medium text-zinc-400 uppercase tracking-wider">Hải Châu, Thanh Khê, Ngũ Hành Sơn, Hòa Vang</p>
+            </div>
+          </div>
+
+          <p className="text-zinc-500 text-sm leading-relaxed mt-8">
+            Cường Thông Gió cung cấp dịch vụ thi công, lắp đặt và bảo trì hệ thống thông gió, quạt công nghiệp trên toàn bộ Đà Nẵng và các tỉnh Miền Trung. Đội ngũ kỹ thuật có mặt tại công trình trong vòng 60 phút.
+          </p>
+        </div>
       </div>
     </div>
   );
 }
-
-

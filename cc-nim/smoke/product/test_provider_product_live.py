@@ -136,11 +136,21 @@ def test_openrouter_native_e2e(smoke_config: SmokeConfig) -> None:
 
 def _run_for_each_provider(smoke_config: SmokeConfig, scenario) -> None:
     failures: list[str] = []
-    for provider_model in ProviderMatrixDriver(smoke_config).provider_smoke_models():
+    models = ProviderMatrixDriver(smoke_config).provider_smoke_models()
+    
+    # Allow filtering by provider via pytest -k
+    filter_provider = os.getenv("FCC_SMOKE_PROVIDER_FILTER")
+    if filter_provider:
+        models = [m for m in models if m.provider == filter_provider]
+
+    for provider_model in models:
+        print(f"\n[Smoke] Running {scenario.__name__} for {provider_model.full_model}...")
         try:
             scenario(smoke_config, provider_model)
+            print(f"[Smoke] SUCCESS: {provider_model.full_model}")
         except Exception as exc:
             skip_if_upstream_unavailable_exception(exc)
+            print(f"[Smoke] FAILURE: {provider_model.full_model}: {exc}")
             failures.append(
                 f"{provider_model.source}={provider_model.full_model}: "
                 f"{type(exc).__name__}: {exc}"

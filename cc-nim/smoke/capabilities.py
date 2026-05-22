@@ -173,6 +173,7 @@ CAPABILITY_CONTRACTS: tuple[CapabilityContract, ...] = (
             "tests/contracts/test_stream_contracts.py",
             "tests/providers/test_converter.py",
             "tests/providers/test_deepseek.py",
+            "tests/providers/test_capy.py",
             "tests/providers/test_nvidia_nim_request.py",
             "tests/providers/test_open_router.py",
         ),

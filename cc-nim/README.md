@@ -139,6 +139,7 @@ provider_id/model/name
 | NVIDIA NIM | `nvidia_nim/...` | OpenAI chat translation | `NVIDIA_NIM_API_KEY` | `https://integrate.api.nvidia.com/v1` |
 | OpenRouter | `open_router/...` | Anthropic Messages | `OPENROUTER_API_KEY` | `https://openrouter.ai/api/v1` |
 | DeepSeek | `deepseek/...` | Anthropic Messages | `DEEPSEEK_API_KEY` | `https://api.deepseek.com/anthropic` |
+| Capy.ai | `capy/...` | Anthropic Messages | `CAPY_API_KEY` | `https://capy.ai/api/v1` |
 | LM Studio | `lmstudio/...` | Anthropic Messages | none | `http://localhost:1234/v1` |
 | llama.cpp | `llamacpp/...` | Anthropic Messages | none | `http://localhost:8080/v1` |
 | Ollama | `ollama/...` | Anthropic Messages | none | `http://localhost:11434` |
@@ -189,6 +190,20 @@ MODEL="deepseek/deepseek-chat"
 ```
 
 This provider uses DeepSeek's Anthropic-compatible endpoint, not the OpenAI chat-completions endpoint.
+
+</details>
+
+<details>
+<summary><b>Capy.ai</b></summary>
+
+Get a key at [capy.ai](https://capy.ai).
+
+```dotenv
+CAPY_API_KEY="your-capy-key"
+MODEL="capy/claude-3-5-sonnet"
+```
+
+Capy.ai provides an Anthropic-compatible API for Claude models and others.
 
 </details>
 

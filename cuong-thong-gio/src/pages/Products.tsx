@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { SEO, makeBreadcrumbSchema, makeProductSchema, makeFAQSchema } from '../components/SEO';
 
 type Solution = {
   title: string;
@@ -137,7 +138,9 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
         <img
           key={src}
           src={src}
-          alt={`${title} ${i + 1}`}
+          alt={`${title} — hình ảnh thi công ${i + 1}`}
+          loading="lazy"
+          decoding="async"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === current ? 'opacity-100' : 'opacity-0'}`}
         />
       ))}
@@ -145,12 +148,14 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
 
       <button
         onClick={prev}
+        aria-label="Ảnh trước"
         className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white z-10"
       >
         <ChevronLeft className="w-5 h-5 text-zinc-800" />
       </button>
       <button
         onClick={next}
+        aria-label="Ảnh tiếp theo"
         className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white z-10"
       >
         <ChevronRight className="w-5 h-5 text-zinc-800" />
@@ -161,6 +166,7 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
           <button
             key={i}
             onClick={() => setCurrent(i)}
+            aria-label={`Xem ảnh ${i + 1}`}
             className={`w-2 h-2 rounded-full transition-all ${i === current ? 'bg-white w-5' : 'bg-white/50'}`}
           />
         ))}
@@ -169,10 +175,68 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
   );
 }
 
+const productFaqData = [
+  {
+    question: 'Quạt ly tâm công nghiệp có công suất tối đa bao nhiêu?',
+    answer: 'Quạt ly tâm công nghiệp do Cường Thông Gió sản xuất có công suất từ 1.5kW đến 200kW, áp suất tĩnh lên đến 3.000 Pa, phù hợp cho hệ thống hút bụi, thông gió áp suất cao và lò hơi.'
+  },
+  {
+    question: 'Ống gió được sản xuất theo tiêu chuẩn nào?',
+    answer: 'Ống gió tại Cường Thông Gió được sản xuất theo tiêu chuẩn quốc tế SMACNA, sử dụng tôn mạ kẽm dày 0.48 - 1.15mm, cắt bằng máy Plasma CNC đảm bảo chính xác và kín khít.'
+  },
+  {
+    question: 'Cường Thông Gió có lắp đặt máy điều hòa cassette không?',
+    answer: 'Có. Chúng tôi cung cấp và lắp đặt máy điều hòa dạng cassette âm trần từ các hãng uy tín, công suất từ 1.5HP đến 5HP, sử dụng gas R32/R410A tiết kiệm năng lượng.'
+  },
+  {
+    question: 'VCD vuông trục vít dùng để làm gì?',
+    answer: 'VCD (Volume Control Damper) dạng vuông trục vít dùng để điều chỉnh và cân bằng lưu lượng gió trong hệ thống ống gió. Sản phẩm được sản xuất từ tôn mạ kẽm dày 1.0mm, phù hợp ống gió vuông tiêu chuẩn SMACNA.'
+  },
+];
+
 export function Products() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const breadcrumb = makeBreadcrumbSchema([
+    { name: 'Trang chủ', url: 'https://cuongthonggio.com/' },
+    { name: 'Sản phẩm', url: 'https://cuongthonggio.com/san-pham' }
+  ]);
+
+  const productSchemas = solutions.map(s => makeProductSchema({
+    name: s.title,
+    description: s.desc,
+    image: s.imageUrl,
+    category: 'Quạt công nghiệp & Thông gió'
+  }));
+
+  const productFAQ = makeFAQSchema([
+    {
+      question: 'Quạt ly tâm công nghiệp có công suất tối đa bao nhiêu?',
+      answer: 'Quạt ly tâm công nghiệp do Cường Thông Gió sản xuất có công suất từ 1.5kW đến 200kW, áp suất tĩnh lên đến 3.000 Pa, phù hợp cho hệ thống hút bụi, thông gió áp suất cao và lò hơi.'
+    },
+    {
+      question: 'Ống gió được sản xuất theo tiêu chuẩn nào?',
+      answer: 'Ống gió tại Cường Thông Gió được sản xuất theo tiêu chuẩn quốc tế SMACNA, sử dụng tôn mạ kẽm dày 0.48 - 1.15mm, cắt bằng máy Plasma CNC đảm bảo chính xác và kín khít.'
+    },
+    {
+      question: 'Cường Thông Gió có lắp đặt máy điều hòa cassette không?',
+      answer: 'Có. Chúng tôi cung cấp và lắp đặt máy điều hòa dạng cassette âm trần từ các hãng uy tín, công suất từ 1.5HP đến 5HP, sử dụng gas R32/R410A tiết kiệm năng lượng.'
+    },
+    {
+      question: 'VCD vuông trục vít dùng để làm gì?',
+      answer: 'VCD (Volume Control Damper) dạng vuông trục vít dùng để điều chỉnh và cân bằng lưu lượng gió trong hệ thống ống gió. Sản phẩm được sản xuất từ tôn mạ kẽm dày 1.0mm, phù hợp ống gió vuông tiêu chuẩn SMACNA.'
+    },
+  ]);
+
   return (
     <div className="bg-white">
-      <section className="pt-40 pb-20 border-b border-zinc-100">
+      <SEO
+        title="Sản Phẩm Quạt Công Nghiệp & Ống Gió"
+        description="Quạt ly tâm, quạt hướng trục, ống gió, VCD, miệng gió — sản xuất trực tiếp tại xưởng Cường Thông Gió Đà Nẵng. Tiêu chuẩn SMACNA, bảo hành 12 tháng."
+        keywords="quạt ly tâm, quạt hướng trục, ống gió, VCD, miệng gió, máy điều hòa cassette, quạt công nghiệp Đà Nẵng, gia công ống gió, thi công thông gió, gia công cơ khí Đà Nẵng, quạt ly tâm Đà Nẵng, quạt hướng trục KCN Hòa Khánh, ống gió SMACNA Đà Nẵng, VCD van điều tiết gió Liên Chiểu, lắp đặt điều hòa cassette Đà Nẵng, quạt hút công nghiệp Sơn Trà"
+        structuredData={[breadcrumb, ...productSchemas, productFAQ]}
+      />
+
+      <section className="pt-40 pb-20 border-b border-zinc-100" aria-label="Danh sách sản phẩm">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -196,7 +260,7 @@ export function Products() {
       <section className="py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-6 space-y-32 md:space-y-48">
           {solutions.map((item, idx) => (
-            <motion.div
+            <motion.article
               key={item.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -211,7 +275,11 @@ export function Products() {
                   <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200">
                     <img
                       src={item.imageUrl}
-                      alt={item.title}
+                      alt={`${item.title} — sản xuất & lắp đặt tại Đà Nẵng | Cường Thông Gió`}
+                      loading="lazy"
+                      decoding="async"
+                      width="600"
+                      height="450"
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/5" />
@@ -243,12 +311,12 @@ export function Products() {
                   <Link to="/lien-he">Yêu cầu sản xuất</Link>
                 </Button>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </section>
 
-      <section className="bg-zinc-950 py-24 md:py-32 relative overflow-hidden">
+      <section className="bg-zinc-950 py-24 md:py-32 relative overflow-hidden" aria-label="Tiêu chuẩn kỹ thuật">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.03),transparent)]" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -294,6 +362,69 @@ export function Products() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section - Product FAQ */}
+      <section className="py-20 md:py-32 bg-zinc-50 relative z-10" aria-label="Câu hỏi thường gặp về sản phẩm" id="faq-san-pham">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-14 md:mb-20">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight"
+            >
+              Câu hỏi thường gặp về sản phẩm
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-zinc-500 text-base md:text-lg leading-relaxed"
+            >
+              Giải đáp các thắc mắc phổ biến về sản phẩm quạt công nghiệp, ống gió và phụ kiện.
+            </motion.p>
+          </div>
+
+          <div className="space-y-4">
+            {productFaqData.map((faq, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="bg-white rounded-2xl border border-zinc-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  className="w-full flex items-center justify-between p-6 md:p-8 text-left"
+                  aria-expanded={openFaq === idx}
+                  aria-controls={`product-faq-answer-${idx}`}
+                >
+                  <h3 className="text-base md:text-lg font-bold text-zinc-900 pr-4 leading-snug">{faq.question}</h3>
+                  <svg
+                    className={`w-5 h-5 text-zinc-400 transition-transform duration-300 shrink-0 ${openFaq === idx ? 'rotate-180' : ''}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div
+                  id={`product-faq-answer-${idx}`}
+                  className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-96 pb-6 md:pb-8' : 'max-h-0'}`}
+                  role="region"
+                  aria-labelledby={`product-faq-question-${idx}`}
+                >
+                  <p className="px-6 md:px-8 text-zinc-500 text-sm md:text-base leading-relaxed">{faq.answer}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

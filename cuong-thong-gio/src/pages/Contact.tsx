@@ -1,8 +1,80 @@
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { SEO, makeBreadcrumbSchema, LOCAL_BUSINESS_SCHEMA } from '../components/SEO';
+import emailjs from '@emailjs/browser';
+
+// ========================================
+// CẤU HÌNH EMAILJS - Thay bằng credentials của bạn
+// Lấy tại: https://www.emailjs.com/
+// ========================================
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";   // Ví dụ: "service_abc123"
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Ví dụ: "template_xyz789"
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";    // Ví dụ: "AbCdEfGhIjKlMn"
 
 export function Contact() {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const breadcrumb = makeBreadcrumbSchema([
+    { name: 'Trang chủ', url: 'https://cuongthonggio.com/' },
+    { name: 'Liên hệ', url: 'https://cuongthonggio.com/lien-he' }
+  ]);
+
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Liên hệ Cường Thông Gió",
+    "description": "Liên hệ Cường Thông Gió để nhận tư vấn, báo giá hệ thống thông gió, quạt công nghiệp tại Đà Nẵng.",
+    "url": "https://cuongthonggio.com/lien-he",
+    "hasMap": "https://maps.google.com/maps?q=101+Tr%E1%BA%A7n+Qu%C3%BD+Kho%C3%A1ch,+Ho%C3%A0+Minh,+Li%C3%AAn+Chi%E1%BB%83u,+%C4%90%C3%A0+N%E1%BA%B5ng"
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('submitting');
+    setErrorMsg('');
+
+    if (!formRef.current) return;
+
+    try {
+      const result = await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      if (result.status === 200) {
+        setStatus('success');
+        formRef.current.reset();
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setErrorMsg(`Lỗi: ${result.text}`);
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 8000);
+      }
+    } catch (error: unknown) {
+      console.error("EmailJS error", error);
+      const errMsg = error instanceof Error 
+        ? error.message 
+        : (typeof error === 'object' && error !== null && 'text' in error) 
+          ? String((error as { text: string }).text) 
+          : "Lỗi kết nối mạng";
+      setErrorMsg(errMsg);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 8000);
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#f8f9fa] py-20 px-6">
+    <div className="min-h-screen bg-[#f8f9fa] pt-32 pb-20 px-6">
+      <SEO
+        title="Liên Hệ — Báo Giá Quạt Công Nghiệp & Thông Gió"
+        description="Liên hệ Cường Thông Gió để nhận tư vấn kỹ thuật và báo giá hệ thống thông gió, quạt công nghiệp. Địa chỉ: 101 Trần Quý Khoách, Đà Nẵng. Hotline: 0905 001 224."
+        keywords="liên hệ Cường Thông Gió, báo giá quạt công nghiệp, tư vấn thông gió, thông gió Đà Nẵng, hotline quạt công nghiệp"
+        structuredData={[breadcrumb, contactSchema, LOCAL_BUSINESS_SCHEMA]}
+      />
+
       <div className="max-w-[1200px] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -26,7 +98,7 @@ export function Contact() {
                 THÔNG TIN LIÊN HỆ
               </h2>
 
-              <div className="space-y-7">
+              <address className="space-y-7 not-italic">
                 {/* Location */}
                 <div className="flex items-start gap-5">
                   <div className="flex-shrink-0 w-14 h-14 rounded-full border border-gray-200 flex items-center justify-center bg-white">
@@ -52,7 +124,9 @@ export function Contact() {
                   </div>
                   <div className="pt-1">
                     <h3 className="font-bold text-gray-900 mb-2 text-base">Điện thoại</h3>
-                    <p className="text-gray-600 text-sm">0905 001 224</p>
+                    <p className="text-gray-600 text-sm">
+                      <a href="tel:0905001224" className="hover:text-industrial-blue transition-colors">0905 001 224</a>
+                    </p>
                   </div>
                 </div>
 
@@ -65,22 +139,27 @@ export function Contact() {
                   </div>
                   <div className="pt-1">
                     <h3 className="font-bold text-gray-900 mb-2 text-base">Email</h3>
-                    <p className="text-gray-600 text-sm">phantrongcuong77@gmail.com</p>
+                    <p className="text-gray-600 text-sm">
+                      <a href="mailto:phantrongcuong77@gmail.com" className="hover:text-industrial-blue transition-colors">phantrongcuong77@gmail.com</a>
+                    </p>
                   </div>
                 </div>
-              </div>
+              </address>
+
             </div>
 
             {/* Right Column - Form Section */}
             <div>
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <form ref={formRef} className="space-y-5" onSubmit={handleSubmit}>
                 {/* Full Name */}
                 <div>
-                  <label className="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-3">
+                  <label htmlFor="contact-name" className="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-3">
                     HỌ VÀ TÊN *
                   </label>
                   <input
+                    id="contact-name"
                     type="text"
+                    name="name"
                     placeholder="Tên của bạn..."
                     className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent placeholder:text-gray-400"
                     required
@@ -90,22 +169,26 @@ export function Contact() {
                 {/* Phone and Email Row */}
                 <div className="grid grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-3">
+                    <label htmlFor="contact-phone" className="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-3">
                       SỐ ĐIỆN THOẠI *
                     </label>
                     <input
+                      id="contact-phone"
                       type="tel"
+                      name="phone"
                       placeholder="0905..."
                       className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent placeholder:text-gray-400"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-3">
+                    <label htmlFor="contact-email" className="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-3">
                       EMAIL
                     </label>
                     <input
+                      id="contact-email"
                       type="email"
+                      name="email"
                       placeholder="email@vidu.com"
                       className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent placeholder:text-gray-400"
                     />
@@ -114,23 +197,40 @@ export function Contact() {
 
                 {/* Technical Requirements */}
                 <div>
-                  <label className="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-3">
+                  <label htmlFor="contact-message" className="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-3">
                     YÊU CẦU KỸ THUẬT *
                   </label>
                   <textarea
+                    id="contact-message"
                     rows={5}
+                    name="message"
                     placeholder="Diện tích xưởng, quy mô, loại quạt..."
                     className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent placeholder:text-gray-400 resize-none"
                     required
                   />
                 </div>
 
+                {/* Status Messages */}
+                {status === 'success' && (
+                  <div className="p-3 bg-green-50 text-green-700 rounded-lg text-sm font-medium border border-green-200" role="alert">
+                    Cảm ơn bạn! Yêu cầu của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại sớm nhất.
+                  </div>
+                )}
+                {status === 'error' && (
+                  <div className="p-3 bg-red-50 text-red-700 rounded-lg text-sm font-medium border border-red-200" role="alert">
+                    Có lỗi xảy ra khi gửi yêu cầu. {errorMsg && <><br/><span className="text-xs text-red-500">Chi tiết: {errorMsg}</span></>}
+                  </div>
+                )}
+
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#1a1a1a] text-white uppercase py-4 rounded-full hover:bg-black transition-all duration-200 font-semibold tracking-widest text-sm mt-2 shadow-lg"
+                  disabled={status === 'submitting'}
+                  className={`w-full bg-[#1a1a1a] text-white uppercase py-4 rounded-full transition-all duration-200 font-semibold tracking-widest text-sm mt-2 shadow-lg ${
+                    status === 'submitting' ? 'opacity-70 cursor-not-allowed' : 'hover:bg-black'
+                  }`}
                 >
-                  GỬI YÊU CẦU TƯ VẤN
+                  {status === 'submitting' ? 'ĐANG GỬI...' : 'GỬI YÊU CẦU TƯ VẤN'}
                 </button>
               </form>
             </div>
@@ -140,4 +240,3 @@ export function Contact() {
     </div>
   );
 }
-

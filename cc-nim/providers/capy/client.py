@@ -35,12 +35,12 @@ class CapyProvider(AnthropicMessagesTransport):
     ) -> dict:
         """Internal helper for tests and direct request dispatch."""
         # Capy.ai expects standard Anthropic messages format
-        body = request.model_dump(exclude_none=True) if hasattr(request, "model_dump") else dict(request)
-        
+        body = super()._build_request_body(request, thinking_enabled=thinking_enabled)
+
         # Ensure model name is stripped of provider prefix if passed
         if "model" in body and "/" in body["model"]:
             body["model"] = body["model"].split("/", 1)[1]
-            
+
         return body
 
     def _request_headers(self) -> dict[str, str]:

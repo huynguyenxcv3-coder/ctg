@@ -21,7 +21,7 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -30,7 +30,7 @@ export function Navbar() {
   }, [location]);
 
   return (
-    <nav
+    <header
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b',
         scrolled 
@@ -38,9 +38,9 @@ export function Navbar() {
           : 'bg-white py-6 border-transparent'
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center">
+      <nav aria-label="Điều hướng chính" className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center">
         {/* Logo Section */}
-        <NavLink to="/" className="flex items-center gap-3 group whitespace-nowrap">
+        <NavLink to="/" className="flex items-center gap-3 group whitespace-nowrap" aria-label="Cường Thông Gió — Trang chủ">
           <Logo size={44} />
           <div className="flex flex-col">
             <span className="font-bold text-xl tracking-tighter text-industrial-black">
@@ -81,19 +81,25 @@ export function Navbar() {
         <button
           className="md:hidden ml-auto p-2 text-industrial-black"
           onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          aria-label={isOpen ? 'Đóng menu' : 'Mở menu'}
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
+            role="navigation"
+            aria-label="Menu di động"
           >
             <div className="px-4 py-8 flex flex-col gap-6">
               {navItems.map((item) => (
@@ -120,6 +126,6 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </header>
   );
 }

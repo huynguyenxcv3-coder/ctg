@@ -5,8 +5,11 @@
   --color-industrial-black: #09090b;
   --color-industrial-blue: #3b82f6;
   --color-industrial-gray: #71717a;
+  --color-industrial-silver: #f4f4f5;
+  --color-industrial-border: #e4e4e7;
   
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
@@ -31,4 +34,3 @@
     box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.05);
   }
 }
-

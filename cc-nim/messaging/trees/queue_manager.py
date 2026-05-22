@@ -174,7 +174,7 @@ class TreeRepository:
         }
 
     @classmethod
-    def from_dict(cls, data: dict) -> TreeRepository:
+    def from_dict(cls, data: dict) -> "TreeRepository":
         """Deserialize from dictionary."""
         repo = cls()
         for root_id, tree_data in data.get("trees", {}).items():
@@ -733,7 +733,7 @@ class TreeQueueManager:
         queue_update_callback: Callable[[MessageTree], Awaitable[None]] | None = None,
         node_started_callback: Callable[[MessageTree, str], Awaitable[None]]
         | None = None,
-    ) -> TreeQueueManager:
+    ) -> "TreeQueueManager":
         """Deserialize from dictionary."""
         return cls(
             queue_update_callback=queue_update_callback,
