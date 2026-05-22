@@ -33,37 +33,6 @@ export function Footer() {
             </ul>
           </nav>
 
-          {/* Service Areas — GEO SEO -->  */}
-          <div className="space-y-8">
-            <h3 className="font-bold text-lg uppercase tracking-wider">KHU VỰC PHỤC VỤ</h3>
-            <ul className="space-y-2.5">
-              <li className="text-gray-500 text-[14px] font-medium flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
-                KCN Hòa Khánh — Q. Liên Chiểu
-              </li>
-              <li className="text-gray-500 text-[14px] font-medium flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
-                KCN Hòa Cầm — Q. Cẩm Lệ
-              </li>
-              <li className="text-gray-500 text-[14px] font-medium flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
-                KCN An Đồn — Q. Sơn Trà
-              </li>
-              <li className="text-gray-500 text-[14px] font-medium flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
-                KCN Thọ Quang — Q. Sơn Trà
-              </li>
-              <li className="text-gray-500 text-[14px] font-medium flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
-                KCN Điện Nam-Điện Ngọc
-              </li>
-              <li className="text-gray-500 text-[14px] font-medium flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
-                Các quận nội thành Đà Nẵng
-              </li>
-            </ul>
-          </div>
-
           {/* Contact Info */}
           <div className="space-y-8">
             <h3 className="font-bold text-lg uppercase tracking-wider">THÔNG TIN LIÊN HỆ</h3>
@@ -87,7 +56,7 @@ export function Footer() {
 
             {/* Quick Navigation Links */}
             <nav aria-label="Điều hướng nhanh">
-              <ul className="flex flex-wrap gap-4 text-[12px] font-bold uppercase tracking-widest text-gray-400">
+              <ul className="flex flex-wrap gap-x-3 gap-y-2 text-[12px] font-bold uppercase tracking-wider text-gray-400">
                 <li><NavLink to="/" className="hover:text-industrial-black transition-colors">Trang chủ</NavLink></li>
                 <li><NavLink to="/gioi-thieu" className="hover:text-industrial-black transition-colors">Giới thiệu</NavLink></li>
                 <li><NavLink to="/san-pham" className="hover:text-industrial-black transition-colors">Sản phẩm</NavLink></li>

@@ -82,39 +82,6 @@ const faqs = [
   },
 ]
 
-const serviceAreas = [
-  {
-    name: 'KCN Hòa Khánh',
-    district: 'Q. Liên Chiểu',
-    description: 'Thi công hệ thống thông gió, hút bụi cho các nhà máy sản xuất gỗ, cơ khí, nhựa.',
-  },
-  {
-    name: 'KCN Hòa Cầm',
-    district: 'Q. Cẩm Lệ',
-    description: 'Lắp đặt hệ thống quạt hút, xử lý khí thải cho nhà máy chế biến, dệt may.',
-  },
-  {
-    name: 'KCN An Đồn',
-    district: 'Q. Sơn Trà',
-    description: 'Cung cấp hệ thống thông gió tầng hầm, PCCC cho tòa nhà, trung tâm thương mại.',
-  },
-  {
-    name: 'KCN Điện Nam - Điện Ngọc',
-    district: 'Quảng Nam',
-    description: 'Thi công ống gió, quạt công nghiệp cho các nhà máy FDI, điện tử.',
-  },
-  {
-    name: 'KCN Thọ Quang',
-    district: 'Q. Sơn Trà',
-    description: 'Hệ thống hút mùi, xử lý khí thải cho nhà máy chế biến thủy sản.',
-  },
-  {
-    name: 'Các quận nội thành',
-    district: 'TP. Đà Nẵng',
-    description: 'Thông gió tầng hầm, quạt hút bếp công nghiệp, điều hòa cho nhà hàng, khách sạn.',
-  },
-]
-
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
@@ -451,48 +418,6 @@ export function Home() {
                   </div>
                 </div>
               </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Khu Vực Phục Vụ Section - GEO Targeting */}
-      <section className="py-20 md:py-32 bg-white relative z-10" aria-label="Khu vực phục vụ tại Đà Nẵng">
-        <div className="container-custom">
-          <div className="text-center mb-14 md:mb-20 max-w-3xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight"
-            >
-              Khu Vực Phục Vụ
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-zinc-500 text-base md:text-lg leading-relaxed"
-            >
-              Chúng tôi tự hào phục vụ các khu công nghiệp và công trình trên toàn thành phố Đà Nẵng và khu vực lân cận.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full mx-auto max-w-7xl">
-            {serviceAreas.map((area, i) => (
-              <motion.div
-                key={area.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="bg-white rounded-2xl border border-zinc-100 p-8 md:p-10 hover:shadow-xl transition-all duration-500"
-              >
-                <h3 className="text-xl md:text-2xl font-bold text-zinc-900 mb-2 tracking-tight">{area.name}</h3>
-                <p className="text-sm font-medium text-zinc-400 mb-4 uppercase tracking-wider">{area.district}</p>
-                <p className="text-zinc-500 text-sm md:text-base leading-relaxed">{area.description}</p>
-              </motion.div>
             ))}
           </div>
         </div>
