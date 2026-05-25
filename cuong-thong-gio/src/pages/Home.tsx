@@ -18,7 +18,7 @@ import {
 const stats = [
   { value: '13', label: 'Năm hoạt động' },
   { value: '2,145', label: 'Dự án bàn giao' },
-  { value: '500m²', label: 'Diện tích xưởng' },
+  { value: '150m²', label: 'Diện tích xưởng' },
 ]
 
 const services = [
@@ -139,7 +139,7 @@ export function Home() {
     steps: [
       { name: 'Khảo sát & Tư vấn', text: 'Đội ngũ kỹ sư đến tận công trình tại Đà Nẵng để khảo sát thực tế, đo đạc diện tích, đánh giá nhu cầu thông gió.' },
       { name: 'Thiết kế hệ thống', text: 'Lập bản vẽ kỹ thuật chi tiết hệ thống ống gió, vị trí quạt, miệng gió phù hợp với layout nhà xưởng.' },
-      { name: 'Sản xuất tại xưởng', text: 'Gia công quạt công nghiệp, ống gió tại xưởng 500m² tại Đà Nẵng, kiểm tra cân bằng động trước khi xuất xưởng.' },
+      { name: 'Sản xuất tại xưởng', text: 'Gia công quạt công nghiệp, ống gió tại xưởng 150m² tại Đà Nẵng, kiểm tra cân bằng động trước khi xuất xưởng.' },
       { name: 'Thi công & Lắp đặt', text: 'Đội ngũ thợ lành nghề lắp đặt hệ thống tại công trình, đảm bảo đúng bản vẽ thiết kế và tiến độ cam kết.' },
       { name: 'Nghiệm thu & Bàn giao', text: 'Đo lưu lượng, áp suất thực tế bằng thiết bị chuyên dụng, bàn giao hệ thống hoạt động ổn định.' },
     ],
