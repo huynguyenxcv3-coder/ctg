@@ -1,0 +1,30 @@
+# Robots.txt — Cường Thông Gió
+# https://cuongthonggio.com
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Google crawl optimization
+User-agent: Googlebot
+Allow: /
+Allow: /assets/
+Crawl-delay: 1
+
+# Bing crawl optimization
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Coc Coc (Vietnamese search engine)
+User-agent: CocCocBot
+Allow: /
+Crawl-delay: 1
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 3
+
+# Sitemap
+Sitemap: https://cuongthonggio.com/sitemap.xml

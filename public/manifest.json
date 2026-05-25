@@ -1,0 +1,21 @@
+{
+  "name": "Cường Thông Gió — Quạt Công Nghiệp & Hệ Thống Thông Gió Đà Nẵng",
+  "short_name": "Cường Thông Gió",
+  "description": "Chuyên sản xuất quạt công nghiệp, gia công ống gió, thi công hệ thống thông gió, xử lý khí thải & bụi cho nhà xưởng, công trình tại Đà Nẵng và khu vực Miền Trung. 13+ năm kinh nghiệm, 2000+ dự án.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#09090b",
+  "orientation": "portrait-primary",
+  "lang": "vi",
+  "dir": "ltr",
+  "categories": ["business", "industrial", "utilities"],
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
