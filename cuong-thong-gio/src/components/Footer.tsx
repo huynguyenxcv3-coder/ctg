@@ -48,7 +48,7 @@ export function Footer() {
                 <li className="text-[15px] font-bold">
                   Hotline/Zalo: <a href="tel:0905001224" className="hover:text-industrial-blue transition-colors" aria-label="Gọi hotline 0905 001 224" itemProp="telephone">0905 001 224</a>
                 </li>
-                <li className="text-[15px] font-medium text-gray-500">
+                <li className="text-[15px] font-medium text-gray-500 whitespace-nowrap">
                   Email: <a href="mailto:phantrongcuong77@gmail.com" className="hover:text-industrial-blue transition-colors" aria-label="Gửi email đến Cường Thông Gió" itemProp="email">phantrongcuong77@gmail.com</a>
                 </li>
               </ul>
@@ -56,7 +56,7 @@ export function Footer() {
 
             {/* Quick Navigation Links */}
             <nav aria-label="Điều hướng nhanh">
-              <ul className="flex flex-wrap gap-x-3 gap-y-2 text-[12px] font-bold uppercase tracking-wider text-gray-400">
+              <ul className="flex flex-nowrap gap-x-3 gap-y-2 text-[12px] font-bold uppercase tracking-wider text-gray-400 whitespace-nowrap">
                 <li><NavLink to="/" className="hover:text-industrial-black transition-colors">Trang chủ</NavLink></li>
                 <li><NavLink to="/gioi-thieu" className="hover:text-industrial-black transition-colors">Giới thiệu</NavLink></li>
                 <li><NavLink to="/san-pham" className="hover:text-industrial-black transition-colors">Sản phẩm</NavLink></li>

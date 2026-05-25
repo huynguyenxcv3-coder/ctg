@@ -1,18 +1,177 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { SEO, makeBreadcrumbSchema, LOCAL_BUSINESS_SCHEMA } from '../components/SEO';
-import emailjs from '@emailjs/browser';
 
-// ========================================
-// CẤU HÌNH EMAILJS - Thay bằng credentials của bạn
-// Lấy tại: https://www.emailjs.com/
-// ========================================
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";   // Ví dụ: "service_abc123"
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Ví dụ: "template_xyz789"
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";    // Ví dụ: "AbCdEfGhIjKlMn"
+// Validate SĐT Việt Nam: bắt đầu bằng 0, 10 chữ số
+function isValidVNPhone(phone: string): boolean {
+  const cleaned = phone.replace(/[\s.-]/g, '');
+  return /^0\d{9}$/.test(cleaned);
+}
 
+// Validate email
+function isValidEmail(email: string): boolean {
+  if (!email) return true; // email không bắt buộc
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+// ==========================================
+// Popup Modal Component
+// ==========================================
+function PopupModal({ 
+  isOpen, 
+  onClose, 
+  type 
+}: { 
+  isOpen: boolean; 
+  onClose: () => void; 
+  type: 'success' | 'error';
+}) {
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      // Trigger animation after mount
+      requestAnimationFrame(() => setIsAnimating(true));
+      // Auto close after 6s for success
+      if (type === 'success') {
+        const timer = setTimeout(() => handleClose(), 6000);
+        return () => clearTimeout(timer);
+      }
+    } else {
+      setIsAnimating(false);
+    }
+  }, [isOpen, type]);
+
+  const handleClose = () => {
+    setIsAnimating(false);
+    setTimeout(() => onClose(), 300); // wait for exit animation
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div 
+      className={`fixed inset-0 z-[9999] flex items-center justify-center px-4 transition-all duration-300 ${
+        isAnimating ? 'opacity-100' : 'opacity-0'
+      }`}
+      onClick={handleClose}
+    >
+      {/* Backdrop */}
+      <div className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
+        isAnimating ? 'opacity-100' : 'opacity-0'
+      }`} />
+      
+      {/* Modal */}
+      <div 
+        className={`relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 transition-all duration-300 ${
+          isAnimating ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-4 opacity-0'
+        }`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close button */}
+        <button 
+          onClick={handleClose}
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-gray-400 hover:text-gray-600"
+          aria-label="Đóng"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {type === 'success' ? (
+          <div className="text-center">
+            {/* Success Icon */}
+            <div className={`mx-auto w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mb-6 transition-all duration-500 ${
+              isAnimating ? 'scale-100' : 'scale-0'
+            }`}>
+              <svg className={`w-10 h-10 text-green-500 transition-all duration-500 delay-200 ${
+                isAnimating ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+              }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Gửi thành công!</h3>
+            <p className="text-gray-500 leading-relaxed">
+              Cảm ơn bạn đã liên hệ! Đội ngũ Cường Thông Gió sẽ phản hồi trong thời gian sớm nhất.
+            </p>
+            <button
+              onClick={handleClose}
+              className="mt-6 px-8 py-3 bg-green-500 text-white rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-green-600 transition-colors"
+            >
+              Đã hiểu
+            </button>
+          </div>
+        ) : (
+          <div className="text-center">
+            {/* Error Icon */}
+            <div className={`mx-auto w-20 h-20 rounded-full bg-red-50 flex items-center justify-center mb-6 transition-all duration-500 ${
+              isAnimating ? 'scale-100' : 'scale-0'
+            }`}>
+              <svg className={`w-10 h-10 text-red-500 transition-all duration-500 delay-200 ${
+                isAnimating ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+              }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Gửi không thành công!</h3>
+            <p className="text-gray-500 leading-relaxed mb-5">
+              Rất tiếc, đã xảy ra lỗi khi gửi yêu cầu. Vui lòng liên hệ trực tiếp qua:
+            </p>
+            
+            {/* Contact alternatives */}
+            <div className="space-y-3 mb-6">
+              <a
+                href="tel:0905001224"
+                className="flex items-center gap-3 p-3.5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group"
+              >
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Gọi điện</p>
+                  <p className="text-gray-800 font-bold group-hover:text-blue-600 transition-colors">0905 001 224</p>
+                </div>
+              </a>
+              
+              <a
+                href="https://zalo.me/0905001224"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-3.5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group"
+              >
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-blue-600 font-black text-sm">Z</span>
+                </div>
+                <div className="text-left">
+                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Zalo</p>
+                  <p className="text-gray-800 font-bold group-hover:text-blue-600 transition-colors">0905 001 224</p>
+                </div>
+              </a>
+            </div>
+
+            <button
+              onClick={handleClose}
+              className="px-8 py-3 bg-gray-900 text-white rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-black transition-colors"
+            >
+              Đóng
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ==========================================
+// Contact Page
+// ==========================================
 export function Contact() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  const [errorMsg, setErrorMsg] = useState('');
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupType, setPopupType] = useState<'success' | 'error'>('success');
+  const [validationErrors, setValidationErrors] = useState<{ phone?: string; email?: string }>({});
   const formRef = useRef<HTMLFormElement>(null);
 
   const breadcrumb = makeBreadcrumbSchema([
@@ -31,39 +190,67 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('submitting');
-    setErrorMsg('');
-
+    
     if (!formRef.current) return;
 
-    try {
-      const result = await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        EMAILJS_PUBLIC_KEY
-      );
+    const formData = new FormData(formRef.current);
+    const phone = (formData.get('phone') as string) || '';
+    const email = (formData.get('email') as string) || '';
 
-      if (result.status === 200) {
+    // Validate
+    const errors: { phone?: string; email?: string } = {};
+    
+    if (!isValidVNPhone(phone)) {
+      errors.phone = 'Số điện thoại không hợp lệ. Vui lòng nhập SĐT Việt Nam (10 số, bắt đầu bằng 0).';
+    }
+    
+    if (email && !isValidEmail(email)) {
+      errors.email = 'Email không hợp lệ.';
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setValidationErrors(errors);
+      return;
+    }
+
+    setValidationErrors({});
+    setStatus('submitting');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          phone,
+          email: email || undefined,
+          message: formData.get('message'),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         setStatus('success');
+        setPopupType('success');
+        setShowPopup(true);
         formRef.current.reset();
-        setTimeout(() => setStatus('idle'), 5000);
       } else {
-        setErrorMsg(`Lỗi: ${result.text}`);
         setStatus('error');
-        setTimeout(() => setStatus('idle'), 8000);
+        setPopupType('error');
+        setShowPopup(true);
       }
     } catch (error: unknown) {
       console.error("EmailJS error", error);
-      const errMsg = error instanceof Error 
-        ? error.message 
-        : (typeof error === 'object' && error !== null && 'text' in error) 
-          ? String((error as { text: string }).text) 
-          : "Lỗi kết nối mạng";
-      setErrorMsg(errMsg);
       setStatus('error');
-      setTimeout(() => setStatus('idle'), 8000);
+      setPopupType('error');
+      setShowPopup(true);
     }
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+    setStatus('idle');
   };
 
   return (
@@ -74,6 +261,9 @@ export function Contact() {
         keywords="liên hệ Cường Thông Gió, báo giá quạt công nghiệp, tư vấn thông gió, thông gió Đà Nẵng, hotline quạt công nghiệp"
         structuredData={[breadcrumb, contactSchema, LOCAL_BUSINESS_SCHEMA]}
       />
+
+      {/* Popup Modal */}
+      <PopupModal isOpen={showPopup} onClose={handleClosePopup} type={popupType} />
 
       <div className="max-w-[1200px] mx-auto">
         {/* Header Section */}
@@ -177,9 +367,15 @@ export function Contact() {
                       type="tel"
                       name="phone"
                       placeholder="0905..."
-                      className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent placeholder:text-gray-400"
+                      className={`w-full px-4 py-3.5 bg-white border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent placeholder:text-gray-400 ${
+                        validationErrors.phone ? 'border-red-400 ring-1 ring-red-200' : 'border-gray-300'
+                      }`}
                       required
+                      onChange={() => setValidationErrors(prev => ({ ...prev, phone: undefined }))}
                     />
+                    {validationErrors.phone && (
+                      <p className="mt-1.5 text-xs text-red-500 font-medium">{validationErrors.phone}</p>
+                    )}
                   </div>
                   <div>
                     <label htmlFor="contact-email" className="block text-xs uppercase font-bold tracking-wider text-gray-700 mb-3">
@@ -190,8 +386,14 @@ export function Contact() {
                       type="email"
                       name="email"
                       placeholder="email@vidu.com"
-                      className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent placeholder:text-gray-400"
+                      className={`w-full px-4 py-3.5 bg-white border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent placeholder:text-gray-400 ${
+                        validationErrors.email ? 'border-red-400 ring-1 ring-red-200' : 'border-gray-300'
+                      }`}
+                      onChange={() => setValidationErrors(prev => ({ ...prev, email: undefined }))}
                     />
+                    {validationErrors.email && (
+                      <p className="mt-1.5 text-xs text-red-500 font-medium">{validationErrors.email}</p>
+                    )}
                   </div>
                 </div>
 
@@ -210,27 +412,23 @@ export function Contact() {
                   />
                 </div>
 
-                {/* Status Messages */}
-                {status === 'success' && (
-                  <div className="p-3 bg-green-50 text-green-700 rounded-lg text-sm font-medium border border-green-200" role="alert">
-                    Cảm ơn bạn! Yêu cầu của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại sớm nhất.
-                  </div>
-                )}
-                {status === 'error' && (
-                  <div className="p-3 bg-red-50 text-red-700 rounded-lg text-sm font-medium border border-red-200" role="alert">
-                    Có lỗi xảy ra khi gửi yêu cầu. {errorMsg && <><br/><span className="text-xs text-red-500">Chi tiết: {errorMsg}</span></>}
-                  </div>
-                )}
-
                 {/* Submit Button */}
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className={`w-full bg-[#1a1a1a] text-white uppercase py-4 rounded-full transition-all duration-200 font-semibold tracking-widest text-sm mt-2 shadow-lg ${
+                  className={`w-full bg-[#1a1a1a] text-white uppercase py-4 rounded-full transition-all duration-200 font-semibold tracking-widest text-sm mt-2 shadow-lg flex items-center justify-center gap-2 ${
                     status === 'submitting' ? 'opacity-70 cursor-not-allowed' : 'hover:bg-black'
                   }`}
                 >
-                  {status === 'submitting' ? 'ĐANG GỬI...' : 'GỬI YÊU CẦU TƯ VẤN'}
+                  {status === 'submitting' ? (
+                    <>
+                      <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                      ĐANG GỬI...
+                    </>
+                  ) : 'GỬI YÊU CẦU TƯ VẤN'}
                 </button>
               </form>
             </div>
