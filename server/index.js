@@ -359,7 +359,7 @@ app.post('/api/send-email', async (req, res) => {
 
     // Send notification to admin via Graph API
     await sendMailViaGraph({
-      to: process.env.EMAIL_TO || 'phantrongkien12@gmail.com',
+      to: process.env.EMAIL_TO || 'admin@example.com',
       subject: `Yeu cau tu van - ${name} - ${phone}`,
       htmlBody: htmlContent,
       textBody: `Họ tên: ${name}\nSĐT: ${phone}\nEmail: ${email || 'N/A'}\nYêu cầu: ${message}`,
@@ -627,3 +627,4 @@ if (process.env.NODE_ENV !== 'production' && process.env.GATEWAY !== 'netlify') 
 
 export const handler = serverless(app);
 export default app;
+p;
