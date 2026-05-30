@@ -18,7 +18,7 @@ const GRAPH_CONFIG = {
   tenantId: process.env.AZURE_TENANT_ID,
   clientId: process.env.AZURE_CLIENT_ID,
   clientSecret: process.env.AZURE_CLIENT_SECRET,
-  fromEmail: process.env.EMAIL_USER || 'team@cuongthonggio.com',
+  fromEmail: process.env.EMAIL_USER || 'admin@example.com',
 };
 
 // Cache access token
