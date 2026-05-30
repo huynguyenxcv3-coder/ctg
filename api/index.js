@@ -62,6 +62,9 @@ async function getAccessToken() {
 async function sendMailViaGraph({ to, subject, htmlBody, textBody, replyTo }) {
   const token = await getAccessToken();
 
+  // Support multiple emails separated by commas
+  const toList = to.split(',').map(email => ({ emailAddress: { address: email.trim() } }));
+
   const message = {
     message: {
       subject,
@@ -69,7 +72,7 @@ async function sendMailViaGraph({ to, subject, htmlBody, textBody, replyTo }) {
         contentType: 'HTML',
         content: htmlBody,
       },
-      toRecipients: [{ emailAddress: { address: to } }],
+      toRecipients: toList,
     },
     saveToSentItems: true,
   };
