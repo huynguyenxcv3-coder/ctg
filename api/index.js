@@ -11,105 +11,32 @@ app.use(cors());
 app.use(express.json());
 
 // ========================================
-// Microsoft Graph API - OAuth2 Client Credentials
-// Bypass Security Defaults, no SMTP needed
+// CẤU HÌNH MICROSOFT 365 SMTP
 // ========================================
-const GRAPH_CONFIG = {
-  tenantId: process.env.AZURE_TENANT_ID,
-  clientId: process.env.AZURE_CLIENT_ID,
-  clientSecret: process.env.AZURE_CLIENT_SECRET,
-  fromEmail: process.env.EMAIL_USER || 'team@cuongthonggio.com',
-};
+import nodemailer from 'nodemailer';
 
-// Cache access token
-let tokenCache = { token: null, expiresAt: 0 };
+const transporter = nodemailer.createTransport({
+  host: 'smtp.office365.com',
+  port: 587,
+  secure: false, // true for 465, false for other ports
+  requireTLS: true,
+  auth: {
+    user: process.env.EMAIL_USER || 'admin@example.com',
+    pass: process.env.EMAIL_PASS || 'your_password',
+  },
+});
 
-async function getAccessToken() {
-  // Return cached token if still valid (with 5 min buffer)
-  if (tokenCache.token && Date.now() < tokenCache.expiresAt - 300000) {
-    return tokenCache.token;
-  }
-
-  const tokenUrl = `https://login.microsoftonline.com/${GRAPH_CONFIG.tenantId}/oauth2/v2.0/token`;
-
-  const body = new URLSearchParams({
-    client_id: GRAPH_CONFIG.clientId,
-    client_secret: GRAPH_CONFIG.clientSecret,
-    scope: 'https://graph.microsoft.com/.default',
-    grant_type: 'client_credentials',
-  });
-
-  const response = await fetch(tokenUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: body.toString(),
-  });
-
-  if (!response.ok) {
-    const err = await response.json();
-    throw new Error(`Token error: ${err.error_description || err.error || response.statusText}`);
-  }
-
-  const data = await response.json();
-  tokenCache = {
-    token: data.access_token,
-    expiresAt: Date.now() + data.expires_in * 1000,
-  };
-
-  return data.access_token;
-}
-
-async function sendMailViaGraph({ to, subject, htmlBody, textBody, replyTo }) {
-  const token = await getAccessToken();
-
-  const message = {
-    message: {
-      subject,
-      body: {
-        contentType: 'HTML',
-        content: htmlBody,
-      },
-      toRecipients: [{ emailAddress: { address: to } }],
-    },
-    saveToSentItems: true,
-  };
-
-  // Add replyTo if provided
-  if (replyTo) {
-    message.message.replyTo = [{ emailAddress: { address: replyTo } }];
-  }
-
-  const graphUrl = `https://graph.microsoft.com/v1.0/users/${GRAPH_CONFIG.fromEmail}/sendMail`;
-
-  const response = await fetch(graphUrl, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(message),
-  });
-
-  if (!response.ok) {
-    const err = await response.text();
-    throw new Error(`Graph API error (${response.status}): ${err}`);
-  }
-
-  return true;
-}
-
-// Verify Graph API connection
-const verifyGraphAPI = async () => {
+const verifyTransporter = async () => {
   try {
-    if (!GRAPH_CONFIG.tenantId || !GRAPH_CONFIG.clientId || !GRAPH_CONFIG.clientSecret) {
-      console.warn('⚠️  Azure credentials not set. Set AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET');
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.warn('⚠️  SMTP credentials not set. Set EMAIL_USER and EMAIL_PASS');
       return false;
     }
-    const token = await getAccessToken();
-    console.log('✅ Microsoft Graph API connected (token obtained)');
-    return !!token;
+    await transporter.verify();
+    console.log('✅ Microsoft 365 SMTP connection verified');
+    return true;
   } catch (err) {
-    console.error('❌ Graph API connection failed:', err.message);
+    console.error('❌ SMTP connection failed:', err.message);
     return false;
   }
 };
@@ -359,14 +286,17 @@ app.post('/api/send-email', async (req, res) => {
 </body>
 </html>`;
 
-    // Send notification to admin via Graph API
-    await sendMailViaGraph({
+    // Send notification to admin via SMTP
+    const mailOptions = {
+      from: `"Cuong Thong Gio" <${process.env.EMAIL_USER || 'admin@example.com'}>`,
       to: process.env.EMAIL_TO || 'admin@example.com',
-      subject: `Yeu cau tu van - ${name} - ${phone}`,
-      htmlBody: htmlContent,
-      textBody: `Họ tên: ${name}\nSĐT: ${phone}\nEmail: ${email || 'N/A'}\nYêu cầu: ${message}`,
       replyTo: email || undefined,
-    });
+      subject: `Yeu cau tu van - ${name} - ${phone}`,
+      text: `Họ tên: ${name}\nSĐT: ${phone}\nEmail: ${email || 'N/A'}\nYêu cầu: ${message}`,
+      html: htmlContent,
+    };
+
+    await transporter.sendMail(mailOptions);
 
     if (email) {
       const customerHtml = `<!DOCTYPE html>
@@ -600,10 +530,11 @@ app.post('/api/send-email', async (req, res) => {
 </body>
 </html>`;
 
-      await sendMailViaGraph({
+      await transporter.sendMail({
+        from: `"Cuong Thong Gio" <${process.env.EMAIL_USER || 'admin@example.com'}>`,
         to: email,
         subject: 'Cuong Thong Gio - Đã nhận yêu cầu tư vấn của bạn',
-        htmlBody: customerHtml,
+        html: customerHtml,
       });
     }
 
@@ -621,7 +552,7 @@ app.get('/api/health', (req, res) => {
 if (process.env.NODE_ENV !== 'production' && process.env.GATEWAY !== 'netlify') {
   app.listen(PORT, async () => {
     console.log(`🚀 Server running on port ${PORT}`);
-    await verifyGraphAPI();
+    await verifyTransporter();
   });
 }
 
