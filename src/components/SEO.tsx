@@ -165,8 +165,8 @@ export const ORGANIZATION_SCHEMA = {
       "hoursAvailable": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "07:30",
-        "closes": "17:30"
+        "opens": "08:00",
+        "closes": "17:00"
       }
     },
     {
@@ -220,8 +220,8 @@ export const LOCAL_BUSINESS_SCHEMA = {
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "07:30",
-      "closes": "17:30"
+      "opens": "08:00",
+      "closes": "17:00"
     }
   ],
   "priceRange": "$$",

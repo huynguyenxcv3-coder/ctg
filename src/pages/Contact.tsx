@@ -347,7 +347,7 @@ export function Contact() {
               <div className="mt-8 pt-8 border-t border-gray-100">
                 <h3 className="font-bold text-gray-900 mb-4 text-base">Giờ làm việc</h3>
                 <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex justify-between"><span>Thứ 2 - Thứ 7</span><span className="font-semibold text-gray-900">07:30 - 17:30</span></div>
+                  <div className="flex justify-between"><span>Thứ 2 - Thứ 7</span><span className="font-semibold text-gray-900">08:00 - 17:00</span></div>
                   <div className="flex justify-between"><span>Chủ nhật</span><span className="text-red-500 font-semibold">Nghỉ</span></div>
                 </div>
               </div>
