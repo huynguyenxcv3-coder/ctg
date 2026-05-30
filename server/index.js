@@ -311,7 +311,7 @@ app.post('/api/send-email', async (req, res) => {
           <table cellpadding="0" cellspacing="0" border="0">
             <tr>
               <td style="vertical-align: middle;">
-                <img src="https://cuongthonggio.com/logo.png" alt="CTG" width="48" height="48" style="display: block; width: 48px; height: 48px; object-fit: contain;" />
+                <img src="https://www.cuongthonggio.com/logo.png" alt="CTG" width="48" height="48" style="display: block; width: 48px; height: 48px; object-fit: contain;" />
               </td>
               <td style="vertical-align: middle; padding-left: 12px;">
                 <span class="brand-logo-text">CƯỜNG THÔNG GIÓ.</span>
@@ -539,7 +539,7 @@ app.post('/api/send-email', async (req, res) => {
           <table cellpadding="0" cellspacing="0" border="0">
             <tr>
               <td style="vertical-align: middle;">
-                <img src="https://cuongthonggio.com/logo.png" alt="CTG" width="48" height="48" style="display: block; width: 48px; height: 48px; object-fit: contain;" />
+                <img src="https://www.cuongthonggio.com/logo.png" alt="CTG" width="48" height="48" style="display: block; width: 48px; height: 48px; object-fit: contain;" />
               </td>
               <td style="vertical-align: middle; padding-left: 12px;">
                 <span class="brand-name">CƯỜNG THÔNG GIÓ.</span>
