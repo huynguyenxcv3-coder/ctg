@@ -630,4 +630,3 @@ if (process.env.NODE_ENV !== 'production' && process.env.GATEWAY !== 'netlify') 
 
 export const handler = serverless(app);
 export default app;
-p;
