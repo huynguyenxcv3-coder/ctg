@@ -162,9 +162,23 @@ export function Home() {
           howToSchema,
         ]}
       />
-      
+
+      {/* Breadcrumb — SEO Navigation */}
+      <nav aria-label="Breadcrumb" className="pt-24 md:pt-28 pb-0 relative z-10 bg-white">
+        <div className="container-custom">
+          <ol className="flex items-center gap-2 text-xs text-zinc-400 font-medium" itemScope itemType="https://schema.org/BreadcrumbList">
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <Link to="/" itemProp="item" className="hover:text-zinc-900 transition-colors">
+                <span itemProp="name">Trang chủ</span>
+              </Link>
+              <meta itemProp="position" content="1" />
+            </li>
+          </ol>
+        </div>
+      </nav>
+
       {/* Hero Section - Balanced spacing and typography */}
-      <section className="pt-32 pb-16 md:pt-48 md:pb-24 relative z-10 bg-white overflow-hidden">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-24 relative z-10 bg-white overflow-hidden">
         <div className="container-custom w-full">
           <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
             <motion.div

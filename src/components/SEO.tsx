@@ -50,8 +50,8 @@ export function SEO({
     // GEO meta tags for local SEO
     setMeta('name', 'geo.region', 'VN-DN');
     setMeta('name', 'geo.placename', 'Đà Nẵng');
-    setMeta('name', 'geo.position', '16.0678;108.1772');
-    setMeta('name', 'ICBM', '16.0678, 108.1772');
+    setMeta('name', 'geo.position', '16.0773;108.1595');
+    setMeta('name', 'ICBM', '16.0773, 108.1595');
 
     // Open Graph
     setMeta('property', 'og:title', fullTitle);
@@ -179,7 +179,7 @@ export const ORGANIZATION_SCHEMA = {
   ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "101 Trần Quý Khoách, P. Hoà Minh, Q. Liên Chiểu",
+    "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
     "addressLocality": "Đà Nẵng",
     "addressRegion": "Đà Nẵng",
     "postalCode": "550000",
@@ -202,10 +202,10 @@ export const LOCAL_BUSINESS_SCHEMA = {
   "email": "phantrongcuong77@gmail.com",
   "image": "https://cuongthonggio.com/logo.png",
   "logo": "https://cuongthonggio.com/logo.png",
-  "hasMap": "https://maps.google.com/maps?q=101+Tr%E1%BA%A7n+Qu%C3%BD+Kho%C3%A1ch,+Ho%C3%A0+Minh,+Li%C3%AAn+Chi%E1%BB%83u,+%C4%90%C3%A0+N%E1%BA%B5ng",
+  "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJAQDvmduYQjERvtE7J7awz68",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "101 Trần Quý Khoách, P. Hoà Minh, Q. Liên Chiểu",
+    "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
     "addressLocality": "Đà Nẵng",
     "addressRegion": "Đà Nẵng",
     "postalCode": "550000",
@@ -213,8 +213,8 @@ export const LOCAL_BUSINESS_SCHEMA = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "16.0678",
-    "longitude": "108.1772"
+    "latitude": "16.0773",
+    "longitude": "108.1595"
   },
   "openingHoursSpecification": [
     {
@@ -363,7 +363,7 @@ export function makeProductSchema(product: {
         "name": "Xưởng sản xuất Cường Thông Gió",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "101 Trần Quý Khoách, P. Hoà Minh, Q. Liên Chiểu",
+          "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
           "addressLocality": "Đà Nẵng",
           "addressCountry": "VN"
         }
@@ -413,7 +413,7 @@ export function makeServiceSchema(service: {
       "telephone": "+84-905-001-224",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "101 Trần Quý Khoách, P. Hoà Minh, Q. Liên Chiểu",
+        "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
         "addressLocality": "Đà Nẵng",
         "addressCountry": "VN"
       }
@@ -518,8 +518,8 @@ export const GEO_SERVICE_AREA_SCHEMA = {
     "@type": "GeoCircle",
     "geoMidpoint": {
       "@type": "GeoCoordinates",
-      "latitude": "16.0678",
-      "longitude": "108.1772"
+      "latitude": "16.0773",
+      "longitude": "108.1595"
     },
     "geoRadius": "100000"
   },

@@ -47,6 +47,23 @@ export function About() {
       />
 
       <div className="max-w-[1200px] mx-auto">
+        {/* Breadcrumb — SEO Navigation */}
+        <nav aria-label="Breadcrumb" className="mb-8">
+          <ol className="flex items-center gap-2 text-xs text-zinc-400 font-medium" itemScope itemType="https://schema.org/BreadcrumbList">
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <a href="/" itemProp="item" className="hover:text-zinc-900 transition-colors">
+                <span itemProp="name">Trang chủ</span>
+              </a>
+              <meta itemProp="position" content="1" />
+            </li>
+            <li className="text-zinc-300">/</li>
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <span itemProp="name" className="text-zinc-900 font-bold">Giới thiệu</span>
+              <meta itemProp="position" content="2" />
+            </li>
+          </ol>
+        </nav>
+
         {/* Header Section */}
         <div className="text-center mb-16 px-4">
           <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">
@@ -158,6 +175,24 @@ export function About() {
               </div>
             </div>
 
+          </div>
+        </div>
+
+        {/* CTA Section — Tăng chuyển đổi */}
+        <div className="mt-12 bg-zinc-900 rounded-2xl p-12 md:p-16 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 tracking-tight">
+            Bạn cần tư vấn giải pháp thông gió?
+          </h2>
+          <p className="text-zinc-400 mb-10 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+            Đội ngũ kỹ sư Cường Thông Gió sẵn sàng khảo sát thực tế và báo giá miễn phí cho dự án của bạn.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/lien-he" className="bg-white text-zinc-900 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-zinc-100 transition-colors shadow-lg">
+              Nhận báo giá miễn phí
+            </a>
+            <a href="tel:0905001224" className="border-2 border-zinc-700 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:border-white transition-colors">
+              Gọi ngay: 0905 001 224
+            </a>
           </div>
         </div>
 

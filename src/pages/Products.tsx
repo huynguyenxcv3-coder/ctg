@@ -236,7 +236,26 @@ export function Products() {
         structuredData={[breadcrumb, ...productSchemas, productFAQ]}
       />
 
-      <section className="pt-40 pb-20 border-b border-zinc-100" aria-label="Danh sách sản phẩm">
+      {/* Breadcrumb — SEO Navigation */}
+      <nav aria-label="Breadcrumb" className="pt-24 md:pt-28 pb-0 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <ol className="flex items-center gap-2 text-xs text-zinc-400 font-medium" itemScope itemType="https://schema.org/BreadcrumbList">
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <Link to="/" itemProp="item" className="hover:text-zinc-900 transition-colors">
+                <span itemProp="name">Trang chủ</span>
+              </Link>
+              <meta itemProp="position" content="1" />
+            </li>
+            <li className="text-zinc-300">/</li>
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <span itemProp="name" className="text-zinc-900 font-bold">Sản phẩm</span>
+              <meta itemProp="position" content="2" />
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <section className="pt-8 pb-20 border-b border-zinc-100" aria-label="Danh sách sản phẩm">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

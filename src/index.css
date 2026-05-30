@@ -13,6 +13,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply bg-white text-industrial-black font-sans antialiased;
   }
@@ -20,9 +24,18 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-sans tracking-tight font-bold;
   }
+  
+  /* Improved focus for accessibility & SEO */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-industrial-blue;
+  }
 }
 
 @layer utilities {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+  
   .visible-grid {
     background-size: 40px 40px;
     background-image: 
@@ -32,5 +45,53 @@
   
   .industrial-shadow {
     box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.05);
+  }
+}
+
+/* Floating CTA buttons */
+.floating-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9990;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.floating-cta a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.floating-cta a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+}
+
+.floating-cta .cta-phone {
+  background: #09090b;
+}
+
+.floating-cta .cta-zalo {
+  background: #0068ff;
+}
+
+@media (max-width: 768px) {
+  .floating-cta {
+    bottom: 16px;
+    right: 16px;
+  }
+  
+  .floating-cta a {
+    width: 48px;
+    height: 48px;
   }
 }
