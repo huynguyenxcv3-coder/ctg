@@ -39,8 +39,7 @@ export function Footer() {
             <address className="not-italic" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
               <ul className="space-y-4">
                 <li className="text-gray-500 text-[15px] font-medium leading-relaxed">
-                  <span itemProp="streetAddress">101 Trần Quý Khoách,<br />P. Hòa Khánh</span>,<br />
-                  <span itemProp="addressLocality">TP. Đà Nẵng</span>
+                  <span itemProp="streetAddress">101 Trần Quý Khoách, P. Hòa Khánh</span>, <span itemProp="addressLocality">TP. Đà Nẵng</span>
                   <meta itemProp="addressRegion" content="Đà Nẵng" />
                   <meta itemProp="postalCode" content="550000" />
                   <meta itemProp="addressCountry" content="VN" />
@@ -67,9 +66,14 @@ export function Footer() {
         </div>
 
         <div className="mt-24 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">
-            © {currentYear} CƯỜNG THÔNG GIÓ. TẤT CẢ QUYỀN ĐƯỢC BẢO LƯU.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">
+              © {currentYear} CƯỜNG THÔNG GIÓ. TẤT CẢ QUYỀN ĐƯỢC BẢO LƯU.
+            </p>
+            <a href="//www.dmca.com/Protection/Status.aspx?ID=2b5c0b87-c2bc-4147-9498-defdcb5bc5e6" title="DMCA.com Protection Status" className="dmca-badge">
+              <img src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-06.png?ID=2b5c0b87-c2bc-4147-9498-defdcb5bc5e6" alt="DMCA.com Protection Status" />
+            </a>
+          </div>
           <div className="flex items-center gap-6">
             <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest hidden md:inline">T2-T7: 08:00–17:00</span>
             <div className="flex gap-3">
