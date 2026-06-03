@@ -70,7 +70,7 @@ export function Footer() {
             <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">
               © {currentYear} CƯỜNG THÔNG GIÓ. TẤT CẢ QUYỀN ĐƯỢC BẢO LƯU.
             </p>
-            <a href="//www.dmca.com/Protection/Status.aspx?ID=2b5c0b87-c2bc-4147-9498-defdcb5bc5e6" title="DMCA.com Protection Status" className="dmca-badge">
+            <a href="//www.dmca.com/Protection/Status.aspx?ID=2b5c0b87-c2bc-4147-9498-defdcb5bc5e6&refurl=https://cuongthonggio.com/" title="DMCA.com Protection Status" className="dmca-badge">
               <img src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-06.png?ID=2b5c0b87-c2bc-4147-9498-defdcb5bc5e6" alt="DMCA.com Protection Status" />
             </a>
           </div>
