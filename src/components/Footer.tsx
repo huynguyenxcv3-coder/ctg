@@ -38,7 +38,7 @@ export function Footer() {
             <h3 className="font-bold text-lg uppercase tracking-wider">THÔNG TIN LIÊN HỆ</h3>
             <address className="not-italic" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
               <ul className="space-y-4">
-                <li className="text-gray-500 text-[15px] font-medium leading-relaxed">
+                <li className="text-gray-500 text-[15px] font-medium leading-relaxed whitespace-nowrap">
                   <span itemProp="streetAddress">101 Trần Quý Khoách, P. Hòa Khánh</span>, <span itemProp="addressLocality">TP. Đà Nẵng</span>
                   <meta itemProp="addressRegion" content="Đà Nẵng" />
                   <meta itemProp="postalCode" content="550000" />
