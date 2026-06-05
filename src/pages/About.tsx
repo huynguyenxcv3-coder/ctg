@@ -34,6 +34,16 @@ export function About() {
         { "@type": "AdministrativeArea", "name": "KCN Thọ Quang" },
         { "@type": "State", "name": "Miền Trung, Việt Nam" }
       ]
+      ,"founder": {
+        "@type": "Person",
+        "name": "Phan Trọng Cường",
+        "jobTitle": "Giám đốc — Kỹ sư Cơ khí Thông gió",
+        "knowsAbout": ["Quạt công nghiệp", "Hệ thống HVAC", "Thông gió PCCC", "Xử lý khí thải"],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Cường Thông Gió"
+        }
+      }
     }
   };
 
@@ -44,6 +54,7 @@ export function About() {
         description="Công ty TNHH MTV Cường Thông Gió — 13+ năm kinh nghiệm, 2000+ dự án hoàn thành. Chuyên sản xuất quạt công nghiệp, thi công hệ thống thông gió & xử lý khí thải tại Đà Nẵng, Liên Chiểu, Hải Châu, Sơn Trà, Cẩm Lệ và các KCN Miền Trung."
         keywords="giới thiệu Cường Thông Gió, công ty thông gió Đà Nẵng, nhà thầu M&E, quạt công nghiệp, thông gió công nghiệp, thông gió Liên Chiểu, quạt công nghiệp Hải Châu, KCN Hòa Khánh, KCN An Đồn, KCN Hòa Cầm, thông gió Sơn Trà, xử lý khí thải Cẩm Lệ"
         structuredData={[breadcrumb, aboutSchema]}
+        dateModified="2026-06-04"
       />
 
       <div className="max-w-[1200px] mx-auto">
@@ -70,10 +81,10 @@ export function About() {
             VỀ CHÚNG TÔI
           </p>
           <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Từ xưởng gia công cơ khí <br className="hidden md:block" /> đến nhà thầu M&E uy tín.
+            Cường Thông Gió là ai? <br className="hidden md:block" /> Nhà thầu M&E hàng đầu Đà Nẵng.
           </h1>
           <p className="text-gray-600 text-lg max-w-[600px] mx-auto leading-relaxed">
-            Công ty TNHH Một Thành Viên Cường Thông Gió (CTGCo., Ltd) là doanh nghiệp hoạt động chuyên sâu trong lĩnh vực cơ điện lạnh, điều hòa không khí và thông gió.
+            <strong>Cường Thông Gió là công ty chuyên sản xuất quạt công nghiệp và thi công hệ thống thông gió tại Đà Nẵng, hoạt động từ năm 2015 với hơn 2,145 dự án hoàn thành.</strong> Công ty TNHH Một Thành Viên Cường Thông Gió (CTGCo., Ltd) là đơn vị tiên phong trong lĩnh vực cơ điện lạnh, điều hòa không khí và thông gió tại khu vực Miền Trung.
           </p>
         </div>
 
@@ -84,7 +95,7 @@ export function About() {
             {/* Left Column - Intro & History */}
             <div className="lg:col-span-7">
               <h2 className="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-400 mb-12">
-                SỨ MỆNH & PHÁT TRIỂN
+                LỊCH SỬ & NĂNG LỰC
               </h2>
 
               <div className="space-y-12">
@@ -177,6 +188,55 @@ export function About() {
 
           </div>
         </div>
+
+        {/* Founder Profile — E-E-A-T */}
+        <section className="mt-12 bg-white rounded-2xl shadow-[0_2px_30px_rgba(0,0,0,0.04)] p-12 md:p-16" itemScope itemType="https://schema.org/Person">
+          <h2 className="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-400 mb-12">
+            NGƯỜI SÁNG LẬP
+          </h2>
+          <div className="flex flex-col md:flex-row gap-10 items-start">
+            <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-zinc-900 flex items-center justify-center text-white text-3xl md:text-4xl font-bold shrink-0">
+              C
+            </div>
+            <div className="flex-1">
+              <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-2 tracking-tight" itemProp="name">Phan Trọng Cường</h3>
+              <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-6" itemProp="jobTitle">Giám đốc — Kỹ sư Cơ khí Thông gió</p>
+              <div className="space-y-4 text-zinc-600 leading-relaxed">
+                <p><strong>Hơn 13 năm kinh nghiệm</strong> trong lĩnh vực thiết kế, sản xuất quạt công nghiệp và thi công hệ thống thông gió cho nhà xưởng, tòa nhà tại Đà Nẵng và Miền Trung.</p>
+                <p>Với nền tảng chuyên môn vững chắc về cơ khí chế tạo và kỹ thuật HVAC, anh Cường đã trực tiếp giám sát và hoàn thành hơn <strong>2,145 dự án</strong> — từ nhà máy sản xuất tại KCN Hòa Khánh đến hệ thống thông gió PCCC tầng hầm các tòa nhà cao tầng.</p>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {['Cơ khí chế tạo', 'Hệ thống HVAC', 'Thông gió PCCC', 'Quạt công nghiệp', 'Xử lý khí thải'].map(skill => (
+                  <span key={skill} className="px-4 py-2 bg-zinc-50 border border-zinc-100 rounded-full text-xs font-bold text-zinc-500 uppercase tracking-wider">{skill}</span>
+                ))}
+              </div>
+              <meta itemProp="url" content="https://cuongthonggio.com/gioi-thieu" />
+              <meta itemProp="worksFor" content="Cường Thông Gió" />
+            </div>
+          </div>
+        </section>
+
+        {/* Liên kết liên quan — Internal Linking */}
+        <section className="mt-12 bg-white rounded-2xl shadow-[0_2px_30px_rgba(0,0,0,0.04)] p-12 md:p-16" aria-label="Khám phá thêm">
+          <h2 className="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-400 mb-8">KHÁM PHÁ THÊM</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="/san-pham" className="group p-6 bg-zinc-50 rounded-2xl border border-zinc-100 hover:bg-white hover:shadow-lg transition-all duration-300">
+              <span className="text-2xl mb-3 block">🔧</span>
+              <h3 className="text-base font-bold text-zinc-900 mb-2 group-hover:text-zinc-700">Sản phẩm</h3>
+              <p className="text-sm text-zinc-500">Xem danh mục quạt công nghiệp, ống gió và phụ kiện →</p>
+            </a>
+            <a href="/kien-thuc" className="group p-6 bg-zinc-50 rounded-2xl border border-zinc-100 hover:bg-white hover:shadow-lg transition-all duration-300">
+              <span className="text-2xl mb-3 block">📚</span>
+              <h3 className="text-base font-bold text-zinc-900 mb-2 group-hover:text-zinc-700">Kiến thức</h3>
+              <p className="text-sm text-zinc-500">Hướng dẫn chọn quạt, bảng giá và tiêu chuẩn PCCC →</p>
+            </a>
+            <a href="/lien-he" className="group p-6 bg-zinc-50 rounded-2xl border border-zinc-100 hover:bg-white hover:shadow-lg transition-all duration-300">
+              <span className="text-2xl mb-3 block">📞</span>
+              <h3 className="text-base font-bold text-zinc-900 mb-2 group-hover:text-zinc-700">Liên hệ</h3>
+              <p className="text-sm text-zinc-500">Nhận báo giá miễn phí trong 24h →</p>
+            </a>
+          </div>
+        </section>
 
         {/* CTA Section — Tăng chuyển đổi */}
         <div className="mt-12 bg-zinc-900 rounded-2xl p-12 md:p-16 text-center">

@@ -234,6 +234,7 @@ export function Products() {
         description="Quạt ly tâm, quạt hướng trục, ống gió, VCD, miệng gió — sản xuất trực tiếp tại xưởng Cường Thông Gió Đà Nẵng. Tiêu chuẩn SMACNA, bảo hành 12 tháng."
         keywords="quạt ly tâm, quạt hướng trục, ống gió, VCD, miệng gió, máy điều hòa cassette, quạt công nghiệp Đà Nẵng, gia công ống gió, thi công thông gió, gia công cơ khí Đà Nẵng, quạt ly tâm Đà Nẵng, quạt hướng trục KCN Hòa Khánh, ống gió SMACNA Đà Nẵng, VCD van điều tiết gió Liên Chiểu, lắp đặt điều hòa cassette Đà Nẵng, quạt hút công nghiệp Sơn Trà"
         structuredData={[breadcrumb, ...productSchemas, productFAQ]}
+        dateModified="2026-06-04"
       />
 
       {/* Breadcrumb — SEO Navigation */}
@@ -266,11 +267,14 @@ export function Products() {
               Sản phẩm & Giải pháp
             </span>
             <h1 className="text-4xl md:text-7xl font-bold tracking-tighter text-zinc-900 mb-8 max-w-4xl leading-[1.1]">
-              Sản xuất trực tiếp, <br className="hidden md:block" />
-              kiểm soát chất lượng tuyệt đối.
+              Quạt công nghiệp & ống gió nào <br className="hidden md:block" />
+              phù hợp cho nhà xưởng của bạn?
             </h1>
             <p className="text-zinc-500 text-lg md:text-xl max-w-3xl leading-relaxed">
               Cường Thông Gió tự hào sở hữu xưởng gia công quy mô tại Đà Nẵng, giúp chúng tôi chủ động hoàn toàn về tiến độ và cam kết tiêu chuẩn kỹ thuật khắt khe nhất cho mọi dự án.
+            </p>
+            <p className="text-zinc-700 text-base md:text-lg font-semibold leading-relaxed max-w-3xl mt-4">
+              <strong>Cường Thông Gió cung cấp quạt ly tâm (1.5–200kW), quạt hướng trục (lưu lượng đến 150.000 m³/h), ống gió SMACNA, VCD, miệng gió và máy điều hòa cassette — tất cả sản xuất trực tiếp tại xưởng Đà Nẵng, bảo hành 12 tháng.</strong>
             </p>
           </motion.div>
         </div>
@@ -332,6 +336,61 @@ export function Products() {
               </div>
             </motion.article>
           ))}
+        </div>
+      </section>
+
+      {/* Bảng so sánh sản phẩm — GEO structured comparison */}
+      <section className="py-16 md:py-24 bg-zinc-50 border-y border-zinc-100" aria-label="So sánh sản phẩm quạt công nghiệp">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-zinc-900 mb-4 tracking-tight text-center">
+            So sánh thông số quạt công nghiệp Cường Thông Gió
+          </h2>
+          <p className="text-zinc-500 text-base md:text-lg text-center mb-10 max-w-2xl mx-auto">
+            <strong>Bảng so sánh giúp bạn chọn đúng loại quạt phù hợp với nhu cầu thông gió, hút bụi hoặc PCCC cho nhà xưởng.</strong>
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-zinc-200 shadow-sm bg-white">
+            <table className="w-full text-sm text-left" data-speakable="true">
+              <thead>
+                <tr className="bg-zinc-900 text-white">
+                  <th className="px-6 py-4 font-bold uppercase tracking-wider text-xs">Thông số</th>
+                  <th className="px-6 py-4 font-bold uppercase tracking-wider text-xs">Quạt Ly Tâm</th>
+                  <th className="px-6 py-4 font-bold uppercase tracking-wider text-xs">Quạt Hướng Trục</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-zinc-100">
+                <tr className="hover:bg-zinc-50 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-zinc-900">Công suất</td>
+                  <td className="px-6 py-4 text-zinc-600">1.5kW – 200kW</td>
+                  <td className="px-6 py-4 text-zinc-600">1.1kW – 200kW</td>
+                </tr>
+                <tr className="hover:bg-zinc-50 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-zinc-900">Lưu lượng gió</td>
+                  <td className="px-6 py-4 text-zinc-600">Trung bình – Cao</td>
+                  <td className="px-6 py-4 text-zinc-600">Lên đến 150.000 m³/h</td>
+                </tr>
+                <tr className="hover:bg-zinc-50 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-zinc-900">Áp suất tĩnh</td>
+                  <td className="px-6 py-4 text-zinc-600">Lên đến 3.000 Pa (cao)</td>
+                  <td className="px-6 py-4 text-zinc-600">Thấp – Trung bình</td>
+                </tr>
+                <tr className="hover:bg-zinc-50 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-zinc-900">Ứng dụng chính</td>
+                  <td className="px-6 py-4 text-zinc-600">Hút bụi, lò hơi, áp suất cao</td>
+                  <td className="px-6 py-4 text-zinc-600">Thông gió nhà xưởng, hầm, PCCC</td>
+                </tr>
+                <tr className="hover:bg-zinc-50 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-zinc-900">Vật liệu</td>
+                  <td className="px-6 py-4 text-zinc-600">Thép CT3, sơn tĩnh điện</td>
+                  <td className="px-6 py-4 text-zinc-600">Thép CT3 hoặc Inox 304</td>
+                </tr>
+                <tr className="hover:bg-zinc-50 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-zinc-900">Bảo hành</td>
+                  <td className="px-6 py-4 text-zinc-600">12 tháng</td>
+                  <td className="px-6 py-4 text-zinc-600">12 tháng</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -444,6 +503,27 @@ export function Products() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bài viết liên quan — Internal Linking */}
+      <section className="py-16 md:py-24 bg-white border-t border-zinc-100" aria-label="Bài viết liên quan">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-8 tracking-tight text-center">
+            Kiến thức liên quan đến sản phẩm
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <Link to="/kien-thuc/chon-quat-cong-nghiep" className="group p-6 bg-zinc-50 rounded-2xl border border-zinc-100 hover:bg-white hover:shadow-lg transition-all duration-300">
+              <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Bài viết</span>
+              <h3 className="text-lg font-bold text-zinc-900 mt-2 mb-2 group-hover:text-zinc-700 transition-colors">Cách chọn quạt công nghiệp phù hợp cho nhà xưởng</h3>
+              <p className="text-sm text-zinc-500">Hướng dẫn chọn quạt ly tâm, hướng trục dựa trên diện tích và yêu cầu kỹ thuật →</p>
+            </Link>
+            <Link to="/kien-thuc/chi-phi-thi-cong-thong-gio" className="group p-6 bg-zinc-50 rounded-2xl border border-zinc-100 hover:bg-white hover:shadow-lg transition-all duration-300">
+              <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Bài viết</span>
+              <h3 className="text-lg font-bold text-zinc-900 mt-2 mb-2 group-hover:text-zinc-700 transition-colors">Chi phí thi công hệ thống thông gió 2026</h3>
+              <p className="text-sm text-zinc-500">Bảng giá tham khảo cho nhà xưởng 500m² – 5.000m² →</p>
+            </Link>
           </div>
         </div>
       </section>

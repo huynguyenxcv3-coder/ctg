@@ -59,6 +59,7 @@ export function Footer() {
                 <li><NavLink to="/" className="hover:text-industrial-black transition-colors">Trang chủ</NavLink></li>
                 <li><NavLink to="/gioi-thieu" className="hover:text-industrial-black transition-colors">Giới thiệu</NavLink></li>
                 <li><NavLink to="/san-pham" className="hover:text-industrial-black transition-colors">Sản phẩm</NavLink></li>
+                <li><NavLink to="/kien-thuc" className="hover:text-industrial-black transition-colors">Kiến thức</NavLink></li>
                 <li><NavLink to="/lien-he" className="hover:text-industrial-black transition-colors">Liên hệ</NavLink></li>
               </ul>
             </nav>

@@ -9,6 +9,7 @@ const navItems = [
   { name: 'TRANG CHỦ', path: '/' },
   { name: 'VỀ CHÚNG TÔI', path: '/gioi-thieu' },
   { name: 'GIẢI PHÁP & THIẾT BỊ', path: '/san-pham' },
+  { name: 'CHIA SẺ KỸ THUẬT', path: '/kien-thuc' },
   { name: 'LIÊN HỆ', path: '/lien-he' },
 ];
 

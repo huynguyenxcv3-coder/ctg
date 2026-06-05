@@ -161,6 +161,7 @@ export function Home() {
           ...reviewSchemas,
           howToSchema,
         ]}
+        dateModified="2026-06-04"
       />
 
       {/* Breadcrumb — SEO Navigation */}
@@ -282,18 +283,18 @@ export function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight uppercase"
+              className="text-3xl md:text-5xl font-bold text-zinc-900 mb-5 tracking-tight uppercase"
             >
-              Giải pháp & Thiết bị
+              Giải pháp thông gió toàn diện cho mọi công trình
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-zinc-500 text-base md:text-xl font-normal leading-relaxed mx-auto"
+              className="text-zinc-500 text-base md:text-lg font-normal leading-relaxed mx-auto mb-0"
             >
-              Tư vấn thiết kế & Thi công hệ thống thông gió công nghiệp, xử lý khí thải, bụi cho nhà xưởng, tòa nhà, bếp công nghiệp...
+              Cường Thông Gió chuyên tư vấn, thiết kế & thi công hệ thống thông gió công nghiệp, xử lý khí thải, lọc bụi cho nhà xưởng, tòa nhà và bếp công nghiệp — với 4 nhóm giải pháp chính: <strong className="text-zinc-700">Quạt công nghiệp</strong> (ly tâm, hướng trục), <strong className="text-zinc-700">Xử lý khí thải & lọc bụi</strong>, <strong className="text-zinc-700">Thông gió & làm mát nhà xưởng</strong>, và <strong className="text-zinc-700">Cơ khí & inox dân dụng</strong>. Tất cả được sản xuất trực tiếp tại xưởng 150m² tại Đà Nẵng.
             </motion.p>
           </div>
 
@@ -322,9 +323,9 @@ export function Home() {
                   <h3 className="text-xl md:text-2xl font-bold text-zinc-900 mb-4 tracking-tight leading-tight uppercase">{service.title}</h3>
                   <p className="text-zinc-500 text-sm md:text-base mb-8 leading-relaxed font-normal opacity-80">{service.desc}</p>
                   <div className="mt-auto pt-6 border-t border-zinc-100">
-                    <Link to="/san-pham" className="inline-flex items-center text-[11px] font-bold text-zinc-400 hover:text-zinc-900 transition-colors uppercase tracking-[0.2em]">
-                      Xem chi tiết thiết bị
-                      <svg className="w-4 h-4 ml-3 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <Link to="/san-pham" className="inline-flex items-center text-xs font-bold text-zinc-900 hover:text-blue-600 transition-colors uppercase tracking-[0.15em] group/link">
+                      Xem thiết bị & thông số
+                      <svg className="w-4 h-4 ml-2 transform group-hover/link:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 12h14M12 5l7 7-7 7" />
                       </svg>
                     </Link>
@@ -341,7 +342,7 @@ export function Home() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full mx-auto max-w-7xl">
             <div className="text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 tracking-tighter leading-tight">Đội ngũ kỹ thuật <br/><span className="text-zinc-500">giàu kinh nghiệm.</span></h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 tracking-tighter leading-tight">Tại sao nên chọn <br/><span className="text-zinc-500">đội ngũ Cường Thông Gió?</span></h2>
               <p className="text-zinc-400 text-base md:text-lg mb-10 leading-relaxed font-normal max-w-xl mx-auto lg:mx-0">
                 Sự chính xác trong từng hệ thống được đảm bảo bởi những kỹ sư và thợ lành nghề. Chúng tôi tự hào về đội ngũ nhân sự tận tâm, am hiểu sâu sắc về kỹ thuật cơ khí và thông gió.
               </p>
@@ -383,7 +384,7 @@ export function Home() {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-6"
             >
-              Đánh giá từ đối tác
+              Khách hàng đánh giá Cường Thông Gió như thế nào?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -429,6 +430,7 @@ export function Home() {
                   <div>
                     <cite className="text-sm md:text-base font-bold text-zinc-900 uppercase tracking-wider not-italic">{p.author}</cite>
                     <div className="text-xs md:text-sm font-bold text-zinc-400 uppercase tracking-widest mt-1">{p.name}</div>
+                    <time className="text-[10px] text-zinc-300 font-medium mt-1 block" dateTime="2026-06-01">Tháng 6, 2026</time>
                   </div>
                 </div>
               </motion.article>
@@ -448,7 +450,7 @@ export function Home() {
                 viewport={{ once: true }}
                 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight"
               >
-                Câu hỏi thường gặp
+                Câu hỏi thường gặp về dịch vụ thông gió Đà Nẵng
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}

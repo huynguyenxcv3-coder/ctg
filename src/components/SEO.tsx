@@ -8,6 +8,7 @@ interface SEOProps {
   ogImage?: string;
   ogType?: string;
   structuredData?: object | object[];
+  dateModified?: string;
 }
 
 /**
@@ -22,6 +23,7 @@ export function SEO({
   ogImage = '/logo.png',
   ogType = 'website',
   structuredData,
+  dateModified,
 }: SEOProps) {
   const location = useLocation();
   const baseUrl = 'https://cuongthonggio.com';
@@ -97,6 +99,20 @@ export function SEO({
     }
     xDefault.setAttribute('href', fullUrl);
 
+    // Date modified — GEO signal for content freshness
+    if (dateModified) {
+      setMeta('name', 'article:modified_time', dateModified);
+      setMeta('property', 'og:updated_time', dateModified);
+      // Add last-modified meta for AI crawlers
+      let lastMod = document.querySelector('meta[http-equiv="last-modified"]') as HTMLMetaElement | null;
+      if (!lastMod) {
+        lastMod = document.createElement('meta');
+        lastMod.setAttribute('http-equiv', 'last-modified');
+        document.head.appendChild(lastMod);
+      }
+      lastMod.setAttribute('content', dateModified);
+    }
+
     // JSON-LD Structured Data
     // Remove old script tags
     document.querySelectorAll('script[data-seo-jsonld]').forEach(el => el.remove());
@@ -116,7 +132,7 @@ export function SEO({
       // Cleanup JSON-LD on unmount
       document.querySelectorAll('script[data-seo-jsonld]').forEach(el => el.remove());
     };
-  }, [fullTitle, description, keywords, fullUrl, ogImage, ogType, structuredData]);
+  }, [fullTitle, description, keywords, fullUrl, ogImage, ogType, structuredData, dateModified]);
 
   return null;
 }
@@ -546,3 +562,54 @@ export const GEO_SERVICE_AREA_SCHEMA = {
     }
   ]
 };
+
+/**
+ * SpeakableSpecification — helps AI identify content suitable for voice/text answers
+ */
+export function makeSpeakableSchema(page: {
+  url: string;
+  cssSelectors?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": page.url,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": page.cssSelectors || ["h1", "h2", "[data-speakable]", ".faq-answer"]
+    },
+    "lastReviewed": new Date().toISOString().split('T')[0]
+  };
+}
+
+/**
+ * Person Schema — E-E-A-T signal for founder/author profiles
+ */
+export function makePersonSchema(person: {
+  name: string;
+  jobTitle: string;
+  description?: string;
+  url?: string;
+  worksFor?: string;
+  knowsAbout?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": person.name,
+    "jobTitle": person.jobTitle,
+    "description": person.description,
+    "url": person.url || "https://cuongthonggio.com/gioi-thieu",
+    "worksFor": {
+      "@type": "Organization",
+      "name": person.worksFor || "Cường Thông Gió",
+      "url": "https://cuongthonggio.com"
+    },
+    "knowsAbout": person.knowsAbout || [
+      "Quạt công nghiệp",
+      "Hệ thống HVAC",
+      "Thông gió PCCC",
+      "Xử lý khí thải"
+    ]
+  };
+}

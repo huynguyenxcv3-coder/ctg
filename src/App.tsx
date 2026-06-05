@@ -15,6 +15,8 @@ const Products = lazy(() => import('./pages/Products').then(m => ({ default: m.P
 const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
 const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })));
 const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
+const Blog = lazy(() => import('./pages/Blog').then(m => ({ default: m.Blog })));
+const ArticlePage = lazy(() => import('./pages/ArticlePage').then(m => ({ default: m.ArticlePage })));
 
 // ─── Scroll restoration ───
 function ScrollToTop() {
@@ -117,6 +119,8 @@ export default function App() {
                 <Route path="/san-pham" element={<Products />} />
                 <Route path="/gioi-thieu" element={<About />} />
                 <Route path="/lien-he" element={<Contact />} />
+                <Route path="/kien-thuc" element={<Blog />} />
+                <Route path="/kien-thuc/:articleId" element={<ArticlePage />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

@@ -267,6 +267,7 @@ export function Contact() {
         description="Liên hệ Cường Thông Gió để nhận tư vấn kỹ thuật và báo giá hệ thống thông gió, quạt công nghiệp. Địa chỉ: 101 Trần Quý Khoách, P. Hòa Khánh, Đà Nẵng. Hotline: 0905 001 224."
         keywords="liên hệ Cường Thông Gió, báo giá quạt công nghiệp, tư vấn thông gió, thông gió Đà Nẵng, hotline quạt công nghiệp"
         structuredData={[breadcrumb, contactSchema, LOCAL_BUSINESS_SCHEMA]}
+        dateModified="2026-06-04"
       />
 
       {/* Popup Modal */}
@@ -365,6 +366,16 @@ export function Contact() {
                   title="Bản đồ Cường Thông Gió — 101 Trần Quý Khoách, P. Hòa Khánh, Đà Nẵng"
                   className="w-full"
                 />
+              </div>
+
+              {/* Liên kết hữu ích */}
+              <div className="mt-8 pt-8 border-t border-gray-100">
+                <h3 className="font-bold text-gray-900 mb-4 text-base">Câu hỏi thường gặp</h3>
+                <div className="space-y-2">
+                  <a href="/kien-thuc/chon-quat-cong-nghiep" className="block text-sm text-gray-600 hover:text-gray-900 transition-colors">→ Cách chọn quạt công nghiệp phù hợp</a>
+                  <a href="/kien-thuc/chi-phi-thi-cong-thong-gio" className="block text-sm text-gray-600 hover:text-gray-900 transition-colors">→ Bảng giá thi công thông gió 2026</a>
+                  <a href="/#faq" className="block text-sm text-gray-600 hover:text-gray-900 transition-colors">→ Xem thêm câu hỏi thường gặp</a>
+                </div>
               </div>
 
             </div>
