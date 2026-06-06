@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="vi" dir="ltr">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9G4R4J7NB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-H9G4R4J7NB');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,23 +21,21 @@
     <meta name="author" content="Công ty TNHH MTV Cường Thông Gió" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <link rel="canonical" href="https://cuongthonggio.com/" />
+    <!-- Canonical & hreflang: managed dynamically by <SEO/> component per route.
+         This prevents Google from treating /san-pham, /kien-thuc etc. as duplicates of homepage.
+         The SEO component sets canonical = https://cuongthonggio.com{pathname} on every route. -->
     <meta name="theme-color" content="#09090b" />
 
     <!-- Geo SEO — Targeting Đà Nẵng -->
     <meta name="geo.region" content="VN-DN" />
     <meta name="geo.placename" content="Đà Nẵng, Việt Nam" />
-    <meta name="geo.position" content="16.0678;108.1772" />
-    <meta name="ICBM" content="16.0678, 108.1772" />
+    <meta name="geo.position" content="16.0773;108.1595" />
+    <meta name="ICBM" content="16.0773, 108.1595" />
     <meta name="distribution" content="local" />
     <meta name="coverage" content="Đà Nẵng, Miền Trung, Việt Nam" />
     <meta name="target" content="all" />
     <meta name="rating" content="general" />
     <meta name="revisit-after" content="7 days" />
-
-    <!-- Language alternatives -->
-    <link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/" />
-    <link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -65,129 +72,9 @@
 
     <!-- Preload critical images (LCP optimization) -->
     <link rel="preload" as="image" href="/logo.png" type="image/png" />
-    <link rel="preload" as="image" href="/quat-ly-tam.png" type="image/png" fetchpriority="low" />
+    <link rel="preload" as="image" href="/quat-ly-tam.png" type="image/png" fetchpriority="high" />
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1200&auto=format&fit=crop" fetchpriority="low" />
 
-    <!-- Structured Data: Organization (always present for SPA) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Cường Thông Gió",
-      "alternateName": ["Công ty TNHH MTV Cường Thông Gió", "Cuong Thong Gio"],
-      "url": "https://cuongthonggio.com",
-      "logo": "https://cuongthonggio.com/logo.png",
-      "description": "Chuyên sản xuất quạt công nghiệp, gia công ống gió, thi công hệ thống thông gió, xử lý khí thải & bụi cho nhà xưởng tại Đà Nẵng và Miền Trung.",
-      "foundingDate": "2015",
-      "foundingLocation": {
-        "@type": "Place",
-        "name": "Đà Nẵng, Việt Nam"
-      },
-      "slogan": "Làm chủ công nghệ và kỹ thuật thông gió",
-      "knowsAbout": ["Quạt công nghiệp", "Hệ thống thông gió", "Ống gió công nghiệp", "Xử lý khí thải", "Lọc bụi", "PCCC"],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+84-905-001-224",
-        "contactType": "customer service",
-        "areaServed": "VN",
-        "availableLanguage": "Vietnamese"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "101 Trần Quý Khoách, P. Hoà Minh, Q. Liên Chiểu",
-        "addressLocality": "Đà Nẵng",
-        "addressRegion": "Đà Nẵng",
-        "postalCode": "550000",
-        "addressCountry": "VN"
-      },
-      "sameAs": [
-        "https://www.facebook.com/cuongthonggio",
-        "https://zalo.me/0905001224"
-      ]
-    }
-    </script>
-
-    <!-- Structured Data: LocalBusiness with HVACBusiness (critical for local SEO) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": ["LocalBusiness", "HVACBusiness"],
-      "name": "Cường Thông Gió",
-      "alternateName": "Công ty TNHH MTV Cường Thông Gió",
-      "description": "Chuyên sản xuất quạt công nghiệp, gia công ống gió, thi công hệ thống thông gió, xử lý khí thải và bụi cho nhà xưởng, công trình tại Đà Nẵng và Miền Trung.",
-      "url": "https://cuongthonggio.com",
-      "telephone": "+84-905-001-224",
-      "email": "phantrongcuong77@gmail.com",
-      "image": "https://cuongthonggio.com/logo.png",
-      "logo": "https://cuongthonggio.com/logo.png",
-      "hasMap": "https://maps.google.com/maps?q=Cường+Thông+Gió,+101+Trần+Quý+Khoách,+Hoà+Minh,+Liên+Chiểu,+Đà+Nẵng",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "101 Trần Quý Khoách, P. Hoà Minh, Q. Liên Chiểu",
-        "addressLocality": "Đà Nẵng",
-        "addressRegion": "Đà Nẵng",
-        "postalCode": "550000",
-        "addressCountry": "VN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "16.0678",
-        "longitude": "108.1772"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "07:30",
-          "closes": "17:30"
-        }
-      ],
-      "priceRange": "$$",
-      "areaServed": [
-        {"@type": "City", "name": "Đà Nẵng"},
-        {"@type": "AdministrativeArea", "name": "Quận Liên Chiểu"},
-        {"@type": "AdministrativeArea", "name": "Quận Hải Châu"},
-        {"@type": "AdministrativeArea", "name": "Quận Thanh Khê"},
-        {"@type": "AdministrativeArea", "name": "Quận Sơn Trà"},
-        {"@type": "AdministrativeArea", "name": "Quận Ngũ Hành Sơn"},
-        {"@type": "AdministrativeArea", "name": "Quận Cẩm Lệ"},
-        {"@type": "AdministrativeArea", "name": "Huyện Hòa Vang"},
-        {"@type": "AdministrativeArea", "name": "Miền Trung"},
-        {"@type": "AdministrativeArea", "name": "Quảng Nam"}
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "127",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "sameAs": [
-        "https://www.facebook.com/cuongthonggio",
-        "https://zalo.me/0905001224"
-      ]
-    }
-    </script>
-
-    <!-- Structured Data: WebSite with SearchAction -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Cường Thông Gió",
-      "alternateName": ["Cuong Thong Gio", "Cường Thông Gió Đà Nẵng"],
-      "url": "https://cuongthonggio.com",
-      "inLanguage": "vi",
-      "description": "Website chính thức của Cường Thông Gió — Chuyên sản xuất quạt công nghiệp, thi công hệ thống thông gió tại Đà Nẵng.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://cuongthonggio.com/san-pham?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
   </head>
   <body>
     <!-- Skip to main content — accessibility & SEO -->
@@ -223,10 +110,10 @@
             <h2 style="font-size:20px;margin-bottom:16px;">Thông Tin Liên Hệ</h2>
             <address style="font-style:normal;line-height:2;">
               <p><strong>Công ty:</strong> Công ty TNHH MTV Cường Thông Gió</p>
-              <p><strong>Địa chỉ:</strong> 101 Trần Quý Khoách, P. Hoà Minh, Q. Liên Chiểu, TP. Đà Nẵng</p>
+              <p><strong>Địa chỉ:</strong> 101 Trần Quý Khoách, P. Hòa Khánh, TP. Đà Nẵng</p>
               <p><strong>Hotline/Zalo:</strong> <a href="tel:0905001224">0905 001 224</a></p>
               <p><strong>Email:</strong> <a href="mailto:phantrongcuong77@gmail.com">phantrongcuong77@gmail.com</a></p>
-              <p><strong>Giờ làm việc:</strong> Thứ 2 - Thứ 7: 07:30 - 17:30</p>
+              <p><strong>Giờ làm việc:</strong> Thứ 2 - Thứ 7: 08:00 - 17:00</p>
             </address>
           </section>
         </main>
@@ -237,6 +124,7 @@
             <li><a href="/san-pham">Sản phẩm</a></li>
             <li><a href="/gioi-thieu">Giới thiệu</a></li>
             <li><a href="/lien-he">Liên hệ</a></li>
+            <li><a href="/kien-thuc">Kiến thức</a></li>
           </ul>
         </nav>
 
@@ -245,5 +133,6 @@
     </noscript>
 
     <script type="module" src="/src/main.tsx"></script>
+    <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
   </body>
 </html>

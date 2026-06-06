@@ -26,5 +26,28 @@ User-agent: Baiduspider
 Allow: /
 Crawl-delay: 3
 
+# AI Crawlers — Allow for GEO (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 2
+
 # Sitemap
 Sitemap: https://cuongthonggio.com/sitemap.xml

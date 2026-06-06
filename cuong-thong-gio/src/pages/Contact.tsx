@@ -142,7 +142,14 @@ function PopupModal({
                 className="flex items-center gap-3 p-3.5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group"
               >
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-blue-600 font-black text-sm">Z</span>
+                  <svg className="w-5 h-5 text-blue-600" viewBox="0 0 48 48">
+                    <path d="M15,36v-29.173l-1.211,-0.811c-5.149,2.067 -8.789,7.096 -8.789,12.984v10c0,7.732 6.268,14 14,14h10c4.722,0 8.883,-2.348 11.417,-5.931v-1.069z" fill="currentColor" opacity="0.3"></path>
+                    <path d="M29,5h-10c-1.845,0 -3.601,0.366 -5.214,1.014c-3.333,3.236 -5.786,8.514 -5.786,12.986c0,6.771 0.936,10.735 3.712,14.607c0.216,0.301 0.357,0.653 0.376,1.022c0.043,0.835 -0.129,2.365 -1.634,3.742c-0.162,0.148 -0.059,0.419 0.16,0.428c0.942,0.041 2.843,-0.014 4.797,-0.877c0.557,-0.246 1.191,-0.203 1.729,0.083c3.313,1.759 7.193,1.995 10.86,1.995c4.676,0 9.339,-1.04 12.417,-2.916c1.621,-2.285 2.583,-5.07 2.583,-8.084v-10c0,-7.732 -6.268,-14 -14,-14z" fill="currentColor"></path>
+                    <path d="M36.75,27c-2.067,0 -3.75,-1.683 -3.75,-3.75c0,-2.067 1.683,-3.75 3.75,-3.75c2.067,0 3.75,1.683 3.75,3.75c0,2.067 -1.683,3.75 -3.75,3.75zM36.75,21c-1.24,0 -2.25,1.01 -2.25,2.25c0,1.24 1.01,2.25 2.25,2.25c1.24,0 2.25,-1.01 2.25,-2.25c0,-1.24 -1.01,-2.25 -2.25,-2.25z" fill="white"></path>
+                    <path d="M31.5,27h-1c-0.276,0 -0.5,-0.224 -0.5,-0.5v-8.5h1.5z" fill="white"></path>
+                    <path d="M27,19.75v0.519c-0.629,-0.476 -1.403,-0.769 -2.25,-0.769c-2.067,0 -3.75,1.683 -3.75,3.75c0,2.067 1.683,3.75 3.75,3.75c0.847,0 1.621,-0.293 2.25,-0.769v0.269c0,0.276 0.224,0.5 0.5,0.5h1v-7.25zM24.75,25.5c-1.24,0 -2.25,-1.01 -2.25,-2.25c0,-1.24 1.01,-2.25 2.25,-2.25c1.24,0 2.25,1.01 2.25,2.25c0,1.24 -1.01,2.25 -2.25,2.25z" fill="white"></path>
+                    <path d="M21.25,18h-8v1.5h5.321l-5.571,6.5h0.026c-0.163,0.211 -0.276,0.463 -0.276,0.75v0.25h7.5c0.276,0 0.5,-0.224 0.5,-0.5v-1h-5.321l5.571,-6.5h-0.026c0.163,-0.211 0.276,-0.463 0.276,-0.75z" fill="white"></path>
+                  </svg>
                 </div>
                 <div className="text-left">
                   <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Zalo</p>
@@ -185,7 +192,7 @@ export function Contact() {
     "name": "Liên hệ Cường Thông Gió",
     "description": "Liên hệ Cường Thông Gió để nhận tư vấn, báo giá hệ thống thông gió, quạt công nghiệp tại Đà Nẵng.",
     "url": "https://cuongthonggio.com/lien-he",
-    "hasMap": "https://maps.google.com/maps?q=101+Tr%E1%BA%A7n+Qu%C3%BD+Kho%C3%A1ch,+Ho%C3%A0+Minh,+Li%C3%AAn+Chi%E1%BB%83u,+%C4%90%C3%A0+N%E1%BA%B5ng"
+    "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJAQDvmduYQjERvtE7J7awz68"
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -257,9 +264,10 @@ export function Contact() {
     <div className="min-h-screen bg-[#f8f9fa] pt-32 pb-20 px-6">
       <SEO
         title="Liên Hệ — Báo Giá Quạt Công Nghiệp & Thông Gió"
-        description="Liên hệ Cường Thông Gió để nhận tư vấn kỹ thuật và báo giá hệ thống thông gió, quạt công nghiệp. Địa chỉ: 101 Trần Quý Khoách, Đà Nẵng. Hotline: 0905 001 224."
+        description="Liên hệ Cường Thông Gió để nhận tư vấn kỹ thuật và báo giá hệ thống thông gió, quạt công nghiệp. Địa chỉ: 101 Trần Quý Khoách, P. Hòa Khánh, Đà Nẵng. Hotline: 0905 001 224."
         keywords="liên hệ Cường Thông Gió, báo giá quạt công nghiệp, tư vấn thông gió, thông gió Đà Nẵng, hotline quạt công nghiệp"
         structuredData={[breadcrumb, contactSchema, LOCAL_BUSINESS_SCHEMA]}
+        dateModified="2026-06-04"
       />
 
       {/* Popup Modal */}
@@ -300,7 +308,7 @@ export function Contact() {
                   <div className="pt-1">
                     <h3 className="font-bold text-gray-900 mb-2 text-base">Trụ sở chính</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      101 Trần Quý Khoách, P. Hoà Minh, Q. Liên Chiểu, TP. Đà Nẵng
+                      101 Trần Quý Khoách, P. Hòa Khánh, TP. Đà Nẵng
                     </p>
                   </div>
                 </div>
@@ -335,6 +343,40 @@ export function Contact() {
                   </div>
                 </div>
               </address>
+
+              {/* Giờ làm việc — Local SEO */}
+              <div className="mt-8 pt-8 border-t border-gray-100">
+                <h3 className="font-bold text-gray-900 mb-4 text-base">Giờ làm việc</h3>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex justify-between"><span>Thứ 2 - Thứ 7</span><span className="font-semibold text-gray-900">08:00 - 17:00</span></div>
+                  <div className="flex justify-between"><span>Chủ nhật</span><span className="text-red-500 font-semibold">Nghỉ</span></div>
+                </div>
+              </div>
+
+              {/* Google Maps — Local SEO */}
+              <div className="mt-8 rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834!2d108.1594859!3d16.0772668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314218db99ef0001%3A0xafcfb0b6273bd1be!2zQ8O0bmcgVHkgVG5oaCBN4buZdCBUaMOgbmggVmnDqm4gQ8aw4budbmcgVGjDtG5nIEdpw7M!5e0!3m2!1svi!2svn!4v1"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Bản đồ Cường Thông Gió — 101 Trần Quý Khoách, P. Hòa Khánh, Đà Nẵng"
+                  className="w-full"
+                />
+              </div>
+
+              {/* Liên kết hữu ích */}
+              <div className="mt-8 pt-8 border-t border-gray-100">
+                <h3 className="font-bold text-gray-900 mb-4 text-base">Câu hỏi thường gặp</h3>
+                <div className="space-y-2">
+                  <a href="/kien-thuc/chon-quat-cong-nghiep" className="block text-sm text-gray-600 hover:text-gray-900 transition-colors">→ Cách chọn quạt công nghiệp phù hợp</a>
+                  <a href="/kien-thuc/chi-phi-thi-cong-thong-gio" className="block text-sm text-gray-600 hover:text-gray-900 transition-colors">→ Bảng giá thi công thông gió 2026</a>
+                  <a href="/#faq" className="block text-sm text-gray-600 hover:text-gray-900 transition-colors">→ Xem thêm câu hỏi thường gặp</a>
+                </div>
+              </div>
 
             </div>
 

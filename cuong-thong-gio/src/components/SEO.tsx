@@ -8,6 +8,7 @@ interface SEOProps {
   ogImage?: string;
   ogType?: string;
   structuredData?: object | object[];
+  dateModified?: string;
 }
 
 /**
@@ -22,6 +23,7 @@ export function SEO({
   ogImage = '/logo.png',
   ogType = 'website',
   structuredData,
+  dateModified,
 }: SEOProps) {
   const location = useLocation();
   const baseUrl = 'https://cuongthonggio.com';
@@ -50,8 +52,8 @@ export function SEO({
     // GEO meta tags for local SEO
     setMeta('name', 'geo.region', 'VN-DN');
     setMeta('name', 'geo.placename', 'Đà Nẵng');
-    setMeta('name', 'geo.position', '16.0678;108.1772');
-    setMeta('name', 'ICBM', '16.0678, 108.1772');
+    setMeta('name', 'geo.position', '16.0773;108.1595');
+    setMeta('name', 'ICBM', '16.0773, 108.1595');
 
     // Open Graph
     setMeta('property', 'og:title', fullTitle);
@@ -97,6 +99,19 @@ export function SEO({
     }
     xDefault.setAttribute('href', fullUrl);
 
+    // Date modified — GEO signal for content freshness
+    if (dateModified) {
+      setMeta('name', 'article:modified_time', dateModified);
+      setMeta('property', 'og:updated_time', dateModified);
+      let lastMod = document.querySelector('meta[http-equiv="last-modified"]') as HTMLMetaElement | null;
+      if (!lastMod) {
+        lastMod = document.createElement('meta');
+        lastMod.setAttribute('http-equiv', 'last-modified');
+        document.head.appendChild(lastMod);
+      }
+      lastMod.setAttribute('content', dateModified);
+    }
+
     // JSON-LD Structured Data
     // Remove old script tags
     document.querySelectorAll('script[data-seo-jsonld]').forEach(el => el.remove());
@@ -116,7 +131,7 @@ export function SEO({
       // Cleanup JSON-LD on unmount
       document.querySelectorAll('script[data-seo-jsonld]').forEach(el => el.remove());
     };
-  }, [fullTitle, description, keywords, fullUrl, ogImage, ogType, structuredData]);
+  }, [fullTitle, description, keywords, fullUrl, ogImage, ogType, structuredData, dateModified]);
 
   return null;
 }
@@ -165,8 +180,8 @@ export const ORGANIZATION_SCHEMA = {
       "hoursAvailable": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "07:30",
-        "closes": "17:30"
+        "opens": "08:00",
+        "closes": "17:00"
       }
     },
     {
@@ -179,7 +194,7 @@ export const ORGANIZATION_SCHEMA = {
   ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "101 Trần Quý Khoách, P. Hoà Minh, Q. Liên Chiểu",
+    "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
     "addressLocality": "Đà Nẵng",
     "addressRegion": "Đà Nẵng",
     "postalCode": "550000",
@@ -202,10 +217,10 @@ export const LOCAL_BUSINESS_SCHEMA = {
   "email": "phantrongcuong77@gmail.com",
   "image": "https://cuongthonggio.com/logo.png",
   "logo": "https://cuongthonggio.com/logo.png",
-  "hasMap": "https://maps.google.com/maps?q=101+Tr%E1%BA%A7n+Qu%C3%BD+Kho%C3%A1ch,+Ho%C3%A0+Minh,+Li%C3%AAn+Chi%E1%BB%83u,+%C4%90%C3%A0+N%E1%BA%B5ng",
+  "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJAQDvmduYQjERvtE7J7awz68",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "101 Trần Quý Khoách, P. Hoà Minh, Q. Liên Chiểu",
+    "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
     "addressLocality": "Đà Nẵng",
     "addressRegion": "Đà Nẵng",
     "postalCode": "550000",
@@ -213,15 +228,15 @@ export const LOCAL_BUSINESS_SCHEMA = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "16.0678",
-    "longitude": "108.1772"
+    "latitude": "16.0773",
+    "longitude": "108.1595"
   },
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "07:30",
-      "closes": "17:30"
+      "opens": "08:00",
+      "closes": "17:00"
     }
   ],
   "priceRange": "$$",
@@ -363,7 +378,7 @@ export function makeProductSchema(product: {
         "name": "Xưởng sản xuất Cường Thông Gió",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "101 Trần Quý Khoách, P. Hoà Minh, Q. Liên Chiểu",
+          "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
           "addressLocality": "Đà Nẵng",
           "addressCountry": "VN"
         }
@@ -413,7 +428,7 @@ export function makeServiceSchema(service: {
       "telephone": "+84-905-001-224",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "101 Trần Quý Khoách, P. Hoà Minh, Q. Liên Chiểu",
+        "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
         "addressLocality": "Đà Nẵng",
         "addressCountry": "VN"
       }
@@ -518,8 +533,8 @@ export const GEO_SERVICE_AREA_SCHEMA = {
     "@type": "GeoCircle",
     "geoMidpoint": {
       "@type": "GeoCoordinates",
-      "latitude": "16.0678",
-      "longitude": "108.1772"
+      "latitude": "16.0773",
+      "longitude": "108.1595"
     },
     "geoRadius": "100000"
   },
@@ -546,3 +561,35 @@ export const GEO_SERVICE_AREA_SCHEMA = {
     }
   ]
 };
+
+/**
+ * Person Schema — E-E-A-T signal for founder/author profiles
+ */
+export function makePersonSchema(person: {
+  name: string;
+  jobTitle: string;
+  description?: string;
+  url?: string;
+  worksFor?: string;
+  knowsAbout?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": person.name,
+    "jobTitle": person.jobTitle,
+    "description": person.description,
+    "url": person.url || "https://cuongthonggio.com/gioi-thieu",
+    "worksFor": {
+      "@type": "Organization",
+      "name": person.worksFor || "Cường Thông Gió",
+      "url": "https://cuongthonggio.com"
+    },
+    "knowsAbout": person.knowsAbout || [
+      "Quạt công nghiệp",
+      "Hệ thống HVAC",
+      "Thông gió PCCC",
+      "Xử lý khí thải"
+    ]
+  };
+}

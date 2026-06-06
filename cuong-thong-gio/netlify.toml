@@ -1,5 +1,5 @@
 [build]
-  command = "pnpm build"
+  command = "pnpm build:ssg"
   publish = "dist"
   functions = "server"
 
@@ -12,7 +12,9 @@
   to = "/.netlify/functions/index/api/:splat"
   status = 200
 
+# SPA fallback — only applies if no pre-rendered file exists
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
