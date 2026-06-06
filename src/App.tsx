@@ -17,6 +17,17 @@ const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Con
 const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
 const Blog = lazy(() => import('./pages/Blog').then(m => ({ default: m.Blog })));
 const ArticlePage = lazy(() => import('./pages/ArticlePage').then(m => ({ default: m.ArticlePage })));
+const GiaCongOngGio = lazy(() => import('./pages/GiaCongOngGio').then(m => ({ default: m.GiaCongOngGio })));
+const ThongGioNhaXuong = lazy(() => import('./pages/ThongGioNhaXuong').then(m => ({ default: m.ThongGioNhaXuong })));
+const Projects = lazy(() => import('./pages/Projects').then(m => ({ default: m.Projects })));
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail').then(m => ({ default: m.ProjectDetail })));
+const Tools = lazy(() => import('./pages/Tools').then(m => ({ default: m.Tools })));
+const AirflowCalculator = lazy(() => import('./pages/AirflowCalculator').then(m => ({ default: m.AirflowCalculator })));
+const DuctSizingCalculator = lazy(() => import('./pages/DuctSizingCalculator').then(m => ({ default: m.DuctSizingCalculator })));
+const FanPowerCalculator = lazy(() => import('./pages/FanPowerCalculator').then(m => ({ default: m.FanPowerCalculator })));
+const HutKhoiNhaXuong = lazy(() => import('./pages/HutKhoiNhaXuong').then(m => ({ default: m.HutKhoiNhaXuong })));
+const QuatLyTam = lazy(() => import('./pages/QuatLyTam').then(m => ({ default: m.QuatLyTam })));
+const XuLyBuiCongNghiep = lazy(() => import('./pages/XuLyBuiCongNghiep').then(m => ({ default: m.XuLyBuiCongNghiep })));
 
 // ─── Scroll restoration ───
 function ScrollToTop() {
@@ -121,6 +132,17 @@ export default function App() {
                 <Route path="/lien-he" element={<Contact />} />
                 <Route path="/kien-thuc" element={<Blog />} />
                 <Route path="/kien-thuc/:articleId" element={<ArticlePage />} />
+                <Route path="/gia-cong-ong-gio-da-nang" element={<GiaCongOngGio />} />
+                <Route path="/thong-gio-nha-xuong-da-nang" element={<ThongGioNhaXuong />} />
+                <Route path="/du-an" element={<Projects />} />
+                <Route path="/du-an/:projectId" element={<ProjectDetail />} />
+                <Route path="/cong-cu" element={<Tools />} />
+                <Route path="/cong-cu/tinh-luu-luong-gio" element={<AirflowCalculator />} />
+                <Route path="/cong-cu/tinh-tiet-dien-ong-gio" element={<DuctSizingCalculator />} />
+                <Route path="/cong-cu/tinh-cong-suat-quat" element={<FanPowerCalculator />} />
+                <Route path="/hut-khoi-nha-xuong-da-nang" element={<HutKhoiNhaXuong />} />
+                <Route path="/quat-ly-tam-cong-nghiep" element={<QuatLyTam />} />
+                <Route path="/xu-ly-bui-cong-nghiep" element={<XuLyBuiCongNghiep />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

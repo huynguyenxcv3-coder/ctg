@@ -103,7 +103,6 @@ export function SEO({
     if (dateModified) {
       setMeta('name', 'article:modified_time', dateModified);
       setMeta('property', 'og:updated_time', dateModified);
-      // Add last-modified meta for AI crawlers
       let lastMod = document.querySelector('meta[http-equiv="last-modified"]') as HTMLMetaElement | null;
       if (!lastMod) {
         lastMod = document.createElement('meta');
@@ -562,25 +561,6 @@ export const GEO_SERVICE_AREA_SCHEMA = {
     }
   ]
 };
-
-/**
- * SpeakableSpecification — helps AI identify content suitable for voice/text answers
- */
-export function makeSpeakableSchema(page: {
-  url: string;
-  cssSelectors?: string[];
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "url": page.url,
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": page.cssSelectors || ["h1", "h2", "[data-speakable]", ".faq-answer"]
-    },
-    "lastReviewed": new Date().toISOString().split('T')[0]
-  };
-}
 
 /**
  * Person Schema — E-E-A-T signal for founder/author profiles
