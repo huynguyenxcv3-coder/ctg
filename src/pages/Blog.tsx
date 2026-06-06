@@ -10,7 +10,6 @@ export interface ArticleContentBlock {
   speakable?: boolean;
   headers?: string[];
   rows?: string[][];
-  icon?: string;
   items?: string[];
   level?: 'h2' | 'h3';
 }
@@ -54,7 +53,6 @@ export const articles: ArticleData[] = [
       /* ─── Callout mở đầu ─── */
       {
         type: 'callout' as const,
-        icon: 'lightbulb',
         speakable: true,
         text: 'Chọn sai quạt công nghiệp = tốn điện, ồn ào, thông gió kém và tốn tiền sửa chữa. Bài viết này hướng dẫn bạn chọn đúng loại quạt, tính đúng lưu lượng gió và tránh các sai lầm phổ biến — đúc kết từ 13+ năm kinh nghiệm và 2.145+ dự án của Cường Thông Gió.'
       },
@@ -144,7 +142,6 @@ export const articles: ArticleData[] = [
       },
       {
         type: 'formula' as const,
-        icon: 'calculator',
         text: 'Lưu lượng gió (m³/h) = Thể tích nhà xưởng (m³) × Số lần thay đổi không khí (ACH). Trong đó: Thể tích = Dài × Rộng × Cao'
       },
       {
@@ -159,7 +156,6 @@ export const articles: ArticleData[] = [
       },
       {
         type: 'callout' as const,
-        icon: 'ruler',
         speakable: true,
         text: 'Ví dụ thực tế: Nhà xưởng cơ khí 40m × 25m × 6m → Thể tích = 6.000 m³ → Chọn ACH = 25 → Lưu lượng cần = 150.000 m³/h → Nếu mỗi quạt 25.000 m³/h → cần 6 quạt.'
       },
@@ -195,7 +191,6 @@ export const articles: ArticleData[] = [
       },
       {
         type: 'callout' as const,
-        icon: 'zap',
         speakable: true,
         text: 'Quạt công nghiệp có tốn điện không? Nếu chọn đúng công suất và đúng loại, chi phí điện rất hợp lý. Chọn dư công suất hoặc sai loại mới là nguyên nhân gây tốn điện.'
       },
@@ -207,7 +202,6 @@ export const articles: ArticleData[] = [
       },
       {
         type: 'callout' as const,
-        icon: 'phone',
         speakable: true,
         text: 'Đội ngũ kỹ sư Cường Thông Gió khảo sát, thiết kế và báo giá miễn phí. Hotline/Zalo: 0905 001 224 — Email: phantrongcuong77@gmail.com — Địa chỉ: 101 Trần Quý Khoách, P. Hòa Khánh, TP. Đà Nẵng.'
       }

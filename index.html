@@ -21,7 +21,9 @@
     <meta name="author" content="Công ty TNHH MTV Cường Thông Gió" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <link rel="canonical" href="https://cuongthonggio.com/" />
+    <!-- Canonical & hreflang: managed dynamically by <SEO/> component per route.
+         This prevents Google from treating /san-pham, /kien-thuc etc. as duplicates of homepage.
+         The SEO component sets canonical = https://cuongthonggio.com{pathname} on every route. -->
     <meta name="theme-color" content="#09090b" />
 
     <!-- Geo SEO — Targeting Đà Nẵng -->
@@ -34,10 +36,6 @@
     <meta name="target" content="all" />
     <meta name="rating" content="general" />
     <meta name="revisit-after" content="7 days" />
-
-    <!-- Language alternatives -->
-    <link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/" />
-    <link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />

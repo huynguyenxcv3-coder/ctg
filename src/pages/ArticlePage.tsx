@@ -6,45 +6,6 @@ import type { ArticleContentBlock } from './Blog';
 import { SEO, makeBreadcrumbSchema, makeFAQSchema } from '../components/SEO';
 import { NotFound } from './NotFound';
 
-/* ─── SVG Icon Map ─── */
-const iconMap: Record<string, React.ReactNode> = {
-  lightbulb: (
-    <svg className="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5.002 5.002 0 117.072 0l.46.46a2 2 0 01.586 1.414v.873a2 2 0 01-2 2H9.828a2 2 0 01-2-2v-.873a2 2 0 01.586-1.414l.46-.46z" />
-    </svg>
-  ),
-  calculator: (
-    <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm2.25-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H12.75v-.008zm0 2.25h.008v.008H12.75v-.008zm2.25-4.5h.008v.008H15v-.008zm0 2.25h.008v.008H15v-.008zm0 2.25h.008v.008H15v-.008zM5.25 5.25h13.5A2.25 2.25 0 0121 7.5v9a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 16.5v-9A2.25 2.25 0 015.25 5.25zm0 0v1.5a1.5 1.5 0 001.5 1.5h10.5a1.5 1.5 0 001.5-1.5v-1.5" />
-    </svg>
-  ),
-  ruler: (
-    <svg className="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
-    </svg>
-  ),
-  zap: (
-    <svg className="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-    </svg>
-  ),
-  phone: (
-    <svg className="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-    </svg>
-  ),
-};
-
-function renderIcon(icon: string | undefined) {
-  if (!icon) return null;
-  const svgIcon = iconMap[icon];
-  if (svgIcon) {
-    return <span className="shrink-0 mt-0.5" aria-hidden="true">{svgIcon}</span>;
-  }
-  // Fallback for any unmapped icons
-  return <span className="text-2xl shrink-0 mt-0.5" aria-hidden="true">{icon}</span>;
-}
-
 /* ─── Content Block Renderer ─── */
 function renderBlock(block: ArticleContentBlock, idx: number) {
   switch (block.type) {
@@ -118,7 +79,6 @@ function renderBlock(block: ArticleContentBlock, idx: number) {
           className="bg-amber-50 border-l-4 border-amber-400 rounded-r-2xl p-6 mb-8 flex gap-4 items-start"
           {...(block.speakable ? { 'data-speakable': 'true' } : {})}
         >
-          {renderIcon(block.icon)}
           <p className="text-zinc-700 text-sm md:text-base leading-relaxed">{block.text}</p>
         </div>
       );
@@ -140,7 +100,6 @@ function renderBlock(block: ArticleContentBlock, idx: number) {
           key={idx}
           className="bg-blue-50 border border-blue-200 rounded-2xl p-6 mb-8 flex gap-4 items-start"
         >
-          {renderIcon(block.icon)}
           <p className="text-blue-900 text-base md:text-lg font-semibold leading-relaxed">
             {block.text}
           </p>

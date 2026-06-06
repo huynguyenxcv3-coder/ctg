@@ -12,7 +12,7 @@ export function Footer() {
           <div className="space-y-8 lg:col-span-1">
             <div className="flex items-center gap-4">
               <Logo size={56} />
-              <span className="font-bold text-2xl tracking-tighter uppercase" itemProp="name">CƯỜNG THÔNG GIÓ.</span>
+              <span className="font-bold text-xl tracking-tighter uppercase whitespace-nowrap" itemProp="name">CƯỜNG THÔNG GIÓ.</span>
             </div>
             <p className="text-gray-500 text-[15px] leading-relaxed font-medium" itemProp="description">
               Chuyên tư vấn, thiết kế và thi công hệ thống quạt công nghiệp, ống gió tại Đà Nẵng và khu vực Miền Trung. Chúng tôi cam kết chất lượng sản phẩm trực tiếp từ xưởng với chi phí tối ưu nhất và chế độ bảo hành tận tâm.

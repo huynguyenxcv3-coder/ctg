@@ -188,9 +188,9 @@ export function Home() {
               animate="visible"
               className="flex flex-col items-center w-full"
             >
-              <div className="mb-10 md:mb-12 max-w-5xl w-full">
-                <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-zinc-900 leading-[1.1] text-center">
-                  Hệ thống thông gió chuyên <br className="hidden md:block" /> nghiệp cho công trình công nghiệp.
+              <div className="mb-10 md:mb-12 max-w-6xl w-full">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.1] text-center">
+                  Hệ thống thông gió chuyên nghiệp<br /> cho công trình công nghiệp.
                 </h1>
               </div>
               

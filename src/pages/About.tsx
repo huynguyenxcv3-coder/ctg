@@ -221,17 +221,17 @@ export function About() {
           <h2 className="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-400 mb-8">KHÁM PHÁ THÊM</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a href="/san-pham" className="group p-6 bg-zinc-50 rounded-2xl border border-zinc-100 hover:bg-white hover:shadow-lg transition-all duration-300">
-              <span className="text-2xl mb-3 block">🔧</span>
+
               <h3 className="text-base font-bold text-zinc-900 mb-2 group-hover:text-zinc-700">Sản phẩm</h3>
               <p className="text-sm text-zinc-500">Xem danh mục quạt công nghiệp, ống gió và phụ kiện →</p>
             </a>
             <a href="/kien-thuc" className="group p-6 bg-zinc-50 rounded-2xl border border-zinc-100 hover:bg-white hover:shadow-lg transition-all duration-300">
-              <span className="text-2xl mb-3 block">📚</span>
+
               <h3 className="text-base font-bold text-zinc-900 mb-2 group-hover:text-zinc-700">Kiến thức</h3>
               <p className="text-sm text-zinc-500">Hướng dẫn chọn quạt, bảng giá và tiêu chuẩn PCCC →</p>
             </a>
             <a href="/lien-he" className="group p-6 bg-zinc-50 rounded-2xl border border-zinc-100 hover:bg-white hover:shadow-lg transition-all duration-300">
-              <span className="text-2xl mb-3 block">📞</span>
+
               <h3 className="text-base font-bold text-zinc-900 mb-2 group-hover:text-zinc-700">Liên hệ</h3>
               <p className="text-sm text-zinc-500">Nhận báo giá miễn phí trong 24h →</p>
             </a>
