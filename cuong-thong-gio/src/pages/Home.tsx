@@ -257,21 +257,23 @@ export function Home() {
       {/* Concrete Stats Section - Refined */}
       <section className="py-12 md:py-20 bg-white border-b border-zinc-100 relative z-10" aria-label="Thống kê hoạt động">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 text-center w-full mx-auto max-w-5xl">
-            {stats.map((s, i) => (
-              <motion.div 
-                key={s.label} 
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex flex-col items-center"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-zinc-900 mb-2 tracking-tighter">{s.value}</div>
-                <div className="text-[10px] md:text-xs font-bold text-zinc-400 uppercase tracking-widest">{s.label}</div>
-              </motion.div>
-            ))}
-          </div>
+          <Link to="/du-an" className="block group">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 text-center w-full mx-auto max-w-5xl">
+              {stats.map((s, i) => (
+                <motion.div 
+                  key={s.label} 
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="flex flex-col items-center group-hover:transform group-hover:scale-105 transition-transform duration-300"
+                >
+                  <div className="text-4xl md:text-5xl font-bold text-zinc-900 mb-2 tracking-tighter group-hover:text-blue-600 transition-colors">{s.value}</div>
+                  <div className="text-[10px] md:text-xs font-bold text-zinc-400 uppercase tracking-widest">{s.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </Link>
         </div>
       </section>
 
