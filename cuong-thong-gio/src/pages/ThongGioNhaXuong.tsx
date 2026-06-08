@@ -513,8 +513,8 @@ export function ThongGioNhaXuong() {
                 Đội ngũ kỹ sư Cường Thông Gió sẵn sàng khảo sát miễn phí tại công trình và đề xuất giải pháp thông gió tối ưu nhất cho nhà xưởng của bạn.
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 mx-auto w-full sm:w-auto">
-                <Button asChild size="lg" className="w-full sm:w-auto font-bold uppercase tracking-wider text-[13px] h-14 md:h-16 px-10 rounded-full shadow-lg bg-white text-zinc-900 hover:bg-zinc-100 whitespace-nowrap">
-                  <Link to="/lien-he" className="flex items-center justify-center w-full h-full">Đặt lịch khảo sát miễn phí</Link>
+                <Button asChild size="lg" className="w-full sm:w-auto font-bold uppercase tracking-wider text-[14px] md:text-base h-auto min-h-[64px] md:min-h-[72px] py-4 px-8 md:px-14 rounded-full shadow-lg bg-white text-zinc-900 hover:bg-zinc-100 text-center">
+                  <Link to="/lien-he" className="flex items-center justify-center w-full h-full leading-relaxed">Gửi yêu cầu tư vấn kỹ thuật</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="w-full sm:w-auto font-bold uppercase tracking-wider text-[13px] h-14 md:h-16 px-10 rounded-full border-[2px] border-zinc-600 hover:border-white text-white whitespace-nowrap">
                   <a href="tel:0905001224" className="flex items-center justify-center w-full h-full">Hotline: 0905 001 224</a>

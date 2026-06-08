@@ -16,30 +16,30 @@ import {
 } from '../components/SEO'
 
 const stats = [
-  { value: '13', label: 'Năm hoạt động' },
-  { value: '2,145', label: 'Dự án bàn giao' },
-  { value: '150m²', label: 'Diện tích xưởng' },
+  { value: '13', label: 'Năm trong nghề' },
+  { value: '2,145', label: 'Công trình đã làm' },
+  { value: '150m²', label: 'Xưởng sản xuất' },
 ]
 
 const services = [
   {
     title: 'Quạt Công Nghiệp',
-    desc: 'Gia công trực tiếp các dòng quạt ly tâm, hướng trục, hút mái bằng vật liệu tiêu chuẩn. Cân bằng động kỹ thuật số chính xác tuyệt đối.',
+    desc: 'Xưởng mình làm quạt ly tâm, hướng trục, hút mái — dùng tôn dày đúng chuẩn, cánh quạt cân bằng động bằng máy nên chạy êm, không rung.',
     imageUrl: '/quat-ly-tam.png'
   },
   {
     title: 'Hệ Thống Xử Lý Khí & Bụi',
-    desc: 'Thi công hệ thống lọc bụi túi vải, tháp hấp thụ khí thải cho khu công nghiệp, nhà xưởng, cam kết đạt chuẩn môi trường.',
+    desc: 'Làm hệ thống lọc bụi túi vải, tháp xử lý khí thải cho nhà máy, xưởng sản xuất — đảm bảo đạt chuẩn môi trường khi nghiệm thu.',
     imageUrl: '/ong-gio-cong-truong-1.png'
   },
   {
     title: 'Hệ Thống Thông Gió & Làm Mát',
-    desc: 'Thiết kế & thi công hệ thống thông gió tươi, làm mát nhà xưởng bằng tấm cooling pad, máy làm mát công nghiệp hiệu suất cao.',
+    desc: 'Thi công thông gió tươi, lắp cooling pad và máy làm mát cho nhà xưởng — giảm nhiệt rõ rệt, công nhân làm việc thoải mái hơn.',
     imageUrl: '/ong-gio-cong-truong-2.png'
   },
   {
     title: 'Cơ Khí & Inox Dân Dụng',
-    desc: 'Gia công ống gió xoắn, máng hút khói bếp, bồn chứa inox và các thiết bị phụ trợ cơ khí theo yêu cầu kỹ thuật riêng.',
+    desc: 'Gia công ống gió xoắn, máng hút khói bếp, bồn inox và đồ cơ khí theo bản vẽ hoặc yêu cầu riêng của khách.',
     imageUrl: '/ong-gio-phu-kien.png'
   }
 ]
@@ -47,13 +47,13 @@ const services = [
 const projects = [
   {
     name: 'Hệ thống hút bụi xưởng Gỗ Xuất Khẩu',
-    text: 'Cường Thông Gió đã giải quyết triệt để tình trạng bụi mịn trong không gian sản xuất. Hệ thống vận hành ổn định, giúp chúng tôi đáp ứng các tiêu chuẩn khắt khe về an toàn lao động.',
+    text: 'Trước khi lắp hệ thống thì bụi gỗ bay mù mịt, công nhân kêu suốt. Từ khi bên Cường Thông Gió thi công xong, xưởng sạch hẳn, đợt kiểm tra an toàn lao động cũng đạt luôn.',
     author: 'Anh Tuấn - Giám đốc Sản xuất',
     location: 'Nhà máy Gỗ Tân Phát, KCN Hòa Khánh'
   },
   {
     name: 'Thông gió sự cố tầng hầm Tòa nhà',
-    text: 'Đội ngũ kỹ thuật làm việc chuyên nghiệp, bám sát bản vẽ thiết kế. Hệ thống thông gió tươi hoạt động hiệu quả, giúp dự án nghiệm thu PCCC thuận lợi ngay từ lần đầu.',
+    text: 'Đội thợ làm đúng bản vẽ, không phải nhắc nhiều. Lắp xong chạy thử ổn, nghiệm thu PCCC đậu ngay lần đầu nên tôi cũng yên tâm.',
     author: 'KS. Hoàng Nam',
     location: 'Dự án Chung cư Nam Cẩm Lệ'
   }
@@ -61,24 +61,24 @@ const projects = [
 
 const faqs = [
   {
-    question: 'Cường Thông Gió thi công hệ thống thông gió cho những loại công trình nào?',
-    answer: 'Chúng tôi thi công hệ thống thông gió cho nhà xưởng, nhà máy sản xuất, kho lạnh, tầng hầm, tòa nhà thương mại, bếp công nghiệp, bệnh viện và các khu công nghiệp tại Đà Nẵng và Miền Trung.'
+    question: 'Cường Thông Gió nhận thi công thông gió cho loại công trình nào?',
+    answer: 'Bên mình nhận làm thông gió cho nhà xưởng, nhà máy, kho lạnh, tầng hầm, tòa nhà, bếp công nghiệp, bệnh viện — chủ yếu ở Đà Nẵng và các tỉnh Miền Trung.'
   },
   {
-    question: 'Quạt công nghiệp do Cường Thông Gió sản xuất có bảo hành không?',
-    answer: 'Có. Tất cả quạt công nghiệp do Cường Thông Gió sản xuất đều được bảo hành 12 tháng về kỹ thuật, bao gồm cân bằng động, motor và vỏ quạt. Chúng tôi hỗ trợ bảo trì định kỳ sau bảo hành.'
+    question: 'Quạt do Cường Thông Gió làm có bảo hành không?',
+    answer: 'Có, bảo hành 12 tháng cho cân bằng động, motor và vỏ quạt. Hết bảo hành mình vẫn hỗ trợ bảo trì định kỳ nếu khách cần.'
   },
   {
-    question: 'Chi phí thi công hệ thống thông gió khoảng bao nhiêu?',
-    answer: 'Chi phí phụ thuộc vào diện tích, loại hình công trình và yêu cầu kỹ thuật cụ thể. Quý khách vui lòng liên hệ Hotline 0905 001 224 hoặc gửi yêu cầu qua trang Liên hệ để nhận báo giá miễn phí trong 24h.'
+    question: 'Thi công thông gió thì tốn khoảng bao nhiêu?',
+    answer: 'Giá tùy diện tích xưởng, loại công trình và yêu cầu cụ thể nên khó nói chung được. Anh chị gọi 0905 001 224 hoặc gửi qua trang Liên hệ, mình báo giá chi tiết trong vòng 24h.'
   },
   {
-    question: 'Cường Thông Gió có thi công hệ thống xử lý khí thải, lọc bụi không?',
-    answer: 'Có. Chúng tôi chuyên thi công hệ thống lọc bụi túi vải, tháp hấp thụ khí thải, hệ thống hút bụi gỗ, hút bụi mài, đảm bảo đạt tiêu chuẩn QCVN về khí thải công nghiệp.'
+    question: 'Bên mình có làm hệ thống xử lý khí thải, lọc bụi không?',
+    answer: 'Có, mình làm lọc bụi túi vải, tháp xử lý khí thải, hút bụi gỗ, hút bụi mài — đảm bảo đạt QCVN khi đo kiểm.'
   },
   {
-    question: 'Thời gian thi công hệ thống thông gió mất bao lâu?',
-    answer: 'Tùy quy mô dự án, thời gian thi công dao động từ 7 đến 45 ngày. Đối với dự án nhà xưởng vừa và nhỏ thường hoàn thành trong 2-3 tuần. Chúng tôi cam kết bám sát tiến độ đã thỏa thuận.'
+    question: 'Thi công thông gió mất bao lâu?',
+    answer: 'Tùy công trình lớn nhỏ, thường từ 7 đến 45 ngày. Xưởng vừa thì 2-3 tuần là xong. Mình luôn bám tiến độ đã thống nhất với khách.'
   },
 ]
 
@@ -137,11 +137,11 @@ export function Home() {
     name: 'Quy trình thi công hệ thống thông gió tại Đà Nẵng',
     description: 'Quy trình 5 bước thi công hệ thống thông gió chuyên nghiệp của Cường Thông Gió cho nhà xưởng, công trình tại Đà Nẵng.',
     steps: [
-      { name: 'Khảo sát & Tư vấn', text: 'Đội ngũ kỹ sư đến tận công trình tại Đà Nẵng để khảo sát thực tế, đo đạc diện tích, đánh giá nhu cầu thông gió.' },
-      { name: 'Thiết kế hệ thống', text: 'Lập bản vẽ kỹ thuật chi tiết hệ thống ống gió, vị trí quạt, miệng gió phù hợp với layout nhà xưởng.' },
-      { name: 'Sản xuất tại xưởng', text: 'Gia công quạt công nghiệp, ống gió tại xưởng 150m² tại Đà Nẵng, kiểm tra cân bằng động trước khi xuất xưởng.' },
-      { name: 'Thi công & Lắp đặt', text: 'Đội ngũ thợ lành nghề lắp đặt hệ thống tại công trình, đảm bảo đúng bản vẽ thiết kế và tiến độ cam kết.' },
-      { name: 'Nghiệm thu & Bàn giao', text: 'Đo lưu lượng, áp suất thực tế bằng thiết bị chuyên dụng, bàn giao hệ thống hoạt động ổn định.' },
+      { name: 'Khảo sát & Tư vấn', text: 'Mình đến tận công trình để xem thực tế, đo đạc diện tích, xác định nhu cầu thông gió cụ thể.' },
+      { name: 'Thiết kế hệ thống', text: 'Lên bản vẽ kỹ thuật chi tiết — vị trí quạt, ống gió, miệng gió sao cho hợp lý với layout xưởng.' },
+      { name: 'Sản xuất tại xưởng', text: 'Gia công quạt, ống gió tại xưởng 150m² ở Đà Nẵng. Cân bằng động, kiểm tra kỹ trước khi xuất.' },
+      { name: 'Thi công & Lắp đặt', text: 'Thợ lành nghề lắp đặt tại công trình, bám sát bản vẽ và tiến độ đã thống nhất.' },
+      { name: 'Nghiệm thu & Bàn giao', text: 'Đo lưu lượng, áp suất bằng thiết bị chuyên dụng. Đạt rồi mới ký bàn giao.' },
     ],
   });
 
@@ -190,7 +190,7 @@ export function Home() {
             >
               <div className="mb-10 md:mb-12 max-w-6xl w-full">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.1] text-center">
-                  Hệ thống thông gió chuyên nghiệp<br /> cho công trình công nghiệp.
+                  Thông gió nhà xưởng, công trình<br /> — làm tận xưởng, lắp tận nơi.
                 </h1>
               </div>
               
@@ -198,7 +198,7 @@ export function Home() {
                 variants={fadeUp}
                 className="text-lg md:text-xl text-zinc-500 mb-10 md:mb-14 leading-relaxed max-w-2xl font-normal px-4"
               >
-                Cường Thông Gió sở hữu năng lực sản xuất độc lập, giúp kiểm soát hoàn toàn chất lượng thiết bị và đảm bảo tiến độ cho mọi dự án.
+                Mình có xưởng riêng nên tự sản xuất quạt, ống gió — không qua trung gian. Chất lượng mình kiểm soát, tiến độ mình chủ động.
               </motion.p>
               
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto px-6 mb-16">
@@ -278,29 +278,29 @@ export function Home() {
       </section>
 
       {/* Practical Solutions - Balanced Space */}
-      <section className="py-20 md:py-32 relative bg-zinc-50 z-10" aria-label="Giải pháp và thiết bị">
+      <section className="py-16 md:py-32 relative bg-zinc-50 z-10" aria-label="Giải pháp và thiết bị">
         <div className="container-custom">
-          <div className="mb-14 md:mb-20 text-center w-full mx-auto px-4 max-w-3xl">
+          <div className="mb-10 md:mb-20 text-center w-full mx-auto px-2 max-w-3xl">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-zinc-900 mb-5 tracking-tight uppercase"
+              className="text-2xl md:text-5xl font-bold text-zinc-900 mb-5 tracking-tight uppercase"
             >
-              Giải pháp thông gió toàn diện cho mọi công trình
+              Mình làm được gì cho xưởng của bạn?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-zinc-500 text-base md:text-lg font-normal leading-relaxed mx-auto mb-0"
+              className="text-zinc-500 text-[15px] md:text-lg font-normal leading-relaxed mx-auto mb-0 px-2"
             >
-              Cường Thông Gió chuyên tư vấn, thiết kế & thi công hệ thống thông gió công nghiệp, xử lý khí thải, lọc bụi cho nhà xưởng, tòa nhà và bếp công nghiệp — với 4 nhóm giải pháp chính: <strong className="text-zinc-700">Quạt công nghiệp</strong> (ly tâm, hướng trục), <strong className="text-zinc-700">Xử lý khí thải & lọc bụi</strong>, <strong className="text-zinc-700">Thông gió & làm mát nhà xưởng</strong>, và <strong className="text-zinc-700">Cơ khí & inox dân dụng</strong>. Tất cả được sản xuất trực tiếp tại xưởng 150m² tại Đà Nẵng.
+               Từ <strong className="text-zinc-700">quạt công nghiệp</strong> (ly tâm, hướng trục), <strong className="text-zinc-700">hệ thống lọc bụi, xử lý khí thải</strong>, đến <strong className="text-zinc-700">thông gió làm mát nhà xưởng</strong> và <strong className="text-zinc-700">gia công cơ khí, inox</strong> — tất cả mình đều sản xuất trực tiếp tại xưởng 150m² ở Đà Nẵng, không qua trung gian.
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 w-full mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full mx-auto max-w-7xl">
             {services.map((service, i) => (
               <motion.article 
                 key={service.title}
@@ -310,7 +310,7 @@ export function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="group bg-white rounded-[1.5rem] overflow-hidden border border-zinc-100 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col"
               >
-                <div className="h-64 md:h-80 overflow-hidden relative">
+                <div className="h-56 md:h-80 overflow-hidden relative">
                   <img 
                     src={service.imageUrl} 
                     alt={`${service.title} — Cường Thông Gió Đà Nẵng`} 
@@ -321,10 +321,10 @@ export function Home() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                   />
                 </div>
-                <div className="p-8 md:p-12 flex-1 flex flex-col">
-                  <h3 className="text-xl md:text-2xl font-bold text-zinc-900 mb-4 tracking-tight leading-tight uppercase">{service.title}</h3>
-                  <p className="text-zinc-500 text-sm md:text-base mb-8 leading-relaxed font-normal opacity-80">{service.desc}</p>
-                  <div className="mt-auto pt-6 border-t border-zinc-100">
+                <div className="p-6 md:p-12 flex-1 flex flex-col">
+                  <h3 className="text-lg md:text-2xl font-bold text-zinc-900 mb-3 md:mb-4 tracking-tight leading-tight uppercase">{service.title}</h3>
+                  <p className="text-zinc-500 text-sm md:text-base mb-6 md:mb-8 leading-relaxed font-normal opacity-80">{service.desc}</p>
+                  <div className="mt-auto pt-5 md:pt-6 border-t border-zinc-100">
                     <Link to="/san-pham" className="inline-flex items-center text-xs font-bold text-zinc-900 hover:text-blue-600 transition-colors uppercase tracking-[0.15em] group/link">
                       Xem thiết bị & thông số
                       <svg className="w-4 h-4 ml-2 transform group-hover/link:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -340,28 +340,28 @@ export function Home() {
       </section>
 
       {/* Human/Team Section - Balanced */}
-      <section className="py-20 md:py-32 bg-zinc-900 text-white overflow-hidden relative z-10" aria-label="Đội ngũ kỹ thuật">
+      <section className="py-16 md:py-32 bg-zinc-900 text-white overflow-hidden relative z-10" aria-label="Đội ngũ kỹ thuật">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full mx-auto max-w-7xl">
-            <div className="text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 tracking-tighter leading-tight">Tại sao nên chọn <br/><span className="text-zinc-500">đội ngũ Cường Thông Gió?</span></h2>
-              <p className="text-zinc-400 text-base md:text-lg mb-10 leading-relaxed font-normal max-w-xl mx-auto lg:mx-0">
-                Sự chính xác trong từng hệ thống được đảm bảo bởi những kỹ sư và thợ lành nghề. Chúng tôi tự hào về đội ngũ nhân sự tận tâm, am hiểu sâu sắc về kỹ thuật cơ khí và thông gió.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center w-full mx-auto max-w-7xl">
+            <div className="text-center lg:text-left px-2">
+              <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8 tracking-tighter leading-tight">Tại sao khách chọn <br className="hidden md:block"/><span className="text-zinc-500">Cường Thông Gió?</span></h2>
+              <p className="text-zinc-400 text-base md:text-lg mb-8 md:mb-10 leading-relaxed font-normal max-w-xl mx-auto lg:mx-0">
+                Thợ mình đi lên từ nghề, không phải dân "lý thuyết". Anh em làm cơ khí, hàn, lắp đặt — ai cũng nhiều năm kinh nghiệm thực tế tại công trình.
               </p>
               <div className="flex justify-center lg:justify-start">
-                <ul className="space-y-5 md:space-y-6 mb-12 md:mb-0 text-left">
-                  {['Kỹ thuật viên chứng chỉ chuyên ngành', 'Kỹ sư thiết kế hệ thống chuyên sâu', 'Giám sát thi công 10+ năm kinh nghiệm'].map((item, idx) => (
+                <ul className="space-y-4 md:space-y-6 mb-10 md:mb-0 text-left">
+                  {['Thợ có tay nghề, qua đào tạo bài bản', 'Kỹ sư thiết kế hệ thống từ bản vẽ', 'Giám sát thi công hơn 10 năm kinh nghiệm'].map((item, idx) => (
                     <li key={idx} className="flex items-center gap-4">
                       <div className="w-5 h-5 rounded-full border border-zinc-700 flex items-center justify-center shrink-0">
                         <div className="w-2 h-2 rounded-full bg-white" />
                       </div>
-                      <span className="font-semibold uppercase text-xs md:text-sm tracking-widest">{item}</span>
+                      <span className="font-semibold uppercase text-[11px] md:text-sm tracking-widest">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            <div className="relative max-w-2xl mx-auto lg:max-w-none w-full">
+            <div className="relative max-w-2xl mx-auto lg:max-w-none w-full px-4 md:px-0">
                <img 
                  src="/thi-cong-ong-gio.png" 
                  alt="Đội ngũ kỹ thuật Cường Thông Gió đang thi công hệ thống ống gió tại công trình" 
@@ -369,7 +369,7 @@ export function Home() {
                  decoding="async"
                  width="800"
                  height="500"
-                 className="rounded-[1.5rem] md:rounded-[2rem] shadow-2xl w-full object-cover h-[350px] md:h-[500px]" 
+                 className="rounded-[1.5rem] md:rounded-[2rem] shadow-2xl w-full object-cover h-[300px] md:h-[500px]" 
                />
             </div>
           </div>
@@ -377,29 +377,29 @@ export function Home() {
       </section>
 
       {/* Detailed Reviews - Balanced Space */}
-      <section className="py-20 md:py-32 bg-white relative z-10 block overflow-visible" aria-label="Đánh giá từ đối tác">
+      <section className="py-16 md:py-32 bg-white relative z-10 block overflow-visible" aria-label="Đánh giá từ đối tác">
         <div className="container-custom">
-          <div className="mb-16 md:mb-24 text-center w-full mx-auto px-4 max-w-3xl">
+          <div className="mb-12 md:mb-24 text-center w-full mx-auto px-2 max-w-3xl">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-6"
+              className="text-2xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-5"
             >
-              Khách hàng đánh giá Cường Thông Gió như thế nào?
+              Khách hàng nói gì về mình?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-zinc-500 text-base md:text-lg mx-auto font-normal leading-relaxed"
+              className="text-zinc-500 text-base md:text-lg mx-auto font-normal leading-relaxed px-2"
             >
-              Chúng tôi luôn trân trọng sự tin tưởng và những phản hồi tích cực từ phía chủ đầu tư sau mỗi dự án hoàn thiện.
+              Mỗi công trình xong, phản hồi từ khách là thước đo tốt nhất để mình biết mình đang làm đúng hay chưa.
             </motion.p>
           </div>
             
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 w-full mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full mx-auto max-w-6xl">
             {projects.map((p, i) => (
               <motion.article 
                 key={i}
@@ -407,10 +407,10 @@ export function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-zinc-50/50 p-8 md:p-12 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-100 flex flex-col hover:bg-white hover:shadow-xl transition-all duration-500"
+                className="bg-zinc-50/50 p-7 md:p-12 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-100 flex flex-col hover:bg-white hover:shadow-xl transition-all duration-500"
               >
-                <div className="mb-8 md:mb-10 flex-1">
-                  <div className="inline-flex items-center rounded-full bg-zinc-100 px-4 py-2 text-[10px] md:text-xs font-bold text-zinc-500 uppercase tracking-widest mb-6">
+                <div className="mb-6 md:mb-10 flex-1">
+                  <div className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1.5 text-[10px] md:text-xs font-bold text-zinc-500 uppercase tracking-widest mb-5">
                     {p.location}
                   </div>
                   {/* Star rating for SEO */}
@@ -422,17 +422,16 @@ export function Home() {
                     ))}
                   </div>
                   <blockquote>
-                    <p className="text-zinc-900 leading-relaxed font-medium text-base md:text-lg">"{p.text}"</p>
+                    <p className="text-zinc-900 leading-relaxed font-medium text-[15px] md:text-lg">"{p.text}"</p>
                   </blockquote>
                 </div>
                 <div className="flex items-center gap-4 md:gap-5 pt-6 md:pt-8 border-t border-zinc-100">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-zinc-900 flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                  <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-zinc-900 flex items-center justify-center text-white font-bold text-base md:text-xl">
                     {p.author.charAt(0)}
                   </div>
                   <div>
                     <cite className="text-sm md:text-base font-bold text-zinc-900 uppercase tracking-wider not-italic">{p.author}</cite>
-                    <div className="text-xs md:text-sm font-bold text-zinc-400 uppercase tracking-widest mt-1">{p.name}</div>
-                    <time className="text-[10px] text-zinc-300 font-medium mt-1 block" dateTime="2026-06-01">Tháng 6, 2026</time>
+                    <div className="text-[10px] md:text-sm font-bold text-zinc-400 uppercase tracking-widest mt-1">{p.name}</div>
                   </div>
                 </div>
               </motion.article>
@@ -442,15 +441,15 @@ export function Home() {
       </section>
 
       {/* FAQ Section - SEO Rich Snippet */}
-      <section className="py-20 md:py-32 bg-zinc-50 relative z-10" aria-label="Câu hỏi thường gặp" id="faq">
+      <section className="py-16 md:py-32 bg-zinc-50 relative z-10" aria-label="Câu hỏi thường gặp" id="faq">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-14 md:mb-20">
+            <div className="text-center mb-10 md:mb-20 px-2">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight"
+                className="text-2xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight"
               >
                 Câu hỏi thường gặp về dịch vụ thông gió Đà Nẵng
               </motion.h2>
@@ -459,13 +458,13 @@ export function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-zinc-500 text-base md:text-lg leading-relaxed"
+                className="text-zinc-500 text-sm md:text-lg leading-relaxed px-2"
               >
                 Giải đáp các thắc mắc phổ biến về dịch vụ và sản phẩm của Cường Thông Gió.
               </motion.p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {faqs.map((faq, idx) => (
                 <motion.div
                   key={idx}
@@ -477,11 +476,11 @@ export function Home() {
                 >
                   <button
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    className="w-full flex items-center justify-between p-6 md:p-8 text-left"
+                    className="w-full flex items-center justify-between p-5 md:p-8 text-left"
                     aria-expanded={openFaq === idx}
                     aria-controls={`faq-answer-${idx}`}
                   >
-                    <h3 className="text-base md:text-lg font-bold text-zinc-900 pr-4 leading-snug">{faq.question}</h3>
+                    <h3 className="text-[15px] md:text-lg font-bold text-zinc-900 pr-4 leading-snug">{faq.question}</h3>
                     <svg
                       className={`w-5 h-5 text-zinc-400 transition-transform duration-300 shrink-0 ${openFaq === idx ? 'rotate-180' : ''}`}
                       fill="none"
@@ -493,11 +492,11 @@ export function Home() {
                   </button>
                   <div
                     id={`faq-answer-${idx}`}
-                    className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-96 pb-6 md:pb-8' : 'max-h-0'}`}
+                    className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-96 pb-5 md:pb-8' : 'max-h-0'}`}
                     role="region"
                     aria-labelledby={`faq-question-${idx}`}
                   >
-                    <p className="px-6 md:px-8 text-zinc-500 text-sm md:text-base leading-relaxed">{faq.answer}</p>
+                    <p className="px-5 md:px-8 text-zinc-500 text-sm md:text-base leading-relaxed">{faq.answer}</p>
                   </div>
                 </motion.div>
               ))}
@@ -507,9 +506,9 @@ export function Home() {
       </section>
 
       {/* Industrial CTA - Balanced */}
-      <section className="relative w-full py-20 md:py-32 z-10 px-4" aria-label="Liên hệ tư vấn">
+      <section className="relative w-full py-16 md:py-32 z-10 px-4" aria-label="Liên hệ tư vấn">
         <div className="container-custom flex justify-center">
-           <div className="bg-zinc-900 rounded-[2rem] md:rounded-[3rem] py-20 px-8 md:py-32 md:px-16 text-center relative overflow-hidden mx-auto shadow-2xl w-full max-w-6xl flex flex-col items-center">
+           <div className="bg-zinc-900 rounded-[2rem] md:rounded-[3rem] py-16 px-6 md:py-32 md:px-16 text-center relative overflow-hidden mx-auto shadow-2xl w-full max-w-6xl flex flex-col items-center">
               <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.4)_0,transparent_100%)] pointer-events-none" />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -518,15 +517,15 @@ export function Home() {
                 transition={{ duration: 0.5 }}
                 className="relative z-10 max-w-3xl mx-auto flex flex-col items-center text-center w-full"
               >
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 tracking-tight text-white uppercase leading-tight">
-                  Sẵn sàng đồng hành <br /> cùng dự án của bạn.
+                <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 tracking-tight text-white uppercase leading-tight px-2">
+                   Có dự án cần thi công? <br className="hidden md:block" /> Gọi mình tư vấn.
                 </h2>
-                <p className="text-zinc-400 mb-10 md:mb-14 text-base md:text-lg font-normal leading-relaxed max-w-xl mx-auto">
-                  Đội ngũ kỹ sư của Cường Thông Gió luôn sẵn sàng hỗ trợ khảo sát và tư vấn phương án thi công tối ưu nhất cho doanh nghiệp của bạn.
+                <p className="text-zinc-400 mb-8 md:mb-14 text-sm md:text-lg font-normal leading-relaxed max-w-xl mx-auto px-4">
+                  Mình sẽ xuống tận nơi khảo sát, đo đạc rồi báo giá cụ thể — không tính phí tư vấn.
                 </p>
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 mx-auto w-full sm:w-auto">
-                  <Button asChild size="lg" className="w-full sm:w-auto font-bold uppercase tracking-wider text-[13px] h-14 md:h-16 px-10 rounded-full shadow-lg transition-all duration-300 bg-white text-zinc-900 hover:bg-zinc-100 whitespace-nowrap">
-                    <Link to="/lien-he" className="flex items-center justify-center w-full h-full">Gửi yêu cầu tư vấn kỹ thuật</Link>
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 mx-auto w-full sm:w-auto mt-2 px-6">
+                  <Button asChild size="lg" className="w-full sm:w-auto font-bold uppercase tracking-wider text-[13px] md:text-base h-auto min-h-[60px] md:min-h-[72px] py-4 px-8 md:px-14 rounded-2xl shadow-lg transition-all duration-300 bg-white text-zinc-900 hover:bg-zinc-100 text-center">
+                    <Link to="/lien-he" className="flex items-center justify-center w-full h-full leading-relaxed">Gửi yêu cầu tư vấn kỹ thuật</Link>
                   </Button>
                 </div>
               </motion.div>
