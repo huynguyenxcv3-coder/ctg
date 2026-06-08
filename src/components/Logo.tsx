@@ -5,9 +5,12 @@ interface LogoProps {
   size?: number;
 }
 
-export function Logo({ className, size = 48 }: LogoProps) {
+export function Logo({ className, size }: LogoProps) {
   return (
-    <div className={cn("relative flex items-center justify-center overflow-hidden rounded-full", className)} style={{ width: size, height: size }}>
+    <div 
+      className={cn("relative flex items-center justify-center overflow-hidden rounded-full shrink-0", className)} 
+      style={size ? { width: size, height: size } : undefined}
+    >
       <img 
         src="/logo.png?v=1" 
         alt="CƯỜNG THÔNG GIÓ Logo"

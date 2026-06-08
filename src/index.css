@@ -33,7 +33,7 @@
 
 @layer utilities {
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-5 md:px-8 lg:px-12;
   }
   
   .visible-grid {
@@ -86,12 +86,13 @@
 
 @media (max-width: 768px) {
   .floating-cta {
-    bottom: 16px;
-    right: 16px;
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
   }
   
   .floating-cta a {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
   }
 }

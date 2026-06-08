@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -19,7 +19,7 @@ const solutions: Solution[] = [
   {
     title: 'Quạt Ly Tâm Công Nghiệp',
     badge: 'Sản xuất & Lắp đặt',
-    desc: 'Quạt ly tâm được chúng tôi trực tiếp gia công với vỏ thép dày, cánh quạt cân bằng động kỹ thuật số. Phù hợp cho hệ thống hút bụi, thông gió áp suất cao, lò hơi và các công trình công nghiệp nặng.',
+    desc: 'Quạt ly tâm mình tự gia công tại xưởng — vỏ thép dày, cánh quạt cân bằng động bằng máy nên chạy êm, không rung. Dùng được cho hút bụi, lò hơi, thông gió áp suất cao.',
     specs: [
       'Công suất: 1.5kW - 200kW',
       'Áp suất tĩnh: lên đến 3.000 Pa',
@@ -32,7 +32,7 @@ const solutions: Solution[] = [
   {
     title: 'Quạt Hướng Trục Công Nghiệp',
     badge: 'Sản xuất & Lắp đặt',
-    desc: 'Chúng tôi trực tiếp gia công và lắp đặt các dòng quạt hướng trục công nghiệp. Sản phẩm sử dụng động cơ dây đồng tiêu chuẩn, cánh quạt được cân bằng động kỹ thuật số đảm bảo vận hành êm ái, bền bỉ và không rung lắc. Phù hợp cho nhà xưởng, hầm, khu công nghiệp.',
+    desc: 'Quạt hướng trục mình cũng tự sản xuất luôn. Dùng motor dây đồng, cánh cân bằng động nên chạy bền, không rung lắc. Phù hợp cho nhà xưởng, hầm xe, khu công nghiệp.',
     specs: [
       'Công suất: 1.1kW - 200kW',
       'Lưu lượng: lên đến 150.000 m³/h',
@@ -45,7 +45,7 @@ const solutions: Solution[] = [
   {
     title: 'Máy Điều Hoà Cassette',
     badge: 'Cung cấp & Lắp đặt',
-    desc: 'Cung cấp và lắp đặt máy điều hoà dạng cassette âm trần cho văn phòng, trung tâm thương mại, nhà hàng và khu công nghiệp. Phân phối từ các hãng uy tín, đảm bảo hiệu suất làm lạnh tối ưu và tiết kiệm điện năng.',
+    desc: 'Mình cung cấp và lắp đặt máy điều hoà cassette âm trần cho văn phòng, nhà hàng, trung tâm thương mại. Hàng từ các hãng uy tín, gas tiết kiệm điện, thổi gió 4 chiều đều.',
     specs: [
       'Công suất: 1.5HP - 5HP',
       'Gas R32 / R410A tiết kiệm năng lượng',
@@ -58,7 +58,7 @@ const solutions: Solution[] = [
   {
     title: 'Miệng Gió 4 Hướng',
     badge: 'Phụ kiện & Phân phối',
-    desc: 'Cung cấp miệng gió 4 hướng dạng âm trần, phân phối luồng không khí đều theo 4 chiều. Sản phẩm làm từ nhôm sơn tĩnh điện trắng, tương thích với hệ thống điều hoà trung tâm và thông gió dân dụng, thương mại.',
+    desc: 'Miệng gió 4 hướng dạng âm trần, bằng nhôm sơn tĩnh điện trắng. Gắn vào trần thạch cao hoặc trần nhôm đều được, dùng chung với hệ thống điều hoà trung tâm hoặc thông gió.',
     specs: [
       'Vật liệu: Nhôm sơn tĩnh điện trắng',
       'Kích thước: 300x300 đến 600x600mm',
@@ -71,7 +71,7 @@ const solutions: Solution[] = [
   {
     title: 'VCD Vuông Trục Vít',
     badge: 'Van điều tiết gió',
-    desc: 'Van điều tiết lưu lượng VCD (Volume Control Damper) dạng vuông cơ cấu trục vít, dùng để điều chỉnh và cân bằng lưu lượng gió trong hệ thống ống gió. Sản xuất từ tôn mạ kẽm dày, chịu lực tốt, vận hành bền bỉ.',
+    desc: 'Van VCD vuông dạng trục vít, dùng để chỉnh lưu lượng gió trong ống. Mình sản xuất từ tôn mạ kẽm dày 1.0mm, chắc chắn và bền.',
     specs: [
       'Vật liệu: Tôn mạ kẽm dày 1.0mm',
       'Kích thước: theo yêu cầu thực tế',
@@ -84,7 +84,7 @@ const solutions: Solution[] = [
   {
     title: 'Thi Công Hệ Thống Ống Gió Tại Công Trường',
     badge: 'Thi công trực tiếp',
-    desc: 'Đội ngũ kỹ thuật Cường Thông Gió trực tiếp lắp đặt hệ thống ống gió tại công trình nhà máy, kho xưởng và toà nhà thương mại. Ống gió được bọc cách nhiệt đúng tiêu chuẩn, đảm bảo hiệu suất và thẩm mỹ công trình.',
+    desc: 'Thợ mình trực tiếp lắp ống gió tại công trình — nhà máy, xưởng, toà nhà. Ống gió bọc cách nhiệt đúng chuẩn, lắp theo bản vẽ ME, đảm bảo thẩm mỹ và hiệu suất.',
     specs: [
       'Ống gió bọc bông thuỷ tinh cách nhiệt',
       'Lắp đặt theo bản vẽ thiết kế ME',
@@ -105,7 +105,7 @@ const solutions: Solution[] = [
   {
     title: 'Gia Công Ống Gió & Phụ Kiện',
     badge: 'Cơ khí chính xác',
-    desc: 'Sở hữu dây chuyền cắt Plasma CNC hiện đại, chúng tôi sản xuất ống gió vuông, tròn xoắn theo tiêu chuẩn quốc tế (SMACNA). Ngoài ra, chúng tôi cung cấp đầy đủ phụ kiện như van VCD, FD và cửa gió nhôm định hình cao cấp.',
+    desc: 'Xưởng mình có máy cắt Plasma CNC, nên cắt ống gió vuông, tròn xoắn rất chính xác theo chuẩn SMACNA. Ngoài ra mình còn làm van VCD, FD và cửa gió nhôm.',
     specs: [
       'Tôn mạ kẽm độ dày 0.48 - 1.15mm',
       'Cửa gió nhôm sơn tĩnh điện',
@@ -256,32 +256,32 @@ export function Products() {
         </div>
       </nav>
 
-      <section className="pt-8 pb-20 border-b border-zinc-100" aria-label="Danh sách sản phẩm">
+      <section className="pt-6 pb-12 md:pb-20 border-b border-zinc-100" aria-label="Danh sách sản phẩm">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-1 bg-zinc-900 text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-8">
+            <span className="inline-block px-4 py-1 bg-zinc-900 text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-6 md:mb-8">
               Sản phẩm & Giải pháp
             </span>
-            <h1 className="text-4xl md:text-7xl font-bold tracking-tighter text-zinc-900 mb-8 max-w-4xl leading-[1.1]">
+            <h1 className="text-[28px] sm:text-4xl md:text-7xl font-bold tracking-tighter text-zinc-900 mb-6 md:mb-8 max-w-4xl leading-[1.2] md:leading-[1.1]">
               Quạt công nghiệp & ống gió nào <br className="hidden md:block" />
               phù hợp cho nhà xưởng của bạn?
             </h1>
-            <p className="text-zinc-500 text-lg md:text-xl max-w-3xl leading-relaxed">
-              Cường Thông Gió tự hào sở hữu xưởng gia công quy mô tại Đà Nẵng, giúp chúng tôi chủ động hoàn toàn về tiến độ và cam kết tiêu chuẩn kỹ thuật khắt khe nhất cho mọi dự án.
+            <p className="text-zinc-500 text-base md:text-xl max-w-3xl leading-relaxed">
+              Mình có xưởng gia công riêng ở Đà Nẵng nên tự chủ được tiến độ. Từ quạt, ống gió tới phụ kiện — tất cả đều qua tay mình kiểm tra trước khi đưa ra công trình.
             </p>
-            <p className="text-zinc-700 text-base md:text-lg font-semibold leading-relaxed max-w-3xl mt-4">
-              <strong>Cường Thông Gió cung cấp quạt ly tâm (1.5–200kW), quạt hướng trục (lưu lượng đến 150.000 m³/h), ống gió SMACNA, VCD, miệng gió và máy điều hòa cassette — tất cả sản xuất trực tiếp tại xưởng Đà Nẵng, bảo hành 12 tháng.</strong>
+            <p className="text-zinc-700 text-[15px] md:text-lg font-semibold leading-relaxed max-w-3xl mt-4">
+              <strong>Quạt ly tâm (1.5–200kW), quạt hướng trục (lưu lượng tới 150.000 m³/h), ống gió theo chuẩn SMACNA, VCD, miệng gió, máy điều hòa cassette — tất cả sản xuất tại xưởng, bảo hành 12 tháng.</strong>
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 space-y-32 md:space-y-48">
+      <section className="py-12 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 space-y-24 md:space-y-48">
           {solutions.map((item, idx) => (
             <motion.article
               key={item.title}
@@ -289,13 +289,13 @@ export function Products() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.1 }}
-              className={`flex flex-col ${item.isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 md:gap-20`}
+              className={`flex flex-col ${item.isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-8 md:gap-20`}
             >
               <div className="w-full md:w-1/2">
                 {item.images ? (
                   <ImageCarousel images={item.images} title={item.title} />
                 ) : (
-                  <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200">
+                  <div className="aspect-[4/3] bg-zinc-50 rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200">
                     <img
                       src={item.imageUrl}
                       alt={`${item.title} — sản xuất & lắp đặt tại Đà Nẵng | Cường Thông Gió`}
@@ -311,26 +311,26 @@ export function Products() {
               </div>
 
               <div className="w-full md:w-1/2">
-                <span className="inline-block px-3 py-1 bg-zinc-100 text-zinc-600 text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-6">
+                <span className="inline-block px-3 py-1 bg-zinc-100 text-zinc-600 text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-4 md:mb-6">
                   {item.badge}
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-8 leading-tight">
+                <h2 className="text-2xl md:text-5xl font-bold text-zinc-900 mb-6 md:mb-8 leading-tight">
                   {item.title}
                 </h2>
-                <p className="text-zinc-500 text-base md:text-lg mb-10 leading-relaxed font-normal opacity-90">
+                <p className="text-zinc-500 text-[15px] md:text-lg mb-8 md:mb-10 leading-relaxed font-normal opacity-90">
                   {item.desc}
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 mb-12 bg-white/50 backdrop-blur rounded-2xl p-6 border border-zinc-100">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 mb-10 md:mb-12 bg-white/50 backdrop-blur rounded-2xl p-5 md:p-6 border border-zinc-100">
                   {item.specs.map((spec) => (
                     <div key={spec} className="flex items-center gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-zinc-900" />
-                      <span className="text-sm font-semibold text-zinc-700">{spec}</span>
+                      <span className="text-[13px] md:text-sm font-semibold text-zinc-700">{spec}</span>
                     </div>
                   ))}
                 </div>
 
-                <Button asChild size="lg" className="rounded-full px-10 h-16 bg-zinc-900 hover:bg-zinc-800 text-white font-bold uppercase tracking-widest transition-all">
+                <Button asChild size="lg" className="w-full sm:w-auto rounded-2xl px-10 h-16 bg-zinc-900 hover:bg-zinc-800 text-white font-bold uppercase tracking-widest transition-all">
                   <Link to="/lien-he">Yêu cầu sản xuất</Link>
                 </Button>
               </div>
@@ -346,7 +346,7 @@ export function Products() {
             So sánh thông số quạt công nghiệp Cường Thông Gió
           </h2>
           <p className="text-zinc-500 text-base md:text-lg text-center mb-10 max-w-2xl mx-auto">
-            <strong>Bảng so sánh giúp bạn chọn đúng loại quạt phù hợp với nhu cầu thông gió, hút bụi hoặc PCCC cho nhà xưởng.</strong>
+            <strong>So sánh nhanh để biết nên dùng quạt nào cho xưởng của bạn — hút bụi, thông gió hay PCCC.</strong>
           </p>
           <div className="overflow-x-auto rounded-2xl border border-zinc-200 shadow-sm bg-white">
             <table className="w-full text-sm text-left" data-speakable="true">
@@ -411,7 +411,7 @@ export function Products() {
                     Đo đạc & Nghiệm thu thực tế
                   </h4>
                   <p className="text-zinc-500 leading-relaxed">
-                    Chúng tôi sử dụng thiết bị đo chuyên dụng để kiểm tra lưu lượng và áp suất ngay tại công trình trước khi bàn giao.
+                    Trước khi bàn giao, mình dùng thiết bị chuyên dụng đo lưu lượng gió và áp suất ngay tại hiện trường. Đạt rồi mới ký nghiệm thu.
                   </p>
                 </div>
                 <div>
@@ -420,7 +420,7 @@ export function Products() {
                     Vận hành êm ái, bền bỉ
                   </h4>
                   <p className="text-zinc-500 leading-relaxed">
-                    Mọi quạt công nghiệp đều được kiểm tra cân bằng động nghiêm ngặt, giúp bảo vệ động cơ và giảm thiểu tiếng ồn.
+                    Quạt nào ra khỏi xưởng cũng phải qua cân bằng động. Nhờ vậy motor sống lâu hơn, tiếng ồn thấp, khách yên tâm sử dụng.
                   </p>
                 </div>
               </div>
@@ -531,7 +531,7 @@ export function Products() {
       <section className="py-32 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-10 tracking-tight leading-tight italic">
-            Bạn cần tư vấn giải pháp tối ưu cho công trình?
+            Cần tư vấn chọn thiết bị cho công trình?
           </h2>
           <Button asChild size="lg" className="rounded-full px-16 h-20 bg-zinc-900 border-none hover:bg-zinc-800 text-white text-lg font-bold uppercase tracking-[0.2em] shadow-2xl shadow-zinc-300">
             <Link to="/lien-he">Nhận báo giá ngay</Link>

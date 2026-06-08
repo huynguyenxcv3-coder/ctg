@@ -81,10 +81,10 @@ export function About() {
             VỀ CHÚNG TÔI
           </p>
           <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Cường Thông Gió là ai? <br className="hidden md:block" /> Nhà thầu M&E hàng đầu Đà Nẵng.
+            Cường Thông Gió — ai, làm gì, <br className="hidden md:block" /> ở đâu?
           </h1>
           <p className="text-gray-600 text-lg max-w-[600px] mx-auto leading-relaxed">
-            <strong>Cường Thông Gió là công ty chuyên sản xuất quạt công nghiệp và thi công hệ thống thông gió tại Đà Nẵng, hoạt động từ năm 2015 với hơn 2,145 dự án hoàn thành.</strong> Công ty TNHH Một Thành Viên Cường Thông Gió (CTGCo., Ltd) là đơn vị tiên phong trong lĩnh vực cơ điện lạnh, điều hòa không khí và thông gió tại khu vực Miền Trung.
+            <strong>Mình là Cường, mở xưởng làm quạt công nghiệp và thi công thông gió ở Đà Nẵng từ 2015.</strong> Đến giờ đã hoàn thành hơn 2.145 công trình lớn nhỏ — từ nhà xưởng trong KCN Hòa Khánh đến tầng hầm chung cư cao tầng. Nói ngắn gọn: mình làm từ A tới Z, từ sản xuất thiết bị tại xưởng đến lắp đặt tận công trình.
           </p>
         </div>
 
@@ -101,21 +101,21 @@ export function About() {
               <div className="space-y-12">
                 <div className="space-y-8">
                   <p className="text-zinc-900 leading-relaxed font-medium text-xl md:text-2xl tracking-tight">
-                    Được thành lập từ năm 2015 tại Đà Nẵng, Cường Thông Gió đã khẳng định vị thế là đơn vị tiên phong trong lĩnh vực sản xuất & thi công hệ thống thông gió công nghiệp.
+                    Năm 2015, mình bắt đầu mở xưởng nhỏ ở Đà Nẵng, chuyên làm quạt và ống gió. Dần dần khách quen giới thiệu, công trình ngày càng lớn, xưởng cũng mở rộng theo.
                   </p>
                   <p className="text-zinc-500 leading-relaxed text-lg opacity-90">
-                    Chúng tôi không chỉ cung cấp thiết bị, mà còn mang đến giải pháp kỹ thuật tối ưu. Với xưởng sản xuất trực tiếp và đội ngũ kỹ thuật lành nghề, mỗi sản phẩm rời xưởng đều mang theo cam kết về chất lượng và độ bền vượt thời gian.
+                    Mình không chỉ bán thiết bị rồi thôi — mà tư vấn luôn cách bố trí hệ thống sao cho hợp lý nhất. Có xưởng riêng nên từ cắt tôn, hàn, sơn đến cân bằng động, bước nào mình cũng kiểm soát được.
                   </p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-12 py-8 border-y border-zinc-100">
                   <div>
                     <div className="text-4xl md:text-5xl font-black text-zinc-900 leading-none mb-3 tracking-tighter">13+</div>
-                    <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Năm kinh nghiệm</div>
+                    <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Năm trong nghề</div>
                   </div>
                   <div>
                     <div className="text-4xl md:text-5xl font-black text-zinc-900 leading-none mb-3 tracking-tighter">2,145</div>
-                    <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Dự án hoàn thành</div>
+                    <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Công trình đã làm</div>
                   </div>
                 </div>
 
@@ -147,7 +147,7 @@ export function About() {
                     <h3 className="font-bold text-zinc-900 text-lg uppercase tracking-wider">Vật tư đúng tiêu chuẩn</h3>
                   </div>
                   <p className="text-zinc-500 text-sm leading-relaxed pl-12 border-l border-zinc-100 group-hover:border-zinc-900 transition-colors duration-500">
-                    Cam kết sử dụng đúng chủng loại vật tư, độ dày tôn và công suất động cơ như đã thỏa thuận. Minh bạch hoàn toàn về nguồn gốc và chất lượng (CO/CQ).
+                    Tôn dày bao nhiêu, motor loại gì, mình nói rõ từ đầu. Khách muốn xem CO/CQ thì mình cung cấp đầy đủ, không giấu giếm.
                   </p>
                 </div>
 
@@ -158,7 +158,7 @@ export function About() {
                     <h3 className="font-bold text-zinc-900 text-lg uppercase tracking-wider">Trách nhiệm cao nhất</h3>
                   </div>
                   <p className="text-zinc-500 text-sm leading-relaxed pl-12 border-l border-zinc-100 group-hover:border-zinc-900 transition-colors duration-500">
-                    Luôn bám sát công trình, xử lý triệt để các vấn đề kỹ thuật phát sinh. Hệ thống chỉ được bàn giao khi vận hành êm ái và đạt chuẩn yêu cầu của khách hàng.
+                    Mình bám công trình tới khi hệ thống chạy êm, khách hài lòng mới bàn giao. Có vấn đề gì phát sinh thì xử lý luôn, không để khách phải đợi.
                   </p>
                 </div>
 
@@ -169,7 +169,7 @@ export function About() {
                     <h3 className="font-bold text-zinc-900 text-lg uppercase tracking-wider">Báo giá minh bạch</h3>
                   </div>
                   <p className="text-zinc-500 text-sm leading-relaxed pl-12 border-l border-zinc-100 group-hover:border-zinc-900 transition-colors duration-500">
-                    Quy trình báo giá rõ ràng, không phát sinh chi phí ngoài kế hoạch. Chúng tôi tư vấn giải pháp tối ưu nhất dựa trên nhu cầu thực tế của từng dự án.
+                    Báo giá rõ ràng, ghi rõ từng hạng mục. Không phát sinh thêm phí khi đang thi công. Mình tư vấn giải pháp nào tiết kiệm nhất mà vẫn đạt yêu cầu.
                   </p>
                 </div>
 
@@ -180,7 +180,7 @@ export function About() {
                     <h3 className="font-bold text-zinc-900 text-lg uppercase tracking-wider">Đội ngũ tận tâm</h3>
                   </div>
                   <p className="text-zinc-500 text-sm leading-relaxed pl-12 border-l border-zinc-100 group-hover:border-zinc-900 transition-colors duration-500">
-                    Đội ngũ kỹ sư và thợ cơ khí tay nghề cao, am hiểu sâu sắc về kỹ thuật thông gió, luôn sẵn sàng đồng hành cùng khách hàng trong mọi giai đoạn.
+                    Anh em thợ và kỹ sư đều đi lên từ nghề, hiểu rõ từng loại quạt, từng kiểu ống gió. Làm việc với khách từ lúc khảo sát tới khi nghiệm thu xong.
                   </p>
                 </div>
               </div>
@@ -202,8 +202,8 @@ export function About() {
               <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-2 tracking-tight" itemProp="name">Phan Trọng Cường</h3>
               <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-6" itemProp="jobTitle">Giám đốc — Kỹ sư Cơ khí Thông gió</p>
               <div className="space-y-4 text-zinc-600 leading-relaxed">
-                <p><strong>Hơn 13 năm kinh nghiệm</strong> trong lĩnh vực thiết kế, sản xuất quạt công nghiệp và thi công hệ thống thông gió cho nhà xưởng, tòa nhà tại Đà Nẵng và Miền Trung.</p>
-                <p>Với nền tảng chuyên môn vững chắc về cơ khí chế tạo và kỹ thuật HVAC, anh Cường đã trực tiếp giám sát và hoàn thành hơn <strong>2,145 dự án</strong> — từ nhà máy sản xuất tại KCN Hòa Khánh đến hệ thống thông gió PCCC tầng hầm các tòa nhà cao tầng.</p>
+                <p><strong>Hơn 13 năm</strong> trong nghề, mình đã trực tiếp khảo sát, thiết kế và giám sát thi công hệ thống thông gió cho đủ loại công trình — từ nhà xưởng nhỏ đến nhà máy trong KCN.</p>
+                <p>Xuất phát từ dân cơ khí, mình hiểu rõ từng chi tiết kỹ thuật nên khi trao đổi với khách hay với thợ đều nhanh, ít hiểu nhầm. Đến nay đã hoàn thành hơn <strong>2.145 công trình</strong> ở Đà Nẵng và các tỉnh Miền Trung.</p>
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
                 {['Cơ khí chế tạo', 'Hệ thống HVAC', 'Thông gió PCCC', 'Quạt công nghiệp', 'Xử lý khí thải'].map(skill => (
@@ -241,10 +241,10 @@ export function About() {
         {/* CTA Section — Tăng chuyển đổi */}
         <div className="mt-12 bg-zinc-900 rounded-2xl p-12 md:p-16 text-center">
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 tracking-tight">
-            Bạn cần tư vấn giải pháp thông gió?
+            Cần tư vấn thông gió cho xưởng?
           </h2>
           <p className="text-zinc-400 mb-10 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            Đội ngũ kỹ sư Cường Thông Gió sẵn sàng khảo sát thực tế và báo giá miễn phí cho dự án của bạn.
+            Gọi mình hoặc gửi thông tin qua form — mình sẽ khảo sát và báo giá miễn phí, không cam kết gì cả.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/lien-he" className="bg-white text-zinc-900 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-zinc-100 transition-colors shadow-lg">

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
@@ -96,22 +96,22 @@ export function Navbar() {
         {isOpen && (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="md:hidden bg-white border-b border-gray-100 overflow-hidden shadow-2xl"
             role="navigation"
             aria-label="Menu di động"
           >
-            <div className="px-4 py-8 flex flex-col gap-6">
+            <div className="px-5 py-10 flex flex-col gap-5">
               {navItems.map((item) => (
                 <NavLink
                   key={item.path}
                   to={item.path}
                   className={({ isActive }) =>
                     cn(
-                      'text-lg font-bold tracking-tight py-2 border-b border-gray-50 uppercase shadow-none',
-                      isActive ? 'text-industrial-black' : 'text-gray-400'
+                      'text-lg font-bold tracking-tight py-4 px-2 border-b border-gray-50 uppercase transition-colors',
+                      isActive ? 'text-industrial-blue bg-gray-50/50' : 'text-zinc-900 active:bg-gray-50'
                     )
                   }
                 >
@@ -120,7 +120,7 @@ export function Navbar() {
               ))}
               <NavLink
                 to="/lien-he"
-                className="bg-zinc-900 text-white p-4 rounded-full text-center font-bold uppercase tracking-[0.2em] mt-4"
+                className="bg-zinc-900 text-white p-5 rounded-2xl text-center font-bold uppercase tracking-[0.15em] mt-4 shadow-xl shadow-zinc-200 active:scale-[0.98] transition-all"
               >
                 BÁO GIÁ NGAY
               </NavLink>
