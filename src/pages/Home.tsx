@@ -24,22 +24,22 @@ const stats = [
 const services = [
   {
     title: 'Quạt Công Nghiệp',
-    desc: 'Xưởng mình làm quạt ly tâm, hướng trục, hút mái — dùng tôn dày đúng chuẩn, cánh quạt cân bằng động bằng máy nên chạy êm, không rung.',
+    desc: 'Chúng tôi sản xuất quạt ly tâm, hướng trục, hút mái — sử dụng tôn dày đúng tiêu chuẩn, cánh quạt cân bằng động bằng máy đảm bảo vận hành êm ái.',
     imageUrl: '/quat-ly-tam.png'
   },
   {
     title: 'Hệ Thống Xử Lý Khí & Bụi',
-    desc: 'Làm hệ thống lọc bụi túi vải, tháp xử lý khí thải cho nhà máy, xưởng sản xuất — đảm bảo đạt chuẩn môi trường khi nghiệm thu.',
+    desc: 'Thiết kế hệ thống lọc bụi túi vải, tháp xử lý khí thải cho nhà máy — đảm bảo đạt tiêu chuẩn môi trường khắt khe nhất.',
     imageUrl: '/ong-gio-cong-truong-1.png'
   },
   {
     title: 'Hệ Thống Thông Gió & Làm Mát',
-    desc: 'Thi công thông gió tươi, lắp cooling pad và máy làm mát cho nhà xưởng — giảm nhiệt rõ rệt, công nhân làm việc thoải mái hơn.',
+    desc: 'Thi công thông gió tươi, lắp cooling pad và máy làm mát cho nhà xưởng — giải pháp tối ưu giúp hạ nhiệt hiệu quả.',
     imageUrl: '/ong-gio-cong-truong-2.png'
   },
   {
     title: 'Cơ Khí & Inox Dân Dụng',
-    desc: 'Gia công ống gió xoắn, máng hút khói bếp, bồn inox và đồ cơ khí theo bản vẽ hoặc yêu cầu riêng của khách.',
+    desc: 'Gia công ống gió xoắn, máng hút khói bếp, bồn inox và đồ cơ khí chính xác theo bản vẽ yêu cầu.',
     imageUrl: '/ong-gio-phu-kien.png'
   }
 ]
@@ -62,23 +62,23 @@ const projects = [
 const faqs = [
   {
     question: 'Cường Thông Gió nhận thi công thông gió cho loại công trình nào?',
-    answer: 'Bên mình nhận làm thông gió cho nhà xưởng, nhà máy, kho lạnh, tầng hầm, tòa nhà, bếp công nghiệp, bệnh viện — chủ yếu ở Đà Nẵng và các tỉnh Miền Trung.'
+    answer: 'Chúng tôi nhận thực hiện các dự án thông gió cho nhà xưởng, nhà máy, kho lạnh, tầng hầm, tòa nhà, bếp công nghiệp, bệnh viện — trọng tâm tại Đà Nẵng và các tỉnh Miền Trung.'
   },
   {
     question: 'Quạt do Cường Thông Gió làm có bảo hành không?',
-    answer: 'Có, bảo hành 12 tháng cho cân bằng động, motor và vỏ quạt. Hết bảo hành mình vẫn hỗ trợ bảo trì định kỳ nếu khách cần.'
+    answer: 'Có, chúng tôi bảo hành 12 tháng cho cân bằng động, motor và vỏ quạt, đồng thời hỗ trợ bảo trì định kỳ theo yêu cầu của khách hàng.'
   },
   {
     question: 'Thi công thông gió thì tốn khoảng bao nhiêu?',
-    answer: 'Giá tùy diện tích xưởng, loại công trình và yêu cầu cụ thể nên khó nói chung được. Anh chị gọi 0905 001 224 hoặc gửi qua trang Liên hệ, mình báo giá chi tiết trong vòng 24h.'
+    answer: 'Chi phí phụ thuộc vào quy mô xưởng và yêu cầu kỹ thuật cụ thể. Quý khách vui lòng gọi 0905 001 224 hoặc gửi thông tin qua trang Liên hệ để chúng tôi báo giá chi tiết trong vòng 24h.'
   },
   {
     question: 'Bên mình có làm hệ thống xử lý khí thải, lọc bụi không?',
-    answer: 'Có, mình làm lọc bụi túi vải, tháp xử lý khí thải, hút bụi gỗ, hút bụi mài — đảm bảo đạt QCVN khi đo kiểm.'
+    answer: 'Có, chúng tôi cung cấp giải pháp lọc bụi túi vải, tháp xử lý khí thải, hút bụi gỗ và kim loại — cam kết đạt chuẩn QCVN khi đo kiểm.'
   },
   {
     question: 'Thi công thông gió mất bao lâu?',
-    answer: 'Tùy công trình lớn nhỏ, thường từ 7 đến 45 ngày. Xưởng vừa thì 2-3 tuần là xong. Mình luôn bám tiến độ đã thống nhất với khách.'
+    answer: 'Tùy quy mô công trình, thời gian thường từ 7 đến 45 ngày. Chúng tôi luôn cam kết bám sát tiến độ đã thống nhất với khách hàng.'
   },
 ]
 
@@ -137,11 +137,11 @@ export function Home() {
     name: 'Quy trình thi công hệ thống thông gió tại Đà Nẵng',
     description: 'Quy trình 5 bước thi công hệ thống thông gió chuyên nghiệp của Cường Thông Gió cho nhà xưởng, công trình tại Đà Nẵng.',
     steps: [
-      { name: 'Khảo sát & Tư vấn', text: 'Mình đến tận công trình để xem thực tế, đo đạc diện tích, xác định nhu cầu thông gió cụ thể.' },
-      { name: 'Thiết kế hệ thống', text: 'Lên bản vẽ kỹ thuật chi tiết — vị trí quạt, ống gió, miệng gió sao cho hợp lý với layout xưởng.' },
-      { name: 'Sản xuất tại xưởng', text: 'Gia công quạt, ống gió tại xưởng 150m² ở Đà Nẵng. Cân bằng động, kiểm tra kỹ trước khi xuất.' },
-      { name: 'Thi công & Lắp đặt', text: 'Thợ lành nghề lắp đặt tại công trình, bám sát bản vẽ và tiến độ đã thống nhất.' },
-      { name: 'Nghiệm thu & Bàn giao', text: 'Đo lưu lượng, áp suất bằng thiết bị chuyên dụng. Đạt rồi mới ký bàn giao.' },
+      { name: 'Khảo sát & Tư vấn', text: 'Chúng tôi đến tận công trình để khảo sát thực tế, đo đạc và xác định nhu cầu thông gió tối ưu.' },
+      { name: 'Thiết kế hệ thống', text: 'Kỹ sư của chúng tôi lên bản vẽ kỹ thuật chi tiết, tối ưu hóa vị trí quạt và đường ống.' },
+      { name: 'Sản xuất tại xưởng', text: 'Gia công thiết bị tại xưởng 150m² ở Đà Nẵng. Kiểm soát kỹ thuật và cân bằng động trước khi xuất xưởng.' },
+      { name: 'Thi công & Lắp đặt', text: 'Đội ngũ thợ lành nghề thực hiện lắp đặt chuyên nghiệp, đảm bảo đúng bản vẽ và tiến độ.' },
+      { name: 'Nghiệm thu & Bàn giao', text: 'Đo kiểm lưu lượng, áp suất bằng thiết bị chuyên dụng trước khi bàn giao chính thức.' },
     ],
   });
 
@@ -198,7 +198,7 @@ export function Home() {
                 variants={fadeUp}
                 className="text-lg md:text-xl text-zinc-500 mb-10 md:mb-14 leading-relaxed max-w-2xl font-normal px-4"
               >
-                Mình có xưởng riêng nên tự sản xuất quạt, ống gió — không qua trung gian. Chất lượng mình kiểm soát, tiến độ mình chủ động.
+                Chúng tôi sở hữu năng lực sản xuất độc lập, giúp kiểm soát hoàn toàn chất lượng thiết bị và đảm bảo tiến độ cho mọi dự án.
               </motion.p>
               
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto px-6 mb-16">
@@ -287,16 +287,15 @@ export function Home() {
               viewport={{ once: true }}
               className="text-2xl md:text-5xl font-bold text-zinc-900 mb-5 tracking-tight uppercase"
             >
-              Mình làm được gì cho xưởng của bạn?
+              Chúng tôi giải quyết vấn đề gì cho bạn?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-zinc-500 text-[15px] md:text-lg font-normal leading-relaxed mx-auto mb-0 px-2"
+              className="text-lg md:text-xl text-zinc-500 leading-relaxed max-w-5xl mx-auto"
             >
-               Từ <strong className="text-zinc-700">quạt công nghiệp</strong> (ly tâm, hướng trục), <strong className="text-zinc-700">hệ thống lọc bụi, xử lý khí thải</strong>, đến <strong className="text-zinc-700">thông gió làm mát nhà xưởng</strong> và <strong className="text-zinc-700">gia công cơ khí, inox</strong> — tất cả mình đều sản xuất trực tiếp tại xưởng 150m² ở Đà Nẵng, không qua trung gian.
+              Chúng tôi chuyên tư vấn, thiết kế & thi công hệ thống thông gió công nghiệp, xử lý khí thải, lọc bụi cho nhà xưởng, tòa nhà và bếp công nghiệp — với 4 nhóm giải pháp chính: <strong className="text-zinc-700">Quạt công nghiệp</strong> (ly tâm, hướng trục), <strong className="text-zinc-700">Xử lý khí thải & lọc bụi</strong>, <strong className="text-zinc-700">Thông gió & làm mát nhà xưởng</strong>, và <strong className="text-zinc-700">Cơ khí & inox dân dụng</strong>. Tất cả được sản xuất trực tiếp tại xưởng 150m² tại Đà Nẵng.
             </motion.p>
           </div>
 
@@ -346,7 +345,7 @@ export function Home() {
             <div className="text-center lg:text-left px-2">
               <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8 tracking-tighter leading-tight">Tại sao khách chọn <br className="hidden md:block"/><span className="text-zinc-500">Cường Thông Gió?</span></h2>
               <p className="text-zinc-400 text-base md:text-lg mb-8 md:mb-10 leading-relaxed font-normal max-w-xl mx-auto lg:mx-0">
-                Thợ mình đi lên từ nghề, không phải dân "lý thuyết". Anh em làm cơ khí, hàn, lắp đặt — ai cũng nhiều năm kinh nghiệm thực tế tại công trình.
+                Đội ngũ của chúng tôi đi lên từ nghề thực tế, giàu kinh nghiệm trong lĩnh vực cơ khí, hàn và lắp đặt tại các công trình lớn nhỏ.
               </p>
               <div className="flex justify-center lg:justify-start">
                 <ul className="space-y-4 md:space-y-6 mb-10 md:mb-0 text-left">
@@ -386,7 +385,7 @@ export function Home() {
               viewport={{ once: true }}
               className="text-2xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-5"
             >
-              Khách hàng nói gì về mình?
+              Khách hàng nói gì về chúng tôi?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -395,7 +394,7 @@ export function Home() {
               transition={{ delay: 0.1 }}
               className="text-zinc-500 text-base md:text-lg mx-auto font-normal leading-relaxed px-2"
             >
-              Mỗi công trình xong, phản hồi từ khách là thước đo tốt nhất để mình biết mình đang làm đúng hay chưa.
+              Sự hài lòng của khách hàng là thước đo chuẩn xác nhất cho chất lượng dịch vụ của chúng tôi.
             </motion.p>
           </div>
             
@@ -518,10 +517,10 @@ export function Home() {
                 className="relative z-10 max-w-3xl mx-auto flex flex-col items-center text-center w-full"
               >
                 <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 tracking-tight text-white uppercase leading-tight px-2">
-                   Có dự án cần thi công? <br className="hidden md:block" /> Gọi mình tư vấn.
+                   Có dự án cần thi công? <br className="hidden md:block" /> Gọi chúng tôi tư vấn.
                 </h2>
-                <p className="text-zinc-400 mb-8 md:mb-14 text-sm md:text-lg font-normal leading-relaxed max-w-xl mx-auto px-4">
-                  Mình sẽ xuống tận nơi khảo sát, đo đạc rồi báo giá cụ thể — không tính phí tư vấn.
+                <p className="text-zinc-400 mb-10 md:mb-14 text-base md:text-lg font-normal leading-relaxed max-w-xl mx-auto">
+                  Đội ngũ kỹ sư của chúng tôi luôn sẵn sàng hỗ trợ khảo sát và tư vấn phương án thi công tối ưu nhất cho doanh nghiệp của bạn.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 mx-auto w-full sm:w-auto mt-2 px-6">
                   <Button asChild size="lg" className="w-full sm:w-auto font-bold uppercase tracking-wider text-[13px] md:text-base h-auto min-h-[60px] md:min-h-[72px] py-4 px-8 md:px-14 rounded-2xl shadow-lg transition-all duration-300 bg-white text-zinc-900 hover:bg-zinc-100 text-center">

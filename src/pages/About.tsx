@@ -81,10 +81,10 @@ export function About() {
             VỀ CHÚNG TÔI
           </p>
           <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Cường Thông Gió — ai, làm gì, <br className="hidden md:block" /> ở đâu?
+            Cường Thông Gió — tầm nhìn, sứ mệnh <br className="hidden md:block" /> và đội ngũ
           </h1>
-          <p className="text-gray-600 text-lg max-w-[600px] mx-auto leading-relaxed">
-            <strong>Mình là Cường, mở xưởng làm quạt công nghiệp và thi công thông gió ở Đà Nẵng từ 2015.</strong> Đến giờ đã hoàn thành hơn 2.145 công trình lớn nhỏ — từ nhà xưởng trong KCN Hòa Khánh đến tầng hầm chung cư cao tầng. Nói ngắn gọn: mình làm từ A tới Z, từ sản xuất thiết bị tại xưởng đến lắp đặt tận công trình.
+          <p className="text-gray-600 text-lg max-w-[800px] mx-auto leading-relaxed">
+            <strong>Chúng tôi là đơn vị chuyên sản xuất quạt công nghiệp và thi công hệ thống thông gió chuyên nghiệp tại Đà Nẵng, hoạt động từ năm 2015 với hơn 2,145 dự án hoàn thành.</strong> Công ty TNHH Một Thành Viên Cường Thông Gió (CTGCo., Ltd) tự hào là đối tác tin cậy của các nhà thầu M&E và doanh nghiệp tại khu vực Miền Trung.
           </p>
         </div>
 
@@ -101,10 +101,10 @@ export function About() {
               <div className="space-y-12">
                 <div className="space-y-8">
                   <p className="text-zinc-900 leading-relaxed font-medium text-xl md:text-2xl tracking-tight">
-                    Năm 2015, mình bắt đầu mở xưởng nhỏ ở Đà Nẵng, chuyên làm quạt và ống gió. Dần dần khách quen giới thiệu, công trình ngày càng lớn, xưởng cũng mở rộng theo.
+                    Được thành lập từ năm 2015 tại Đà Nẵng, chúng tôi đã không ngừng mở rộng quy mô sản xuất và khẳng định năng lực trong các dự án thông gió công nghiệp quy mô lớn.
                   </p>
                   <p className="text-zinc-500 leading-relaxed text-lg opacity-90">
-                    Mình không chỉ bán thiết bị rồi thôi — mà tư vấn luôn cách bố trí hệ thống sao cho hợp lý nhất. Có xưởng riêng nên từ cắt tôn, hàn, sơn đến cân bằng động, bước nào mình cũng kiểm soát được.
+                    Chúng tôi cung cấp giải pháp tổng thể từ tư vấn thiết kế đến trực tiếp sản xuất và lắp đặt. Với xưởng sản xuất hiện đại, chúng tôi kiểm soát chặt chẽ mọi công đoạn từ gia công cơ khí đến cân bằng động thiết bị, đảm bảo chất lượng cao nhất cho khách hàng.
                   </p>
                 </div>
 
@@ -147,7 +147,7 @@ export function About() {
                     <h3 className="font-bold text-zinc-900 text-lg uppercase tracking-wider">Vật tư đúng tiêu chuẩn</h3>
                   </div>
                   <p className="text-zinc-500 text-sm leading-relaxed pl-12 border-l border-zinc-100 group-hover:border-zinc-900 transition-colors duration-500">
-                    Tôn dày bao nhiêu, motor loại gì, mình nói rõ từ đầu. Khách muốn xem CO/CQ thì mình cung cấp đầy đủ, không giấu giếm.
+                    Chúng tôi cam kết sử dụng vật tư đúng quy cách và cung cấp đầy đủ chứng chỉ CO/CQ theo yêu cầu của dự án.
                   </p>
                 </div>
 
@@ -158,7 +158,7 @@ export function About() {
                     <h3 className="font-bold text-zinc-900 text-lg uppercase tracking-wider">Trách nhiệm cao nhất</h3>
                   </div>
                   <p className="text-zinc-500 text-sm leading-relaxed pl-12 border-l border-zinc-100 group-hover:border-zinc-900 transition-colors duration-500">
-                    Mình bám công trình tới khi hệ thống chạy êm, khách hài lòng mới bàn giao. Có vấn đề gì phát sinh thì xử lý luôn, không để khách phải đợi.
+                    Đội ngũ của chúng tôi luôn đồng hành cùng công trình cho đến khi hệ thống vận hành ổn định và khách hàng hoàn toàn hài lòng.
                   </p>
                 </div>
 
@@ -169,7 +169,7 @@ export function About() {
                     <h3 className="font-bold text-zinc-900 text-lg uppercase tracking-wider">Báo giá minh bạch</h3>
                   </div>
                   <p className="text-zinc-500 text-sm leading-relaxed pl-12 border-l border-zinc-100 group-hover:border-zinc-900 transition-colors duration-500">
-                    Báo giá rõ ràng, ghi rõ từng hạng mục. Không phát sinh thêm phí khi đang thi công. Mình tư vấn giải pháp nào tiết kiệm nhất mà vẫn đạt yêu cầu.
+                    Chúng tôi cung cấp giải pháp tối ưu về chi phí với báo giá chi tiết, không phát sinh chi phí ngoài dự kiến.
                   </p>
                 </div>
 
@@ -180,7 +180,7 @@ export function About() {
                     <h3 className="font-bold text-zinc-900 text-lg uppercase tracking-wider">Đội ngũ tận tâm</h3>
                   </div>
                   <p className="text-zinc-500 text-sm leading-relaxed pl-12 border-l border-zinc-100 group-hover:border-zinc-900 transition-colors duration-500">
-                    Anh em thợ và kỹ sư đều đi lên từ nghề, hiểu rõ từng loại quạt, từng kiểu ống gió. Làm việc với khách từ lúc khảo sát tới khi nghiệm thu xong.
+                    Đội ngũ kỹ sư và thợ lành nghề của chúng tôi am hiểu sâu sắc về kỹ thuật, luôn sẵn sàng hỗ trợ khách hàng từ khâu khảo sát đến nghiệm thu.
                   </p>
                 </div>
               </div>
@@ -202,8 +202,8 @@ export function About() {
               <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-2 tracking-tight" itemProp="name">Phan Trọng Cường</h3>
               <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-6" itemProp="jobTitle">Giám đốc — Kỹ sư Cơ khí Thông gió</p>
               <div className="space-y-4 text-zinc-600 leading-relaxed">
-                <p><strong>Hơn 13 năm</strong> trong nghề, mình đã trực tiếp khảo sát, thiết kế và giám sát thi công hệ thống thông gió cho đủ loại công trình — từ nhà xưởng nhỏ đến nhà máy trong KCN.</p>
-                <p>Xuất phát từ dân cơ khí, mình hiểu rõ từng chi tiết kỹ thuật nên khi trao đổi với khách hay với thợ đều nhanh, ít hiểu nhầm. Đến nay đã hoàn thành hơn <strong>2.145 công trình</strong> ở Đà Nẵng và các tỉnh Miền Trung.</p>
+                <p>Với <strong>hơn 13 năm</strong> kinh nghiệm, ông Phan Trọng Cường đã trực tiếp điều hành khảo sát, thiết kế và giám sát thi công hệ thống thông gió cho hàng nghìn dự án công nghiệp trọng điểm.</p>
+                <p>Dưới sự dẫn dắt của ông, Cường Thông Gió đã hoàn thành hơn <strong>2.145 công trình</strong> tại Đà Nẵng và các tỉnh Miền Trung, khẳng định vị thế uy tín trên thị trường cơ điện lạnh.</p>
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
                 {['Cơ khí chế tạo', 'Hệ thống HVAC', 'Thông gió PCCC', 'Quạt công nghiệp', 'Xử lý khí thải'].map(skill => (
@@ -241,10 +241,10 @@ export function About() {
         {/* CTA Section — Tăng chuyển đổi */}
         <div className="mt-12 bg-zinc-900 rounded-2xl p-12 md:p-16 text-center">
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 tracking-tight">
-            Cần tư vấn thông gió cho xưởng?
+            Cần tư vấn thông gió cho dự án?
           </h2>
           <p className="text-zinc-400 mb-10 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            Gọi mình hoặc gửi thông tin qua form — mình sẽ khảo sát và báo giá miễn phí, không cam kết gì cả.
+            Đội ngũ kỹ sư của chúng tôi sẵn sàng khảo sát thực tế và cung cấp phương án thi công tối ưu cùng báo giá miễn phí cho dự án của bạn.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/lien-he" className="bg-white text-zinc-900 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-zinc-100 transition-colors shadow-lg">

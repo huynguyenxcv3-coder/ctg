@@ -52,7 +52,7 @@ export function Navbar() {
         </NavLink>
 
         {/* Desktop Nav - Centered */}
-        <div className="hidden md:flex flex-1 items-center justify-center gap-10">
+        <div className="hidden lg:flex flex-1 items-center justify-center gap-8">
           {navItems.map((item) => (
             <NavLink
               key={item.path}
@@ -70,7 +70,7 @@ export function Navbar() {
         </div>
 
         {/* Right Action Button */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <NavLink
             to="/lien-he"
             className="bg-[#18181b] text-white px-8 py-3.5 rounded-full hover:bg-industrial-blue transition-all text-[12px] font-bold uppercase tracking-[0.1em] shadow-lg shadow-zinc-200"
@@ -81,7 +81,7 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden ml-auto p-2 text-industrial-black"
+          className="lg:hidden ml-auto p-2 text-industrial-black"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
@@ -99,7 +99,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden bg-white border-b border-gray-100 overflow-hidden shadow-2xl"
+            className="lg:hidden bg-white border-b border-gray-100 overflow-hidden shadow-2xl"
             role="navigation"
             aria-label="Menu di động"
           >

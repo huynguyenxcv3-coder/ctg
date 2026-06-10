@@ -69,7 +69,7 @@ export function Blog() {
     <div className="bg-white">
       <SEO
         title="Kiến Thức Thông Gió Công Nghiệp"
-        description="Trung tâm kiến thức thông gió công nghiệp — Hướng dẫn chọn quạt, bảng giá thi công 2026, tiêu chuẩn PCCC tầng hầm QCVN 06:2022/BXD. Bài viết chuyên sâu từ kỹ sư Cường Thông Gió."
+        description="Trung tâm kiến thức thông gió công nghiệp — Hướng dẫn chọn quạt, bảng giá thi công 2026, tiêu chuẩn PCCC tầng hầm QCVN 06:2022/BXD. Bài viết chuyên sâu từ đội ngũ kỹ sư Cường Thông Gió."
         keywords="kiến thức thông gió, cách chọn quạt công nghiệp, chi phí thông gió nhà xưởng 2026, tiêu chuẩn PCCC tầng hầm, QCVN 06:2022, quạt ly tâm, quạt hướng trục, ống gió SMACNA, thông gió Đà Nẵng"
         structuredData={[breadcrumb, ...articleSchemas, faqSchema]}
         dateModified="2026-06-05"
@@ -111,11 +111,11 @@ export function Blog() {
               Hỏi gì, đáp nấy.
             </h1>
             <p className="text-zinc-500 text-lg md:text-xl max-w-3xl leading-relaxed">
-              Tổng hợp bài viết chuyên sâu từ kỹ sư Cường Thông Gió — giúp chủ đầu tư, kỹ sư M&E và nhà thầu hiểu rõ về quạt công nghiệp, chi phí thi công và tiêu chuẩn PCCC.
+              Tổng hợp bài viết chuyên sâu từ đội ngũ kỹ sư Cường Thông Gió — giúp chủ đầu tư, kỹ sư M&E và nhà thầu hiểu rõ về quạt công nghiệp, chi phí thi công và tiêu chuẩn PCCC.
             </p>
             <p className="text-zinc-700 text-base md:text-lg font-semibold leading-relaxed max-w-3xl mt-4" data-speakable="true">
               <strong>
-                Cường Thông Gió chia sẻ kiến thức thực tiễn về cách chọn quạt công nghiệp (ly tâm, hướng trục), bảng giá thi công thông gió nhà xưởng 2026 (từ 150 triệu cho 1.000 m²), và tiêu chuẩn PCCC tầng hầm QCVN 06:2022/BXD — dựa trên 13+ năm kinh nghiệm và 2.145+ dự án.
+                Chúng tôi chia sẻ kiến thức thực tiễn về cách chọn quạt công nghiệp (ly tâm, hướng trục), bảng giá thi công thông gió nhà xưởng 2026 và các quy chuẩn kỹ thuật mới nhất — đúc kết từ hơn 13 năm kinh nghiệm thực chiến.
               </strong>
             </p>
           </motion.div>
@@ -270,7 +270,7 @@ export function Blog() {
               Cần tư vấn giải pháp thông gió cho dự án của bạn?
             </h2>
             <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
-              Đội ngũ kỹ sư Cường Thông Gió sẵn sàng khảo sát, thiết kế và báo giá miễn phí — từ thông gió nhà xưởng đến PCCC tầng hầm.
+              Đội ngũ kỹ sư của chúng tôi sẵn sàng khảo sát, thiết kế và báo giá miễn phí — từ thông gió nhà xưởng đến PCCC tầng hầm.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

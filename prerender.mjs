@@ -60,6 +60,66 @@ const pages = [
     description: 'Trung tâm kiến thức thông gió công nghiệp — Hướng dẫn chọn quạt, bảng giá thi công 2026, tiêu chuẩn PCCC tầng hầm. Bài viết chuyên sâu từ kỹ sư Cường Thông Gió.',
     keywords: 'kiến thức thông gió, quạt công nghiệp, chi phí thông gió, PCCC tầng hầm, QCVN 06:2022',
   },
+  {
+    route: '/dich-vu/thong-gio-nha-xuong',
+    title: 'Dịch Vụ Thông Gió Nhà Xưởng Đà Nẵng — Cường Thông Gió',
+    description: 'Chuyên thi công hệ thống thông gió nhà xưởng tại Đà Nẵng và Miền Trung. Giải pháp làm mát, hút nhiệt, cấp gió tươi cho nhà máy, kho xưởng. Hotline: 0905 001 224.',
+    keywords: 'thông gió nhà xưởng, thi công thông gió, Đà Nẵng, làm mát nhà xưởng, Cường Thông Gió',
+  },
+  {
+    route: '/dich-vu/xu-ly-bui-cong-nghiep',
+    title: 'Hệ Thống Xử Lý Bụi Công Nghiệp Đà Nẵng — Cường Thông Gió',
+    description: 'Tư vấn, thiết kế và thi công hệ thống hút bụi, lọc bụi công nghiệp tại Đà Nẵng. Đạt tiêu chuẩn QCVN. Cường Thông Gió — 13+ năm kinh nghiệm.',
+    keywords: 'xử lý bụi công nghiệp, hút bụi nhà xưởng, lọc bụi, Đà Nẵng, Cường Thông Gió',
+  },
+  {
+    route: '/dich-vu/hut-khoi-nha-xuong',
+    title: 'Hệ Thống Hút Khói Nhà Xưởng Đà Nẵng — Cường Thông Gió',
+    description: 'Thi công hệ thống hút khói, xử lý khí thải nhà xưởng tại Đà Nẵng. Quạt chịu nhiệt 300°C, đạt QCVN 06:2022/BXD. Cường Thông Gió.',
+    keywords: 'hút khói nhà xưởng, xử lý khí thải, quạt chịu nhiệt, PCCC, Đà Nẵng, Cường Thông Gió',
+  },
+  {
+    route: '/dich-vu/gia-cong-ong-gio',
+    title: 'Gia Công Ống Gió Đà Nẵng — CNC Plasma — Cường Thông Gió',
+    description: 'Gia công ống gió vuông, tròn xoắn theo tiêu chuẩn SMACNA. Cắt CNC Plasma chính xác. Sản xuất trực tiếp tại xưởng Đà Nẵng. Cường Thông Gió.',
+    keywords: 'gia công ống gió, ống gió vuông, ống gió tròn xoắn, CNC Plasma, Đà Nẵng, Cường Thông Gió',
+  },
+  {
+    route: '/dich-vu/quat-ly-tam',
+    title: 'Quạt Ly Tâm Công Nghiệp Đà Nẵng — Cường Thông Gió',
+    description: 'Sản xuất và cung cấp quạt ly tâm công nghiệp công suất 1.5kW - 200kW tại Đà Nẵng. Cân bằng động kỹ thuật số. Cường Thông Gió — Trực tiếp từ xưởng.',
+    keywords: 'quạt ly tâm, quạt công nghiệp, sản xuất quạt, Đà Nẵng, Cường Thông Gió',
+  },
+  {
+    route: '/cong-cu',
+    title: 'Công Cụ Tính Toán Thông Gió — Cường Thông Gió',
+    description: 'Bộ công cụ tính toán thông gió miễn phí: tính lưu lượng gió, kích thước ống gió, công suất quạt. Hỗ trợ kỹ sư thiết kế hệ thống thông gió.',
+    keywords: 'công cụ tính toán, lưu lượng gió, kích thước ống gió, công suất quạt, thông gió',
+  },
+  {
+    route: '/cong-cu/tinh-luu-luong-gio',
+    title: 'Tính Lưu Lượng Gió Nhà Xưởng — Công Cụ Miễn Phí — Cường Thông Gió',
+    description: 'Công cụ tính lưu lượng gió miễn phí cho nhà xưởng, nhà máy. Nhập diện tích, chiều cao, ACH để tính tổng lưu lượng gió cần thiết.',
+    keywords: 'tính lưu lượng gió, ACH, thông gió nhà xưởng, công cụ miễn phí',
+  },
+  {
+    route: '/cong-cu/tinh-kich-thuoc-ong-gio',
+    title: 'Tính Kích Thước Ống Gió — Công Cụ Miễn Phí — Cường Thông Gió',
+    description: 'Tính kích thước ống gió vuông, tròn dựa trên lưu lượng và vận tốc gió. Đạt tiêu chuẩn SMACNA. Công cụ miễn phí từ Cường Thông Gió.',
+    keywords: 'tính kích thước ống gió, ống gió vuông, ống gió tròn, SMACNA, công cụ',
+  },
+  {
+    route: '/cong-cu/tinh-cong-suat-quat',
+    title: 'Tính Công Suất Quạt — Công Cụ Miễn Phí — Cường Thông Gió',
+    description: 'Tính công suất quạt thông gió dựa trên lưu lượng, áp suất và hiệu suất. Hỗ trợ chọn quạt ly tâm, hướng trục phù hợp.',
+    keywords: 'tính công suất quạt, quạt ly tâm, quạt hướng trục, công cụ miễn phí',
+  },
+  {
+    route: '/du-an',
+    title: 'Dự Án Đã Thực Hiện — Cường Thông Gió Đà Nẵng',
+    description: 'Danh sách 2000+ dự án thông gió, PCCC đã thi công tại Đà Nẵng và Miền Trung. Hình ảnh thực tế từ Cường Thông Gió.',
+    keywords: 'dự án thông gió, thi công thực tế, Đà Nẵng, Cường Thông Gió',
+  },
 ];
 
 // ─── Helpers ───
