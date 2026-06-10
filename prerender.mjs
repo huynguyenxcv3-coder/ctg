@@ -23,10 +23,69 @@ const BASE_URL = 'https://cuongthonggio.com';
 // ─── Read the base index.html template ───
 const baseHtml = readFileSync(join(DIST_DIR, 'index.html'), 'utf-8');
 
-// ─── Article Data ───
-const contentData = JSON.parse(readFileSync(join(__dirname, 'src/data/content.json'), 'utf-8'));
-const articles = contentData.articles;
-const faqData = contentData.faqData;
+// ─── Article Data (mirrored from Blog.tsx) ───
+// In a larger project, this would be read from a CMS or shared JSON file.
+const articles = [
+  {
+    id: 'chon-quat-cong-nghiep',
+    headline: 'Cách chọn quạt công nghiệp phù hợp cho nhà xưởng — Hướng dẫn từ A đến Z',
+    description: 'Chọn sai quạt công nghiệp = tốn điện, ồn ào, thông gió kém và tốn tiền sửa chữa. Hướng dẫn chọn đúng loại quạt, tính đúng lưu lượng gió — đúc kết từ 13+ năm kinh nghiệm và 2.145+ dự án của Cường Thông Gió.',
+    datePublished: '2026-06-04',
+    dateModified: '2026-06-05',
+    author: 'Phan Trọng Cường',
+    keywords: 'cách chọn quạt công nghiệp, quạt ly tâm, quạt hướng trục, tính lưu lượng gió, ACH, SMACNA, TCVN 5687, QCVN 06:2022, nhà xưởng, thông gió Đà Nẵng',
+    contentSummary: [
+      'Hệ thống thông gió là "lá phổi" của nhà xưởng. Một nhà xưởng thông gió tốt giúp giảm nhiệt độ, loại bỏ bụi – khí độc, bảo vệ sức khỏe công nhân và tăng tuổi thọ máy móc.',
+      'Quạt ly tâm (Centrifugal): Không khí đi vào theo trục và bị đẩy ra theo phương vuông góc (xoay 90°). Tạo áp suất tĩnh cao, phù hợp khi không khí phải đi qua đường ống dài, bộ lọc bụi hoặc có nhiều trở lực.',
+      'Quạt hướng trục (Axial): Không khí đi thẳng theo trục cánh quạt. Tạo lưu lượng gió lớn nhưng áp suất thấp, phù hợp thông gió trực tiếp trên tường/mái.',
+      'Công thức tính lưu lượng gió: Lưu lượng gió (m³/h) = Thể tích nhà xưởng (m³) × Số lần thay đổi không khí (ACH).',
+      'Ví dụ thực tế: Nhà xưởng cơ khí 40m × 25m × 6m → Thể tích = 6.000 m³ → Chọn ACH = 25 → Lưu lượng cần = 150.000 m³/h → cần 6 quạt 25.000 m³/h.',
+      'Tiêu chuẩn SMACNA — tiêu chuẩn quốc tế về thiết kế, chế tạo ống gió. TCVN 5687:2010 — tiêu chuẩn Việt Nam về thông gió. QCVN 06:2022/BXD — quy chuẩn an toàn cháy.',
+    ]
+  },
+  {
+    id: 'chi-phi-thi-cong-thong-gio',
+    headline: 'Chi phí thi công hệ thống thông gió nhà xưởng năm 2026 — Bảng giá tham khảo',
+    description: 'Bảng giá tham khảo chi phí thi công thông gió nhà xưởng 2026: quạt ly tâm, quạt hướng trục, ống gió, lắp đặt. So sánh chi phí theo diện tích nhà xưởng 500m²–5000m².',
+    datePublished: '2026-06-04',
+    dateModified: '2026-06-04',
+    author: 'Phan Trọng Cường',
+    keywords: 'chi phí thông gió nhà xưởng, bảng giá thi công thông gió 2026, quạt ly tâm giá, ống gió tôn mạ kẽm, lắp đặt thông gió, Đà Nẵng',
+    contentSummary: [
+      'Chi phí thi công hệ thống thông gió nhà xưởng dao động từ 150.000 đến 450.000 VNĐ/m² sàn, tùy theo yêu cầu kỹ thuật.',
+      'Quạt ly tâm công nghiệp: 8.000.000 – 85.000.000 VNĐ/quạt. Quạt hướng trục: 5.000.000 – 65.000.000 VNĐ/quạt.',
+      'Ống gió tôn mạ kẽm: 180.000 – 350.000 VNĐ/m². Van điều tiết VCD: 450.000 – 1.200.000 VNĐ/cái. Van chặn lửa FD: 800.000 – 2.500.000 VNĐ/cái.',
+      'Nhà xưởng 1.000 m²: 150 – 500 triệu VNĐ. Nhà xưởng 2.000 m²: 280 – 950 triệu VNĐ. Nhà xưởng 5.000 m²: 650 – 2.200 triệu VNĐ.',
+      'Chọn đơn vị thi công có xưởng sản xuất trực tiếp như Cường Thông Gió — giảm 15–20% chi phí so với đơn vị trung gian.',
+    ]
+  },
+  {
+    id: 'tieu-chuan-pccc-tang-ham',
+    headline: 'Tiêu chuẩn thông gió PCCC tầng hầm theo QCVN 06:2022/BXD — Yêu cầu kỹ thuật',
+    description: 'Quy định thông gió PCCC tầng hầm theo QCVN 06:2022/BXD: yêu cầu lưu lượng gió, quạt hút khói, hệ thống thông gió khẩn cấp. Kinh nghiệm Cường Thông Gió với dự án PCCC.',
+    datePublished: '2026-06-04',
+    dateModified: '2026-06-04',
+    author: 'Phan Trọng Cường',
+    keywords: 'PCCC tầng hầm, QCVN 06:2022/BXD, quạt hút khói, thông gió PCCC, van chặn lửa FD, tiêu chuẩn phòng cháy, Đà Nẵng',
+    contentSummary: [
+      'Hệ thống thông gió PCCC tầng hầm là yêu cầu bắt buộc theo QCVN 06:2022/BXD. Quạt hút khói phải chịu nhiệt 300°C liên tục 120 phút.',
+      'Lưu lượng hút khói tối thiểu ACH ≥ 6 cho chế độ thường, ACH ≥ 10 khi có cháy. Tốc độ gió tại miệng hút ≥ 1,5 m/s.',
+      'Quạt hút khói: công suất 7.5kW–55kW, chịu nhiệt 300°C/2h, có biến tần VFD, tự động khởi động khi báo cháy.',
+      'Van chặn lửa FD tự động đóng khi nhiệt độ đạt 72°C theo TCVN 7336:2021.',
+      'Cường Thông Gió đã thi công hơn 350 dự án thông gió PCCC tầng hầm tại Đà Nẵng và Miền Trung.',
+    ]
+  }
+];
+
+// ─── FAQ Data ───
+const faqData = [
+  { question: 'Quạt ly tâm và quạt hướng trục khác nhau thế nào?', answer: 'Quạt ly tâm tạo áp suất cao, phù hợp ống gió dài và hút bụi/khí; quạt hướng trục cho lưu lượng lớn, giá tốt, hợp làm mát nhà xưởng gắn tường/mái.' },
+  { question: 'Làm sao biết cần bao nhiêu quạt cho nhà xưởng?', answer: 'Tính thể tích nhà xưởng × ACH (số lần thay đổi không khí/giờ) để ra tổng lưu lượng cần thiết, sau đó chia cho công suất mỗi quạt.' },
+  { question: 'Quạt công nghiệp có tốn điện không?', answer: 'Nếu chọn đúng công suất và đúng loại, chi phí điện rất hợp lý. Chọn dư công suất hoặc sai loại mới là nguyên nhân gây tốn điện.' },
+  { question: 'Chi phí thi công hệ thống thông gió nhà xưởng 1.000 m² khoảng bao nhiêu?', answer: 'Chi phí dao động từ 150 triệu (cơ bản) đến 500 triệu VNĐ (cao cấp). Giá chưa bao gồm VAT 8%.' },
+  { question: 'QCVN 06:2022/BXD yêu cầu gì về thông gió tầng hầm?', answer: 'ACH ≥ 6 (thông gió thường) và ACH ≥ 10 (cháy). Quạt chịu nhiệt 300°C/120 phút. Van FD đóng khi 72°C.' },
+  { question: 'Cường Thông Gió có thi công PCCC tầng hầm không?', answer: 'Có. 350+ dự án PCCC tầng hầm tại Đà Nẵng và Miền Trung. Sản xuất quạt chịu nhiệt 300°C/2h.' },
+];
 
 // ─── Page definitions ───
 const pages = [
@@ -59,66 +118,6 @@ const pages = [
     title: 'Cường Thông Gió — Kiến Thức Thông Gió Công Nghiệp',
     description: 'Trung tâm kiến thức thông gió công nghiệp — Hướng dẫn chọn quạt, bảng giá thi công 2026, tiêu chuẩn PCCC tầng hầm. Bài viết chuyên sâu từ kỹ sư Cường Thông Gió.',
     keywords: 'kiến thức thông gió, quạt công nghiệp, chi phí thông gió, PCCC tầng hầm, QCVN 06:2022',
-  },
-  {
-    route: '/dich-vu/thong-gio-nha-xuong',
-    title: 'Dịch Vụ Thông Gió Nhà Xưởng Đà Nẵng — Cường Thông Gió',
-    description: 'Chuyên thi công hệ thống thông gió nhà xưởng tại Đà Nẵng và Miền Trung. Giải pháp làm mát, hút nhiệt, cấp gió tươi cho nhà máy, kho xưởng. Hotline: 0905 001 224.',
-    keywords: 'thông gió nhà xưởng, thi công thông gió, Đà Nẵng, làm mát nhà xưởng, Cường Thông Gió',
-  },
-  {
-    route: '/dich-vu/xu-ly-bui-cong-nghiep',
-    title: 'Hệ Thống Xử Lý Bụi Công Nghiệp Đà Nẵng — Cường Thông Gió',
-    description: 'Tư vấn, thiết kế và thi công hệ thống hút bụi, lọc bụi công nghiệp tại Đà Nẵng. Đạt tiêu chuẩn QCVN. Cường Thông Gió — 13+ năm kinh nghiệm.',
-    keywords: 'xử lý bụi công nghiệp, hút bụi nhà xưởng, lọc bụi, Đà Nẵng, Cường Thông Gió',
-  },
-  {
-    route: '/dich-vu/hut-khoi-nha-xuong',
-    title: 'Hệ Thống Hút Khói Nhà Xưởng Đà Nẵng — Cường Thông Gió',
-    description: 'Thi công hệ thống hút khói, xử lý khí thải nhà xưởng tại Đà Nẵng. Quạt chịu nhiệt 300°C, đạt QCVN 06:2022/BXD. Cường Thông Gió.',
-    keywords: 'hút khói nhà xưởng, xử lý khí thải, quạt chịu nhiệt, PCCC, Đà Nẵng, Cường Thông Gió',
-  },
-  {
-    route: '/dich-vu/gia-cong-ong-gio',
-    title: 'Gia Công Ống Gió Đà Nẵng — CNC Plasma — Cường Thông Gió',
-    description: 'Gia công ống gió vuông, tròn xoắn theo tiêu chuẩn SMACNA. Cắt CNC Plasma chính xác. Sản xuất trực tiếp tại xưởng Đà Nẵng. Cường Thông Gió.',
-    keywords: 'gia công ống gió, ống gió vuông, ống gió tròn xoắn, CNC Plasma, Đà Nẵng, Cường Thông Gió',
-  },
-  {
-    route: '/dich-vu/quat-ly-tam',
-    title: 'Quạt Ly Tâm Công Nghiệp Đà Nẵng — Cường Thông Gió',
-    description: 'Sản xuất và cung cấp quạt ly tâm công nghiệp công suất 1.5kW - 200kW tại Đà Nẵng. Cân bằng động kỹ thuật số. Cường Thông Gió — Trực tiếp từ xưởng.',
-    keywords: 'quạt ly tâm, quạt công nghiệp, sản xuất quạt, Đà Nẵng, Cường Thông Gió',
-  },
-  {
-    route: '/cong-cu',
-    title: 'Công Cụ Tính Toán Thông Gió — Cường Thông Gió',
-    description: 'Bộ công cụ tính toán thông gió miễn phí: tính lưu lượng gió, kích thước ống gió, công suất quạt. Hỗ trợ kỹ sư thiết kế hệ thống thông gió.',
-    keywords: 'công cụ tính toán, lưu lượng gió, kích thước ống gió, công suất quạt, thông gió',
-  },
-  {
-    route: '/cong-cu/tinh-luu-luong-gio',
-    title: 'Tính Lưu Lượng Gió Nhà Xưởng — Công Cụ Miễn Phí — Cường Thông Gió',
-    description: 'Công cụ tính lưu lượng gió miễn phí cho nhà xưởng, nhà máy. Nhập diện tích, chiều cao, ACH để tính tổng lưu lượng gió cần thiết.',
-    keywords: 'tính lưu lượng gió, ACH, thông gió nhà xưởng, công cụ miễn phí',
-  },
-  {
-    route: '/cong-cu/tinh-kich-thuoc-ong-gio',
-    title: 'Tính Kích Thước Ống Gió — Công Cụ Miễn Phí — Cường Thông Gió',
-    description: 'Tính kích thước ống gió vuông, tròn dựa trên lưu lượng và vận tốc gió. Đạt tiêu chuẩn SMACNA. Công cụ miễn phí từ Cường Thông Gió.',
-    keywords: 'tính kích thước ống gió, ống gió vuông, ống gió tròn, SMACNA, công cụ',
-  },
-  {
-    route: '/cong-cu/tinh-cong-suat-quat',
-    title: 'Tính Công Suất Quạt — Công Cụ Miễn Phí — Cường Thông Gió',
-    description: 'Tính công suất quạt thông gió dựa trên lưu lượng, áp suất và hiệu suất. Hỗ trợ chọn quạt ly tâm, hướng trục phù hợp.',
-    keywords: 'tính công suất quạt, quạt ly tâm, quạt hướng trục, công cụ miễn phí',
-  },
-  {
-    route: '/du-an',
-    title: 'Dự Án Đã Thực Hiện — Cường Thông Gió Đà Nẵng',
-    description: 'Danh sách 2000+ dự án thông gió, PCCC đã thi công tại Đà Nẵng và Miền Trung. Hình ảnh thực tế từ Cường Thông Gió.',
-    keywords: 'dự án thông gió, thi công thực tế, Đà Nẵng, Cường Thông Gió',
   },
 ];
 

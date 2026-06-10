@@ -92,7 +92,7 @@ function PopupModal({
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Gửi thành công!</h3>
             <p className="text-gray-500 leading-relaxed">
-              Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.
+              Cảm ơn bạn đã liên hệ! Đội ngũ Cường Thông Gió sẽ phản hồi trong thời gian sớm nhất.
             </p>
             <button
               onClick={handleClose}
@@ -280,10 +280,10 @@ export function Contact() {
             LIÊN HỆ CHÚNG TÔI
           </p>
           <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Cần báo giá? Gọi chúng tôi hoặc gửi form bên dưới.
+            Tư vấn giải pháp kỹ thuật chuyên sâu.
           </h1>
-          <p className="text-gray-600 text-lg max-w-[800px] mx-auto leading-relaxed">
-            Cung cấp thông tin sơ bộ về dự án để nhận báo giá chi tiết và phương án thiết kế từ đội ngũ kỹ sư của chúng tôi.
+          <p className="text-gray-600 text-lg max-w-[600px] mx-auto leading-relaxed">
+            Cung cấp thông tin sơ bộ về dự án để nhận báo giá chi tiết và phương án thiết kế từ đội ngũ kỹ sư Cường Thông Gió.
           </p>
         </div>
 

@@ -54,7 +54,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "bash /home/runner/workspace/gemini-restore.sh ; cd cuong-thong-gio && pnpm dev"
+args = "bash /home/runner/workspace/gemini-restore.sh ; node server/index.js & cd cuong-thong-gio && pnpm dev"
 waitForPort = 5000
 
 [workflows.workflow.metadata]

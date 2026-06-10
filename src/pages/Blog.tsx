@@ -44,7 +44,7 @@ export const articles: ArticleData[] = [
   {
     id: 'chon-quat-cong-nghiep',
     headline: 'Cách chọn quạt công nghiệp phù hợp cho nhà xưởng — Hướng dẫn từ A đến Z',
-    description: 'Chọn sai quạt công nghiệp = tốn điện, ồn ào, thông gió kém và tốn tiền sửa chữa. Hướng dẫn chọn đúng loại quạt, tính đúng lưu lượng gió — đúc kết từ 13+ năm kinh nghiệm và 2.145+ dự án của chúng tôi.',
+    description: 'Chọn sai quạt công nghiệp = tốn điện, ồn ào, thông gió kém và tốn tiền sửa chữa. Hướng dẫn chọn đúng loại quạt, tính đúng lưu lượng gió — đúc kết từ 13+ năm kinh nghiệm và 2.145+ dự án của Cường Thông Gió.',
     datePublished: '2026-06-04',
     dateModified: '2026-06-05',
     author: 'Phan Trọng Cường',
@@ -54,7 +54,7 @@ export const articles: ArticleData[] = [
       {
         type: 'callout' as const,
         speakable: true,
-        text: 'Chọn sai quạt công nghiệp = tốn điện, ồn ào, thông gió kém và tốn tiền sửa chữa. Bài viết này hướng dẫn bạn chọn đúng loại quạt, tính đúng lưu lượng gió và tránh các sai lầm phổ biến — đúc kết từ 13+ năm kinh nghiệm và 2.145+ dự án của chúng tôi.'
+        text: 'Chọn sai quạt công nghiệp = tốn điện, ồn ào, thông gió kém và tốn tiền sửa chữa. Bài viết này hướng dẫn bạn chọn đúng loại quạt, tính đúng lưu lượng gió và tránh các sai lầm phổ biến — đúc kết từ 13+ năm kinh nghiệm và 2.145+ dự án của Cường Thông Gió.'
       },
       {
         type: 'paragraph' as const,
@@ -203,7 +203,7 @@ export const articles: ArticleData[] = [
       {
         type: 'callout' as const,
         speakable: true,
-        text: 'Đội ngũ kỹ sư của chúng tôi sẵn sàng khảo sát, thiết kế và báo giá miễn phí. Hotline/Zalo: 0905 001 224 — Email: phantrongcuong77@gmail.com — Địa chỉ: 101 Trần Quý Khoách, P. Hòa Khánh, TP. Đà Nẵng.'
+        text: 'Đội ngũ kỹ sư Cường Thông Gió khảo sát, thiết kế và báo giá miễn phí. Hotline/Zalo: 0905 001 224 — Email: phantrongcuong77@gmail.com — Địa chỉ: 101 Trần Quý Khoách, P. Hòa Khánh, TP. Đà Nẵng.'
       }
     ]
   },
@@ -219,7 +219,7 @@ export const articles: ArticleData[] = [
       {
         type: 'paragraph' as const,
         speakable: true,
-        text: 'Chi phí thi công hệ thống thông gió nhà xưởng phụ thuộc vào nhiều yếu tố: loại quạt, chiều dài hệ thống ống gió, phụ kiện (VCD, FD, miệng gió), và mức độ phức tạp của công trình. Theo dữ liệu từ các dự án chúng tôi đã thực hiện trong năm 2025–2026, chi phí trung bình cho hệ thống thông gió nhà xưởng dao động từ 150.000 đến 450.000 VNĐ/m² sàn, tùy theo yêu cầu kỹ thuật.'
+        text: 'Chi phí thi công hệ thống thông gió nhà xưởng phụ thuộc vào nhiều yếu tố: loại quạt, chiều dài hệ thống ống gió, phụ kiện (VCD, FD, miệng gió), và mức độ phức tạp của công trình. Theo dữ liệu từ các dự án Cường Thông Gió đã thực hiện trong năm 2025–2026, chi phí trung bình cho hệ thống thông gió nhà xưởng dao động từ 150.000 đến 450.000 VNĐ/m² sàn, tùy theo yêu cầu kỹ thuật.'
       },
       {
         type: 'heading' as const,
@@ -265,14 +265,14 @@ export const articles: ArticleData[] = [
       {
         type: 'paragraph' as const,
         speakable: false,
-        text: 'Để tiết kiệm chi phí mà vẫn đảm bảo hiệu quả: (1) Ưu tiên thiết kế đường ống ngắn nhất, giảm co cua để hạn chế tổn thất áp suất và giảm kích cỡ quạt cần thiết; (2) Sử dụng quạt hướng trục cho các khu vực thông gió trực tiếp, chỉ dùng quạt ly tâm khi cần áp suất cao; (3) Chọn đơn vị thi công có xưởng sản xuất trực tiếp như chúng tôi — giảm 15–20% chi phí so với đơn vị trung gian nhờ cắt bỏ khâu trung gian; (4) Thi công đồng bộ với hệ thống M&E chung để giảm chi phí giàn giáo và nhân công.'
+        text: 'Để tiết kiệm chi phí mà vẫn đảm bảo hiệu quả: (1) Ưu tiên thiết kế đường ống ngắn nhất, giảm co cua để hạn chế tổn thất áp suất và giảm kích cỡ quạt cần thiết; (2) Sử dụng quạt hướng trục cho các khu vực thông gió trực tiếp, chỉ dùng quạt ly tâm khi cần áp suất cao; (3) Chọn đơn vị thi công có xưởng sản xuất trực tiếp như Cường Thông Gió — giảm 15–20% chi phí so với đơn vị trung gian nhờ cắt bỏ khâu trung gian; (4) Thi công đồng bộ với hệ thống M&E chung để giảm chi phí giàn giáo và nhân công.'
       }
     ]
   },
   {
     id: 'tieu-chuan-pccc-tang-ham',
     headline: 'Tiêu chuẩn thông gió PCCC tầng hầm theo QCVN 06:2022/BXD — Yêu cầu kỹ thuật',
-    description: 'Quy định thông gió PCCC tầng hầm theo QCVN 06:2022/BXD: yêu cầu lưu lượng gió, quạt hút khói, hệ thống thông gió khẩn cấp. Kinh nghiệm của chúng tôi với dự án PCCC.',
+    description: 'Quy định thông gió PCCC tầng hầm theo QCVN 06:2022/BXD: yêu cầu lưu lượng gió, quạt hút khói, hệ thống thông gió khẩn cấp. Kinh nghiệm Cường Thông Gió với dự án PCCC.',
     datePublished: '2026-06-04',
     dateModified: '2026-06-04',
     author: 'Phan Trọng Cường',
@@ -312,12 +312,12 @@ export const articles: ArticleData[] = [
       },
       {
         type: 'heading' as const,
-        text: 'Kinh nghiệm của chúng tôi với dự án PCCC'
+        text: 'Kinh nghiệm Cường Thông Gió với dự án PCCC'
       },
       {
         type: 'paragraph' as const,
         speakable: true,
-        text: 'Chúng tôi đã thi công hơn 350 dự án thông gió PCCC tầng hầm tại Đà Nẵng và Miền Trung, bao gồm các tòa nhà cao tầng, trung tâm thương mại và chung cư. Quy trình triển khai gồm 5 bước: (1) Khảo sát hiện trạng và bản vẽ kiến trúc; (2) Tính toán lưu lượng gió theo QCVN 06:2022/BXD; (3) Thiết kế bản vẽ thi công (shop drawing) chi tiết; (4) Sản xuất quạt chịu nhiệt và ống gió tại xưởng; (5) Lắp đặt, vận hành thử và nghiệm thu cùng cơ quan PCCC. Mỗi dự án đều được kiểm định lưu lượng gió thực tế bằng thiết bị đo chuyên dụng, đảm bảo đạt 100% yêu cầu nghiệm thu.'
+        text: 'Cường Thông Gió đã thi công hơn 350 dự án thông gió PCCC tầng hầm tại Đà Nẵng và Miền Trung, bao gồm các tòa nhà cao tầng, trung tâm thương mại và chung cư. Quy trình triển khai gồm 5 bước: (1) Khảo sát hiện trạng và bản vẽ kiến trúc; (2) Tính toán lưu lượng gió theo QCVN 06:2022/BXD; (3) Thiết kế bản vẽ thi công (shop drawing) chi tiết; (4) Sản xuất quạt chịu nhiệt và ống gió tại xưởng; (5) Lắp đặt, vận hành thử và nghiệm thu cùng cơ quan PCCC. Mỗi dự án đều được kiểm định lưu lượng gió thực tế bằng thiết bị đo chuyên dụng, đảm bảo đạt 100% yêu cầu nghiệm thu.'
       },
       {
         type: 'heading' as const,
@@ -326,14 +326,14 @@ export const articles: ArticleData[] = [
       {
         type: 'paragraph' as const,
         speakable: false,
-        text: 'Các lỗi thường gặp khi thi công thông gió PCCC tầng hầm: (1) Chọn quạt không đủ chịu nhiệt 300°C/2h — chỉ dùng quạt thông gió thường, không đạt yêu cầu nghiệm thu PCCC; (2) Không lắp van chặn lửa FD tại vị trí ống gió xuyên tường/sàn chống cháy; (3) Ống gió thiếu phần mềm (flexible duct) kết nối với quạt, gây rung và tiếng ồn; (4) Bố trí miệng hút khói quá xa (hơn 2m từ tường), tạo vùng chết không hút được khói. Chúng tôi cam kết tuân thủ 100% QCVN 06:2022/BXD và hỗ trợ chủ đầu tư trong quá trình nghiệm thu PCCC.'
+        text: 'Các lỗi thường gặp khi thi công thông gió PCCC tầng hầm: (1) Chọn quạt không đủ chịu nhiệt 300°C/2h — chỉ dùng quạt thông gió thường, không đạt yêu cầu nghiệm thu PCCC; (2) Không lắp van chặn lửa FD tại vị trí ống gió xuyên tường/sàn chống cháy; (3) Ống gió thiếu phần mềm (flexible duct) kết nối với quạt, gây rung và tiếng ồn; (4) Bố trí miệng hút khói quá xa (hơn 2m từ tường), tạo vùng chết không hút được khói. Cường Thông Gió cam kết tuân thủ 100% QCVN 06:2022/BXD và hỗ trợ chủ đầu tư trong quá trình nghiệm thu PCCC.'
       }
     ]
   }
 ];
 
 /* ─── FAQ Data ─── */
-export const faqData: { question: string; answer: string }[] = [
+export const faqData = [
   {
     question: 'Quạt ly tâm và quạt hướng trục khác nhau thế nào?',
     answer: 'Quạt ly tâm tạo áp suất cao, phù hợp ống gió dài và hút bụi/khí; quạt hướng trục cho lưu lượng lớn, giá tốt, hợp làm mát nhà xưởng gắn tường/mái.'
@@ -355,8 +355,8 @@ export const faqData: { question: string; answer: string }[] = [
     answer: 'QCVN 06:2022/BXD yêu cầu tầng hầm phải có hệ thống hút khói cơ khí với ACH ≥ 6 (thông gió thường) và ACH ≥ 10 (chế độ cháy). Quạt hút khói phải chịu nhiệt 300°C liên tục 120 phút. Van chặn lửa FD tự động đóng khi nhiệt độ đạt 72°C.'
   },
   {
-    question: 'Chúng tôi có thi công PCCC tầng hầm không?',
-    answer: 'Có. Chúng tôi đã thi công hơn 350 dự án thông gió PCCC tầng hầm tại Đà Nẵng và Miền Trung. Chúng tôi sản xuất quạt chịu nhiệt 300°C/2h, ống gió chịu lửa và hỗ trợ chủ đầu tư nghiệm thu PCCC theo QCVN 06:2022/BXD.'
+    question: 'Cường Thông Gió có thi công PCCC tầng hầm không?',
+    answer: 'Có. Cường Thông Gió đã thi công hơn 350 dự án thông gió PCCC tầng hầm tại Đà Nẵng và Miền Trung. Chúng tôi sản xuất quạt chịu nhiệt 300°C/2h, ống gió chịu lửa và hỗ trợ chủ đầu tư nghiệm thu PCCC theo QCVN 06:2022/BXD.'
   }
 ];
 
@@ -384,7 +384,7 @@ export function Blog() {
     <div className="bg-white">
       <SEO
         title="Kiến Thức Thông Gió Công Nghiệp"
-        description="Trung tâm kiến thức thông gió công nghiệp — Hướng dẫn chọn quạt, bảng giá thi công 2026, tiêu chuẩn PCCC tầng hầm QCVN 06:2022/BXD. Bài viết chuyên sâu từ đội ngũ kỹ sư của chúng tôi."
+        description="Trung tâm kiến thức thông gió công nghiệp — Hướng dẫn chọn quạt, bảng giá thi công 2026, tiêu chuẩn PCCC tầng hầm QCVN 06:2022/BXD. Bài viết chuyên sâu từ kỹ sư Cường Thông Gió."
         keywords="kiến thức thông gió, cách chọn quạt công nghiệp, chi phí thông gió nhà xưởng 2026, tiêu chuẩn PCCC tầng hầm, QCVN 06:2022, quạt ly tâm, quạt hướng trục, ống gió SMACNA, thông gió Đà Nẵng"
         structuredData={[breadcrumb, ...articleSchemas, faqSchema]}
         dateModified="2026-06-05"
@@ -415,64 +415,103 @@ export function Blog() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
+            transition={{ duration: 0.6 }}
           >
-            <p className="text-xs uppercase tracking-[0.3em] text-zinc-400 font-bold mb-6">
-              TRUNG TÂM KIẾN THỨC
-            </p>
-            <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-8 tracking-tight leading-[1.1]">
-              Kinh nghiệm & Kỹ thuật <br /> Thông gió Công nghiệp.
+            <span className="inline-block px-4 py-1 bg-zinc-900 text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-8">
+              Kiến thức chuyên sâu
+            </span>
+            <h1 className="text-4xl md:text-7xl font-bold tracking-tighter text-zinc-900 mb-8 max-w-5xl leading-[1.1]">
+              Kiến thức thông gió công nghiệp —{' '}
+              <br className="hidden md:block" />
+              Hỏi gì, đáp nấy.
             </h1>
-            <p className="text-zinc-500 text-lg md:text-xl leading-relaxed font-normal">
-              Tổng hợp bài viết chuyên sâu từ đội ngũ kỹ sư của chúng tôi — giúp chủ đầu tư, kỹ sư M&E và nhà thầu hiểu rõ về quạt công nghiệp, chi phí thi công và tiêu chuẩn PCCC.
+            <p className="text-zinc-500 text-lg md:text-xl max-w-3xl leading-relaxed">
+              Tổng hợp bài viết chuyên sâu từ kỹ sư Cường Thông Gió — giúp chủ đầu tư, kỹ sư M&E và nhà thầu hiểu rõ về quạt công nghiệp, chi phí thi công và tiêu chuẩn PCCC.
+            </p>
+            <p className="text-zinc-700 text-base md:text-lg font-semibold leading-relaxed max-w-3xl mt-4" data-speakable="true">
+              <strong>
+                Cường Thông Gió chia sẻ kiến thức thực tiễn về cách chọn quạt công nghiệp (ly tâm, hướng trục), bảng giá thi công thông gió nhà xưởng 2026 (từ 150 triệu cho 1.000 m²), và tiêu chuẩn PCCC tầng hầm QCVN 06:2022/BXD — dựa trên 13+ năm kinh nghiệm và 2.145+ dự án.
+              </strong>
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ─── Article Grid ─── */}
-      <section className="py-20 bg-zinc-50/50" aria-label="Danh sách bài viết">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {articles.map((article, i) => (
-              <motion.article
-                key={article.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group bg-white rounded-2xl border border-zinc-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full"
+      {/* ─── Articles ─── */}
+      <section className="py-20 md:py-32" aria-label="Bài viết kiến thức thông gió">
+        <div className="max-w-4xl mx-auto px-6 space-y-8">
+          {articles.map((article, idx) => (
+            <motion.article
+              key={article.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="bg-white rounded-2xl border border-zinc-100 shadow-[0_2px_30px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-[0_4px_40px_rgba(0,0,0,0.08)] transition-shadow duration-500"
+              itemScope
+              itemType="https://schema.org/Article"
+            >
+              <Link
+                to={`/kien-thuc/${article.id}`}
+                className="block p-8 md:p-12 group"
               >
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="w-1 h-1 rounded-full bg-zinc-900" />
-                    <time className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">{article.datePublished}</time>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="inline-block px-3 py-1 bg-zinc-100 text-zinc-600 text-[10px] font-black uppercase tracking-[0.2em] rounded-full">
+                    Bài viết #{idx + 1}
+                  </span>
+                  <time
+                    dateTime={article.datePublished}
+                    className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest"
+                    itemProp="datePublished"
+                  >
+                    {article.datePublished}
+                  </time>
+                </div>
+
+                <h2
+                  className="text-xl md:text-3xl font-bold text-zinc-900 mb-4 leading-tight tracking-tight group-hover:text-zinc-700 transition-colors"
+                  itemProp="headline"
+                >
+                  {article.headline}
+                </h2>
+
+                <p className="text-zinc-500 text-sm md:text-base leading-relaxed mb-6" itemProp="description">
+                  {article.description}
+                </p>
+
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3" itemProp="author" itemScope itemType="https://schema.org/Person">
+                    <div className="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center text-white text-xs font-bold shrink-0">
+                      C
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold text-zinc-700 block" itemProp="name">{article.author}</span>
+                      <span className="text-[10px] text-zinc-400 uppercase tracking-wider" itemProp="jobTitle">Kỹ sư Cơ khí Thông gió</span>
+                    </div>
                   </div>
-                  <h2 className="text-xl font-bold text-zinc-900 mb-4 group-hover:text-zinc-600 transition-colors line-clamp-2 leading-snug">
-                    <Link to={`/kien-thuc/${article.id}`}>{article.headline}</Link>
-                  </h2>
-                  <p className="text-zinc-500 text-sm leading-relaxed mb-8 line-clamp-3">
-                    {article.description}
-                  </p>
-                  <div className="mt-auto pt-6 border-t border-zinc-50">
-                    <Link
-                      to={`/kien-thuc/${article.id}`}
-                      className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-900 group-hover:translate-x-2 transition-transform inline-block"
+
+                  <div className="flex items-center gap-2 text-sm font-bold text-zinc-400 group-hover:text-zinc-900 transition-colors">
+                    <span className="hidden sm:inline">Đọc bài viết</span>
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
                     >
-                      Đọc chi tiết →
-                    </Link>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </div>
                 </div>
-              </motion.article>
-            ))}
-          </div>
+              </Link>
+            </motion.article>
+          ))}
         </div>
       </section>
 
       {/* ─── FAQ Section ─── */}
-      <section className="py-24 bg-white" aria-label="Câu hỏi thường gặp">
+      <section className="py-20 md:py-32 bg-zinc-50 border-y border-zinc-100" aria-label="Câu hỏi thường gặp về thông gió" id="faq-kien-thuc">
         <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-14 md:mb-20">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -493,7 +532,7 @@ export function Blog() {
           </div>
 
           <div className="space-y-4">
-            {faqData.map((faq: { question: string; answer: string }, idx: number) => (
+            {faqData.map((faq, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 10 }}
@@ -520,13 +559,12 @@ export function Blog() {
                 </button>
                 <div
                   id={`blog-faq-answer-${idx}`}
-                  className={`transition-all duration-300 ease-in-out ${openFaq === idx ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
+                  className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-96 pb-6 md:pb-8' : 'max-h-0'}`}
+                  role="region"
                 >
-                  <div className="p-6 md:p-8 pt-0 border-t border-zinc-50">
-                    <p className="text-zinc-500 text-sm md:text-base leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
+                  <p className="faq-answer px-6 md:px-8 text-zinc-500 text-sm md:text-base leading-relaxed" data-speakable="true">
+                    {faq.answer}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -534,32 +572,33 @@ export function Blog() {
         </div>
       </section>
 
-      {/* ─── Final CTA ─── */}
-      <section className="py-20 bg-zinc-900 overflow-hidden relative" aria-label="Liên hệ tư vấn">
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+      {/* ─── CTA ─── */}
+      <section className="py-32 bg-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight uppercase">
-              Bạn cần giải pháp tối ưu cho dự án?
+            <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight leading-tight">
+              Cần tư vấn giải pháp thông gió cho dự án của bạn?
             </h2>
-            <p className="text-zinc-400 text-lg mb-12 max-w-2xl mx-auto">
-              Đội ngũ kỹ sư của chúng tôi sẵn sàng khảo sát, thiết kế và báo giá miễn phí — từ thông gió nhà xưởng đến PCCC tầng hầm.
+            <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+              Đội ngũ kỹ sư Cường Thông Gió sẵn sàng khảo sát, thiết kế và báo giá miễn phí — từ thông gió nhà xưởng đến PCCC tầng hầm.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/lien-he"
-                className="px-10 py-5 bg-white text-zinc-900 rounded-full font-black text-xs uppercase tracking-[0.2em] hover:bg-zinc-100 transition-colors shadow-xl"
+                className="bg-zinc-900 text-white px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-zinc-800 transition-colors shadow-2xl shadow-zinc-300 inline-flex items-center justify-center"
               >
-                Nhận tư vấn ngay
+                Nhận báo giá miễn phí
               </Link>
               <a
                 href="tel:0905001224"
-                className="text-white font-bold text-lg hover:underline underline-offset-8"
+                className="border-2 border-zinc-200 text-zinc-900 px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:border-zinc-900 transition-colors inline-flex items-center justify-center"
               >
-                0905 001 224
+                Gọi ngay: 0905 001 224
               </a>
             </div>
           </motion.div>

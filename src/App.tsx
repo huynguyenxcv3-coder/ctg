@@ -21,13 +21,13 @@ const GiaCongOngGio = lazy(() => import('./pages/GiaCongOngGio').then(m => ({ de
 const ThongGioNhaXuong = lazy(() => import('./pages/ThongGioNhaXuong').then(m => ({ default: m.ThongGioNhaXuong })));
 const Projects = lazy(() => import('./pages/Projects').then(m => ({ default: m.Projects })));
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail').then(m => ({ default: m.ProjectDetail })));
-const XuLyBuiCongNghiep = lazy(() => import('./pages/XuLyBuiCongNghiep').then(m => ({ default: m.XuLyBuiCongNghiep })));
-const HutKhoiNhaXuong = lazy(() => import('./pages/HutKhoiNhaXuong').then(m => ({ default: m.HutKhoiNhaXuong })));
-const QuatLyTam = lazy(() => import('./pages/QuatLyTam').then(m => ({ default: m.QuatLyTam })));
 const Tools = lazy(() => import('./pages/Tools').then(m => ({ default: m.Tools })));
 const AirflowCalculator = lazy(() => import('./pages/AirflowCalculator').then(m => ({ default: m.AirflowCalculator })));
 const DuctSizingCalculator = lazy(() => import('./pages/DuctSizingCalculator').then(m => ({ default: m.DuctSizingCalculator })));
 const FanPowerCalculator = lazy(() => import('./pages/FanPowerCalculator').then(m => ({ default: m.FanPowerCalculator })));
+const HutKhoiNhaXuong = lazy(() => import('./pages/HutKhoiNhaXuong').then(m => ({ default: m.HutKhoiNhaXuong })));
+const QuatLyTam = lazy(() => import('./pages/QuatLyTam').then(m => ({ default: m.QuatLyTam })));
+const XuLyBuiCongNghiep = lazy(() => import('./pages/XuLyBuiCongNghiep').then(m => ({ default: m.XuLyBuiCongNghiep })));
 
 // ─── Scroll restoration ───
 function ScrollToTop() {
