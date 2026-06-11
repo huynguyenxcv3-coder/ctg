@@ -344,7 +344,7 @@ export function Home() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full mx-auto max-w-7xl">
             <div className="text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 tracking-tighter leading-tight">Tại sao nên chọn <br/><span className="text-zinc-500">đội ngũ chúng tôi?</span></h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 tracking-tighter leading-tight">Tại sao nên chọn <br/><span className="text-zinc-500">đội ngũ của chúng tôi?</span></h2>
               <p className="text-zinc-400 text-base md:text-lg mb-10 leading-relaxed font-normal max-w-xl mx-auto lg:mx-0">
                 Sự chính xác trong từng hệ thống được đảm bảo bởi những kỹ sư và thợ lành nghề. Chúng tôi tự hào về đội ngũ nhân sự tận tâm, am hiểu sâu sắc về kỹ thuật cơ khí và thông gió.
               </p>
