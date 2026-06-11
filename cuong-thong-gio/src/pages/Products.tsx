@@ -454,7 +454,7 @@ export function Products() {
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight"
             >
-              Câu hỏi thường gặp về sản phẩm
+              Câu hỏi thường gặp về dịch vụ của chúng tôi
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

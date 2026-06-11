@@ -15,11 +15,10 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
   }
   
   body {
-    @apply bg-white text-industrial-black font-sans antialiased overflow-x-hidden;
+    @apply bg-white text-industrial-black font-sans antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {

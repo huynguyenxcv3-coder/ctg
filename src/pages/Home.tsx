@@ -198,7 +198,7 @@ export function Home() {
                 variants={fadeUp}
                 className="text-lg md:text-xl text-zinc-500 mb-10 md:mb-14 leading-relaxed max-w-2xl font-normal px-4"
               >
-                Cường Thông Gió sở hữu năng lực sản xuất độc lập, giúp kiểm soát hoàn toàn chất lượng thiết bị và đảm bảo tiến độ cho mọi dự án.
+                Chúng tôi sở hữu năng lực sản xuất độc lập, giúp kiểm soát hoàn toàn chất lượng thiết bị và đảm bảo tiến độ cho mọi dự án.
               </motion.p>
               
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto px-6 mb-16">
@@ -296,7 +296,7 @@ export function Home() {
               transition={{ delay: 0.1 }}
               className="text-zinc-500 text-base md:text-lg font-normal leading-relaxed mx-auto mb-0"
             >
-              Cường Thông Gió chuyên tư vấn, thiết kế & thi công hệ thống thông gió công nghiệp, xử lý khí thải, lọc bụi cho nhà xưởng, tòa nhà và bếp công nghiệp — với 4 nhóm giải pháp chính: <strong className="text-zinc-700">Quạt công nghiệp</strong> (ly tâm, hướng trục), <strong className="text-zinc-700">Xử lý khí thải & lọc bụi</strong>, <strong className="text-zinc-700">Thông gió & làm mát nhà xưởng</strong>, và <strong className="text-zinc-700">Cơ khí & inox dân dụng</strong>. Tất cả được sản xuất trực tiếp tại xưởng 150m² tại Đà Nẵng.
+              Chúng tôi chuyên tư vấn, thiết kế & thi công hệ thống thông gió công nghiệp, xử lý khí thải, lọc bụi cho nhà xưởng, tòa nhà và bếp công nghiệp — với 4 nhóm giải pháp chính: <strong className="text-zinc-700">Quạt công nghiệp</strong> (ly tâm, hướng trục), <strong className="text-zinc-700">Xử lý khí thải & lọc bụi</strong>, <strong className="text-zinc-700">Thông gió & làm mát nhà xưởng</strong>, và <strong className="text-zinc-700">Cơ khí & inox dân dụng</strong>. Tất cả được sản xuất trực tiếp tại xưởng 150m² tại Đà Nẵng.
             </motion.p>
           </div>
 
@@ -344,7 +344,7 @@ export function Home() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full mx-auto max-w-7xl">
             <div className="text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 tracking-tighter leading-tight">Tại sao nên chọn <br/><span className="text-zinc-500">đội ngũ Cường Thông Gió?</span></h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 tracking-tighter leading-tight">Tại sao nên chọn <br/><span className="text-zinc-500">đội ngũ chúng tôi?</span></h2>
               <p className="text-zinc-400 text-base md:text-lg mb-10 leading-relaxed font-normal max-w-xl mx-auto lg:mx-0">
                 Sự chính xác trong từng hệ thống được đảm bảo bởi những kỹ sư và thợ lành nghề. Chúng tôi tự hào về đội ngũ nhân sự tận tâm, am hiểu sâu sắc về kỹ thuật cơ khí và thông gió.
               </p>
@@ -386,7 +386,7 @@ export function Home() {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-6"
             >
-              Khách hàng đánh giá Cường Thông Gió như thế nào?
+              Khách hàng đánh giá chúng tôi như thế nào?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -452,7 +452,7 @@ export function Home() {
                 viewport={{ once: true }}
                 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight"
               >
-                Câu hỏi thường gặp về dịch vụ thông gió Đà Nẵng
+                Câu hỏi thường gặp về dịch vụ của chúng tôi
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -522,7 +522,7 @@ export function Home() {
                   Sẵn sàng đồng hành <br /> cùng dự án của bạn.
                 </h2>
                 <p className="text-zinc-400 mb-10 md:mb-14 text-base md:text-lg font-normal leading-relaxed max-w-xl mx-auto">
-                  Đội ngũ kỹ sư của Cường Thông Gió luôn sẵn sàng hỗ trợ khảo sát và tư vấn phương án thi công tối ưu nhất cho doanh nghiệp của bạn.
+                  Đội ngũ kỹ sư của chúng tôi luôn sẵn sàng hỗ trợ khảo sát và tư vấn phương án thi công tối ưu nhất cho doanh nghiệp của bạn.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 mx-auto w-full sm:w-auto">
                   <Button asChild size="lg" className="w-full sm:w-auto font-bold uppercase tracking-wider text-[14px] md:text-base h-auto min-h-[64px] md:min-h-[72px] py-4 px-8 md:px-14 rounded-full shadow-lg transition-all duration-300 bg-white text-zinc-900 hover:bg-zinc-100 text-center">

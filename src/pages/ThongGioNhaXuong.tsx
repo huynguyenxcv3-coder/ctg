@@ -180,7 +180,7 @@ export function ThongGioNhaXuong() {
               </div>
 
               <motion.p variants={fadeUp} className="text-lg md:text-xl text-zinc-500 mb-10 md:mb-14 leading-relaxed max-w-3xl font-normal px-4">
-                Cường Thông Gió cung cấp giải pháp thông gió toàn diện cho nhà xưởng sản xuất — từ thiết kế, tính toán ACH, sản xuất thiết bị đến thi công lắp đặt và nghiệm thu. Hơn 13 năm kinh nghiệm thi công tại các KCN lớn nhất Đà Nẵng và Miền Trung.
+                Chúng tôi cung cấp giải pháp thông gió toàn diện cho nhà xưởng sản xuất — từ thiết kế, tính toán ACH, sản xuất thiết bị đến thi công lắp đặt và nghiệm thu. Hơn 13 năm kinh nghiệm thi công tại các KCN lớn nhất Đà Nẵng và Miền Trung.
               </motion.p>
 
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto px-6 mb-16">
@@ -457,7 +457,7 @@ export function ThongGioNhaXuong() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-14 md:mb-20">
               <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight">
-                Câu hỏi thường gặp về thông gió nhà xưởng
+                Câu hỏi thường gặp về dịch vụ của chúng tôi
               </motion.h2>
               <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-zinc-500 text-base md:text-lg leading-relaxed">
                 Giải đáp chi tiết các thắc mắc phổ biến về hệ thống thông gió nhà xưởng.

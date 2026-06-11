@@ -271,10 +271,10 @@ export function Products() {
               phù hợp cho nhà xưởng của bạn?
             </h1>
             <p className="text-zinc-500 text-lg md:text-xl max-w-3xl leading-relaxed">
-              Cường Thông Gió tự hào sở hữu xưởng gia công quy mô tại Đà Nẵng, giúp chúng tôi chủ động hoàn toàn về tiến độ và cam kết tiêu chuẩn kỹ thuật khắt khe nhất cho mọi dự án.
+              Chúng tôi tự hào sở hữu xưởng gia công quy mô tại Đà Nẵng, giúp chúng tôi chủ động hoàn toàn về tiến độ và cam kết tiêu chuẩn kỹ thuật khắt khe nhất cho mọi dự án.
             </p>
             <p className="text-zinc-700 text-base md:text-lg font-semibold leading-relaxed max-w-3xl mt-4">
-              <strong>Cường Thông Gió cung cấp quạt ly tâm (1.5–200kW), quạt hướng trục (lưu lượng đến 150.000 m³/h), ống gió SMACNA, VCD, miệng gió và máy điều hòa cassette — tất cả sản xuất trực tiếp tại xưởng Đà Nẵng, bảo hành 12 tháng.</strong>
+              <strong>Chúng tôi cung cấp quạt ly tâm (1.5–200kW), quạt hướng trục (lưu lượng đến 150.000 m³/h), ống gió SMACNA, VCD, miệng gió và máy điều hòa cassette — tất cả sản xuất trực tiếp tại xưởng Đà Nẵng, bảo hành 12 tháng.</strong>
             </p>
           </motion.div>
         </div>
@@ -454,7 +454,7 @@ export function Products() {
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight"
             >
-              Câu hỏi thường gặp về sản phẩm
+              Câu hỏi thường gặp về dịch vụ của chúng tôi
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

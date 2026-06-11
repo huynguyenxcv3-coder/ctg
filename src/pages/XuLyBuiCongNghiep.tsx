@@ -270,7 +270,7 @@ export function XuLyBuiCongNghiep() {
                   Tại Việt Nam, <strong className="text-zinc-800">QCVN 19:2009/BTNMT quy định nồng độ bụi tổng trong khí thải công nghiệp không được vượt 200 mg/Nm³</strong> (cột B — khu công nghiệp) và 100 mg/Nm³ (cột A — khu dân cư). Các doanh nghiệp vi phạm sẽ bị xử phạt hành chính từ 50–500 triệu đồng, đình chỉ hoạt động hoặc thu hồi giấy phép. Vì vậy, đầu tư hệ thống xử lý bụi không chỉ là trách nhiệm xã hội mà còn là yêu cầu pháp lý bắt buộc.
                 </p>
                 <p>
-                  Cường Thông Gió cung cấp <strong className="text-zinc-800">giải pháp xử lý bụi toàn diện từ A đến Z</strong>: khảo sát hiện trạng → thiết kế hệ thống → gia công chế tạo → lắp đặt → chạy thử nghiệm thu. Với hơn 200 hệ thống đã lắp đặt tại các khu công nghiệp Hoà Khánh, Liên Chiểu, Điện Ngọc và các tỉnh Miền Trung, chúng tôi tự tin đáp ứng mọi yêu cầu xử lý bụi — từ xưởng gỗ nhỏ đến nhà máy xi măng quy mô lớn.
+                  Chúng tôi cung cấp <strong className="text-zinc-800">giải pháp xử lý bụi toàn diện từ A đến Z</strong>: khảo sát hiện trạng → thiết kế hệ thống → gia công chế tạo → lắp đặt → chạy thử nghiệm thu. Với hơn 200 hệ thống đã lắp đặt tại các khu công nghiệp Hoà Khánh, Liên Chiểu, Điện Ngọc và các tỉnh Miền Trung, chúng tôi tự tin đáp ứng mọi yêu cầu xử lý bụi — từ xưởng gỗ nhỏ đến nhà máy xi măng quy mô lớn.
                 </p>
               </div>
             </motion.div>

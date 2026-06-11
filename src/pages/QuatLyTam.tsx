@@ -652,7 +652,7 @@ export function QuatLyTam() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-14 md:mb-20">
               <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight">
-                Câu hỏi thường gặp về quạt ly tâm
+                Câu hỏi thường gặp về dịch vụ của chúng tôi
               </motion.h2>
               <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-zinc-500 text-base md:text-lg leading-relaxed">
                 Giải đáp chi tiết các thắc mắc phổ biến về quạt ly tâm công nghiệp — từ nguyên lý hoạt động, cách chọn quạt đến chi phí và bảo hành.
