@@ -92,7 +92,7 @@ function PopupModal({
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Gửi thành công!</h3>
             <p className="text-gray-500 leading-relaxed">
-              Cảm ơn bạn đã liên hệ! Đội ngũ Cường Thông Gió sẽ phản hồi trong thời gian sớm nhất.
+              Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.
             </p>
             <button
               onClick={handleClose}
