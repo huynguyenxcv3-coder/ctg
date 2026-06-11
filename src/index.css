@@ -84,6 +84,10 @@
   background: #0068ff;
 }
 
+.floating-cta .cta-email {
+  background: #3b82f6; /* Industrial blue */
+}
+
 @media (max-width: 768px) {
   .floating-cta {
     bottom: 16px;
