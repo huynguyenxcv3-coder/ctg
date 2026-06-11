@@ -167,7 +167,7 @@ export function GiaCongOngGio() {
               </div>
 
               <motion.p variants={fadeUp} className="text-lg md:text-xl text-zinc-500 mb-10 md:mb-14 leading-relaxed max-w-3xl font-normal px-4">
-                Cường Thông Gió sở hữu xưởng gia công ống gió quy mô 150m² tại Đà Nẵng, trang bị dây chuyền cắt Plasma CNC, máy gấp mép và cuốn tôn hiện đại. Chúng tôi sản xuất ống gió vuông, tròn, xoắn từ tôn mạ kẽm và inox 304/201 theo tiêu chuẩn quốc tế SMACNA — đảm bảo kín khít, chính xác và giao hàng đúng tiến độ cho mọi công trình.
+                Chúng tôi sở hữu xưởng gia công ống gió quy mô 150m² tại Đà Nẵng, trang bị dây chuyền cắt Plasma CNC, máy gấp mép và cuốn tôn hiện đại. Chúng tôi sản xuất ống gió vuông, tròn, xoắn từ tôn mạ kẽm và inox 304/201 theo tiêu chuẩn quốc tế SMACNA — đảm bảo kín khít, chính xác và giao hàng đúng tiến độ cho mọi công trình.
               </motion.p>
 
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto px-6 mb-16">

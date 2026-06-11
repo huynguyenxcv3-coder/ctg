@@ -326,7 +326,7 @@ export const articles: ArticleData[] = [
       {
         type: 'paragraph' as const,
         speakable: false,
-        text: 'Các lỗi thường gặp khi thi công thông gió PCCC tầng hầm: (1) Chọn quạt không đủ chịu nhiệt 300°C/2h — chỉ dùng quạt thông gió thường, không đạt yêu cầu nghiệm thu PCCC; (2) Không lắp van chặn lửa FD tại vị trí ống gió xuyên tường/sàn chống cháy; (3) Ống gió thiếu phần mềm (flexible duct) kết nối với quạt, gây rung và tiếng ồn; (4) Bố trí miệng hút khói quá xa (hơn 2m từ tường), tạo vùng chết không hút được khói. Cường Thông Gió cam kết tuân thủ 100% QCVN 06:2022/BXD và hỗ trợ chủ đầu tư trong quá trình nghiệm thu PCCC.'
+        text: 'Các lỗi thường gặp khi thi công thông gió PCCC tầng hầm: (1) Chọn quạt không đủ chịu nhiệt 300°C/2h — chỉ dùng quạt thông gió thường, không đạt yêu cầu nghiệm thu PCCC; (2) Không lắp van chặn lửa FD tại vị trí ống gió xuyên tường/sàn chống cháy; (3) Ống gió thiếu phần mềm (flexible duct) kết nối với quạt, gây rung và tiếng ồn; (4) Bố trí miệng hút khói quá xa (hơn 2m từ tường), tạo vùng chết không hút được khói. Chúng tôi cam kết tuân thủ 100% QCVN 06:2022/BXD và hỗ trợ chủ đầu tư trong quá trình nghiệm thu PCCC.'
       }
     ]
   }

@@ -316,7 +316,7 @@ export function HutKhoiNhaXuong() {
               Các loại hệ thống hút khói
             </motion.h2>
             <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-zinc-500 text-base md:text-lg leading-relaxed">
-              Cường Thông Gió cung cấp giải pháp hút khói toàn diện cho mọi loại hình công trình — từ bếp nhà hàng đến tầng hầm PCCC.
+              Chúng tôi cung cấp giải pháp hút khói toàn diện cho mọi loại hình công trình — từ bếp nhà hàng đến tầng hầm PCCC.
             </motion.p>
           </div>
 

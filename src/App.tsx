@@ -120,7 +120,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-white">
+      <div className="min-h-screen flex flex-col bg-white overflow-x-hidden w-full max-w-[100vw]">
         <Navbar />
         <main id="main-content" className="flex-grow">
           <ErrorBoundary>
