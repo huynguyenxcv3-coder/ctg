@@ -283,7 +283,7 @@ export function Contact() {
             Tư vấn giải pháp kỹ thuật chuyên sâu.
           </h1>
           <p className="text-gray-600 text-lg max-w-[600px] mx-auto leading-relaxed">
-            Cung cấp thông tin sơ bộ về dự án để nhận báo giá chi tiết và phương án thiết kế từ đội ngũ kỹ sư Cường Thông Gió.
+            Cung cấp thông tin sơ bộ về dự án để nhận báo giá chi tiết và phương án thiết kế từ đội ngũ kỹ sư của chúng tôi.
           </p>
         </div>
 
