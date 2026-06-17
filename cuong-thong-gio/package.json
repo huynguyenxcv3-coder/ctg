@@ -39,6 +39,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "dotenv": "^17.4.2",
+    "esbuild": "^0.28.1",
     "eslint": "^10.2.1",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
@@ -48,5 +49,11 @@
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.2",
     "vite": "^8.0.10"
+  },
+  "pnpm": {
+    "approvedBuilds": [
+      "puppeteer",
+      "esbuild"
+    ]
   }
 }
