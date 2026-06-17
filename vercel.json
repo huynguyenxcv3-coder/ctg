@@ -1,6 +1,8 @@
 {
   "version": 2,
   "regions": ["sin1"],
+  "buildCommand": "pnpm build:ssg",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/api/(.*)",

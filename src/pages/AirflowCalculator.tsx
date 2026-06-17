@@ -344,7 +344,7 @@ export function AirflowCalculator() {
                 Cần tư vấn chuyên sâu?
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-zinc-400">
-                Đội ngũ kỹ sư Cường Thông Gió sẵn sàng hỗ trợ tính toán chi tiết và thiết kế
+                Đội ngũ kỹ sư của chúng tôi sẵn sàng hỗ trợ tính toán chi tiết và thiết kế
                 hệ thống thông gió tối ưu cho công trình của bạn.
               </p>
               <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">

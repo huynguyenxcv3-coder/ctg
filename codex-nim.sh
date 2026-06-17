@@ -1,17 +1,18 @@
 #!/bin/bash
-# Script để chạy Codex CLI với NVIDIA NIM
+# Script để chạy Codex CLI với IYH Gateway
 
-export NVIDIA_API_KEY="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"
+export OPENAI_API_KEY="iyh_jdCQMqJfiSWNcjx1OaajpjHT90McJjr-"
 
-# Mặc định dùng model gpt-oss-120b nếu không chỉ định
-MODEL=${1:-"gpt-oss-120b"}
+# Mặc định dùng model gpt-5.5-xhigh nếu không chỉ định
+MODEL=${1:-"gpt-5.5-xhigh"}
 shift
 
 if [ "$MODEL" == "pro" ]; then
-    MODEL="gpt-oss-120b"
+    MODEL="gpt-5.5-xhigh"
 elif [ "$MODEL" == "fast" ]; then
-    MODEL="gpt-oss-20b"
+    MODEL="gpt-5.3-codex-high"
 fi
 
 echo "Đang chạy Codex với model: $MODEL"
-/home/runner/workspace/.config/npm/node_global/bin/codex --provider nvidia --model "$MODEL" "$@"
+# Sử dụng cấu hình từ ~/.codex/config.toml
+codex --model "$MODEL" "$@"

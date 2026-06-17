@@ -203,7 +203,7 @@ export const articles: ArticleData[] = [
       {
         type: 'callout' as const,
         speakable: true,
-        text: 'Đội ngũ kỹ sư Cường Thông Gió khảo sát, thiết kế và báo giá miễn phí. Hotline/Zalo: 0905 001 224 — Email: phantrongcuong77@gmail.com — Địa chỉ: 101 Trần Quý Khoách, P. Hòa Khánh, TP. Đà Nẵng.'
+        text: 'Đội ngũ kỹ sư của chúng tôi khảo sát, thiết kế và báo giá miễn phí. Hotline/Zalo: 0905 001 224 — Email: phantrongcuong77@gmail.com — Địa chỉ: 101 Trần Quý Khoách, P. Hòa Khánh, TP. Đà Nẵng.'
       }
     ]
   },
@@ -585,7 +585,7 @@ export function Blog() {
               Cần tư vấn giải pháp thông gió cho dự án của bạn?
             </h2>
             <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
-              Đội ngũ kỹ sư Cường Thông Gió sẵn sàng khảo sát, thiết kế và báo giá miễn phí — từ thông gió nhà xưởng đến PCCC tầng hầm.
+              Đội ngũ kỹ sư của chúng tôi sẵn sàng khảo sát, thiết kế và báo giá miễn phí — từ thông gió nhà xưởng đến PCCC tầng hầm.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

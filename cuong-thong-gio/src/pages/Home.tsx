@@ -16,9 +16,10 @@ import {
 } from '../components/SEO'
 
 const stats = [
-  { value: '13', label: 'Năm hoạt động' },
-  { value: '2,145', label: 'Dự án bàn giao' },
-  { value: '150m²', label: 'Diện tích xưởng' },
+  { value: '13+', label: 'Năm kinh nghiệm' },
+  { value: '2000+', label: 'Dự án hoàn thành' },
+  { value: '30+', label: 'Dự án lớn tiêu biểu' },
+  { value: '7', label: 'Lĩnh vực thi công' },
 ]
 
 const services = [
@@ -149,7 +150,7 @@ export function Home() {
     <div ref={containerRef} className="bg-white min-h-screen selection:bg-zinc-200 selection:text-zinc-900 relative font-sans text-zinc-900">
       <SEO 
         title="Quạt Công Nghiệp & Hệ Thống Thông Gió Đà Nẵng"
-        description="Cường Thông Gió — Chuyên sản xuất quạt ly tâm, quạt hướng trục, gia công ống gió, thi công hệ thống thông gió & xử lý khí thải cho nhà xưởng, công trình tại Đà Nẵng, Miền Trung. 13+ năm kinh nghiệm, 2000+ dự án."
+        description="Cường Thông Gió — Chuyên sản xuất quạt ly tâm, quạt hướng trục, gia công ống gió, thi công hệ thống thông gió & xử lý khí thải cho nhà xưởng, công trình tại Đà Nẵng, Miền Trung. Hơn 13 năm kinh nghiệm, 2000+ dự án hoàn thành, 30+ dự án lớn tiêu biểu."
         keywords="quạt công nghiệp Đà Nẵng, thông gió nhà xưởng, ống gió, quạt ly tâm, quạt hướng trục, hệ thống thông gió, xử lý khí thải, lọc bụi công nghiệp, Cường Thông Gió, thi công thông gió Đà Nẵng, quạt hút công nghiệp, gia công ống gió, thi công thông gió nhà xưởng Đà Nẵng, quạt hút công nghiệp Liên Chiểu, ống gió KCN Hòa Khánh, hệ thống thông gió KCN Hòa Cầm, xử lý khí thải Sơn Trà, thông gió tầng hầm Đà Nẵng"
         structuredData={[
           LOCAL_BUSINESS_SCHEMA,
@@ -202,12 +203,12 @@ export function Home() {
               </motion.p>
               
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto px-6 mb-16">
-                <Button asChild size="lg" className="w-full sm:w-auto min-w-[200px] px-8 font-bold text-sm h-14 rounded-full shadow-lg shadow-zinc-100 transition-all duration-300 bg-zinc-950 text-white hover:bg-zinc-800 uppercase tracking-widest whitespace-nowrap">
+                <Button asChild size="lg" className="w-full sm:w-auto min-w-[200px] px-8 font-bold text-sm h-14 rounded-xl shadow-lg shadow-zinc-100 transition-all duration-300 bg-zinc-950 text-white hover:bg-zinc-800 uppercase tracking-widest whitespace-nowrap">
                   <Link to="/lien-he">
                     Yêu cầu sản xuất
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto min-w-[200px] px-8 font-bold text-sm h-14 rounded-full border-[2px] border-zinc-200 hover:border-zinc-950 hover:bg-zinc-50 transition-all duration-300 text-zinc-950 uppercase tracking-widest whitespace-nowrap">
+                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto min-w-[200px] px-8 font-bold text-sm h-14 rounded-xl border-[2px] border-zinc-200 hover:border-zinc-950 hover:bg-zinc-50 transition-all duration-300 text-zinc-950 uppercase tracking-widest whitespace-nowrap">
                   <Link to="/san-pham">
                     Năng lực sản xuất
                   </Link>
@@ -227,27 +228,19 @@ export function Home() {
           >
             <motion.img 
               style={{ y: imgY, scale: imgScale }}
-              src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1200&auto=format&fit=crop" 
-              srcSet="
-                https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=75&w=480&auto=format&fit=crop 480w,
-                https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop 800w,
-                https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1200&auto=format&fit=crop 1200w
-              "
-              sizes="(max-width: 640px) 480px, (max-width: 1024px) 800px, 1200px"
+              src="/he-thong-ong-gio-cong-truong.png" 
               alt="Xưởng sản xuất quạt công nghiệp Cường Thông Gió tại Đà Nẵng — dây chuyền gia công hiện đại" 
               loading="lazy"
               decoding="async"
-              width="1200"
-              height="675"
               className="w-full h-[120%] object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700 absolute top-[-10%]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-8 md:p-16 lg:p-24">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-8 md:p-16 lg:p-24">
                <div className="text-white max-w-4xl">
-                 <div className="flex items-center gap-4 mb-6">
-                   <span className="bg-white text-black text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-wider">Thực tế</span>
-                   <span className="text-[10px] md:text-xs font-medium opacity-80 uppercase tracking-widest">Dây chuyền sản xuất tại xưởng</span>
+                 <div className="flex items-center gap-4 mb-4">
+                   <span className="bg-white text-zinc-900 text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-wider">Cam kết</span>
+                   <span className="text-[10px] md:text-xs font-medium opacity-90 uppercase tracking-widest">Sản phẩm thực - Giá trị thực</span>
                  </div>
-                 <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight">Làm chủ công nghệ <br className="hidden md:block"/>và kỹ thuật</h2>
+                 <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">Chất lượng tạo nên<br className="hidden md:block"/>thương hiệu</h2>
                </div>
             </div>
           </motion.div>
@@ -258,7 +251,7 @@ export function Home() {
       <section className="py-12 md:py-20 bg-white border-b border-zinc-100 relative z-10" aria-label="Thống kê hoạt động">
         <div className="container-custom">
           <Link to="/du-an" className="block group">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 text-center w-full mx-auto max-w-5xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center w-full mx-auto max-w-5xl">
               {stats.map((s, i) => (
                 <motion.div 
                   key={s.label} 
@@ -525,7 +518,7 @@ export function Home() {
                   Đội ngũ kỹ sư của chúng tôi luôn sẵn sàng hỗ trợ khảo sát và tư vấn phương án thi công tối ưu nhất cho doanh nghiệp của bạn.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 mx-auto w-full sm:w-auto">
-                  <Button asChild size="lg" className="w-full sm:w-auto font-bold uppercase tracking-wider text-[14px] md:text-base h-auto min-h-[64px] md:min-h-[72px] py-4 px-8 md:px-14 rounded-full shadow-lg transition-all duration-300 bg-white text-zinc-900 hover:bg-zinc-100 text-center">
+                  <Button asChild size="lg" className="w-full sm:w-auto font-bold uppercase tracking-wider text-[14px] md:text-base h-auto min-h-[64px] md:min-h-[72px] py-4 px-8 md:px-14 rounded-xl shadow-lg transition-all duration-300 bg-white text-zinc-900 hover:bg-zinc-100 text-center">
                     <Link to="/lien-he" className="flex items-center justify-center w-full h-full leading-relaxed">Gửi yêu cầu tư vấn kỹ thuật</Link>
                   </Button>
                 </div>

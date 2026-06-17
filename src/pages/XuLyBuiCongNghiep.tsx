@@ -674,7 +674,7 @@ export function XuLyBuiCongNghiep() {
                 Cần giải pháp xử lý bụi?
               </h2>
               <p className="text-zinc-400 mb-10 md:mb-14 text-base md:text-lg font-normal leading-relaxed max-w-xl mx-auto">
-                Đội ngũ kỹ sư Cường Thông Gió sẵn sàng khảo sát miễn phí, tư vấn giải pháp tối ưu và gửi báo giá chi tiết trong vòng 24h. Liên hệ ngay để bảo vệ sức khoẻ công nhân và tuân thủ quy định môi trường.
+                Đội ngũ kỹ sư của chúng tôi sẵn sàng khảo sát miễn phí, tư vấn giải pháp tối ưu và gửi báo giá chi tiết trong vòng 24h. Liên hệ ngay để bảo vệ sức khoẻ công nhân và tuân thủ quy định môi trường.
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 mx-auto w-full sm:w-auto">
                 <Button asChild size="lg" className="w-full sm:w-auto font-bold uppercase tracking-wider text-[14px] md:text-base h-auto min-h-[64px] md:min-h-[72px] py-4 px-8 md:px-14 rounded-full shadow-lg transition-all duration-300 bg-white text-zinc-900 hover:bg-zinc-100 text-center">

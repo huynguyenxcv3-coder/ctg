@@ -16,6 +16,28 @@ export default defineConfig({
     host: '0.0.0.0',
     strictPort: true,
     allowedHosts: true,
+    watch: {
+      ignored: [
+        '**/node_modules/**',
+        '**/.pythonlibs/**',
+        '**/.cache/**',
+        '**/.local/**',
+        '**/.git/**',
+        '**/aws/**',
+        '**/backend_extracted/**',
+        '**/cuong-thong-gio/**',
+        '**/cc-nim/**',
+        '**/v-bot/**',
+        '**/my-notion-worker/**',
+        '**/tailscale_state/**',
+        '**/ssh_server/**',
+        '**/extension/**',
+        '**/.antigravitycli/**',
+        '**/.gemini_backup/**',
+        '**/.config_backup/**',
+        '**/.seo-backup-*/**',
+      ],
+    },
     proxy: {
       '/api': {
         target: 'http://localhost:3001',
@@ -30,20 +52,9 @@ export default defineConfig({
     allowedHosts: true,
   },
   build: {
+    sourcemap: false,
+    minify: 'esbuild',
     rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
-              return 'vendor-react';
-            }
-            if (id.includes('framer-motion') || id.includes('gsap') || id.includes('lucide-react')) {
-              return 'vendor-ui';
-            }
-            return 'vendor';
-          }
-        }
-      }
     }
   }
 })

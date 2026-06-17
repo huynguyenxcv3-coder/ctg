@@ -25,11 +25,11 @@ export function Footer() {
           <nav aria-label="Dịch vụ chính" className="space-y-8">
             <h3 className="font-bold text-lg uppercase tracking-wider">DỊCH VỤ</h3>
             <ul className="space-y-3">
-              <li><NavLink to="/san-pham" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Quạt công nghiệp công suất lớn</NavLink></li>
-              <li><NavLink to="/san-pham" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Gia công ống gió Plasma CNC</NavLink></li>
-              <li><NavLink to="/san-pham" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Hệ thống lọc bụi nhà xưởng</NavLink></li>
-              <li><NavLink to="/san-pham" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Thông gió PCCC & Tầng hầm</NavLink></li>
-              <li><NavLink to="/san-pham" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Máy điều hoà cassette</NavLink></li>
+              <li><NavLink to="/quat-ly-tam-cong-nghiep" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Quạt công nghiệp công suất lớn</NavLink></li>
+              <li><NavLink to="/gia-cong-ong-gio-da-nang" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Gia công ống gió Plasma CNC</NavLink></li>
+              <li><NavLink to="/xu-ly-bui-cong-nghiep" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Hệ thống lọc bụi nhà xưởng</NavLink></li>
+              <li><NavLink to="/hut-khoi-nha-xuong-da-nang" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Thông gió PCCC & Tầng hầm</NavLink></li>
+              <li><NavLink to="/thong-gio-nha-xuong-da-nang" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Hệ thống thông gió nhà xưởng</NavLink></li>
             </ul>
           </nav>
 
@@ -72,9 +72,9 @@ export function Footer() {
             <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">
               © {currentYear} CƯỜNG THÔNG GIÓ. TẤT CẢ QUYỀN ĐƯỢC BẢO LƯU.
             </p>
-            <a href="//www.dmca.com/Protection/Status.aspx?ID=2b5c0b87-c2bc-4147-9498-defdcb5bc5e6&refurl=https://cuongthonggio.com/" title="DMCA.com Protection Status" className="dmca-badge">
+            {/* <a href="//www.dmca.com/Protection/Status.aspx?ID=2b5c0b87-c2bc-4147-9498-defdcb5bc5e6&refurl=https://cuongthonggio.com/" title="DMCA.com Protection Status" className="dmca-badge">
               <img src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-06.png?ID=2b5c0b87-c2bc-4147-9498-defdcb5bc5e6" alt="DMCA.com Protection Status" />
-            </a>
+            </a> */}
           </div>
           <div className="flex items-center gap-6">
             <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest hidden md:inline">T2-T7: 08:00–17:00</span>

@@ -8,12 +8,11 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-# Google (Cần cho Gemini AI Overviews)
+# Google Search / AI Overviews use Googlebot. Google does not use Crawl-delay.
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
-# Google Extended — Gemini AI training & grounding
+# Google-Extended controls use for Gemini Apps / Vertex AI grounding, not Search indexing.
 User-agent: Google-Extended
 Allow: /
 

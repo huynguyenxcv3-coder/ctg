@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
 import type { Variants } from 'framer-motion'
 import { Button } from '../components/ui/Button'
 import { SEO, makeBreadcrumbSchema } from '../components/SEO'
-import { projects, CATEGORIES } from './projectsData'
+import { trackRecord } from './projectsData'
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -23,30 +22,14 @@ const stagger: Variants = {
   },
 }
 
-const cardVariant: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-  },
-}
-
 const stats = [
-  { value: '2,145+', label: 'Dự án hoàn thành' },
+  { value: '30+', label: 'Công trình tiêu biểu' },
   { value: '7', label: 'Lĩnh vực thi công' },
-  { value: '13+', label: 'Năm kinh nghiệm' },
+  { value: '10+', label: 'Năm kinh nghiệm' },
   { value: '100%', label: 'Nghiệm thu đạt' },
 ]
 
 export function Projects() {
-  const [activeCategory, setActiveCategory] = useState('tat-ca')
-
-  const filteredProjects =
-    activeCategory === 'tat-ca'
-      ? projects
-      : projects.filter((p) => p.categorySlug === activeCategory)
-
   const breadcrumb = makeBreadcrumbSchema([
     { name: 'Trang chủ', url: 'https://cuongthonggio.com/' },
     { name: 'Dự án', url: 'https://cuongthonggio.com/du-an' },
@@ -56,10 +39,10 @@ export function Projects() {
     <div className="bg-white min-h-screen selection:bg-zinc-200 selection:text-zinc-900 relative font-sans text-zinc-900">
       <SEO
         title="Dự Án Thực Tế — Thi Công Thông Gió & Xử Lý Khí Thải"
-        description="Xem 2000+ dự án thực tế: thông gió nhà xưởng, hút khói bếp, xử lý bụi, thông gió PCCC tầng hầm, làm mát cooling pad, hệ thống ống gió tại Đà Nẵng, Quảng Nam, Huế, Quảng Ngãi. Cường Thông Gió — 13 năm kinh nghiệm."
+        description="Hồ sơ năng lực Cường Thông Gió: hơn 30 công trình tiêu biểu về điều hòa không khí, thông gió, hút mùi, xử lý khí thải tại Đà Nẵng, Huế, Quảng Nam và các nhà máy FDI. Hơn 10 năm kinh nghiệm."
         keywords="dự án thông gió, thông gió nhà xưởng Đà Nẵng, hút khói bếp, xử lý khí thải, thông gió PCCC, cooling pad, ống gió, Cường Thông Gió"
         structuredData={[breadcrumb]}
-        dateModified="2026-06-04"
+        dateModified="2026-06-16"
       />
 
       {/* Breadcrumb */}
@@ -102,9 +85,9 @@ export function Projects() {
                 variants={fadeUp}
                 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-[1.1] mb-6"
               >
-                Hơn 2.000 công trình
+                Hồ sơ công trình
                 <br />
-                đã bàn giao trên khắp Miền Trung.
+                đã thi công khắp Miền Trung.
               </motion.h1>
               <motion.p
                 variants={fadeUp}
@@ -142,146 +125,79 @@ export function Projects() {
         </div>
       </section>
 
-      {/* Category Filter + Project Grid */}
-      <section className="py-16 md:py-24 bg-white">
+      {/* Hồ sơ kinh nghiệm — track record */}
+      <section className="py-16 md:py-24 bg-zinc-50/50 border-t border-zinc-100">
         <div className="container-custom">
-          {/* Filter Tabs */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-wrap gap-2 mb-12 md:mb-16 justify-center"
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto text-center mb-12 md:mb-16"
           >
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat.slug}
-                onClick={() => setActiveCategory(cat.slug)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer ${
-                  activeCategory === cat.slug
-                    ? 'bg-zinc-900 text-white shadow-sm'
-                    : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
+            <p className="text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold mb-4">
+              Hồ sơ năng lực
+            </p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-900 leading-tight mb-6">
+              Một số công trình tiêu biểu đã thực hiện
+            </h2>
+            <p className="text-zinc-500 text-lg leading-relaxed">
+              Danh mục công trình điều hòa không khí, thông gió, hút mùi và xử lý khí thải mà Cường
+              Thông Gió đã thi công cho các chủ đầu tư trong và ngoài nước.
+            </p>
           </motion.div>
 
-          {/* Results count */}
-          <motion.p
-            key={activeCategory}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-sm text-zinc-400 mb-8 text-center"
-          >
-            Hiển thị{' '}
-            <span className="text-zinc-900 font-semibold">{filteredProjects.length}</span> dự án
-            {activeCategory !== 'tat-ca' && (
-              <>
-                {' '}
-                trong danh mục{' '}
-                <span className="text-zinc-900 font-semibold">
-                  {CATEGORIES.find((c) => c.slug === activeCategory)?.label}
-                </span>
-              </>
-            )}
-          </motion.p>
-
-          {/* Grid */}
           <motion.div
-            key={activeCategory}
-            variants={stagger}
-            initial="hidden"
-            animate="visible"
-            className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6 }}
+            className="max-w-7xl mx-auto"
           >
-            {filteredProjects.map((project) => (
-              <motion.div key={project.id} variants={cardVariant} layout>
-                <Link
-                  to={`/du-an/${project.id}`}
-                  className="group block h-full"
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {trackRecord.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-2xl border border-zinc-200 overflow-hidden shadow-sm hover:shadow-xl transition-all group flex flex-col"
                 >
-                  <article className="h-full border border-zinc-200 rounded-2xl p-6 md:p-8 transition-all duration-300 hover:border-zinc-400 hover:shadow-lg hover:shadow-zinc-100 bg-white flex flex-col">
-                    {/* Category badge */}
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                        {project.category}
-                      </span>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-lg font-bold text-zinc-900 leading-snug mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
-                      {project.name}
-                    </h3>
-
-                    {/* Location */}
-                    <p className="text-sm text-zinc-500 mb-4 flex items-center gap-1.5">
-                      <svg
-                        className="w-3.5 h-3.5 text-zinc-400 shrink-0"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                      {project.location}
-                    </p>
-
-                    {/* Key spec highlight */}
-                    <div className="mt-auto pt-4 border-t border-zinc-100">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <div className="text-xs text-zinc-400 font-medium">
-                            {project.specs[0]?.label}
-                          </div>
-                          <div className="text-sm font-bold text-zinc-900">
-                            {project.specs[0]?.value}
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-xs text-zinc-400 font-medium">
-                            {project.specs[project.specs.length - 1]?.label}
-                          </div>
-                          <div className="text-sm font-bold text-blue-600">
-                            {project.specs[project.specs.length - 1]?.value}
-                          </div>
-                        </div>
+                  <div className="aspect-[4/3] bg-zinc-100 overflow-hidden relative group-hover:scale-[1.02] transition-transform duration-500">
+                    {item.image ? (
+                      <img src={item.image} alt={item.name} className="w-full h-full object-cover" loading="lazy" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-zinc-300 bg-zinc-100">
+                        <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
                       </div>
+                    )}
+                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-zinc-700 rounded-full shadow-sm">
+                      Dự án {idx + 1}
                     </div>
-
-                    {/* View link */}
-                    <div className="mt-4 flex items-center gap-1 text-sm font-medium text-zinc-400 group-hover:text-zinc-900 transition-colors">
-                      Xem chi tiết
-                      <svg
-                        className="w-4 h-4 transition-transform group-hover:translate-x-1"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                  </div>
+                  <div className="p-5 flex-1 flex flex-col">
+                    <h3 className="text-sm font-bold text-zinc-900 leading-snug mb-3 flex-1 line-clamp-3">
+                      {item.name}
+                    </h3>
+                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-zinc-100">
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400">Quy mô</span>
+                      <span className="text-xs font-semibold text-zinc-700 bg-zinc-100 px-2.5 py-1 rounded-md">{item.scale}</span>
                     </div>
-                  </article>
-                </Link>
-              </motion.div>
-            ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xs text-zinc-400 text-center mt-6 max-w-5xl mx-auto"
+          >
+            Nguồn: Hồ sơ năng lực Công ty TNHH MTV Cường Thông Gió. Danh mục mang tính tiêu biểu, chưa
+            bao gồm toàn bộ công trình đã thực hiện.
+          </motion.p>
         </div>
       </section>
 
@@ -304,7 +220,7 @@ export function Projects() {
               Liên hệ tư vấn miễn phí.
             </motion.h2>
             <motion.p variants={fadeUp} className="text-zinc-400 text-lg mb-10 leading-relaxed">
-              Đội ngũ kỹ sư Cường Thông Gió sẵn sàng khảo sát thực tế và tư vấn giải pháp phù hợp
+              Đội ngũ kỹ sư của chúng tôi sẵn sàng khảo sát thực tế và tư vấn giải pháp phù hợp
               nhất cho công trình của bạn.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">

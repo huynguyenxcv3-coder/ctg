@@ -120,14 +120,14 @@ export function About() {
                 </div>
 
                 <div className="relative">
-                  <div className="aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl shadow-zinc-200 border border-zinc-100">
-                    <img 
-                      src="/thi-cong-ong-gio.png" 
-                      alt="Đội ngũ kỹ thuật Cường Thông Gió thi công hệ thống ống gió tại công trình" 
+                  <div className="aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl shadow-zinc-200 border border-zinc-100 bg-zinc-100">
+                    {/* <img 
+                      src="/thi-cong-ong-gio.webp" 
+                      alt="Đội ngũ kỹ thuật của chúng tôi thi công hệ thống ống gió tại công trình" 
                       loading="lazy"
                       decoding="async"
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -244,7 +244,7 @@ export function About() {
             Bạn cần tư vấn giải pháp thông gió?
           </h2>
           <p className="text-zinc-400 mb-10 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            Đội ngũ kỹ sư Cường Thông Gió sẵn sàng khảo sát thực tế và báo giá miễn phí cho dự án của bạn.
+            Đội ngũ kỹ sư của chúng tôi sẵn sàng khảo sát thực tế và báo giá miễn phí cho dự án của bạn.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/lien-he" className="bg-white text-zinc-900 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-zinc-100 transition-colors shadow-lg">

@@ -12,6 +12,7 @@ import { Footer } from './components/Footer';
 // ─── Lazy-loaded pages (code-splitting) ───
 const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
 const Products = lazy(() => import('./pages/Products').then(m => ({ default: m.Products })));
+const ProductDetail = lazy(() => import('./pages/ProductDetail').then(m => ({ default: m.ProductDetail })));
 const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
 const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })));
 const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
@@ -20,7 +21,6 @@ const ArticlePage = lazy(() => import('./pages/ArticlePage').then(m => ({ defaul
 const GiaCongOngGio = lazy(() => import('./pages/GiaCongOngGio').then(m => ({ default: m.GiaCongOngGio })));
 const ThongGioNhaXuong = lazy(() => import('./pages/ThongGioNhaXuong').then(m => ({ default: m.ThongGioNhaXuong })));
 const Projects = lazy(() => import('./pages/Projects').then(m => ({ default: m.Projects })));
-const ProjectDetail = lazy(() => import('./pages/ProjectDetail').then(m => ({ default: m.ProjectDetail })));
 const Tools = lazy(() => import('./pages/Tools').then(m => ({ default: m.Tools })));
 const AirflowCalculator = lazy(() => import('./pages/AirflowCalculator').then(m => ({ default: m.AirflowCalculator })));
 const DuctSizingCalculator = lazy(() => import('./pages/DuctSizingCalculator').then(m => ({ default: m.DuctSizingCalculator })));
@@ -95,14 +95,14 @@ class ErrorBoundary extends Component<{ children: ReactNode }, ErrorBoundaryStat
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button
                 onClick={() => this.setState({ hasError: false, error: null })}
-                className="px-6 py-3 bg-zinc-900 text-white rounded-full font-bold text-sm uppercase tracking-widest hover:bg-zinc-800 transition-colors"
+                className="px-6 py-3 bg-zinc-900 text-white rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-zinc-800 transition-colors"
               >
                 Thử lại
               </button>
               <Link
                 to="/"
                 onClick={() => this.setState({ hasError: false, error: null })}
-                className="px-6 py-3 border-2 border-zinc-200 text-zinc-900 rounded-full font-bold text-sm uppercase tracking-widest hover:border-zinc-900 transition-colors text-center"
+                className="px-6 py-3 border-2 border-zinc-200 text-zinc-900 rounded-xl font-bold text-sm uppercase tracking-widest hover:border-zinc-900 transition-colors text-center"
               >
                 Về trang chủ
               </Link>
@@ -128,6 +128,7 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/san-pham" element={<Products />} />
+                <Route path="/san-pham/:slug" element={<ProductDetail />} />
                 <Route path="/gioi-thieu" element={<About />} />
                 <Route path="/lien-he" element={<Contact />} />
                 <Route path="/kien-thuc" element={<Blog />} />
@@ -135,7 +136,6 @@ export default function App() {
                 <Route path="/gia-cong-ong-gio-da-nang" element={<GiaCongOngGio />} />
                 <Route path="/thong-gio-nha-xuong-da-nang" element={<ThongGioNhaXuong />} />
                 <Route path="/du-an" element={<Projects />} />
-                <Route path="/du-an/:projectId" element={<ProjectDetail />} />
                 <Route path="/cong-cu" element={<Tools />} />
                 <Route path="/cong-cu/tinh-luu-luong-gio" element={<AirflowCalculator />} />
                 <Route path="/cong-cu/tinh-tiet-dien-ong-gio" element={<DuctSizingCalculator />} />

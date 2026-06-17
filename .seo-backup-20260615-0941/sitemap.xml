@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://cuongthonggio.com/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://cuongthonggio.com/logo.png</image:loc>
+      <image:title>Logo Cường Thông Gió — Quạt công nghiệp &amp; thông gió Đà Nẵng</image:title>
+      <image:caption>Cường Thông Gió — Công ty chuyên sản xuất quạt công nghiệp, thi công hệ thống thông gió tại Đà Nẵng</image:caption>
+      <image:geo_location>Đà Nẵng, Việt Nam</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://cuongthonggio.com/thi-cong-ong-gio.png</image:loc>
+      <image:title>Thi công hệ thống ống gió tại công trình Đà Nẵng — Cường Thông Gió</image:title>
+      <image:caption>Đội ngũ kỹ thuật Cường Thông Gió thi công lắp đặt ống gió tại nhà máy khu công nghiệp Hòa Khánh, Đà Nẵng</image:caption>
+      <image:geo_location>Đà Nẵng, Việt Nam</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://cuongthonggio.com/quat-ly-tam.png</image:loc>
+      <image:title>Quạt ly tâm công nghiệp sản xuất tại Đà Nẵng — Cường Thông Gió</image:title>
+      <image:caption>Quạt ly tâm công nghiệp công suất lớn, sản xuất trực tiếp tại xưởng Cường Thông Gió, Đà Nẵng</image:caption>
+      <image:geo_location>Đà Nẵng, Việt Nam</image:geo_location>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/san-pham</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/san-pham" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/san-pham" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cuongthonggio.com/quat-ly-tam.png</image:loc>
+      <image:title>Quạt ly tâm công nghiệp — Cường Thông Gió Đà Nẵng</image:title>
+      <image:caption>Quạt ly tâm công suất 1.5kW đến 200kW, cân bằng động kỹ thuật số, sản xuất tại Đà Nẵng</image:caption>
+      <image:geo_location>Đà Nẵng, Việt Nam</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://cuongthonggio.com/quat-huong-truc.png</image:loc>
+      <image:title>Quạt hướng trục công nghiệp — Cường Thông Gió Đà Nẵng</image:title>
+      <image:caption>Quạt hướng trục công nghiệp lưu lượng lớn, phù hợp nhà xưởng và khu công nghiệp tại Đà Nẵng</image:caption>
+      <image:geo_location>Đà Nẵng, Việt Nam</image:geo_location>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/gioi-thieu</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/gioi-thieu" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/gioi-thieu" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/lien-he</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/lien-he" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/lien-he" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/du-an</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/du-an" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/du-an" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- SEO Landing Pages -->
+  <url>
+    <loc>https://cuongthonggio.com/gia-cong-ong-gio-da-nang</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/gia-cong-ong-gio-da-nang" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/gia-cong-ong-gio-da-nang" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cuongthonggio.com/ong-gio-cong-truong-1.png</image:loc>
+      <image:title>Gia công ống gió tại Đà Nẵng — Cường Thông Gió</image:title>
+      <image:caption>Gia công ống gió tôn mạ kẽm, inox theo tiêu chuẩn SMACNA bằng CNC Plasma tại Đà Nẵng</image:caption>
+      <image:geo_location>Đà Nẵng, Việt Nam</image:geo_location>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/thong-gio-nha-xuong-da-nang</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/thong-gio-nha-xuong-da-nang" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/thong-gio-nha-xuong-da-nang" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cuongthonggio.com/thi-cong-ong-gio.png</image:loc>
+      <image:title>Thi công hệ thống thông gió nhà xưởng tại Đà Nẵng — Cường Thông Gió</image:title>
+      <image:caption>Lắp đặt hệ thống ống gió và quạt thông gió cho nhà xưởng tại KCN Hòa Khánh, Đà Nẵng</image:caption>
+      <image:geo_location>Đà Nẵng, Việt Nam</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://cuongthonggio.com/he-thong-ong-gio-cong-truong.png</image:loc>
+      <image:title>Hệ thống ống gió công trường — Cường Thông Gió Đà Nẵng</image:title>
+      <image:caption>Hệ thống ống gió tôn mạ kẽm lắp đặt hoàn chỉnh tại công trường nhà xưởng Đà Nẵng</image:caption>
+      <image:geo_location>Đà Nẵng, Việt Nam</image:geo_location>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/hut-khoi-nha-xuong-da-nang</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/hut-khoi-nha-xuong-da-nang" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/hut-khoi-nha-xuong-da-nang" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cuongthonggio.com/ong-gio-cong-truong-1.png</image:loc>
+      <image:title>Hệ thống hút khói nhà xưởng — Cường Thông Gió Đà Nẵng</image:title>
+      <image:caption>Thi công hệ thống hút khói nhà xưởng, bếp công nghiệp, tầng hầm PCCC tại Đà Nẵng</image:caption>
+      <image:geo_location>Đà Nẵng, Việt Nam</image:geo_location>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/quat-ly-tam-cong-nghiep</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/quat-ly-tam-cong-nghiep" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/quat-ly-tam-cong-nghiep" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cuongthonggio.com/quat-ly-tam.png</image:loc>
+      <image:title>Quạt ly tâm công nghiệp Cường Thông Gió — Sản xuất tại Đà Nẵng</image:title>
+      <image:caption>Quạt ly tâm công nghiệp áp cao, áp trung, hút bụi — Công suất 1.5kW đến 200kW</image:caption>
+      <image:geo_location>Đà Nẵng, Việt Nam</image:geo_location>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/xu-ly-bui-cong-nghiep</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/xu-ly-bui-cong-nghiep" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/xu-ly-bui-cong-nghiep" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cuongthonggio.com/ong-gio-phu-kien.png</image:loc>
+      <image:title>Hệ thống xử lý bụi công nghiệp — Cường Thông Gió Đà Nẵng</image:title>
+      <image:caption>Phụ kiện ống gió và hệ thống hút lọc bụi công nghiệp sản xuất tại Đà Nẵng, đạt QCVN 19</image:caption>
+      <image:geo_location>Đà Nẵng, Việt Nam</image:geo_location>
+    </image:image>
+  </url>
+  <!-- Knowledge/Blog -->
+  <url>
+    <loc>https://cuongthonggio.com/kien-thuc</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/kien-thuc" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/kien-thuc" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://cuongthonggio.com/quat-ly-tam.png</image:loc>
+      <image:title>Kiến thức thông gió công nghiệp — Cường Thông Gió Đà Nẵng</image:title>
+      <image:caption>Trung tâm kiến thức về quạt công nghiệp, hệ thống thông gió, tiêu chuẩn PCCC — Cường Thông Gió</image:caption>
+      <image:geo_location>Đà Nẵng, Việt Nam</image:geo_location>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/kien-thuc/chon-quat-cong-nghiep</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/kien-thuc/chon-quat-cong-nghiep" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/kien-thuc/chon-quat-cong-nghiep" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/kien-thuc/chi-phi-thi-cong-thong-gio</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/kien-thuc/chi-phi-thi-cong-thong-gio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/kien-thuc/chi-phi-thi-cong-thong-gio" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/kien-thuc/tieu-chuan-pccc-tang-ham</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/kien-thuc/tieu-chuan-pccc-tang-ham" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/kien-thuc/tieu-chuan-pccc-tang-ham" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Tools -->
+  <url>
+    <loc>https://cuongthonggio.com/cong-cu</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/cong-cu" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/cong-cu" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/cong-cu/tinh-luu-luong-gio</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/cong-cu/tinh-luu-luong-gio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/cong-cu/tinh-luu-luong-gio" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/cong-cu/tinh-tiet-dien-ong-gio</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/cong-cu/tinh-tiet-dien-ong-gio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/cong-cu/tinh-tiet-dien-ong-gio" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/cong-cu/tinh-cong-suat-quat</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/cong-cu/tinh-cong-suat-quat" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/cong-cu/tinh-cong-suat-quat" />
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

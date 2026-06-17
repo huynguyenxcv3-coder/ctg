@@ -7,7 +7,8 @@ import { SEO, makeBreadcrumbSchema, makeProductSchema, makeFAQSchema } from '../
 
 type Solution = {
   title: string;
-  badge: string;
+  slug: string;
+  badge?: string;
   desc: string;
   specs: string[];
   isReversed: boolean;
@@ -18,6 +19,7 @@ type Solution = {
 const solutions: Solution[] = [
   {
     title: 'Quạt Ly Tâm Công Nghiệp',
+    slug: 'quat-ly-tam-cong-nghiep',
     badge: 'Sản xuất & Lắp đặt',
     desc: 'Quạt ly tâm được chúng tôi trực tiếp gia công với vỏ thép dày, cánh quạt cân bằng động kỹ thuật số. Phù hợp cho hệ thống hút bụi, thông gió áp suất cao, lò hơi và các công trình công nghiệp nặng.',
     specs: [
@@ -31,6 +33,7 @@ const solutions: Solution[] = [
   },
   {
     title: 'Quạt Hướng Trục Công Nghiệp',
+    slug: 'quat-huong-truc-cong-nghiep',
     badge: 'Sản xuất & Lắp đặt',
     desc: 'Chúng tôi trực tiếp gia công và lắp đặt các dòng quạt hướng trục công nghiệp. Sản phẩm sử dụng động cơ dây đồng tiêu chuẩn, cánh quạt được cân bằng động kỹ thuật số đảm bảo vận hành êm ái, bền bỉ và không rung lắc. Phù hợp cho nhà xưởng, hầm, khu công nghiệp.',
     specs: [
@@ -44,6 +47,7 @@ const solutions: Solution[] = [
   },
   {
     title: 'Máy Điều Hoà Cassette',
+    slug: 'may-dieu-hoa-cassette',
     badge: 'Cung cấp & Lắp đặt',
     desc: 'Cung cấp và lắp đặt máy điều hoà dạng cassette âm trần cho văn phòng, trung tâm thương mại, nhà hàng và khu công nghiệp. Phân phối từ các hãng uy tín, đảm bảo hiệu suất làm lạnh tối ưu và tiết kiệm điện năng.',
     specs: [
@@ -57,6 +61,7 @@ const solutions: Solution[] = [
   },
   {
     title: 'Miệng Gió 4 Hướng',
+    slug: 'mieng-gio-4-huong',
     badge: 'Phụ kiện & Phân phối',
     desc: 'Cung cấp miệng gió 4 hướng dạng âm trần, phân phối luồng không khí đều theo 4 chiều. Sản phẩm làm từ nhôm sơn tĩnh điện trắng, tương thích với hệ thống điều hoà trung tâm và thông gió dân dụng, thương mại.',
     specs: [
@@ -70,6 +75,7 @@ const solutions: Solution[] = [
   },
   {
     title: 'VCD Vuông Trục Vít',
+    slug: 'vcd-vuong-truc-vit',
     badge: 'Van điều tiết gió',
     desc: 'Van điều tiết lưu lượng VCD (Volume Control Damper) dạng vuông cơ cấu trục vít, dùng để điều chỉnh và cân bằng lưu lượng gió trong hệ thống ống gió. Sản xuất từ tôn mạ kẽm dày, chịu lực tốt, vận hành bền bỉ.',
     specs: [
@@ -83,6 +89,7 @@ const solutions: Solution[] = [
   },
   {
     title: 'Thi Công Hệ Thống Ống Gió Tại Công Trường',
+    slug: 'thi-cong-he-thong-ong-gio',
     badge: 'Thi công trực tiếp',
     desc: 'Đội ngũ kỹ thuật Cường Thông Gió trực tiếp lắp đặt hệ thống ống gió tại công trình nhà máy, kho xưởng và toà nhà thương mại. Ống gió được bọc cách nhiệt đúng tiêu chuẩn, đảm bảo hiệu suất và thẩm mỹ công trình.',
     specs: [
@@ -104,7 +111,8 @@ const solutions: Solution[] = [
   },
   {
     title: 'Gia Công Ống Gió & Phụ Kiện',
-    badge: 'Cơ khí chính xác',
+    slug: 'gia-cong-ong-gio-phu-kien',
+
     desc: 'Sở hữu dây chuyền cắt Plasma CNC hiện đại, chúng tôi sản xuất ống gió vuông, tròn xoắn theo tiêu chuẩn quốc tế (SMACNA). Ngoài ra, chúng tôi cung cấp đầy đủ phụ kiện như van VCD, FD và cửa gió nhôm định hình cao cấp.',
     specs: [
       'Tôn mạ kẽm độ dày 0.48 - 1.15mm',
@@ -134,16 +142,16 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
 
   return (
     <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200">
-      {images.map((src, i) => (
+      {/* {images.map((src, i) => (
         <img
           key={src}
           src={src}
-          alt={`${title} — hình ảnh thi công ${i + 1}`}
+          alt={`${title} — dự án thực tế thi công tại Đà Nẵng | Hình ảnh ${i + 1}`}
           loading="lazy"
           decoding="async"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === current ? 'opacity-100' : 'opacity-0'}`}
         />
-      ))}
+      ))} */}
       <div className="absolute inset-0 bg-black/5" />
 
       <button
@@ -291,29 +299,39 @@ export function Products() {
               transition={{ duration: 0.8, delay: idx * 0.1 }}
               className={`flex flex-col ${item.isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 md:gap-20`}
             >
-              <div className="w-full md:w-1/2">
-                {item.images ? (
-                  <ImageCarousel images={item.images} title={item.title} />
-                ) : (
-                  <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200">
-                    <img
-                      src={item.imageUrl}
-                      alt={`${item.title} — sản xuất & lắp đặt tại Đà Nẵng | Cường Thông Gió`}
-                      loading="lazy"
-                      decoding="async"
-                      width="600"
-                      height="450"
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/5" />
-                  </div>
-                )}
-              </div>
+              {item.slug === 'thi-cong-he-thong-ong-gio' ? (
+                <div className="w-full md:w-1/2 block">
+                  {item.images ? (
+                    <ImageCarousel images={item.images} title={item.title} />
+                  ) : (
+                    <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200">
+                      <div className="absolute inset-0 bg-black/5" />
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link to={`/san-pham/${item.slug}`} className="w-full md:w-1/2 block">
+                  {item.images ? (
+                    <ImageCarousel images={item.images} title={item.title} />
+                  ) : (
+                    <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200 cursor-pointer">
+                      <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition-colors" />
+                      <div className="absolute bottom-4 left-4 right-4 text-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                        <span className="inline-block px-6 py-2.5 bg-white/95 backdrop-blur-sm text-zinc-900 text-xs font-bold uppercase tracking-[0.2em] rounded-full shadow-lg">
+                          Xem chi tiết →
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                </Link>
+              )}
 
               <div className="w-full md:w-1/2">
-                <span className="inline-block px-3 py-1 bg-zinc-100 text-zinc-600 text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-6">
-                  {item.badge}
-                </span>
+                {item.badge && (
+                  <span className="inline-block px-3 py-1 bg-zinc-100 text-zinc-600 text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-6">
+                    {item.badge}
+                  </span>
+                )}
                 <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-8 leading-tight">
                   {item.title}
                 </h2>
@@ -330,9 +348,22 @@ export function Products() {
                   ))}
                 </div>
 
-                <Button asChild size="lg" className="rounded-full px-10 h-16 bg-zinc-900 hover:bg-zinc-800 text-white font-bold uppercase tracking-widest transition-all">
-                  <Link to="/lien-he">Yêu cầu sản xuất</Link>
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  {item.slug !== 'thi-cong-he-thong-ong-gio' ? (
+                    <>
+                      <Button asChild size="lg" className="rounded-full px-8 h-14 bg-zinc-900 hover:bg-zinc-800 text-white font-bold uppercase tracking-widest transition-all text-sm">
+                        <Link to={`/san-pham/${item.slug}`}>Xem chi tiết</Link>
+                      </Button>
+                      <Button asChild size="lg" className="rounded-full px-8 h-14 bg-zinc-900 text-white font-bold uppercase tracking-widest transition-all text-sm border-none hover:bg-zinc-900 hover:text-white">
+                        <Link to="/lien-he">Yêu cầu báo giá</Link>
+                      </Button>
+                    </>
+                  ) : (
+                    <Button asChild size="lg" className="rounded-full px-8 h-14 bg-zinc-900 text-white font-bold uppercase tracking-widest transition-all text-sm border-none hover:bg-zinc-900 hover:text-white">
+                      <Link to="/lien-he">Yêu cầu báo giá</Link>
+                    </Button>
+                  )}
+                </div>
               </div>
             </motion.article>
           ))}

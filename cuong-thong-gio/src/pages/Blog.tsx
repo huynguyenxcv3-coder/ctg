@@ -590,13 +590,13 @@ export function Blog() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/lien-he"
-                className="bg-zinc-900 text-white px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-zinc-800 transition-colors shadow-2xl shadow-zinc-300 inline-flex items-center justify-center"
+                className="bg-zinc-900 text-white px-12 py-5 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-zinc-800 transition-colors shadow-2xl shadow-zinc-300 inline-flex items-center justify-center"
               >
                 Nhận báo giá miễn phí
               </Link>
               <a
                 href="tel:0905001224"
-                className="border-2 border-zinc-200 text-zinc-900 px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:border-zinc-900 transition-colors inline-flex items-center justify-center"
+                className="border-2 border-zinc-200 text-zinc-900 px-12 py-5 rounded-xl font-bold uppercase tracking-widest text-sm hover:border-zinc-900 transition-colors inline-flex items-center justify-center"
               >
                 Gọi ngay: 0905 001 224
               </a>

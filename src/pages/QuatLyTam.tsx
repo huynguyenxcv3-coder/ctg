@@ -505,7 +505,7 @@ export function QuatLyTam() {
                     Việc lựa chọn vật liệu chế tạo quạt ly tâm phụ thuộc vào môi trường vận hành: nhiệt độ, tính chất hoá học của khí, mức độ mài mòn và yêu cầu vệ sinh. Sai lầm phổ biến là sử dụng vật liệu không phù hợp, dẫn đến quạt bị ăn mòn, mài mòn nhanh, phải thay cánh hoặc thay quạt mới chỉ sau 6-12 tháng — lãng phí chi phí lớn.
                   </p>
                   <p>
-                    Đội ngũ kỹ sư Cường Thông Gió sẽ tư vấn vật liệu tối ưu cho từng ứng dụng cụ thể, cân bằng giữa yêu cầu kỹ thuật và ngân sách đầu tư. Tất cả vật liệu đều có chứng nhận nguồn gốc, mill certificate và được kiểm tra trước khi đưa vào sản xuất.
+                    Đội ngũ kỹ sư của chúng tôi sẽ tư vấn vật liệu tối ưu cho từng ứng dụng cụ thể, cân bằng giữa yêu cầu kỹ thuật và ngân sách đầu tư. Tất cả vật liệu đều có chứng nhận nguồn gốc, mill certificate và được kiểm tra trước khi đưa vào sản xuất.
                   </p>
                 </div>
               </motion.div>

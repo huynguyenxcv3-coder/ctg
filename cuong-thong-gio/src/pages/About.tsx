@@ -84,7 +84,7 @@ export function About() {
             Cường Thông Gió là ai? <br className="hidden md:block" /> Nhà thầu M&E hàng đầu Đà Nẵng.
           </h1>
           <p className="text-gray-600 text-lg max-w-[600px] mx-auto leading-relaxed">
-            <strong>Cường Thông Gió là công ty chuyên sản xuất quạt công nghiệp và thi công hệ thống thông gió tại Đà Nẵng, hoạt động từ năm 2015 với hơn 2,145 dự án hoàn thành.</strong> Công ty TNHH Một Thành Viên Cường Thông Gió (CTGCo., Ltd) là đơn vị tiên phong trong lĩnh vực cơ điện lạnh, điều hòa không khí và thông gió tại khu vực Miền Trung.
+            <strong>Cường Thông Gió là công ty chuyên sản xuất quạt công nghiệp và thi công hệ thống thông gió tại Đà Nẵng, hoạt động từ năm 2015 với hơn 2000+ dự án hoàn thành.</strong> Công ty TNHH Một Thành Viên Cường Thông Gió (CTGCo., Ltd) là đơn vị tiên phong trong lĩnh vực cơ điện lạnh, điều hòa không khí và thông gió tại khu vực Miền Trung.
           </p>
         </div>
 
@@ -114,7 +114,7 @@ export function About() {
                     <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Năm kinh nghiệm</div>
                   </div>
                   <div>
-                    <div className="text-4xl md:text-5xl font-black text-zinc-900 leading-none mb-3 tracking-tighter">2,145</div>
+                    <div className="text-4xl md:text-5xl font-black text-zinc-900 leading-none mb-3 tracking-tighter">2000+</div>
                     <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Dự án hoàn thành</div>
                   </div>
                 </div>
@@ -203,7 +203,7 @@ export function About() {
               <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-6" itemProp="jobTitle">Giám đốc — Kỹ sư Cơ khí Thông gió</p>
               <div className="space-y-4 text-zinc-600 leading-relaxed">
                 <p><strong>Hơn 13 năm kinh nghiệm</strong> trong lĩnh vực thiết kế, sản xuất quạt công nghiệp và thi công hệ thống thông gió cho nhà xưởng, tòa nhà tại Đà Nẵng và Miền Trung.</p>
-                <p>Với nền tảng chuyên môn vững chắc về cơ khí chế tạo và kỹ thuật HVAC, anh Cường đã trực tiếp giám sát và hoàn thành hơn <strong>2,145 dự án</strong> — từ nhà máy sản xuất tại KCN Hòa Khánh đến hệ thống thông gió PCCC tầng hầm các tòa nhà cao tầng.</p>
+                <p>Với nền tảng chuyên môn vững chắc về cơ khí chế tạo và kỹ thuật HVAC, anh Cường đã trực tiếp giám sát và hoàn thành hơn <strong>2000+ dự án</strong> — từ nhà máy sản xuất tại KCN Hòa Khánh đến hệ thống thông gió PCCC tầng hầm các tòa nhà cao tầng.</p>
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
                 {['Cơ khí chế tạo', 'Hệ thống HVAC', 'Thông gió PCCC', 'Quạt công nghiệp', 'Xử lý khí thải'].map(skill => (
@@ -247,10 +247,10 @@ export function About() {
             Đội ngũ kỹ sư Cường Thông Gió sẵn sàng khảo sát thực tế và báo giá miễn phí cho dự án của bạn.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/lien-he" className="bg-white text-zinc-900 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-zinc-100 transition-colors shadow-lg">
+            <a href="/lien-he" className="bg-white text-zinc-900 px-10 py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-zinc-100 transition-colors shadow-lg">
               Nhận báo giá miễn phí
             </a>
-            <a href="tel:0905001224" className="border-2 border-zinc-700 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:border-white transition-colors">
+            <a href="tel:0905001224" className="border-2 border-zinc-700 text-white px-10 py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:border-white transition-colors">
               Gọi ngay: 0905 001 224
             </a>
           </div>

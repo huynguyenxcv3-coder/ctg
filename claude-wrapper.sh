@@ -30,6 +30,7 @@ fi
 # Thử cả hai biến môi trường phổ biến
 export ANTHROPIC_AUTH_TOKEN="freecc"
 export ANTHROPIC_API_KEY="freecc"
+export ANTHROPIC_MODEL="opus-4.8"
 export ANTHROPIC_BASE_URL="$PROXY_URL"
 export CLAUDE_CONFIG_DIR="/home/runner/workspace/.config/claude"
 

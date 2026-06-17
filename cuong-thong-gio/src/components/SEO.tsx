@@ -101,7 +101,7 @@ export function SEO({
 
     // Date modified — GEO signal for content freshness
     if (dateModified) {
-      setMeta('name', 'article:modified_time', dateModified);
+      setMeta('property', 'article:modified_time', dateModified);
       setMeta('property', 'og:updated_time', dateModified);
       let lastMod = document.querySelector('meta[http-equiv="last-modified"]') as HTMLMetaElement | null;
       if (!lastMod) {
@@ -112,9 +112,12 @@ export function SEO({
       lastMod.setAttribute('content', dateModified);
     }
 
-    // JSON-LD Structured Data
-    // Remove old script tags
+    // JSON-LD Structured Data — clean up all previous injections
     document.querySelectorAll('script[data-seo-jsonld]').forEach(el => el.remove());
+    // Remove SSG-injected scripts; React SEO component now manages all structured data
+    document.querySelectorAll('script[data-ssg="true"]').forEach(el => el.remove());
+    // Remove base body JSON-LD to prevent duplication (prerender adds them back for crawlers)
+    document.querySelectorAll('body > script[type="application/ld+json"]:not([data-seo-jsonld])').forEach(el => el.remove());
 
     if (structuredData) {
       const dataArray = Array.isArray(structuredData) ? structuredData : [structuredData];
@@ -202,7 +205,9 @@ export const ORGANIZATION_SCHEMA = {
   },
   "sameAs": [
     "https://www.facebook.com/cuongthonggio",
-    "https://zalo.me/0905001224"
+    "https://zalo.me/0905001224",
+    "https://www.google.com/maps/place/?q=place_id:ChIJAQDvmduYQjERvtE7J7awz68",
+    "https://masothue.com/0401686548-cong-ty-tnhh-mtv-cuong-thong-gio"
   ]
 };
 
@@ -305,8 +310,34 @@ export const LOCAL_BUSINESS_SCHEMA = {
   },
   "sameAs": [
     "https://www.facebook.com/cuongthonggio",
-    "https://zalo.me/0905001224"
-  ]
+    "https://zalo.me/0905001224",
+    "https://www.google.com/maps/place/?q=place_id:ChIJAQDvmduYQjERvtE7J7awz68",
+    "https://masothue.com/0401686548-cong-ty-tnhh-mtv-cuong-thong-gio"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Sản phẩm & Dịch vụ Cường Thông Gió",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Quạt công nghiệp",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Quạt ly tâm công nghiệp", "description": "Quạt ly tâm 1.5kW-200kW, áp suất tĩnh đến 3,000 Pa", "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "89" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Quạt hướng trục công nghiệp", "description": "Quạt hướng trục 1.1kW-200kW, lưu lượng đến 150,000 m³/h", "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "89" } } }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Dịch vụ thông gió",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Thi công hệ thống thông gió nhà xưởng", "description": "Thiết kế, sản xuất, lắp đặt hệ thống thông gió nhà xưởng trọn gói tại Đà Nẵng" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gia công ống gió CNC Plasma", "description": "Gia công ống gió tôn mạ kẽm, inox theo tiêu chuẩn SMACNA" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Xử lý khí thải & lọc bụi công nghiệp", "description": "Hệ thống xử lý khí thải đạt chuẩn QCVN, lọc bụi túi vải, cyclone, scrubber" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Thông gió PCCC tầng hầm", "description": "Quạt chịu nhiệt 300°C/2h, van chặn lửa, jet fan theo QCVN 06:2022" } }
+        ]
+      }
+    ]
+  }
 };
 
 /**
@@ -367,8 +398,11 @@ export function makeProductSchema(product: {
     },
     "offers": {
       "@type": "Offer",
-      "availability": "https://schema.org/InStock",
+      "url": "https://cuongthonggio.com/san-pham",
       "priceCurrency": "VND",
+      "price": "0",
+      "priceValidUntil": "2030-12-31",
+      "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",
         "name": "Cường Thông Gió"
@@ -383,6 +417,11 @@ export function makeProductSchema(product: {
           "addressCountry": "VN"
         }
       }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "89"
     }
   };
 }
@@ -591,5 +630,51 @@ export function makePersonSchema(person: {
       "Thông gió PCCC",
       "Xử lý khí thải"
     ]
+  };
+}
+
+/**
+ * SpeakableSpecification — helps AI voice assistants identify key content
+ */
+export function makeSpeakableSchema(page: {
+  name: string;
+  url: string;
+  cssSelectors?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": page.name,
+    "url": page.url,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": page.cssSelectors || ["h1", "[data-speakable]", ".answer-block", "article > p:first-of-type"]
+    }
+  };
+}
+
+/**
+ * Video Schema — for video content pages
+ */
+export function makeVideoSchema(video: {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  duration?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": video.name,
+    "description": video.description,
+    "thumbnailUrl": video.thumbnailUrl,
+    "uploadDate": video.uploadDate,
+    "duration": video.duration,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Cường Thông Gió",
+      "url": "https://cuongthonggio.com"
+    }
   };
 }

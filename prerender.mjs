@@ -91,7 +91,7 @@ const faqData = [
 const pages = [
   {
     route: '/',
-    title: 'Cường Thông Gió — Quạt Công Nghiệp & Hệ Thống Thông Gió Đà Nẵng',
+    title: 'Thông Gió Đà Nẵng — Quạt Công Nghiệp, Ống Gió, Xử Lý Khí Thải | Cường Thông Gió',
     description: 'Cường Thông Gió — Chuyên sản xuất quạt công nghiệp, gia công ống gió, thi công hệ thống thông gió, xử lý khí thải & bụi tại Đà Nẵng và Miền Trung. 13+ năm kinh nghiệm, 2000+ dự án.',
     keywords: 'quạt công nghiệp, thông gió, ống gió, quạt ly tâm, quạt hướng trục, Đà Nẵng, Cường Thông Gió',
     dateModified: '2026-06-14',
@@ -267,6 +267,109 @@ function makeBreadcrumbJsonLd(items) {
   return `<script type="application/ld+json" data-ssg="true">${JSON.stringify(schema)}</script>`;
 }
 
+function makeOrganizationJsonLd() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness", "HVACBusiness"],
+    "name": "Cường Thông Gió",
+    "alternateName": ["Công ty TNHH MTV Cường Thông Gió", "Cuong Thong Gio", "CTG Co., Ltd"],
+    "url": BASE_URL,
+    "logo": `${BASE_URL}/logo.png`,
+    "image": `${BASE_URL}/logo.png`,
+    "telephone": "+84-905-001-224",
+    "email": "phantrongcuong77@gmail.com",
+    "description": "Chuyên sản xuất quạt công nghiệp, gia công ống gió, thi công hệ thống thông gió, xử lý khí thải & bụi tại Đà Nẵng và Miền Trung. 13+ năm kinh nghiệm, 2145+ dự án.",
+    "foundingDate": "2015",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
+      "addressLocality": "Đà Nẵng",
+      "addressRegion": "Đà Nẵng",
+      "postalCode": "550000",
+      "addressCountry": "VN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "16.0773",
+      "longitude": "108.1595"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5"
+    },
+    "priceRange": "$$",
+    "areaServed": ["Đà Nẵng", "Miền Trung", "Việt Nam"],
+    "sameAs": [
+      "https://www.facebook.com/cuongthonggio",
+      "https://zalo.me/0905001224",
+      "https://www.google.com/maps/place/?q=place_id:ChIJAQDvmduYQjERvtE7J7awz68"
+    ]
+  };
+  return `<script type="application/ld+json" data-ssg="true">${JSON.stringify(schema)}</script>`;
+}
+
+function makeWebsiteJsonLd() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Cường Thông Gió",
+    "url": BASE_URL,
+    "inLanguage": "vi",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Cường Thông Gió",
+      "url": BASE_URL
+    }
+  };
+  return `<script type="application/ld+json" data-ssg="true">${JSON.stringify(schema)}</script>`;
+}
+
+function makeWebPageJsonLd(page) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": page.title,
+    "description": page.description,
+    "url": `${BASE_URL}${page.route}`,
+    "inLanguage": "vi",
+    "dateModified": page.dateModified,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Cường Thông Gió",
+      "url": BASE_URL
+    },
+    "about": {
+      "@type": "Organization",
+      "name": "Cường Thông Gió",
+      "url": BASE_URL
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "[data-speakable]", ".answer-block", "article > p:first-of-type"]
+    }
+  };
+  return `<script type="application/ld+json" data-ssg="true">${JSON.stringify(schema)}</script>`;
+}
+
+function generatePageSummaryHtml(page) {
+  return `
+      <section data-ssg-content="true" itemscope itemtype="https://schema.org/WebPage">
+        <h1 itemprop="name">${escapeHtml(page.title)}</h1>
+        <p itemprop="description">${escapeHtml(page.description)}</p>
+        <p><strong>Cường Thông Gió</strong> sản xuất quạt công nghiệp, gia công ống gió, thi công thông gió nhà xưởng, hút khói, xử lý bụi và xử lý khí thải tại Đà Nẵng, Miền Trung.</p>
+        <p>Hotline/Zalo: <a href="tel:0905001224">0905 001 224</a> — Email: <a href="mailto:phantrongcuong77@gmail.com">phantrongcuong77@gmail.com</a></p>
+        <p>Địa chỉ: 101 Trần Quý Khoách, P. Hòa Khánh, TP. Đà Nẵng.</p>
+      </section>`;
+}
+
 /**
  * Generate semantic HTML content for an article page.
  * This is injected into the <noscript> section AND also into a hidden
@@ -351,13 +454,18 @@ function injectSeoIntoHtml(html, page, extraContent = '', extraHead = '') {
     `<meta name="keywords" content="${escapeHtml(page.keywords)}" />`
   );
 
-  // 4. Inject canonical & hreflang after the comment
+  // 4. Replace existing canonical & hreflang tags (from base template) with correct ones for this route
+  // First, remove all existing canonical and hreflang tags
+  result = result.replace(/\s*<link rel="canonical" href="[^"]*" \/>\s*/g, '\n');
+  result = result.replace(/\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*" \/>\s*/g, '\n');
+  // Then inject the correct ones after the comment (or theme-color if comment was already replaced)
   result = result.replace(
     /<!-- Canonical & hreflang: managed dynamically by <SEO\/> component per route\.\s*This prevents Google from treating \/san-pham, \/kien-thuc etc\. as duplicates of homepage\.\s*The SEO component sets canonical = https:\/\/cuongthonggio\.com\{pathname\} on every route\. -->/,
-    `<!-- Canonical & hreflang: pre-rendered by SSG for ${page.route} -->
-    ${makeCanonicalTag(fullUrl)}
-    ${makeHreflangTags(fullUrl)}`
+    `<!-- Canonical & hreflang: pre-rendered by SSG for ${page.route} -->`
   );
+  // Insert canonical and hreflang before </head>
+  const canonicalBlock = `    ${makeCanonicalTag(fullUrl)}\n    ${makeHreflangTags(fullUrl)}`;
+  result = result.replace('</head>', `${canonicalBlock}\n  </head>`);
 
   // 5. Update og:url
   result = result.replace(
@@ -383,21 +491,26 @@ function injectSeoIntoHtml(html, page, extraContent = '', extraHead = '') {
     result = result.replace('</head>', `    ${modifiedTag}\n  </head>`);
   }
 
-  // 8. Inject extra head content (JSON-LD) before </head>
+  // 8. Inject route-scoped extra head content (JSON-LD) before </head>
   if (extraHead) {
-    result = result.replace('</head>', `    ${extraHead}\n  </head>`);
+    const routeScopedHead = extraHead.replace(
+      /data-ssg="true"/g,
+      `data-ssg="true" data-ssg-route="${escapeHtml(page.route)}"`
+    );
+    result = result.replace('</head>', `    ${routeScopedHead}\n  </head>`);
   }
 
-  // 9. Inject crawlable content before <div id="root">
-  // This content is hidden visually but readable by crawlers
+  // 9. Inject crawlable content inside <div id="root"> for proper hydration
+  // Content is visible initially; React will hydrate over it
   if (extraContent) {
     result = result.replace(
       '<div id="root"></div>',
-      `<!-- SSG: Pre-rendered content for crawlers -->
-    <div id="ssg-content" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+      `<div id="root">
+    <!-- SSG: Pre-rendered content visible to all crawlers -->
+    <div id="ssg-content" data-ssg="true">
 ${extraContent}
     </div>
-    <div id="root"></div>`
+    </div>`
     );
   }
 
@@ -424,18 +537,26 @@ function main() {
 
   let count = 0;
 
-  // 1. Process static pages (/, /san-pham, /gioi-thieu, /lien-he)
+  // 1. Process static pages
   for (const page of pages) {
-    let extraContent = '';
-    let extraHead = '';
+    let extraContent = generatePageSummaryHtml(page);
+    let extraHead = [
+      makeOrganizationJsonLd(),
+      makeWebsiteJsonLd(),
+      makeWebPageJsonLd(page),
+      makeBreadcrumbJsonLd(page.route === '/'
+        ? [{ name: 'Trang chủ', url: `${BASE_URL}/` }]
+        : [
+            { name: 'Trang chủ', url: `${BASE_URL}/` },
+            { name: page.title.replace(/^Cường Thông Gió —\s*/, '').replace(/\s*[|—].*$/, ''), url: `${BASE_URL}${page.route}` }
+          ]
+      )
+    ].join('\n    ');
 
     if (page.route === '/kien-thuc') {
       extraContent = generateBlogListingHtml();
       extraHead = [
-        makeBreadcrumbJsonLd([
-          { name: 'Trang chủ', url: `${BASE_URL}/` },
-          { name: 'Kiến thức', url: `${BASE_URL}/kien-thuc` }
-        ]),
+        extraHead,
         ...articles.map(a => makeArticleJsonLd(a)),
         makeFaqJsonLd()
       ].join('\n    ');
@@ -465,10 +586,14 @@ function main() {
       title: `Cường Thông Gió — ${article.headline}`,
       description: article.description,
       keywords: article.keywords,
+      dateModified: article.dateModified,
     };
 
     const extraContent = generateArticleHtml(article);
     const extraHead = [
+      makeOrganizationJsonLd(),
+      makeWebsiteJsonLd(),
+      makeWebPageJsonLd(page),
       makeBreadcrumbJsonLd([
         { name: 'Trang chủ', url: `${BASE_URL}/` },
         { name: 'Kiến thức', url: `${BASE_URL}/kien-thuc` },
@@ -496,7 +621,7 @@ function main() {
   console.log('  • Correct hreflang tags');
   console.log('  • Correct og:url, og:title, og:description');
   console.log('  • JSON-LD structured data (articles, FAQ, breadcrumbs)');
-  console.log('  • Hidden semantic HTML content for non-JS crawlers\n');
+  console.log('  • Route-specific semantic HTML content for crawlers\n');
 }
 
 main();

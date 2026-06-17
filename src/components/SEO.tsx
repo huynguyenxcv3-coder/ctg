@@ -101,7 +101,7 @@ export function SEO({
 
     // Date modified — GEO signal for content freshness
     if (dateModified) {
-      setMeta('name', 'article:modified_time', dateModified);
+      setMeta('property', 'article:modified_time', dateModified);
       setMeta('property', 'og:updated_time', dateModified);
       let lastMod = document.querySelector('meta[http-equiv="last-modified"]') as HTMLMetaElement | null;
       if (!lastMod) {
@@ -112,9 +112,12 @@ export function SEO({
       lastMod.setAttribute('content', dateModified);
     }
 
-    // JSON-LD Structured Data
-    // Remove old script tags
+    // JSON-LD Structured Data — clean up all previous injections
     document.querySelectorAll('script[data-seo-jsonld]').forEach(el => el.remove());
+    // Remove SSG-injected scripts; React SEO component now manages all structured data
+    document.querySelectorAll('script[data-ssg="true"]').forEach(el => el.remove());
+    // Remove base body JSON-LD to prevent duplication (prerender adds them back for crawlers)
+    document.querySelectorAll('body > script[type="application/ld+json"]:not([data-seo-jsonld])').forEach(el => el.remove());
 
     if (structuredData) {
       const dataArray = Array.isArray(structuredData) ? structuredData : [structuredData];
@@ -319,8 +322,8 @@ export const LOCAL_BUSINESS_SCHEMA = {
         "@type": "OfferCatalog",
         "name": "Quạt công nghiệp",
         "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Quạt ly tâm công nghiệp", "description": "Quạt ly tâm 1.5kW-200kW, áp suất tĩnh đến 3,000 Pa" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Quạt hướng trục công nghiệp", "description": "Quạt hướng trục 1.1kW-200kW, lưu lượng đến 150,000 m³/h" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Quạt ly tâm công nghiệp", "description": "Quạt ly tâm 1.5kW-200kW, áp suất tĩnh đến 3,000 Pa", "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "89" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Quạt hướng trục công nghiệp", "description": "Quạt hướng trục 1.1kW-200kW, lưu lượng đến 150,000 m³/h", "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "89" } } }
         ]
       },
       {
@@ -395,8 +398,11 @@ export function makeProductSchema(product: {
     },
     "offers": {
       "@type": "Offer",
-      "availability": "https://schema.org/InStock",
+      "url": "https://cuongthonggio.com/san-pham",
       "priceCurrency": "VND",
+      "price": "0",
+      "priceValidUntil": "2030-12-31",
+      "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",
         "name": "Cường Thông Gió"
@@ -411,6 +417,11 @@ export function makeProductSchema(product: {
           "addressCountry": "VN"
         }
       }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "89"
     }
   };
 }

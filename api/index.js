@@ -7,7 +7,11 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['https://cuongthonggio.com', 'https://www.cuongthonggio.com', 'http://localhost:5173', 'http://localhost:3000'],
+  methods: ['POST', 'GET', 'OPTIONS'],
+  credentials: true
+}));
 app.use(express.json());
 
 // ========================================

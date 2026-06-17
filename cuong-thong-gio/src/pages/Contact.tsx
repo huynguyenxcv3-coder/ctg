@@ -96,7 +96,7 @@ function PopupModal({
             </p>
             <button
               onClick={handleClose}
-              className="mt-6 px-8 py-3 bg-green-500 text-white rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-green-600 transition-colors"
+              className="mt-6 px-8 py-3 bg-green-500 text-white rounded-xl font-semibold text-sm uppercase tracking-wider hover:bg-green-600 transition-colors"
             >
               Đã hiểu
             </button>
@@ -160,7 +160,7 @@ function PopupModal({
 
             <button
               onClick={handleClose}
-              className="px-8 py-3 bg-gray-900 text-white rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-black transition-colors"
+              className="px-8 py-3 bg-gray-900 text-white rounded-xl font-semibold text-sm uppercase tracking-wider hover:bg-black transition-colors"
             >
               Đóng
             </button>
@@ -458,7 +458,7 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className={`w-full bg-[#1a1a1a] text-white uppercase py-4 rounded-full transition-all duration-200 font-semibold tracking-widest text-sm mt-2 shadow-lg flex items-center justify-center gap-2 ${
+                  className={`w-full bg-[#1a1a1a] text-white uppercase py-4 rounded-xl transition-all duration-200 font-semibold tracking-widest text-sm mt-2 shadow-lg flex items-center justify-center gap-2 ${
                     status === 'submitting' ? 'opacity-70 cursor-not-allowed' : 'hover:bg-black'
                   }`}
                 >
