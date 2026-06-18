@@ -1,27 +1,22 @@
-# ===========================================
-# CUONGTHONGGIO.COM — AI-Optimized Robots.txt
-# Updated: 2026-06-14
-# ===========================================
+# Robots.txt — Cường Thông Gió
+# https://cuongthonggio.com
 
-# Default: Allow all crawlers
 User-agent: *
 Allow: /
 Disallow: /api/
 
-# Google Search / AI Overviews use Googlebot. Google does not use Crawl-delay.
+# Google crawl optimization
 User-agent: Googlebot
 Allow: /
+Allow: /assets/
+Crawl-delay: 1
 
-# Google-Extended controls use for Gemini Apps / Vertex AI grounding, not Search indexing.
-User-agent: Google-Extended
-Allow: /
-
-# Bing (Cần cho Microsoft Copilot)
+# Bing crawl optimization
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 2
 
-# Cốc Cốc (Vietnamese search engine)
+# Coc Coc (Vietnamese search engine)
 User-agent: CocCocBot
 Allow: /
 Crawl-delay: 1
@@ -31,60 +26,28 @@ User-agent: Baiduspider
 Allow: /
 Crawl-delay: 3
 
-# Yandex
-User-agent: YandexBot
+# AI Crawlers — Allow for GEO (Generative Engine Optimization)
+User-agent: GPTBot
 Allow: /
-Crawl-delay: 2
+Crawl-delay: 1
 
-# ===========================================
-# AI SEARCH CRAWLERS (GEO — Allow for visibility)
-# ===========================================
-
-# ChatGPT Search Bot (CRITICAL — different from GPTBot)
-User-agent: OAI-SearchBot
-Allow: /
-
-# ChatGPT User browsing
 User-agent: ChatGPT-User
 Allow: /
 
-# Perplexity AI
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 1
+
 User-agent: PerplexityBot
 Allow: /
 Crawl-delay: 2
 
-# Anthropic Claude (Web search)
-User-agent: ClaudeBot
-Allow: /
-Crawl-delay: 2
-
-# Meta AI
-User-agent: FacebookBot
-Allow: /
-Crawl-delay: 2
-
-# Apple Intelligence / Spotlight
-User-agent: Applebot
-Allow: /
-Crawl-delay: 2
-
-# ===========================================
-# AI TRAINING BOTS (Block to protect content IP)
-# ===========================================
-
-# OpenAI training crawler (NOT search)
-User-agent: GPTBot
-Disallow: /
-
-# Common Crawl (used by many AI training)
 User-agent: CCBot
-Disallow: /
+Allow: /
+Crawl-delay: 2
 
-# ByteDance / TikTok AI training
-User-agent: Bytespider
-Disallow: /
-
-# ===========================================
-# SITEMAPS
-# ===========================================
+# Sitemap
 Sitemap: https://cuongthonggio.com/sitemap.xml

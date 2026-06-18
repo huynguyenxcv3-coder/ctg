@@ -4,7 +4,7 @@ import { useState } from 'react'
 import type { Variants } from 'framer-motion'
 import { Button } from '../components/ui/Button'
 import { SEO, makeBreadcrumbSchema } from '../components/SEO'
-import { projects, CATEGORIES, trackRecord } from './projectsData'
+import { projects, CATEGORIES } from './projectsData'
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -282,91 +282,6 @@ export function Projects() {
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </section>
-
-      {/* Hồ sơ kinh nghiệm — track record */}
-      <section className="py-16 md:py-24 bg-zinc-50/50 border-t border-zinc-100">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center mb-12 md:mb-16"
-          >
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold mb-4">
-              Hồ sơ năng lực
-            </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-900 leading-tight mb-6">
-              Một số công trình tiêu biểu đã thực hiện
-            </h2>
-            <p className="text-zinc-500 text-lg leading-relaxed">
-              Danh mục công trình điều hòa không khí, thông gió, hút mùi và xử lý khí thải mà Cường
-              Thông Gió đã thi công cho các chủ đầu tư trong và ngoài nước.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.6 }}
-            className="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-zinc-200 bg-white"
-          >
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-zinc-900 text-white">
-                    <th className="px-4 py-4 text-xs font-semibold uppercase tracking-wider w-12 text-center">
-                      TT
-                    </th>
-                    <th className="px-4 py-4 text-xs font-semibold uppercase tracking-wider">
-                      Công trình đã &amp; đang thực hiện
-                    </th>
-                    <th className="px-4 py-4 text-xs font-semibold uppercase tracking-wider whitespace-nowrap">
-                      Quy mô
-                    </th>
-                    <th className="px-4 py-4 text-xs font-semibold uppercase tracking-wider text-right whitespace-nowrap">
-                      Tổng giá trị (VNĐ)
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {trackRecord.map((item, idx) => (
-                    <tr
-                      key={idx}
-                      className="border-t border-zinc-100 hover:bg-zinc-50 transition-colors"
-                    >
-                      <td className="px-4 py-4 text-sm text-zinc-400 font-medium text-center align-top">
-                        {idx + 1}
-                      </td>
-                      <td className="px-4 py-4 text-sm text-zinc-800 font-medium leading-snug">
-                        {item.name}
-                      </td>
-                      <td className="px-4 py-4 text-sm text-zinc-500 whitespace-nowrap align-top">
-                        {item.scale}
-                      </td>
-                      <td className="px-4 py-4 text-sm font-bold text-zinc-900 text-right whitespace-nowrap align-top">
-                        {item.value}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xs text-zinc-400 text-center mt-6 max-w-5xl mx-auto"
-          >
-            Nguồn: Hồ sơ năng lực Công ty TNHH MTV Cường Thông Gió. Danh mục mang tính tiêu biểu, chưa
-            bao gồm toàn bộ công trình đã thực hiện.
-          </motion.p>
         </div>
       </section>
 

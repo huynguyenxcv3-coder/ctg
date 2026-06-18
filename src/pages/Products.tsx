@@ -142,7 +142,7 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
 
   return (
     <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200">
-      {/* {images.map((src, i) => (
+      {images.map((src, i) => (
         <img
           key={src}
           src={src}
@@ -151,7 +151,7 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
           decoding="async"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === current ? 'opacity-100' : 'opacity-0'}`}
         />
-      ))} */}
+      ))}
       <div className="absolute inset-0 bg-black/5" />
 
       <button
@@ -304,7 +304,16 @@ export function Products() {
                   {item.images ? (
                     <ImageCarousel images={item.images} title={item.title} />
                   ) : (
-                    <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200">
+                    <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200 cursor-pointer">
+                      <img
+                        src={item.imageUrl}
+                        alt={`${item.title} — sản xuất & lắp đặt tại Đà Nẵng | Cường Thông Gió`}
+                        loading="lazy"
+                        decoding="async"
+                        width="600"
+                        height="450"
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      />
                       <div className="absolute inset-0 bg-black/5" />
                     </div>
                   )}
@@ -315,6 +324,15 @@ export function Products() {
                     <ImageCarousel images={item.images} title={item.title} />
                   ) : (
                     <div className="aspect-[4/3] bg-zinc-50 rounded-[2.5rem] overflow-hidden relative group border border-zinc-100 shadow-2xl shadow-zinc-200 cursor-pointer">
+                      <img
+                        src={item.imageUrl}
+                        alt={`${item.title} — sản xuất & lắp đặt tại Đà Nẵng | Cường Thông Gió`}
+                        loading="lazy"
+                        decoding="async"
+                        width="600"
+                        height="450"
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      />
                       <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition-colors" />
                       <div className="absolute bottom-4 left-4 right-4 text-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                         <span className="inline-block px-6 py-2.5 bg-white/95 backdrop-blur-sm text-zinc-900 text-xs font-bold uppercase tracking-[0.2em] rounded-full shadow-lg">
@@ -351,15 +369,15 @@ export function Products() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   {item.slug !== 'thi-cong-he-thong-ong-gio' ? (
                     <>
-                      <Button asChild size="lg" className="rounded-full px-8 h-14 bg-zinc-900 hover:bg-zinc-800 text-white font-bold uppercase tracking-widest transition-all text-sm">
+                      <Button asChild size="lg" className="rounded-xl px-8 h-14 bg-zinc-900 hover:bg-zinc-800 text-white font-bold uppercase tracking-widest transition-all text-sm">
                         <Link to={`/san-pham/${item.slug}`}>Xem chi tiết</Link>
                       </Button>
-                      <Button asChild size="lg" className="rounded-full px-8 h-14 bg-zinc-900 text-white font-bold uppercase tracking-widest transition-all text-sm border-none hover:bg-zinc-900 hover:text-white">
+                      <Button asChild size="lg" className="rounded-xl px-8 h-14 bg-zinc-900 text-white font-bold uppercase tracking-widest transition-all text-sm border-none hover:bg-zinc-900 hover:text-white">
                         <Link to="/lien-he">Yêu cầu báo giá</Link>
                       </Button>
                     </>
                   ) : (
-                    <Button asChild size="lg" className="rounded-full px-8 h-14 bg-zinc-900 text-white font-bold uppercase tracking-widest transition-all text-sm border-none hover:bg-zinc-900 hover:text-white">
+                    <Button asChild size="lg" className="rounded-xl px-8 h-14 bg-zinc-900 text-white font-bold uppercase tracking-widest transition-all text-sm border-none hover:bg-zinc-900 hover:text-white">
                       <Link to="/lien-he">Yêu cầu báo giá</Link>
                     </Button>
                   )}
@@ -564,7 +582,7 @@ export function Products() {
           <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-10 tracking-tight leading-tight italic">
             Bạn cần tư vấn giải pháp tối ưu cho công trình?
           </h2>
-          <Button asChild size="lg" className="rounded-full px-16 h-20 bg-zinc-900 border-none hover:bg-zinc-800 text-white text-lg font-bold uppercase tracking-[0.2em] shadow-2xl shadow-zinc-300">
+          <Button asChild size="lg" className="rounded-xl px-16 h-20 bg-zinc-900 border-none hover:bg-zinc-800 text-white text-lg font-bold uppercase tracking-[0.2em] shadow-2xl shadow-zinc-300">
             <Link to="/lien-he">Nhận báo giá ngay</Link>
           </Button>
         </div>

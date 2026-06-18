@@ -95,14 +95,14 @@ class ErrorBoundary extends Component<{ children: ReactNode }, ErrorBoundaryStat
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button
                 onClick={() => this.setState({ hasError: false, error: null })}
-                className="px-6 py-3 bg-zinc-900 text-white rounded-full font-bold text-sm uppercase tracking-widest hover:bg-zinc-800 transition-colors"
+                className="px-6 py-3 bg-zinc-900 text-white rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-zinc-800 transition-colors"
               >
                 Thử lại
               </button>
               <Link
                 to="/"
                 onClick={() => this.setState({ hasError: false, error: null })}
-                className="px-6 py-3 border-2 border-zinc-200 text-zinc-900 rounded-full font-bold text-sm uppercase tracking-widest hover:border-zinc-900 transition-colors text-center"
+                className="px-6 py-3 border-2 border-zinc-200 text-zinc-900 rounded-xl font-bold text-sm uppercase tracking-widest hover:border-zinc-900 transition-colors text-center"
               >
                 Về trang chủ
               </Link>

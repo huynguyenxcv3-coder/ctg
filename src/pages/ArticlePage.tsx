@@ -273,19 +273,19 @@ export function ArticlePage() {
               Cần tư vấn giải pháp thông gió cho dự án của bạn?
             </h2>
             <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
-              Đội ngũ kỹ sư của chúng tôi sẵn sàng khảo sát, thiết kế và báo giá miễn phí — từ
+              Đội ngũ kỹ sư Cường Thông Gió sẵn sàng khảo sát, thiết kế và báo giá miễn phí — từ
               thông gió nhà xưởng đến PCCC tầng hầm.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/lien-he"
-                className="bg-zinc-900 text-white px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-zinc-800 transition-colors shadow-2xl shadow-zinc-300 inline-flex items-center justify-center"
+                className="bg-zinc-900 text-white px-12 py-5 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-zinc-800 transition-colors shadow-2xl shadow-zinc-300 inline-flex items-center justify-center"
               >
                 Nhận báo giá miễn phí
               </Link>
               <a
                 href="tel:0905001224"
-                className="border-2 border-zinc-200 text-zinc-900 px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:border-zinc-900 transition-colors inline-flex items-center justify-center"
+                className="border-2 border-zinc-200 text-zinc-900 px-12 py-5 rounded-xl font-bold uppercase tracking-widest text-sm hover:border-zinc-900 transition-colors inline-flex items-center justify-center"
               >
                 Gọi ngay: 0905 001 224
               </a>

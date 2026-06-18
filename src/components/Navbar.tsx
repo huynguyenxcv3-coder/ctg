@@ -73,7 +73,7 @@ export function Navbar() {
         <div className="hidden md:block">
           <NavLink
             to="/lien-he"
-            className="bg-[#18181b] text-white px-8 py-3.5 rounded-full hover:bg-industrial-blue transition-all text-[12px] font-bold uppercase tracking-[0.1em] shadow-lg shadow-zinc-200"
+            className="bg-[#18181b] text-white px-8 py-3.5 rounded-xl hover:bg-industrial-blue transition-all text-[12px] font-bold uppercase tracking-[0.1em] shadow-lg shadow-zinc-200"
           >
             BÁO GIÁ NGAY
           </NavLink>
@@ -120,7 +120,7 @@ export function Navbar() {
               ))}
               <NavLink
                 to="/lien-he"
-                className="bg-zinc-900 text-white p-4 rounded-full text-center font-bold uppercase tracking-[0.2em] mt-4"
+                className="bg-zinc-900 text-white p-4 rounded-xl text-center font-bold uppercase tracking-[0.2em] mt-4"
               >
                 BÁO GIÁ NGAY
               </NavLink>

@@ -25,7 +25,7 @@ function ProductGallery({ images, title }: { images: string[]; title: string }) 
         onClick={() => setIsZoomed(true)}
       >
         <AnimatePresence mode="wait">
-          {/* <motion.img
+          <motion.img
             key={images[current]}
             src={images[current]}
             alt={`${title} — hình ảnh ${current + 1}`}
@@ -36,7 +36,7 @@ function ProductGallery({ images, title }: { images: string[]; title: string }) 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-          /> */}
+          />
         </AnimatePresence>
 
         {images.length > 1 && (
@@ -76,13 +76,13 @@ function ProductGallery({ images, title }: { images: string[]; title: string }) 
                   : 'border-zinc-200 hover:border-zinc-400 opacity-70 hover:opacity-100'
               }`}
             >
-              {/* <img
+              <img
                 src={src}
                 alt={`Thumbnail ${i + 1}`}
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover"
-              /> */}
+              />
             </button>
           ))}
         </div>
@@ -422,7 +422,7 @@ function DescriptionSection({ description, title }: { description: string; title
       <div className="text-center pt-4">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="inline-flex items-center gap-2 px-8 py-3 bg-zinc-100 hover:bg-zinc-200 text-zinc-700 font-bold text-sm uppercase tracking-wider rounded-full transition-all group"
+          className="inline-flex items-center gap-2 px-8 py-3 bg-zinc-100 hover:bg-zinc-200 text-zinc-700 font-bold text-sm uppercase tracking-wider rounded-xl transition-all group"
         >
           {isExpanded ? 'Thu gọn' : 'Xem thêm mô tả chi tiết'}
         </button>
@@ -451,13 +451,13 @@ function RelatedProducts({ slugs, currentSlug }: { slugs: string[]; currentSlug:
               className="group bg-white rounded-2xl border border-zinc-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="aspect-[4/3] overflow-hidden bg-zinc-50">
-                {/* <img
+                <img
                   src={p.imageUrl}
                   alt={p.title}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                /> */}
+                />
               </div>
               <div className="p-5">
                 <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">{p.badge}</span>
@@ -491,7 +491,7 @@ export function ProductDetail() {
           <div className="text-6xl mb-6">🔍</div>
           <h1 className="text-3xl font-bold text-zinc-900 mb-4">Không tìm thấy sản phẩm</h1>
           <p className="text-zinc-500 mb-8">Sản phẩm bạn tìm kiếm không tồn tại hoặc đã được di chuyển.</p>
-          <Button asChild className="rounded-full px-8 h-14 bg-zinc-900 hover:bg-zinc-800 text-white font-bold uppercase tracking-widest">
+          <Button asChild className="rounded-xl px-8 h-14 bg-zinc-900 hover:bg-zinc-800 text-white font-bold uppercase tracking-widest">
             <Link to="/san-pham">Xem tất cả sản phẩm</Link>
           </Button>
         </div>
@@ -604,13 +604,13 @@ export function ProductDetail() {
                 }`}
               >
                 <div className="aspect-square overflow-hidden bg-zinc-50">
-                  {/* <img
+                  <img
                     src={p.imageUrl}
                     alt={p.title}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  /> */}
+                  />
                 </div>
                 <div className="p-3 md:p-4">
                   <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-widest">{p.badge}</span>
@@ -639,10 +639,10 @@ export function ProductDetail() {
             Đội ngũ kỹ thuật 13+ năm kinh nghiệm sẵn sàng tư vấn, báo giá và lắp đặt tận nơi tại Đà Nẵng và Miền Trung.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="rounded-full px-12 h-16 bg-white text-zinc-900 hover:bg-zinc-100 font-bold uppercase tracking-[0.2em] shadow-2xl text-sm">
+            <Button asChild size="lg" className="rounded-xl px-12 h-16 bg-white text-zinc-900 hover:bg-zinc-100 font-bold uppercase tracking-[0.2em] shadow-2xl text-sm">
               <Link to="/lien-he">Nhận báo giá ngay</Link>
             </Button>
-            <Button asChild size="lg" className="rounded-full px-12 h-16 bg-[#0068ff] hover:bg-[#0055dd] text-white font-bold uppercase tracking-[0.2em] shadow-2xl text-sm border-none">
+            <Button asChild size="lg" className="rounded-xl px-12 h-16 bg-[#0068ff] hover:bg-[#0055dd] text-white font-bold uppercase tracking-[0.2em] shadow-2xl text-sm border-none">
               <a href="tel:0905001224">
                 0905 001 224
               </a>

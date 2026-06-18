@@ -158,7 +158,7 @@ export function Tools() {
               Cần tư vấn thiết kế hệ thống thông gió chuyên sâu?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-zinc-400">
-              Đội ngũ kỹ sư của chúng tôi sẵn sàng hỗ trợ bạn thiết kế, tính toán
+              Đội ngũ kỹ sư của Cường Thông Gió sẵn sàng hỗ trợ bạn thiết kế, tính toán
               và thi công hệ thống thông gió phù hợp với công trình. Liên hệ ngay để nhận
               tư vấn miễn phí.
             </p>
