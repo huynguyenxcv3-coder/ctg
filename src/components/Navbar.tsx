@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
 import { Logo } from './Logo';
@@ -17,7 +17,6 @@ const navItems = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,9 +26,9 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
+  // Close mobile menu on route change — use callback instead of useEffect
+  // to avoid cascading double render (Bug #3 fix)
+  const closeMobileMenu = () => setIsOpen(false);
 
   return (
     <header
@@ -108,6 +107,7 @@ export function Navbar() {
                 <NavLink
                   key={item.path}
                   to={item.path}
+                  onClick={closeMobileMenu}
                   className={({ isActive }) =>
                     cn(
                       'text-lg font-bold tracking-tight py-2 border-b border-gray-50 uppercase shadow-none',
@@ -120,6 +120,7 @@ export function Navbar() {
               ))}
               <NavLink
                 to="/lien-he"
+                onClick={closeMobileMenu}
                 className="bg-zinc-900 text-white p-4 rounded-xl text-center font-bold uppercase tracking-[0.2em] mt-4"
               >
                 BÁO GIÁ NGAY

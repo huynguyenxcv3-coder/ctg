@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { SEO, makeBreadcrumbSchema, LOCAL_BUSINESS_SCHEMA } from '../components/SEO';
 
 // Validate SĐT Việt Nam: bắt đầu bằng 0, 10 chữ số
@@ -27,6 +27,11 @@ function PopupModal({
 }) {
   const [isAnimating, setIsAnimating] = useState(false);
 
+  const handleClose = useCallback(() => {
+    setIsAnimating(false);
+    setTimeout(() => onClose(), 300); // wait for exit animation
+  }, [onClose]);
+
   useEffect(() => {
     if (isOpen) {
       // Trigger animation after mount
@@ -36,15 +41,12 @@ function PopupModal({
         const timer = setTimeout(() => handleClose(), 6000);
         return () => clearTimeout(timer);
       }
-    } else {
-      setIsAnimating(false);
     }
-  }, [isOpen, type]);
-
-  const handleClose = () => {
-    setIsAnimating(false);
-    setTimeout(() => onClose(), 300); // wait for exit animation
-  };
+    return () => {
+      // Reset animation state on cleanup (avoids cascading render)
+      setIsAnimating(false);
+    };
+  }, [isOpen, type, handleClose]);
 
   if (!isOpen) return null;
 

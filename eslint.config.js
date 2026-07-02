@@ -5,7 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
-  { ignores: ['dist', 'trafficbot', 'cc-nim', 'my-notion-worker', 'server', 'ssh_server', 'traffic-generator-python', 'trffic', 'v-bot', 'aws', 'Attached_assets', '.cache', '.config', '.claude'] },
+  { ignores: ['dist', 'trafficbot', 'cc-nim', 'my-notion-worker', 'server', 'ssh_server', 'traffic-generator-python', 'trffic', 'v-bot', 'aws', 'Attached_assets', '.cache', '.config', '.claude', '.local', '.config_backup', '.gemini_backup', '.pythonlibs', '.canvas', '.antigravitycli', '.seo-backup-*', 'node_modules', 'cuong-thong-gio', 'backend_extracted', 'extracted_images', '~'] },
   {
     files: ['src/**/*.{ts,tsx}'],
     extends: [

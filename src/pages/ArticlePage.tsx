@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { articles, faqData, makeArticleSchema } from './Blog';
-import type { ArticleContentBlock } from './Blog';
+import { articles, faqData, makeArticleSchema } from './blogData';
+import type { ArticleContentBlock } from './blogData';
 import { SEO, makeBreadcrumbSchema, makeFAQSchema } from '../components/SEO';
 import { NotFound } from './NotFound';
 

@@ -143,14 +143,7 @@ const pages = [
     title: 'Thông Gió Nhà Xưởng Đà Nẵng — Cường Thông Gió | Giải Pháp Trọn Gói',
     description: 'Thi công hệ thống thông gió nhà xưởng tại Đà Nẵng. Giảm nhiệt 5-10°C, loại bỏ bụi & khí độc. Giải pháp cooling pad, quạt công nghiệp. Chi phí từ 150 triệu. Hotline: 0905 001 224.',
     keywords: 'thông gió nhà xưởng Đà Nẵng, hệ thống thông gió, cooling pad, quạt thông gió nhà xưởng, làm mát nhà xưởng, Cường Thông Gió',
-    dateModified: '2026-06-28',
-  },
-  {
-    route: '/thong-gio-cuong-buc-nha-xuong',
-    title: 'Thông Gió Cưỡng Bức Nhà Xưởng — Nguyên Lý, Thiết Kế & Thi Công | Cường Thông Gió',
-    description: 'Hướng dẫn toàn diện về thông gió cưỡng bức (mechanical ventilation) cho nhà xưởng: nguyên lý hút-đẩy, cách tính ACH, so sánh với thông gió tự nhiên, thiết bị cần thiết và bảng giá thi công 2026. Cường Thông Gió — 13+ năm kinh nghiệm tại Đà Nẵng.',
-    keywords: 'thông gió cưỡng bức, thông gió cơ khí, mechanical ventilation, hệ thống hút đẩy, quạt thông gió công nghiệp, ACH, quạt ly tâm, quạt hướng trục, thông gió nhà xưởng, Đà Nẵng, Cường Thông Gió',
-    dateModified: '2026-06-28',
+    dateModified: '2026-06-14',
   },
   {
     route: '/hut-khoi-nha-xuong-da-nang',
@@ -461,17 +454,15 @@ function injectSeoIntoHtml(html, page, extraContent = '', extraHead = '') {
     `<meta name="keywords" content="${escapeHtml(page.keywords)}" />`
   );
 
-  // 4. Replace existing canonical & hreflang tags (if any from base template) with correct ones for this route
-  // Remove any existing canonical and hreflang tags (safety measure)
+  // 4. Replace existing canonical & hreflang tags (from base template) with correct ones for this route
+  // First, remove all existing canonical and hreflang tags
   result = result.replace(/\s*<link rel="canonical" href="[^"]*" \/>\s*/g, '\n');
   result = result.replace(/\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*" \/>\s*/g, '\n');
-  // Handle both old and new comment formats
+  // Then inject the correct ones after the comment (or theme-color if comment was already replaced)
   result = result.replace(
-    /<!-- Canonical & hreflang:.*?-->/s,
+    /<!-- Canonical & hreflang: managed dynamically by <SEO\/> component per route\.\s*This prevents Google from treating \/san-pham, \/kien-thuc etc\. as duplicates of homepage\.\s*The SEO component sets canonical = https:\/\/cuongthonggio\.com\{pathname\} on every route\. -->/,
     `<!-- Canonical & hreflang: pre-rendered by SSG for ${page.route} -->`
   );
-  // Remove the placeholder comment for dynamic injection
-  result = result.replace(/\s*<!-- canonical and hreflang tags are injected dynamically per route -->\s*/g, '\n');
   // Insert canonical and hreflang before </head>
   const canonicalBlock = `    ${makeCanonicalTag(fullUrl)}\n    ${makeHreflangTags(fullUrl)}`;
   result = result.replace('</head>', `${canonicalBlock}\n  </head>`);

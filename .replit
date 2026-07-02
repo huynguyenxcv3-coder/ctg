@@ -20,6 +20,10 @@ localPort = 3001
 externalPort = 3001
 
 [[ports]]
+localPort = 3456
+externalPort = 3000
+
+[[ports]]
 localPort = 5000
 externalPort = 5000
 
@@ -47,6 +51,10 @@ author = "agent"
 task = "workflow.run"
 args = "Start application"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Restore Antigravity"
+
 [[workflows.workflow]]
 name = "Start application"
 author = "agent"
@@ -58,4 +66,15 @@ waitForPort = 5000
 
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow]]
+name = "Restore Antigravity"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash /home/runner/workspace/restore-antigravity.sh"
+
+[workflows.workflow.metadata]
+outputType = "console"
 

@@ -28,19 +28,20 @@
     
     
     <!-- Content freshness signal for AI crawlers -->
-    <meta property="article:modified_time" content="2026-07-02" />
+    <meta property="article:modified_time" content="2026-06-14" />
 
     <!-- Search Engine Verification — DÁN MÃ XÁC MINH CỦA BẠN VÀO content="" rồi deploy lại.
          Google: Search Console → Cài đặt → Xác minh quyền sở hữu → Thẻ HTML → copy phần content.
          Bing:   Bing Webmaster Tools → Import từ Google Search Console (1 click) HOẶC dán mã thủ công. -->
 
 
-    <!-- Canonical & hreflang: managed dynamically by <SEO/> component per route (client-side)
-         and by prerender.mjs during SSG build (server-side).
-         DO NOT hardcode canonical here — it causes all routes to canonicalize to homepage.
-         SEO.tsx sets canonical = https://cuongthonggio.com{pathname} on every route. -->
+    <!-- Canonical & hreflang: managed dynamically by <SEO/> component per route.
+         This prevents Google from treating /san-pham, /kien-thuc etc. as duplicates of homepage.
+         The SEO component sets canonical = https://cuongthonggio.com{pathname} on every route. -->
     <meta name="theme-color" content="#09090b" />
-    <!-- canonical and hreflang tags are injected dynamically per route -->
+    <link rel="canonical" href="https://cuongthonggio.com/" />
+    <link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/" />
 
     <!-- Geo SEO — Targeting Đà Nẵng -->
     <meta name="geo.region" content="VN-DN" />
@@ -91,7 +92,7 @@
 
     <!-- Preload critical images (LCP optimization) -->
     <link rel="preload" as="image" href="/logo.png" type="image/png" />
-    <link rel="preload" as="image" href="/quat-ly-tam.png" type="image/png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/quat-ly-tam.webp" type="image/webp" fetchpriority="high" />
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1200&auto=format&fit=crop" fetchpriority="low" />
 
   </head>
@@ -270,7 +271,6 @@
             <li><a href="/lien-he">Liên hệ & Báo giá</a></li>
             <li><a href="/gia-cong-ong-gio-da-nang">Gia công ống gió</a></li>
             <li><a href="/thong-gio-nha-xuong-da-nang">Thông gió nhà xưởng</a></li>
-            <li><a href="/thong-gio-cuong-buc-nha-xuong">Thông gió cưỡng bức</a></li>
             <li><a href="/hut-khoi-nha-xuong-da-nang">Hút khói nhà xưởng</a></li>
             <li><a href="/quat-ly-tam-cong-nghiep">Quạt ly tâm</a></li>
             <li><a href="/xu-ly-bui-cong-nghiep">Xử lý bụi</a></li>

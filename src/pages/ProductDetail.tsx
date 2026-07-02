@@ -237,14 +237,13 @@ function SpecsTable({ specs }: { specs: ProductDetailData['specs'] }) {
 }
 
 /* ─── Description Section (Markdown-like rendered) ─── */
-function DescriptionSection({ description, title }: { description: string; title: string }) {
+function DescriptionSection({ description }: { description: string; title?: string }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Simple markdown-like renderer
   const renderDescription = (text: string) => {
     const lines = text.split('\n');
     const elements: React.ReactElement[] = [];
-    let inList = false;
     let listItems: React.ReactElement[] = [];
     let inTable = false;
     let tableRows: string[][] = [];
@@ -254,7 +253,6 @@ function DescriptionSection({ description, title }: { description: string; title
       if (listItems.length > 0) {
         elements.push(<ul key={`list-${elements.length}`} className="space-y-2 my-4 pl-1">{listItems}</ul>);
         listItems = [];
-        inList = false;
       }
     };
 
@@ -360,7 +358,6 @@ function DescriptionSection({ description, title }: { description: string; title
 
       // Bullet list
       if (trimmed.startsWith('- ')) {
-        inList = true;
         const text = trimmed.slice(2);
         const boldMatch = text.match(/^\*\*(.*?)\*\*:?\s*(.*)/);
         listItems.push(

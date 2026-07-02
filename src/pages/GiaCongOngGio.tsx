@@ -308,7 +308,7 @@ export function GiaCongOngGio() {
                     desc: 'Chi phí thấp hơn inox 304 khoảng 30%, chịu nhiệt trung bình. Phù hợp cho các ứng dụng ít tiếp xúc hoá chất, môi trường khô ráo, yêu cầu thẩm mỹ cao.',
                     tag: 'Tiết kiệm',
                   },
-                ].map((mat, i) => (
+                ].map((mat) => (
                   <div key={mat.title} className="bg-zinc-50 rounded-2xl p-6 md:p-8 border border-zinc-100">
                     <div className="flex items-center gap-3 mb-3">
                       <span className="inline-block px-3 py-1 bg-zinc-900 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">{mat.tag}</span>
@@ -475,6 +475,181 @@ export function GiaCongOngGio() {
           <p className="text-center text-xs text-zinc-400 mt-4 max-w-2xl mx-auto">
             * Giá trên chưa bao gồm VAT, chi phí vận chuyển và lắp đặt. Áp dụng cho đơn hàng từ 50m² trở lên. Cập nhật tháng 6/2026.
           </p>
+        </div>
+      </section>
+
+      {/* Detailed Size-Based Pricing Section */}
+      <section className='py-16 md:py-24 bg-zinc-50' aria-label='Bảng giá chi tiết theo kích thước ống gió'>
+        <div className='container-custom'>
+          <div className='max-w-5xl mx-auto'>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className='text-3xl md:text-4xl font-bold text-zinc-900 mb-4 tracking-tight text-center'
+            >
+              Bảng giá chi tiết theo kích thước ống gió
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className='text-zinc-500 text-center mb-12 max-w-2xl mx-auto'
+            >
+              Báo giá tham khảo theo từng kích thước phổ biến, áp dụng cho đơn hàng sản xuất tại xưởng.
+            </motion.p>
+
+            {/* Square Duct Pricing Table */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className='mb-12'
+            >
+              <h3 className='text-xl font-bold text-zinc-900 mb-4'>Ống gió vuông (Rectangular Duct)</h3>
+              <div className='overflow-x-auto rounded-2xl border border-zinc-200 bg-white shadow-sm'>
+                <table className='w-full text-sm'>
+                  <thead>
+                    <tr className='bg-zinc-900 text-white'>
+                      <th className='px-6 py-3.5 text-left font-semibold'>Kích thước (mm)</th>
+                      <th className='px-6 py-3.5 text-left font-semibold'>Độ dày tôn</th>
+                      <th className='px-6 py-3.5 text-left font-semibold'>Tôn mạ kẽm (VNĐ/m)</th>
+                      <th className='px-6 py-3.5 text-left font-semibold'>Inox 304 (VNĐ/m)</th>
+                    </tr>
+                  </thead>
+                  <tbody className='divide-y divide-zinc-100'>
+                    {[
+                      { size: '200 x 200', thickness: '0.5mm', zinc: '185,000', inox: '420,000' },
+                      { size: '300 x 300', thickness: '0.5mm', zinc: '245,000', inox: '560,000' },
+                      { size: '400 x 400', thickness: '0.6mm', zinc: '320,000', inox: '710,000' },
+                      { size: '500 x 500', thickness: '0.6mm', zinc: '395,000', inox: '870,000' },
+                      { size: '600 x 600', thickness: '0.8mm', zinc: '480,000', inox: '1,050,000' },
+                      { size: '800 x 800', thickness: '0.8mm', zinc: '610,000', inox: '1,350,000' },
+                      { size: '1000 x 1000', thickness: '1.0mm', zinc: '780,000', inox: '1,720,000' },
+                      { size: '1200 x 1200', thickness: '1.0mm', zinc: '950,000', inox: '2,100,000' },
+                    ].map((row) => (
+                      <tr key={row.size} className='hover:bg-zinc-50 transition-colors'>
+                        <td className='px-6 py-4 font-semibold text-zinc-900'>{row.size}</td>
+                        <td className='px-6 py-4 text-zinc-600'>{row.thickness}</td>
+                        <td className='px-6 py-4 text-zinc-600'>{row.zinc}</td>
+                        <td className='px-6 py-4 text-zinc-600'>{row.inox}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+
+            {/* Round Duct Pricing Table */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <h3 className='text-xl font-bold text-zinc-900 mb-4'>Ống gió tròn (Round Duct / Spiral Duct)</h3>
+              <div className='overflow-x-auto rounded-2xl border border-zinc-200 bg-white shadow-sm'>
+                <table className='w-full text-sm'>
+                  <thead>
+                    <tr className='bg-zinc-900 text-white'>
+                      <th className='px-6 py-3.5 text-left font-semibold'>Kích thước (mm)</th>
+                      <th className='px-6 py-3.5 text-left font-semibold'>Độ dày tôn</th>
+                      <th className='px-6 py-3.5 text-left font-semibold'>Tôn mạ kẽm (VNĐ/m)</th>
+                      <th className='px-6 py-3.5 text-left font-semibold'>Inox 304 (VNĐ/m)</th>
+                    </tr>
+                  </thead>
+                  <tbody className='divide-y divide-zinc-100'>
+                    {[
+                      { size: 'Ø100', thickness: '0.5mm', zinc: '95,000', inox: '210,000' },
+                      { size: 'Ø150', thickness: '0.5mm', zinc: '130,000', inox: '290,000' },
+                      { size: 'Ø200', thickness: '0.5mm', zinc: '165,000', inox: '370,000' },
+                      { size: 'Ø250', thickness: '0.6mm', zinc: '210,000', inox: '460,000' },
+                      { size: 'Ø300', thickness: '0.6mm', zinc: '260,000', inox: '570,000' },
+                      { size: 'Ø400', thickness: '0.6mm', zinc: '340,000', inox: '750,000' },
+                      { size: 'Ø500', thickness: '0.8mm', zinc: '430,000', inox: '950,000' },
+                      { size: 'Ø600', thickness: '0.8mm', zinc: '530,000', inox: '1,170,000' },
+                    ].map((row) => (
+                      <tr key={row.size} className='hover:bg-zinc-50 transition-colors'>
+                        <td className='px-6 py-4 font-semibold text-zinc-900'>{row.size}</td>
+                        <td className='px-6 py-4 text-zinc-600'>{row.thickness}</td>
+                        <td className='px-6 py-4 text-zinc-600'>{row.zinc}</td>
+                        <td className='px-6 py-4 text-zinc-600'>{row.inox}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className='text-center text-xs text-zinc-400 mt-6 max-w-2xl mx-auto'
+            >
+              * Giá tham khảo, chưa bao gồm VAT. Giá thực tế có thể thay đổi tùy theo số lượng đặt hàng, độ phức tạp gia công và thời điểm báo giá. Liên hệ để nhận báo giá chính xác nhất.
+            </motion.p>
+          </div>
+        </div>
+      </section>
+
+      {/* Workshop & Local SEO Section */}
+      <section className='py-20 md:py-32 bg-zinc-950 text-white' aria-label='Xưởng gia công ống gió tại Đà Nẵng'>
+        <div className='container-custom'>
+          <div className='max-w-5xl mx-auto'>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className='text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight text-center'
+            >
+              Xưởng Gia Công Ống Gió tại KCN Hòa Khánh, Đà Nẵng
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className='space-y-4 text-zinc-400 text-base leading-relaxed max-w-3xl mx-auto text-center mb-16'
+            >
+              <p>
+                Xưởng sản xuất của chúng tôi tọa lạc tại Khu Công Nghiệp Hòa Khánh, quận Liên Chiểu, TP. Đà Nẵng — vị trí chiến lược giúp tối ưu chi phí vận chuyển cho các công trình tại miền Trung và Tây Nguyên.
+              </p>
+              <p>
+                Với diện tích nhà xưởng rộng hơn 2.000m², trang bị đầy đủ máy cắt CNC plasma, máy gấp mép tự động, máy cuốn ống xoắn (spiral machine) và dây chuyền gia công phụ kiện hoàn chỉnh, chúng tôi có năng lực sản xuất lên đến 5.000m² ống gió mỗi tháng.
+              </p>
+              <p>
+                Phục vụ khách hàng tại Đà Nẵng, Quảng Nam, Huế, Quảng Ngãi, Bình Định, Gia Lai, Kon Tum và các tỉnh lân cận. Đội ngũ kỹ thuật giàu kinh nghiệm, sẵn sàng hỗ trợ tư vấn thiết kế và thi công lắp đặt trọn gói.
+              </p>
+            </motion.div>
+
+            <div className='grid grid-cols-2 md:grid-cols-4 gap-6'>
+              {[
+                { value: '2,000m²', label: 'Diện tích xưởng' },
+                { value: '5,000m²', label: 'Năng lực sản xuất/tháng' },
+                { value: '10+', label: 'Năm kinh nghiệm' },
+                { value: '500+', label: 'Công trình hoàn thành' },
+              ].map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className='bg-white/5 border border-white/10 rounded-2xl p-6 text-center backdrop-blur-sm'
+                >
+                  <p className='text-2xl md:text-3xl font-bold text-white mb-2'>{stat.value}</p>
+                  <p className='text-zinc-400 text-sm'>{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

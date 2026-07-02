@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script để chạy Codex CLI với IYH Gateway
 
-export OPENAI_API_KEY="iyh_jdCQMqJfiSWNcjx1OaajpjHT90McJjr-"
+export OPENAI_API_KEY="iyh_OtGXzOCggfKWzr87qZAy1Jn3LCmxOlPX"
 
 # Mặc định dùng model gpt-5.5-xhigh nếu không chỉ định
 MODEL=${1:-"gpt-5.5-xhigh"}

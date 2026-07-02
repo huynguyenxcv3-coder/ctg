@@ -1,7 +1,7 @@
 #!/bin/bash
 export ENABLE_TOOL_SEARCH="true"
 export ANTHROPIC_BASE_URL="https://v1.iyhapi.app"
-export ANTHROPIC_AUTH_TOKEN="iyh_jdCQMqJfiSWNcjx1OaajpjHT90McJjr-"
+export ANTHROPIC_AUTH_TOKEN="iyh_OtGXzOCggfKWzr87qZAy1Jn3LCmxOlPX"
 export ANTHROPIC_DEFAULT_OPUS_MODEL="claude-opus-4.8"
 export ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet-4.6"
 export ANTHROPIC_DEFAULT_HAIKU_MODEL="claude-haiku-4.5"

@@ -1,0 +1,34 @@
+DANH SÁCH TỔNG HỢP CÁC LỖI (BUG) TRONG WEBSITE CƯỜNG THÔNG GIÓ
+===================================================================
+Thời gian quét: 28/06/2026
+
+1. BUG NGHIÊM TRỌNG (RUNTIME & LOGIC BUG) TRONG MODAL LIÊN HỆ
+- Vị trí: src/pages/Contact.tsx (Dòng 36 - 47)
+- Chi tiết lỗi:
+  + [Reference/Scoping Bug]: Tại dòng 36 (trong useEffect), setTimeout gọi hàm handleClose(), nhưng hàm handleClose lại được khai báo ở dòng 44 (phía dưới useEffect). Trình tự này gây lỗi ReferenceError hoặc kẹt dữ liệu cũ (stale closure) khi unmount.
+  + [Cascading Renders]: Dòng 40 gọi trực tiếp setIsAnimating(false) trong useEffect, gây ra chuỗi render liên tiếp không cần thiết làm giảm hiệu năng.
+
+2. BUG PHÁ VỠ CƠ CHẾ FAST REFRESH (HOT RELOAD) CỦA VITE
+- Vị trí: src/components/SEO.tsx và src/pages/Blog.tsx
+- Chi tiết lỗi:
+  + Lỗi react-refresh/only-export-components: Ngoài export các React Component chính (SEO, Blog), các file này còn export kèm các hằng số hoặc hàm tiện ích (ORGANIZATION_SCHEMA, LOCAL_BUSINESS_SCHEMA, makeBreadcrumbSchema...).
+  + Tác hại: Phá vỡ hoàn toàn cơ chế HMR (Fast Refresh) của Vite. Khi sửa code, trình duyệt buộc phải tải lại toàn bộ trang (Full reload) thay vì cập nhật tức thì, làm mất trạng thái (state) hiện tại.
+
+3. LỖI HIỆU NĂNG RENDER 2 LẦN (CASCADING RENDER) TẠI NAVBAR
+- Vị trí: src/components/Navbar.tsx (Dòng 30 - 32)
+- Chi tiết lỗi:
+  + Lỗi react-hooks/set-state-in-effect: Dùng useEffect lắng nghe sự thay đổi của 'location' để cập nhật state setIsOpen(false). 
+  + Tác hại: Mỗi khi chuyển trang, React phải thực hiện 2 chu kỳ render liên tiếp (1 lần do đổi URL, 1 lần do cập nhật state isOpen), lãng phí tài nguyên CPU thay vì đóng menu ngay trong event handler click.
+
+4. LỖI BIÊN DỊCH VÀ KIỂM TRA KIỂU (BUILD / CI/CD THẤT BẠI)
+- Vị trí: src/pages/GiaCongOngGio.tsx và src/pages/ProductDetail.tsx
+- Chi tiết lỗi:
+  + Lỗi @typescript-eslint/no-unused-vars (mức error):
+    * GiaCongOngGio.tsx (dòng 311): Biến 'i' được khai báo nhưng không bao giờ sử dụng.
+    * ProductDetail.tsx: Biến 'title' (dòng 240) và 'inList' (dòng 247) được gán giá trị nhưng bỏ ngỏ.
+  + Tác hại: Khiến toàn bộ kịch bản pnpm build / pnpm build:ssg thất bại ngay lập tức với exit code 1, ngăn chặn việc triển khai lên máy chủ Vercel / Netlify.
+
+5. LỖI CẤU HÌNH LINTER QUÉT NHẦM FILE HỆ THỐNG
+- Vị trí: eslint.config.js
+- Chi tiết lỗi:
+  + Thiếu cấu hình ignore cho các thư mục ẩn của môi trường ảo (như .local, .config_backup), khiến ESLint quét sai và báo lỗi cú pháp vào các file nội bộ của Python (xterm.js).

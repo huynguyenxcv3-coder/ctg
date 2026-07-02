@@ -5,6 +5,15 @@ export UV_PYTHON_DOWNLOADS=true
 export UV_PYTHON_PREFERENCE=managed
 export UV_PROJECT_ENVIRONMENT=/home/runner/workspace/cc-nim/.venv
 PROXY_URL="http://localhost:3001"
+CODEX_PROXY_PORT=3456
+
+# Kiểm tra xem codex-proxy có đang chạy không
+if ! curl -s "http://localhost:$CODEX_PROXY_PORT" > /dev/null 2>&1; then
+    echo "Đang khởi động Codex Proxy Pool (v0.dev)..."
+    cd /home/runner/workspace/codex-proxy
+    nohup node proxy.js >> /home/runner/workspace/codex-proxy.log 2>&1 &
+    sleep 2
+fi
 
 # Kiểm tra xem proxy có đang chạy không
 if ! curl -s "$PROXY_URL/health" > /dev/null; then

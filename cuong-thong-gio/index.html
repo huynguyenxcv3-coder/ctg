@@ -35,13 +35,12 @@
          Bing:   Bing Webmaster Tools → Import từ Google Search Console (1 click) HOẶC dán mã thủ công. -->
 
 
-    <!-- Canonical & hreflang: managed dynamically by <SEO/> component per route.
-         This prevents Google from treating /san-pham, /kien-thuc etc. as duplicates of homepage.
-         The SEO component sets canonical = https://cuongthonggio.com{pathname} on every route. -->
+    <!-- Canonical & hreflang: managed dynamically by <SEO/> component per route (client-side)
+         and by prerender.mjs during SSG build (server-side).
+         DO NOT hardcode canonical here — it causes all routes to canonicalize to homepage.
+         SEO.tsx sets canonical = https://cuongthonggio.com{pathname} on every route. -->
     <meta name="theme-color" content="#09090b" />
-    <link rel="canonical" href="https://cuongthonggio.com/" />
-    <link rel="alternate" hreflang="vi" href="https://cuongthonggio.com/" />
-    <link rel="alternate" hreflang="x-default" href="https://cuongthonggio.com/" />
+    <!-- canonical and hreflang tags are injected dynamically per route -->
 
     <!-- Geo SEO — Targeting Đà Nẵng -->
     <meta name="geo.region" content="VN-DN" />

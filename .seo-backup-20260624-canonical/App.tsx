@@ -20,7 +20,6 @@ const Blog = lazy(() => import('./pages/Blog').then(m => ({ default: m.Blog })))
 const ArticlePage = lazy(() => import('./pages/ArticlePage').then(m => ({ default: m.ArticlePage })));
 const GiaCongOngGio = lazy(() => import('./pages/GiaCongOngGio').then(m => ({ default: m.GiaCongOngGio })));
 const ThongGioNhaXuong = lazy(() => import('./pages/ThongGioNhaXuong').then(m => ({ default: m.ThongGioNhaXuong })));
-const ThongGioCuongBuc = lazy(() => import('./pages/ThongGioCuongBuc').then(m => ({ default: m.ThongGioCuongBuc })));
 const Projects = lazy(() => import('./pages/Projects').then(m => ({ default: m.Projects })));
 const Tools = lazy(() => import('./pages/Tools').then(m => ({ default: m.Tools })));
 const AirflowCalculator = lazy(() => import('./pages/AirflowCalculator').then(m => ({ default: m.AirflowCalculator })));
@@ -136,7 +135,6 @@ export default function App() {
                 <Route path="/kien-thuc/:articleId" element={<ArticlePage />} />
                 <Route path="/gia-cong-ong-gio-da-nang" element={<GiaCongOngGio />} />
                 <Route path="/thong-gio-nha-xuong-da-nang" element={<ThongGioNhaXuong />} />
-                <Route path="/thong-gio-cuong-buc-nha-xuong" element={<ThongGioCuongBuc />} />
                 <Route path="/du-an" element={<Projects />} />
                 <Route path="/cong-cu" element={<Tools />} />
                 <Route path="/cong-cu/tinh-luu-luong-gio" element={<AirflowCalculator />} />
