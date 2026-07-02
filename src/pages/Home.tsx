@@ -191,7 +191,7 @@ export function Home() {
             >
               <div className="mb-10 md:mb-12 max-w-6xl w-full">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.1] text-center">
-                  Thông gió Đà Nẵng — Hệ thống thông gió chuyên nghiệp<br /> cho công trình công nghiệp.
+                  Hệ thống thông gió chuyên nghiệp<br /> cho công trình công nghiệp.
                 </h1>
               </div>
               
