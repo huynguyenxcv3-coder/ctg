@@ -59,7 +59,7 @@ export const ORGANIZATION_SCHEMA = {
   ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
+    "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh, Q. Liên Chiểu",
     "addressLocality": "Đà Nẵng",
     "addressRegion": "Đà Nẵng",
     "postalCode": "550000",
@@ -87,7 +87,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
   "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJAQDvmduYQjERvtE7J7awz68",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
+    "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh, Q. Liên Chiểu",
     "addressLocality": "Đà Nẵng",
     "addressRegion": "Đà Nẵng",
     "postalCode": "550000",
@@ -274,7 +274,7 @@ export function makeProductSchema(product: {
         "name": "Xưởng sản xuất Cường Thông Gió",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
+          "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh, Q. Liên Chiểu",
           "addressLocality": "Đà Nẵng",
           "addressCountry": "VN"
         }
@@ -329,7 +329,7 @@ export function makeServiceSchema(service: {
       "telephone": "+84-905-001-224",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh",
+        "streetAddress": "101 Trần Quý Khoách, P. Hòa Khánh, Q. Liên Chiểu",
         "addressLocality": "Đà Nẵng",
         "addressCountry": "VN"
       }

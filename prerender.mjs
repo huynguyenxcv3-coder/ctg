@@ -546,7 +546,25 @@ function main() {
 
   let count = 0;
 
-  // 1. Process static pages
+  // Extract products dynamically for pre-rendering
+  try {
+    const productsContent = readFileSync(resolve(__dirname, 'src/pages/productsDetailData.ts'), 'utf-8');
+    const productRegex = /slug:\s*'([^']+)',[\s\S]*?title:\s*'([^']+)'/g;
+    let pMatch;
+    while ((pMatch = productRegex.exec(productsContent)) !== null) {
+      pages.push({
+        route: '/san-pham/' + pMatch[1],
+        title: pMatch[2] + ' — Cường Thông Gió Đà Nẵng',
+        description: pMatch[2] + ' sản xuất và phân phối bởi Cường Thông Gió tại Đà Nẵng. Bảo hành 12-18 tháng. Liên hệ: 0905 001 224.',
+        keywords: pMatch[2] + ', quạt công nghiệp Đà Nẵng, ống gió, Cường Thông Gió',
+        dateModified: '2026-07-03'
+      });
+    }
+  } catch(e) {
+    console.error("Failed to extract product routes", e);
+  }
+
+  // 1. Process static and dynamic pages
   for (const page of pages) {
     let extraContent = generatePageSummaryHtml(page);
     let extraHead = [
