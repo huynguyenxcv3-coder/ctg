@@ -1,10 +1,19 @@
 import {StrictMode} from 'react';
-import {createRoot} from 'react-dom/client';
+import {hydrateRoot, createRoot} from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 
-createRoot(document.getElementById('root')!).render(
+const rootElement = document.getElementById('root')!;
+const app = (
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 );
+
+// If root has SSG pre-rendered content, hydrate instead of replacing it.
+// This preserves SEO content for crawlers and avoids content flash.
+if (rootElement.childElementCount > 0) {
+  hydrateRoot(rootElement, app);
+} else {
+  createRoot(rootElement).render(app);
+}

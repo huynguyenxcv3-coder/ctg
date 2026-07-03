@@ -7,10 +7,16 @@
     {
       "source": "/api/(.*)",
       "destination": "/api/index.js"
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/index.html"
     }
   ],
   "functions": {
