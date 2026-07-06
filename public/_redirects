@@ -1,1 +1,6 @@
+# Domain canonicalization redirects (enforce https://cuongthonggio.com)
+# Note: For full www + HTTP -> HTTPS non-www enforcement, prefer platform-level redirects (Vercel/Netlify dashboard)
+# These path redirects are supplementary.
+
+# SPA fallback for client-side routing
 /* /index.html 200

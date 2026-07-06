@@ -12,6 +12,10 @@
   to = "/.netlify/functions/index/api/:splat"
   status = 200
 
+# Domain canonicalization: Enforce https://cuongthonggio.com (non-www, HTTPS)
+# For www and HTTP redirects, configure in Netlify dashboard under Domain settings > Redirects & HTTPS
+# or use Netlify's "Custom domain" alias management for permanent redirects.
+
 # SPA fallback — only applies if no pre-rendered file exists
 [[redirects]]
   from = "/*"

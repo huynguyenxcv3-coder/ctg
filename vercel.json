@@ -3,6 +3,30 @@
   "regions": ["sin1"],
   "buildCommand": "pnpm build:ssg",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.cuongthonggio.com"
+        }
+      ],
+      "destination": "https://cuongthonggio.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "scheme",
+          "value": "http"
+        }
+      ],
+      "destination": "https://cuongthonggio.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
