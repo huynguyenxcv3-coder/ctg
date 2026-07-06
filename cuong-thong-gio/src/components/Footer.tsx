@@ -7,77 +7,70 @@ export function Footer() {
   return (
     <footer className="bg-white text-industrial-black py-20 border-t border-gray-100" role="contentinfo" itemScope itemType="https://schema.org/LocalBusiness">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-12">
-          {/* Brand & Slogan */}
-          <div className="space-y-8 lg:col-span-1">
-            <div className="flex items-center gap-4">
-              <Logo size={56} />
-              <span className="font-bold text-xl tracking-tighter uppercase whitespace-nowrap" itemProp="name">CƯỜNG THÔNG GIÓ.</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          {/* Brand section */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <Logo size={48} />
+              <span className="font-black text-2xl tracking-tighter uppercase text-zinc-900">CƯỜNG THÔNG GIÓ.</span>
             </div>
-            <p className="text-gray-500 text-[15px] leading-relaxed font-medium" itemProp="description">
+            <p className="text-zinc-500 text-[15px] leading-relaxed font-medium">
               Chuyên tư vấn, thiết kế và thi công hệ thống quạt công nghiệp, ống gió tại Đà Nẵng và khu vực Miền Trung. Chúng tôi cam kết chất lượng sản phẩm trực tiếp từ xưởng với chi phí tối ưu nhất và chế độ bảo hành tận tâm.
             </p>
-            <meta itemProp="url" content="https://cuongthonggio.com" />
-            <meta itemProp="image" content="https://cuongthonggio.com/logo.png" />
           </div>
 
-          {/* Services Navigation */}
-          <nav aria-label="Dịch vụ chính" className="space-y-8">
-            <h3 className="font-bold text-lg uppercase tracking-wider">DỊCH VỤ</h3>
-            <ul className="space-y-3">
-              <li><NavLink to="/san-pham" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Quạt công nghiệp công suất lớn</NavLink></li>
-              <li><NavLink to="/san-pham" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Gia công ống gió Plasma CNC</NavLink></li>
-              <li><NavLink to="/san-pham" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Hệ thống lọc bụi nhà xưởng</NavLink></li>
-              <li><NavLink to="/san-pham" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Thông gió PCCC & Tầng hầm</NavLink></li>
-              <li><NavLink to="/san-pham" className="text-gray-500 text-[15px] font-medium hover:text-industrial-blue transition-colors">Máy điều hoà cassette</NavLink></li>
+          {/* DỊCH VỤ */}
+          <div>
+            <h3 className="font-bold text-lg uppercase tracking-wider text-zinc-900 mb-4">DỊCH VỤ</h3>
+            <ul className="space-y-2.5 text-[15px]">
+              <li><NavLink to="/san-pham" className="text-zinc-500 font-medium hover:text-industrial-blue transition-colors">Quạt công nghiệp công suất lớn</NavLink></li>
+              <li><NavLink to="/san-pham" className="text-zinc-500 font-medium hover:text-industrial-blue transition-colors">Gia công ống gió Plasma CNC</NavLink></li>
+              <li><NavLink to="/san-pham" className="text-zinc-500 font-medium hover:text-industrial-blue transition-colors">Hệ thống lọc bụi nhà xưởng</NavLink></li>
+              <li><NavLink to="/san-pham" className="text-zinc-500 font-medium hover:text-industrial-blue transition-colors">Thông gió PCCC & Tầng hầm</NavLink></li>
+              <li><NavLink to="/san-pham" className="text-zinc-500 font-medium hover:text-industrial-blue transition-colors">Máy điều hoà cassette</NavLink></li>
             </ul>
-          </nav>
+          </div>
 
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <h3 className="font-bold text-lg uppercase tracking-wider">THÔNG TIN LIÊN HỆ</h3>
-            <address className="not-italic" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-              <ul className="space-y-4">
-                <li className="text-gray-500 text-[15px] font-medium leading-relaxed whitespace-nowrap">
-                  <span itemProp="streetAddress">101 Trần Quý Khoách, P. Hòa Khánh</span>, <span itemProp="addressLocality">TP. Đà Nẵng</span>
-                  <meta itemProp="addressRegion" content="Đà Nẵng" />
-                  <meta itemProp="postalCode" content="550000" />
-                  <meta itemProp="addressCountry" content="VN" />
-                </li>
-                <li className="text-[15px] font-bold">
-                  Hotline/Zalo: <a href="tel:0905001224" className="hover:text-industrial-blue transition-colors" aria-label="Gọi hotline 0905 001 224" itemProp="telephone">0905 001 224</a>
-                </li>
-                <li className="text-[15px] font-medium text-gray-500 whitespace-nowrap">
-                  Email: <a href="mailto:phantrongcuong77@gmail.com" className="hover:text-industrial-blue transition-colors" aria-label="Gửi email đến Cường Thông Gió" itemProp="email">phantrongcuong77@gmail.com</a>
-                </li>
-              </ul>
-            </address>
-
-            {/* Quick Navigation Links */}
-            <nav aria-label="Điều hướng nhanh">
-              <ul className="flex flex-nowrap gap-x-3 gap-y-2 text-[12px] font-bold uppercase tracking-wider text-gray-400 whitespace-nowrap">
-                <li><NavLink to="/" className="hover:text-industrial-black transition-colors">Trang chủ</NavLink></li>
-                <li><NavLink to="/gioi-thieu" className="hover:text-industrial-black transition-colors">Giới thiệu</NavLink></li>
-                <li><NavLink to="/du-an" className="hover:text-industrial-black transition-colors">Dự án</NavLink></li>
-                <li><NavLink to="/san-pham" className="hover:text-industrial-black transition-colors">Sản phẩm</NavLink></li>
-                <li><NavLink to="/kien-thuc" className="hover:text-industrial-black transition-colors">Kiến thức</NavLink></li>
-                <li><NavLink to="/lien-he" className="hover:text-industrial-black transition-colors">Liên hệ</NavLink></li>
-              </ul>
-            </nav>
+          {/* THÔNG TIN LIÊN HỆ */}
+          <div>
+            <h3 className="font-bold text-lg uppercase tracking-wider text-zinc-900 mb-4">THÔNG TIN LIÊN HỆ</h3>
+            <div className="text-zinc-500 text-[15px] font-medium leading-relaxed">
+              101 Trần Quý Khoách, P. Hòa Khánh, TP. Đà Nẵng
+            </div>
+            <div className="mt-3">
+              <div className="font-bold text-zinc-800">
+                Hotline/Zalo: <a href="tel:0905001224" className="text-zinc-900 hover:text-industrial-blue transition-colors">0905 001 224</a>
+              </div>
+              <div className="mt-1 text-zinc-500 font-medium">
+                Email: <a href="mailto:phantrongcuong77@gmail.com" className="text-zinc-600 hover:text-industrial-blue transition-colors">phantrongcuong77@gmail.com</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="mt-24 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col md:flex-row items-center gap-4">
-            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">
+        {/* Quick links - clean bottom row */}
+        <div className="mt-10 pt-6 border-t border-zinc-100">
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[13px] font-medium text-zinc-500">
+            <li><NavLink to="/" className="hover:text-zinc-900 transition-colors">Trang chủ</NavLink></li>
+            <li><NavLink to="/gioi-thieu" className="hover:text-zinc-900 transition-colors">Giới thiệu</NavLink></li>
+            <li><NavLink to="/du-an" className="hover:text-zinc-900 transition-colors">Dự án</NavLink></li>
+            <li><NavLink to="/san-pham" className="hover:text-zinc-900 transition-colors">Sản phẩm</NavLink></li>
+            <li><NavLink to="/kien-thuc" className="hover:text-zinc-900 transition-colors">Kiến thức</NavLink></li>
+            <li><NavLink to="/lien-he" className="hover:text-zinc-900 transition-colors">Liên hệ</NavLink></li>
+          </ul>
+        </div>
+
+        <div className="mt-16 pt-8 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <div className="flex flex-wrap items-center gap-5">
+            <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest">
               © {currentYear} CƯỜNG THÔNG GIÓ. TẤT CẢ QUYỀN ĐƯỢC BẢO LƯU.
             </p>
-            <a href="//www.dmca.com/Protection/Status.aspx?ID=2b5c0b87-c2bc-4147-9498-defdcb5bc5e6&refurl=https://cuongthonggio.com/" title="DMCA.com Protection Status" className="dmca-badge" target="_blank" rel="noopener noreferrer">
-              <img src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-06.png?ID=2b5c0b87-c2bc-4147-9498-defdcb5bc5e6" alt="DMCA.com Protection Status" />
+            <a href="//www.dmca.com/Protection/Status.aspx?ID=2b5c0b87-c2bc-4147-9498-defdcb5bc5e6&refurl=https://cuongthonggio.com/" title="DMCA.com Protection Status" className="dmca-badge shrink-0" target="_blank" rel="noopener noreferrer">
+              <img src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-06.png?ID=2b5c0b87-c2bc-4147-9498-defdcb5bc5e6" alt="DMCA.com Protection Status" className="h-6 w-auto object-contain" />
             </a>
           </div>
-          <div className="flex items-center gap-6">
-            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest hidden md:inline">T2-T7: 08:00–17:00</span>
+          <div className="flex items-center gap-6 shrink-0">
+            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest hidden sm:inline">T2-T7: 08:00–17:00</span>
             <div className="flex gap-3">
               <a href="tel:0905001224" aria-label="Gọi Cường Thông Gió" className="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-500 hover:bg-industrial-blue hover:text-white transition-all">
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>

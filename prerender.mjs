@@ -35,12 +35,10 @@ const articles = [
     author: 'Phan Trọng Cường',
     keywords: 'cách chọn quạt công nghiệp, quạt ly tâm, quạt hướng trục, tính lưu lượng gió, ACH, SMACNA, TCVN 5687, QCVN 06:2022, nhà xưởng, thông gió Đà Nẵng',
     contentSummary: [
-      'Hệ thống thông gió là "lá phổi" của nhà xưởng. Một nhà xưởng thông gió tốt giúp giảm nhiệt độ, loại bỏ bụi – khí độc, bảo vệ sức khỏe công nhân và tăng tuổi thọ máy móc.',
-      'Quạt ly tâm (Centrifugal): Không khí đi vào theo trục và bị đẩy ra theo phương vuông góc (xoay 90°). Tạo áp suất tĩnh cao, phù hợp khi không khí phải đi qua đường ống dài, bộ lọc bụi hoặc có nhiều trở lực.',
-      'Quạt hướng trục (Axial): Không khí đi thẳng theo trục cánh quạt. Tạo lưu lượng gió lớn nhưng áp suất thấp, phù hợp thông gió trực tiếp trên tường/mái.',
-      'Công thức tính lưu lượng gió: Lưu lượng gió (m³/h) = Thể tích nhà xưởng (m³) × Số lần thay đổi không khí (ACH).',
-      'Ví dụ thực tế: Nhà xưởng cơ khí 40m × 25m × 6m → Thể tích = 6.000 m³ → Chọn ACH = 25 → Lưu lượng cần = 150.000 m³/h → cần 6 quạt 25.000 m³/h.',
-      'Tiêu chuẩn SMACNA — tiêu chuẩn quốc tế về thiết kế, chế tạo ống gió. TCVN 5687:2010 — tiêu chuẩn Việt Nam về thông gió. QCVN 06:2022/BXD — quy chuẩn an toàn cháy.',
+      'Hồi mới vào nghề tôi hay gặp chủ xưởng chọn quạt theo giá rẻ, lắp xong gió không đủ, máy nóng ran, công nhân kêu ca. Chọn sai tốn kém lắm.',
+      'Quạt ly tâm tạo áp suất cao, đẩy gió qua ống dài, hút bụi tốt. Quạt hướng trục thì lưu lượng lớn, phù hợp làm mát trực tiếp.',
+      'Công thức đơn giản: Lưu lượng = thể tích xưởng × ACH. Ví dụ xưởng 40x25x6m, ACH 25 cần 150.000 m³/h.',
+      'Dùng tiêu chuẩn SMACNA cho ống gió, TCVN 5687 và QCVN 06:2022/BXD cho PCCC.',
     ]
   },
   {
@@ -52,11 +50,10 @@ const articles = [
     author: 'Phan Trọng Cường',
     keywords: 'chi phí thông gió nhà xưởng, bảng giá thi công thông gió 2026, quạt ly tâm giá, ống gió tôn mạ kẽm, lắp đặt thông gió, Đà Nẵng',
     contentSummary: [
-      'Chi phí thi công hệ thống thông gió nhà xưởng dao động từ 150.000 đến 450.000 VNĐ/m² sàn, tùy theo yêu cầu kỹ thuật.',
-      'Quạt ly tâm công nghiệp: 8.000.000 – 85.000.000 VNĐ/quạt. Quạt hướng trục: 5.000.000 – 65.000.000 VNĐ/quạt.',
-      'Ống gió tôn mạ kẽm: 180.000 – 350.000 VNĐ/m². Van điều tiết VCD: 450.000 – 1.200.000 VNĐ/cái. Van chặn lửa FD: 800.000 – 2.500.000 VNĐ/cái.',
-      'Nhà xưởng 1.000 m²: 150 – 500 triệu VNĐ. Nhà xưởng 2.000 m²: 280 – 950 triệu VNĐ. Nhà xưởng 5.000 m²: 650 – 2.200 triệu VNĐ.',
-      'Chọn đơn vị thi công có xưởng sản xuất trực tiếp như Cường Thông Gió — giảm 15–20% chi phí so với đơn vị trung gian.',
+      'Chi phí thực tế dao động mạnh tùy dự án. Có cái chỉ cần quạt hướng trục đơn giản, có cái phải làm Inox chịu nhiệt thì đắt gấp đôi.',
+      'Quạt ly tâm thường 8-85 triệu/cái. Hướng trục rẻ hơn, 5-65 triệu. Ống gió tôn mạ kẽm khoảng 180-350k/m².',
+      'Nhà xưởng 1.000m² thường rơi vào 150-500 triệu. Làm PCCC đầy đủ thì đội thêm 30-50%.',
+      'Chọn đơn vị có xưởng sản xuất trực tiếp sẽ rẻ hơn trung gian khoảng 15-20%.',
     ]
   },
   {
@@ -68,23 +65,22 @@ const articles = [
     author: 'Phan Trọng Cường',
     keywords: 'PCCC tầng hầm, QCVN 06:2022/BXD, quạt hút khói, thông gió PCCC, van chặn lửa FD, tiêu chuẩn phòng cháy, Đà Nẵng',
     contentSummary: [
-      'Hệ thống thông gió PCCC tầng hầm là yêu cầu bắt buộc theo QCVN 06:2022/BXD. Quạt hút khói phải chịu nhiệt 300°C liên tục 120 phút.',
-      'Lưu lượng hút khói tối thiểu ACH ≥ 6 cho chế độ thường, ACH ≥ 10 khi có cháy. Tốc độ gió tại miệng hút ≥ 1,5 m/s.',
-      'Quạt hút khói: công suất 7.5kW–55kW, chịu nhiệt 300°C/2h, có biến tần VFD, tự động khởi động khi báo cháy.',
-      'Van chặn lửa FD tự động đóng khi nhiệt độ đạt 72°C theo TCVN 7336:2021.',
-      'Cường Thông Gió đã thi công hơn 350 dự án thông gió PCCC tầng hầm tại Đà Nẵng và Miền Trung.',
+      'Tầng hầm bắt buộc phải có hệ thống hút khói chịu nhiệt 300°C trong 120 phút theo QCVN 06:2022/BXD.',
+      'ACH ≥ 6 bình thường, ≥ 10 khi cháy. Miệng hút phải đạt vận tốc 1.5 m/s.',
+      'Quạt phải có VFD, tự động chạy khi báo cháy, chịu nhiệt đúng chuẩn.',
+      'Cường Thông Gió đã làm hơn 350 dự án PCCC tầng hầm, toàn bộ nghiệm thu qua cơ quan PCCC.',
     ]
   }
 ];
 
 // ─── FAQ Data ───
 const faqData = [
-  { question: 'Quạt ly tâm và quạt hướng trục khác nhau thế nào?', answer: 'Quạt ly tâm tạo áp suất cao, phù hợp ống gió dài và hút bụi/khí; quạt hướng trục cho lưu lượng lớn, giá tốt, hợp làm mát nhà xưởng gắn tường/mái.' },
-  { question: 'Làm sao biết cần bao nhiêu quạt cho nhà xưởng?', answer: 'Tính thể tích nhà xưởng × ACH (số lần thay đổi không khí/giờ) để ra tổng lưu lượng cần thiết, sau đó chia cho công suất mỗi quạt.' },
-  { question: 'Quạt công nghiệp có tốn điện không?', answer: 'Nếu chọn đúng công suất và đúng loại, chi phí điện rất hợp lý. Chọn dư công suất hoặc sai loại mới là nguyên nhân gây tốn điện.' },
-  { question: 'Chi phí thi công hệ thống thông gió nhà xưởng 1.000 m² khoảng bao nhiêu?', answer: 'Chi phí dao động từ 150 triệu (cơ bản) đến 500 triệu VNĐ (cao cấp). Giá chưa bao gồm VAT 8%.' },
-  { question: 'QCVN 06:2022/BXD yêu cầu gì về thông gió tầng hầm?', answer: 'ACH ≥ 6 (thông gió thường) và ACH ≥ 10 (cháy). Quạt chịu nhiệt 300°C/120 phút. Van FD đóng khi 72°C.' },
-  { question: 'Cường Thông Gió có thi công PCCC tầng hầm không?', answer: 'Có. 350+ dự án PCCC tầng hầm tại Đà Nẵng và Miền Trung. Sản xuất quạt chịu nhiệt 300°C/2h.' },
+  { question: 'Quạt ly tâm và quạt hướng trục khác nhau thế nào?', answer: 'Quạt ly tâm đẩy gió mạnh qua ống dài, hút bụi tốt. Quạt hướng trục thì gió nhiều, giá rẻ hơn, phù hợp làm mát trực tiếp gắn tường hoặc mái.' },
+  { question: 'Làm sao biết cần bao nhiêu quạt cho nhà xưởng?', answer: 'Tính thể tích xưởng nhân với ACH. Ví dụ xưởng 6.000m³ với ACH 25 thì cần 150.000 m³/h, tức khoảng 6 quạt 25.000 m³/h.' },
+  { question: 'Quạt công nghiệp có tốn điện không?', answer: 'Chọn đúng loại và đúng công suất thì không tốn. Nhiều trường hợp tốn điện là do chọn dư sức hoặc sai loại (dùng hướng trục cho ống dài chẳng hạn).' },
+  { question: 'Chi phí thi công hệ thống thông gió nhà xưởng 1.000 m² khoảng bao nhiêu?', answer: 'Từ 150 triệu cho hệ cơ bản đến 500 triệu cho hệ cao cấp (quạt ly tâm chịu nhiệt, ống gió SMACNA). Giá chưa VAT 8%.' },
+  { question: 'QCVN 06:2022/BXD yêu cầu gì về thông gió tầng hầm?', answer: 'ACH ít nhất 6 lần bình thường, 10 lần khi cháy. Quạt phải chịu nhiệt 300°C trong 120 phút. Van chặn lửa FD tự động đóng khi nhiệt độ đạt 72°C.' },
+  { question: 'Cường Thông Gió có thi công PCCC tầng hầm không?', answer: 'Có, hơn 350 dự án. Chúng tôi sản xuất quạt chịu nhiệt 300°C/2h và hỗ trợ nghiệm thu PCCC luôn.' },
 ];
 
 // ─── Page definitions ───
