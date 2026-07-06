@@ -16,7 +16,8 @@
       "source": "/:path*",
       "has": [
         {
-          "type": "scheme",
+          "type": "header",
+          "key": "x-forwarded-proto",
           "value": "http"
         }
       ],
