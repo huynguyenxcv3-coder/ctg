@@ -32,10 +32,6 @@ function generateId() {
 }
 
 function loadHistory(): ChatMessage[] {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
-  } catch { /* ignore */ }
   return [
     {
       id: generateId(),
@@ -46,10 +42,8 @@ function loadHistory(): ChatMessage[] {
   ];
 }
 
-function saveHistory(messages: ChatMessage[]) {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
-  } catch { /* ignore */ }
+function saveHistory(_messages: ChatMessage[]) {
+  // Không lưu — chat mới mỗi session
 }
 
 export function ChatBot() {
