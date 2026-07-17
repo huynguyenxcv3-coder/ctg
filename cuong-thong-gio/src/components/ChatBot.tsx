@@ -21,9 +21,9 @@ interface ChatMessage {
   timestamp: number;
 }
 
-const API_URL = import.meta.env.VITE_NOTIONCHAT_URL || '/api/chat/v1';
-const API_KEY = import.meta.env.VITE_NOTIONCHAT_API_KEY || 'sk-notionchat';
-const MODEL = import.meta.env.VITE_NOTIONCHAT_MODEL || 'GPT-5.6 Sol';
+const API_URL = import.meta.env.VITE_CHAT_API_URL || '/api/chat/v1';
+const API_KEY = import.meta.env.VITE_CHAT_API_KEY || 'sk-local';
+const MODEL = import.meta.env.VITE_CHAT_MODEL || 'google/gemma-4-31b-it:free';
 const STORAGE_KEY = 'ctg_chat_history';
 
 function generateId() {

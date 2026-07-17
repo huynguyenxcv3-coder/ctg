@@ -624,37 +624,45 @@ app.get('/api/health', (req, res) => {
 });
 
 // ========================================
-// NotionChat Proxy - OpenAI-compatible API
+// OpenRouter Proxy - OpenAI-compatible API
 // ========================================
-const NOTIONCHAT_BASE = 'http://127.0.0.1:8000';
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+const OPENROUTER_BASE = 'https://openrouter.ai';
 
 app.use('/api/chat', (req, res) => {
   const targetPath = req.originalUrl.replace('/api/chat', '');
   const bodyData = req.body ? JSON.stringify(req.body) : undefined;
+
+  if (!OPENROUTER_API_KEY) {
+    return res.status(503).json({ error: 'AI service not configured.' });
+  }
+
   const headers = {
-    host: '127.0.0.1:8000',
-    authorization: req.headers.authorization || '',
+    host: 'openrouter.ai',
+    authorization: `Bearer ${OPENROUTER_API_KEY}`,
     'content-type': 'application/json',
+    'http-referer': req.headers.referer || 'https://cuongthonggio.com',
+    'x-title': 'Cuong Thong Gio Chatbot',
   };
   if (bodyData) {
     headers['content-length'] = Buffer.byteLength(bodyData);
   }
 
   const options = {
-    hostname: '127.0.0.1',
-    port: 8000,
-    path: targetPath,
+    hostname: 'openrouter.ai',
+    port: 443,
+    path: '/api' + targetPath,
     method: req.method,
     headers,
   };
 
-  const proxyReq = http.request(options, (proxyRes) => {
+  const proxyReq = require('https').request(options, (proxyRes) => {
     res.writeHead(proxyRes.statusCode, proxyRes.headers);
     proxyRes.pipe(res);
   });
 
   proxyReq.on('error', (err) => {
-    console.error('NotionChat proxy error:', err.message);
+    console.error('OpenRouter proxy error:', err.message);
     res.status(502).json({ error: 'AI service unavailable. Please try again later.' });
   });
 
@@ -662,40 +670,10 @@ app.use('/api/chat', (req, res) => {
   proxyReq.end();
 });
 
-// Start NotionChat as detached background process
-const NOTIONCHAT_HOME = '/home/runner/workspace/notion-chat';
-let notionChatProcess = null;
-
-function startNotionChat() {
-  if (notionChatProcess) return;
-  console.log('🤖 Starting NotionChat AI server...');
-  notionChatProcess = spawn(
-    'bash',
-    ['-c', `cd ${NOTIONCHAT_HOME} && source .venv/bin/activate && NOTIONCHAT_HOME=${NOTIONCHAT_HOME} python -m notionchat serve`],
-    {
-      detached: true,
-      stdio: ['ignore', 'pipe', 'pipe'],
-      env: { ...process.env, NOTIONCHAT_HOME },
-    }
-  );
-  notionChatProcess.stdout?.on('data', (data) => {
-    console.log(`[NotionChat] ${data.toString().trim()}`);
-  });
-  notionChatProcess.stderr?.on('data', (data) => {
-    console.error(`[NotionChat] ${data.toString().trim()}`);
-  });
-  notionChatProcess.on('exit', (code) => {
-    console.log(`NotionChat exited with code ${code}`);
-    notionChatProcess = null;
-  });
-  notionChatProcess.unref();
-}
-
 if (process.env.NODE_ENV !== 'production' && process.env.GATEWAY !== 'netlify') {
   app.listen(PORT, async () => {
     console.log(`🚀 Server running on port ${PORT}`);
     await verifyGraphAPI();
-    startNotionChat();
   });
 }
 
