@@ -8,6 +8,7 @@ import type { ReactNode, ErrorInfo } from 'react';
 import { BrowserRouter, Routes, Route, useLocation, Link } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { ChatBot } from './components/ChatBot';
 
 // ─── Lazy-loaded pages (code-splitting) ───
 const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
@@ -149,6 +150,7 @@ export default function App() {
           </ErrorBoundary>
         </main>
         <Footer />
+        <ChatBot />
         {/* Floating CTA — Giảm tỷ lệ thoát, tăng chuyển đổi */}
         <div className="floating-cta" aria-label="Liên hệ nhanh">
           <a

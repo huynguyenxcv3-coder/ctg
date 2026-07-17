@@ -2,6 +2,8 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import serverless from 'serverless-http';
+import http from 'http';
+import { spawn } from 'child_process';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -621,10 +623,79 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// ========================================
+// NotionChat Proxy - OpenAI-compatible API
+// ========================================
+const NOTIONCHAT_BASE = 'http://127.0.0.1:8000';
+
+app.use('/api/chat', (req, res) => {
+  const targetPath = req.originalUrl.replace('/api/chat', '');
+  const bodyData = req.body ? JSON.stringify(req.body) : undefined;
+  const headers = {
+    host: '127.0.0.1:8000',
+    authorization: req.headers.authorization || '',
+    'content-type': 'application/json',
+  };
+  if (bodyData) {
+    headers['content-length'] = Buffer.byteLength(bodyData);
+  }
+
+  const options = {
+    hostname: '127.0.0.1',
+    port: 8000,
+    path: targetPath,
+    method: req.method,
+    headers,
+  };
+
+  const proxyReq = http.request(options, (proxyRes) => {
+    res.writeHead(proxyRes.statusCode, proxyRes.headers);
+    proxyRes.pipe(res);
+  });
+
+  proxyReq.on('error', (err) => {
+    console.error('NotionChat proxy error:', err.message);
+    res.status(502).json({ error: 'AI service unavailable. Please try again later.' });
+  });
+
+  if (bodyData) proxyReq.write(bodyData);
+  proxyReq.end();
+});
+
+// Start NotionChat as detached background process
+const NOTIONCHAT_HOME = '/home/runner/workspace/notion-chat';
+let notionChatProcess = null;
+
+function startNotionChat() {
+  if (notionChatProcess) return;
+  console.log('🤖 Starting NotionChat AI server...');
+  notionChatProcess = spawn(
+    'bash',
+    ['-c', `cd ${NOTIONCHAT_HOME} && source .venv/bin/activate && NOTIONCHAT_HOME=${NOTIONCHAT_HOME} python -m notionchat serve`],
+    {
+      detached: true,
+      stdio: ['ignore', 'pipe', 'pipe'],
+      env: { ...process.env, NOTIONCHAT_HOME },
+    }
+  );
+  notionChatProcess.stdout?.on('data', (data) => {
+    console.log(`[NotionChat] ${data.toString().trim()}`);
+  });
+  notionChatProcess.stderr?.on('data', (data) => {
+    console.error(`[NotionChat] ${data.toString().trim()}`);
+  });
+  notionChatProcess.on('exit', (code) => {
+    console.log(`NotionChat exited with code ${code}`);
+    notionChatProcess = null;
+  });
+  notionChatProcess.unref();
+}
+
 if (process.env.NODE_ENV !== 'production' && process.env.GATEWAY !== 'netlify') {
   app.listen(PORT, async () => {
     console.log(`🚀 Server running on port ${PORT}`);
     await verifyGraphAPI();
+    startNotionChat();
   });
 }
 
