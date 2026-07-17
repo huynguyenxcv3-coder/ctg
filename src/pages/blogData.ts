@@ -329,6 +329,154 @@ export const articles: ArticleData[] = [
         text: 'Lỗi thường thấy nhất: dùng quạt thông gió thường thay vì loại chịu nhiệt 300°C/2h — nghiệm thu không đạt. Quên lắp van FD ở vị trí ống xuyên sàn/tường chống cháy. Ống gió cứng nhắc không có nối mềm với quạt, gây rung và ồn. Miệng hút đặt quá xa tường, tạo vùng chết không hút khói được. Chúng tôi luôn làm đúng 100% quy chuẩn và hỗ trợ chủ đầu tư trong quá trình nghiệm thu.'
       }
     ]
+  },
+  {
+    id: 'thiet-ke-ong-gio-nha-xuong',
+    headline: 'Thiết kế và tính toán kích thước ống gió cho nhà xưởng — Kinh nghiệm thực tế',
+    description: 'Hướng dẫn chi tiết cách tính kích thước ống gió, chọn vật liệu và thiết kế hệ thống ống gió nhà xưởng hiệu quả. Kinh nghiệm từ hơn 2000 dự án của Cường Thông Gió.',
+    datePublished: '2026-07-06',
+    dateModified: '2026-07-06',
+    author: 'Phan Trọng Cường',
+    keywords: 'thiết kế ống gió, tính kích thước ống gió, ống gió nhà xưởng, tôn mạ kẽm, SMACNA, thông gió công nghiệp, Đà Nẵng',
+    content: [
+      {
+        type: 'callout' as const,
+        speakable: true,
+        text: 'Nhiều nhà xưởng làm ống gió theo cảm tính, gió không đều, áp suất tụt, quạt phải chạy hết công suất mà vẫn không mát. Tôi đã gặp không ít trường hợp như vậy và phải sửa lại từ đầu.'
+      },
+      {
+        type: 'heading' as const,
+        text: '1. Nguyên tắc cơ bản khi thiết kế ống gió'
+      },
+      {
+        type: 'paragraph' as const,
+        speakable: true,
+        text: 'Ống gió không chỉ là đường dẫn không khí. Nó quyết định toàn bộ hiệu suất của hệ thống. Nguyên tắc vàng: giữ vận tốc gió hợp lý, giảm tối đa trở lực, và chọn vật liệu phù hợp với môi trường.'
+      },
+      {
+        type: 'heading' as const,
+        level: 'h3',
+        text: 'Vận tốc gió khuyến nghị'
+      },
+      {
+        type: 'table' as const,
+        headers: ['Vị trí', 'Vận tốc gió (m/s)'],
+        rows: [
+          ['Ống gió chính', '6 – 10'],
+          ['Ống gió nhánh', '4 – 7'],
+          ['Miệng gió cấp', '2 – 4'],
+          ['Miệng gió hồi', '3 – 5']
+        ]
+      },
+      {
+        type: 'heading' as const,
+        text: '2. Cách tính kích thước ống gió đơn giản'
+      },
+      {
+        type: 'paragraph' as const,
+        speakable: true,
+        text: 'Công thức cơ bản: Diện tích tiết diện (m²) = Lưu lượng gió (m³/h) / (Vận tốc gió (m/s) × 3600)'
+      },
+      {
+        type: 'callout' as const,
+        speakable: true,
+        text: 'Ví dụ thực tế: Cần dẫn 15.000 m³/h với vận tốc 8 m/s → Diện tích = 15000 / (8 x 3600) ≈ 0.52 m² → ống chữ nhật 800x650mm hoặc ống tròn Ø800mm.'
+      },
+      {
+        type: 'heading' as const,
+        text: '3. Chọn vật liệu ống gió'
+      },
+      {
+        type: 'list' as const,
+        items: [
+          'Tôn mạ kẽm dày 0.5 – 0.8mm: Phổ biến nhất, giá tốt, phù hợp hầu hết nhà xưởng khô ráo.',
+          'Tôn mạ kẽm dày 1.0mm trở lên: Dùng cho áp suất cao hoặc ống lớn.',
+          'Inox 304: Bắt buộc khi có khí ăn mòn, ẩm cao, hoặc yêu cầu vệ sinh (thực phẩm, dược phẩm).',
+          'Ống mềm (flexible duct): Chỉ dùng cho đoạn nối cuối, tránh lạm dụng vì mất áp suất nhiều.'
+        ]
+      },
+      {
+        type: 'heading' as const,
+        text: '4. Những sai lầm hay gặp'
+      },
+      {
+        type: 'paragraph' as const,
+        speakable: true,
+        text: 'Làm ống quá nhỏ để tiết kiệm vật liệu → gió ù ù, quạt kêu to, hệ thống không hiệu quả. Hoặc làm quá to thì tốn tiền và gió yếu. Cũng hay thấy quên cách nhiệt ống khi chạy qua khu vực lạnh/nóng chênh lệch.'
+      },
+      {
+        type: 'heading' as const,
+        text: '5. Kinh nghiệm từ thực tế'
+      },
+      {
+        type: 'paragraph' as const,
+        speakable: true,
+        text: 'Tôi thường khuyên khách thiết kế ống gió theo nguyên tắc “ngắn nhất, ít co nhất”. Một dự án ở KCN Hòa Khánh chúng tôi làm, rút ngắn được 18m ống nhờ thay đổi layout, quạt giảm từ 2 cái 30kW xuống còn 1 cái 22kW, khách tiết kiệm gần 40 triệu tiền điện mỗi năm.'
+      }
+    ]
+  },
+  {
+    id: 'bao-tri-he-thong-thong-gio',
+    headline: 'Bảo trì hệ thống quạt công nghiệp và thông gió nhà xưởng đúng cách',
+    description: 'Hướng dẫn bảo trì định kỳ quạt công nghiệp, ống gió, hệ thống lọc bụi để tăng tuổi thọ và tiết kiệm chi phí. Kinh nghiệm thực tế từ Cường Thông Gió.',
+    datePublished: '2026-07-06',
+    dateModified: '2026-07-06',
+    author: 'Phan Trọng Cường',
+    keywords: 'bảo trì quạt công nghiệp, bảo dưỡng hệ thống thông gió, lọc bụi nhà xưởng, vệ sinh ống gió, Đà Nẵng',
+    content: [
+      {
+        type: 'callout' as const,
+        speakable: true,
+        text: 'Nhiều nhà xưởng chỉ nhớ bảo trì khi quạt kêu to hoặc gió yếu. Lúc đó đã muộn, motor cháy hoặc phải thay cả hệ thống. Bảo trì định kỳ thực ra rẻ hơn rất nhiều.'
+      },
+      {
+        type: 'heading' as const,
+        text: '1. Lịch bảo trì khuyến nghị'
+      },
+      {
+        type: 'table' as const,
+        headers: ['Công việc', 'Tần suất', 'Ghi chú'],
+        rows: [
+          ['Vệ sinh cánh quạt, lưới bảo vệ', '3 tháng/lần', 'Bụi bám nhiều làm mất cân bằng'],
+          ['Kiểm tra dầu mỡ vòng bi', '6 tháng/lần', 'Quạt lớn cần tra định kỳ'],
+          ['Vệ sinh ống gió và miệng gió', '6-12 tháng/lần', 'Tùy môi trường bụi'],
+          ['Kiểm tra motor và điện', 'Hàng năm', 'Đo dòng, cách điện'],
+          ['Kiểm tra và thay lọc bụi', 'Theo chỉ số chênh áp', 'Thường 3-6 tháng']
+        ]
+      },
+      {
+        type: 'heading' as const,
+        text: '2. Dấu hiệu cần bảo trì ngay'
+      },
+      {
+        type: 'list' as const,
+        items: [
+          'Quạt kêu lạ, rung mạnh',
+          'Gió ra yếu rõ rệt so với ban đầu',
+          'Motor nóng bất thường',
+          'Có mùi khét hoặc khói từ motor',
+          'Lọc bụi đầy quá mức'
+        ]
+      },
+      {
+        type: 'heading' as const,
+        text: '3. Kinh nghiệm thực tế'
+      },
+      {
+        type: 'paragraph' as const,
+        speakable: true,
+        text: 'Có xưởng dệt chúng tôi bảo trì định kỳ 6 tháng/lần, sau 5 năm quạt vẫn chạy tốt. Ngược lại, một xưởng cơ khí không bảo trì, sau 2 năm phải thay 4 motor vì bụi sắt làm hỏng vòng bi. Chi phí thay motor gấp 3 lần chi phí bảo trì cả năm.'
+      },
+      {
+        type: 'heading' as const,
+        text: '4. Mẹo nhỏ khi bảo trì'
+      },
+      {
+        type: 'paragraph' as const,
+        speakable: false,
+        text: 'Luôn ngắt điện trước khi vệ sinh. Dùng máy hút bụi công nghiệp thay vì chổi để tránh bụi bay ngược vào quạt. Với ống gió dài, nên có cửa quan sát (inspection door) mỗi 5-10m để dễ vệ sinh sau này.'
+      }
+    ]
   }
 ];
 

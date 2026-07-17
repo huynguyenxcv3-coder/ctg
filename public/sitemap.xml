@@ -93,7 +93,7 @@
   </url>
   <url>
     <loc>https://cuongthonggio.com/kien-thuc</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -112,6 +112,18 @@
   <url>
     <loc>https://cuongthonggio.com/kien-thuc/tieu-chuan-pccc-tang-ham</loc>
     <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/kien-thuc/thiet-ke-ong-gio-nha-xuong</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cuongthonggio.com/kien-thuc/bao-tri-he-thong-thong-gio</loc>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -70,6 +70,36 @@ const articles = [
       'Quạt phải có VFD, tự động chạy khi báo cháy, chịu nhiệt đúng chuẩn.',
       'Cường Thông Gió đã làm hơn 350 dự án PCCC tầng hầm, toàn bộ nghiệm thu qua cơ quan PCCC.',
     ]
+  },
+  {
+    id: 'thiet-ke-ong-gio-nha-xuong',
+    headline: 'Thiết kế và tính toán kích thước ống gió cho nhà xưởng — Kinh nghiệm thực tế',
+    description: 'Hướng dẫn chi tiết cách tính kích thước ống gió, chọn vật liệu và thiết kế hệ thống ống gió nhà xưởng hiệu quả. Kinh nghiệm từ hơn 2000 dự án của Cường Thông Gió.',
+    datePublished: '2026-07-06',
+    dateModified: '2026-07-06',
+    author: 'Phan Trọng Cường',
+    keywords: 'thiết kế ống gió, tính kích thước ống gió, ống gió nhà xưởng, tôn mạ kẽm, SMACNA, thông gió công nghiệp, Đà Nẵng',
+    contentSummary: [
+      'Ống gió quyết định hiệu suất cả hệ thống. Vận tốc hợp lý và giảm trở lực là chìa khóa.',
+      'Công thức: Diện tích = Lưu lượng / (Vận tốc × 3600). Ví dụ 15.000 m³/h @ 8m/s cần ống ~Ø800 hoặc 800x650.',
+      'Tôn mạ kẽm thông thường, Inox cho môi trường ăn mòn. Tránh lạm dụng ống mềm.',
+      'Thực tế: rút ngắn ống giúp giảm công suất quạt và tiết kiệm điện dài hạn.'
+    ]
+  },
+  {
+    id: 'bao-tri-he-thong-thong-gio',
+    headline: 'Bảo trì hệ thống quạt công nghiệp và thông gió nhà xưởng đúng cách',
+    description: 'Hướng dẫn bảo trì định kỳ quạt công nghiệp, ống gió, hệ thống lọc bụi để tăng tuổi thọ và tiết kiệm chi phí. Kinh nghiệm thực tế từ Cường Thông Gió.',
+    datePublished: '2026-07-06',
+    dateModified: '2026-07-06',
+    author: 'Phan Trọng Cường',
+    keywords: 'bảo trì quạt công nghiệp, bảo dưỡng hệ thống thông gió, lọc bụi nhà xưởng, vệ sinh ống gió, Đà Nẵng',
+    contentSummary: [
+      'Bảo trì định kỳ rẻ hơn rất nhiều so với thay motor hay sửa chữa lớn.',
+      'Vệ sinh cánh quạt 3 tháng/lần, kiểm tra motor hàng năm, lọc bụi theo chênh áp.',
+      'Dấu hiệu cần bảo trì ngay: quạt kêu lạ, gió yếu, motor nóng bất thường.',
+      'Xưởng bảo trì định kỳ sau 5 năm quạt vẫn tốt; xưởng không bảo trì thay 4 motor sau 2 năm.'
+    ]
   }
 ];
 
@@ -87,38 +117,38 @@ const faqData = [
 const pages = [
   {
     route: '/',
-    title: 'Cường Thông Gió — Quạt Công Nghiệp & Hệ Thống Thông Gió Đà Nẵng',
-    description: 'Cường Thông Gió — Chuyên sản xuất quạt công nghiệp, gia công ống gió, thi công hệ thống thông gió, xử lý khí thải & bụi tại Đà Nẵng và Miền Trung. 13+ năm kinh nghiệm, 2000+ dự án.',
-    keywords: 'quạt công nghiệp, thông gió, ống gió, quạt ly tâm, quạt hướng trục, Đà Nẵng, Cường Thông Gió',
-    dateModified: '2026-07-03',
+    title: 'Thông Gió Đà Nẵng | Hệ Thống Quạt Công Nghiệp & Ống Gió | Cường Thông Gió',
+    description: 'Thông gió Đà Nẵng chuyên nghiệp: thi công hệ thống quạt công nghiệp, ống gió, lọc bụi cho nhà xưởng tại Đà Nẵng & Miền Trung. 13+ năm kinh nghiệm, sản xuất trực tiếp từ xưởng, giá tối ưu.',
+    keywords: 'thông gió đà nãng, hệ thống thông gió đà nãng, quạt công nghiệp đà nãng, ống gió đà nãng, thi công thông gió nhà xưởng đà nãng, Cường Thông Gió',
+    dateModified: '2026-07-06',
   },
   {
     route: '/san-pham',
-    title: 'Cường Thông Gió — Sản Phẩm Quạt Công Nghiệp & Ống Gió',
-    description: 'Danh mục sản phẩm quạt công nghiệp, ống gió, quạt ly tâm, quạt hướng trục, hệ thống xử lý khí thải — sản xuất tại Đà Nẵng. Cường Thông Gió.',
-    keywords: 'quạt công nghiệp, quạt ly tâm, quạt hướng trục, ống gió, sản phẩm, Cường Thông Gió, Đà Nẵng',
-    dateModified: '2026-07-03',
+    title: 'Sản Phẩm Thông Gió Đà Nẵng | Quạt Công Nghiệp & Ống Gió | Cường Thông Gió',
+    description: 'Sản phẩm thông gió Đà Nẵng: quạt công nghiệp, ống gió Plasma CNC, hệ thống lọc bụi — sản xuất trực tiếp tại xưởng Đà Nẵng. Cường Thông Gió.',
+    keywords: 'sản phẩm thông gió đà nãng, quạt công nghiệp đà nãng, ống gió đà nãng, quạt ly tâm đà nãng',
+    dateModified: '2026-07-06',
   },
   {
     route: '/gioi-thieu',
-    title: 'Cường Thông Gió — Giới Thiệu Công Ty',
-    description: 'Công ty TNHH MTV Cường Thông Gió — 13+ năm kinh nghiệm sản xuất quạt công nghiệp và thi công hệ thống thông gió tại Đà Nẵng.',
-    keywords: 'Cường Thông Gió, giới thiệu, công ty, quạt công nghiệp, Đà Nẵng',
-    dateModified: '2026-07-03',
+    title: 'Giới Thiệu Thông Gió Đà Nẵng | Cường Thông Gió - 13+ Năm Kinh Nghiệm',
+    description: 'Cường Thông Gió - Đơn vị chuyên thi công thông gió Đà Nẵng, sản xuất quạt công nghiệp và ống gió. 13+ năm, 2000+ dự án tại Đà Nẵng & Miền Trung.',
+    keywords: 'thông gió đà nãng, giới thiệu công ty thông gió đà nãng, Cường Thông Gió Đà Nẵng',
+    dateModified: '2026-07-06',
   },
   {
     route: '/lien-he',
-    title: 'Cường Thông Gió — Liên Hệ & Báo Giá',
-    description: 'Liên hệ Cường Thông Gió để nhận báo giá miễn phí. Hotline: 0905 001 224. Địa chỉ: 101 Trần Quý Khoách, Đà Nẵng.',
-    keywords: 'liên hệ, báo giá, Cường Thông Gió, Đà Nẵng, thông gió',
-    dateModified: '2026-07-03',
+    title: 'Liên Hệ Thông Gió Đà Nẵng | Báo Giá Hệ Thống Quạt & Ống Gió',
+    description: 'Liên hệ Cường Thông Gió Đà Nẵng để được tư vấn và báo giá miễn phí hệ thống thông gió, quạt công nghiệp. Hotline 0905 001 224.',
+    keywords: 'liên hệ thông gió đà nãng, báo giá thông gió đà nãng, Cường Thông Gió',
+    dateModified: '2026-07-06',
   },
   {
     route: '/kien-thuc',
-    title: 'Cường Thông Gió — Kiến Thức Thông Gió Công Nghiệp',
-    description: 'Trung tâm kiến thức thông gió công nghiệp — Hướng dẫn chọn quạt, bảng giá thi công 2026, tiêu chuẩn PCCC tầng hầm. Bài viết chuyên sâu từ kỹ sư Cường Thông Gió.',
-    keywords: 'kiến thức thông gió, quạt công nghiệp, chi phí thông gió, PCCC tầng hầm, QCVN 06:2022',
-    dateModified: '2026-07-03',
+    title: 'Kiến Thức Thông Gió Đà Nẵng | Chia Sẻ Kỹ Thuật Quạt & Ống Gió',
+    description: 'Kiến thức thông gió Đà Nẵng: cách chọn quạt công nghiệp, thiết kế ống gió, bảo trì hệ thống, tiêu chuẩn PCCC. Chia sẻ thực tế từ kỹ sư Cường Thông Gió.',
+    keywords: 'kiến thức thông gió đà nãng, thông gió đà nãng, kỹ thuật quạt công nghiệp đà nãng, bảo trì thông gió',
+    dateModified: '2026-07-06',
   },
   {
     route: '/du-an',
@@ -136,10 +166,10 @@ const pages = [
   },
   {
     route: '/thong-gio-nha-xuong-da-nang',
-    title: 'Thông Gió Nhà Xưởng Đà Nẵng — Cường Thông Gió | Giải Pháp Trọn Gói',
-    description: 'Thi công hệ thống thông gió nhà xưởng tại Đà Nẵng. Giảm nhiệt 5-10°C, loại bỏ bụi & khí độc. Giải pháp cooling pad, quạt công nghiệp. Chi phí từ 150 triệu. Hotline: 0905 001 224.',
-    keywords: 'thông gió nhà xưởng Đà Nẵng, hệ thống thông gió, cooling pad, quạt thông gió nhà xưởng, làm mát nhà xưởng, Cường Thông Gió',
-    dateModified: '2026-06-28',
+    title: 'Thông Gió Nhà Xưởng Đà Nẵng | Thi Công Hệ Thống Quạt & Ống Gió | Cường Thông Gió',
+    description: 'Thông gió nhà xưởng Đà Nẵng chuyên nghiệp: giảm nhiệt 5-10°C, lọc bụi khí độc. Thi công quạt công nghiệp, ống gió, cooling pad. Giá từ 150 triệu. Hotline 0905 001 224.',
+    keywords: 'thông gió nhà xưởng đà nãng, thông gió đà nãng, thi công thông gió đà nãng, quạt thông gió nhà xưởng đà nãng',
+    dateModified: '2026-07-06',
   },
   {
     route: '/thong-gio-cuong-buc-nha-xuong',

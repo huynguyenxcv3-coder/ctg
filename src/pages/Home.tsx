@@ -149,9 +149,9 @@ export function Home() {
   return (
     <div ref={containerRef} className="bg-white min-h-screen selection:bg-zinc-200 selection:text-zinc-900 relative font-sans text-zinc-900">
       <SEO 
-        title="Quạt Công Nghiệp & Hệ Thống Thông Gió Đà Nẵng"
-        description="Cường Thông Gió — Chuyên sản xuất quạt ly tâm, quạt hướng trục, gia công ống gió, thi công hệ thống thông gió & xử lý khí thải cho nhà xưởng, công trình tại Đà Nẵng, Miền Trung. Hơn 13 năm kinh nghiệm, 2000+ dự án hoàn thành, 30+ dự án lớn tiêu biểu."
-        keywords="quạt công nghiệp Đà Nẵng, thông gió nhà xưởng, ống gió, quạt ly tâm, quạt hướng trục, hệ thống thông gió, xử lý khí thải, lọc bụi công nghiệp, Cường Thông Gió, thi công thông gió Đà Nẵng, quạt hút công nghiệp, gia công ống gió, thi công thông gió nhà xưởng Đà Nẵng, quạt hút công nghiệp Liên Chiểu, ống gió KCN Hòa Khánh, hệ thống thông gió KCN Hòa Cầm, xử lý khí thải Sơn Trà, thông gió tầng hầm Đà Nẵng"
+        title="Thông Gió Đà Nẵng - Thi Công Hệ Thống Quạt Công Nghiệp & Ống Gió | Cường Thông Gió"
+        description="Thông gió Đà Nẵng chuyên nghiệp: thi công hệ thống quạt công nghiệp, ống gió, lọc bụi cho nhà xưởng tại Đà Nẵng & Miền Trung. 13+ năm kinh nghiệm, sản xuất trực tiếp, giá tối ưu. Hotline 0905 001 224."
+        keywords="thông gió Đà Nẵng, thông gió đà nãng, hệ thống thông gió đà nãng, quạt công nghiệp Đà Nẵng, ống gió Đà Nẵng, thi công thông gió nhà xưởng Đà Nẵng, Cường Thông Gió"
         structuredData={[
           LOCAL_BUSINESS_SCHEMA,
           ORGANIZATION_SCHEMA,
@@ -191,7 +191,7 @@ export function Home() {
             >
               <div className="mb-10 md:mb-12 max-w-6xl w-full">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.1] text-center">
-                  Hệ thống thông gió chuyên nghiệp<br /> cho công trình công nghiệp.
+                  Thông Gió Đà Nẵng - Hệ Thống Quạt Công Nghiệp & Ống Gió Chuyên Nghiệp
                 </h1>
               </div>
               
@@ -199,7 +199,7 @@ export function Home() {
                 variants={fadeUp}
                 className="text-lg md:text-xl text-zinc-500 mb-10 md:mb-14 leading-relaxed max-w-2xl font-normal px-4"
               >
-                Chúng tôi sở hữu năng lực sản xuất độc lập, giúp kiểm soát hoàn toàn chất lượng thiết bị và đảm bảo tiến độ cho mọi dự án.
+                Chúng tôi sở hữu năng lực sản xuất độc lập, giúp kiểm soát hoàn toàn chất lượng thiết bị và đảm bảo tiến độ cho mọi dự án thông gió Đà Nẵng.
               </motion.p>
               
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto px-6 mb-16">
