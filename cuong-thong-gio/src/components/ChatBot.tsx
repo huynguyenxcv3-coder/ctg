@@ -165,7 +165,7 @@ export function ChatBot() {
       {/* Floating toggle button */}
       <button
         onClick={() => setIsOpen((o) => !o)}
-        className="fixed bottom-[96px] right-6 z-[9991] w-14 h-14 rounded-full bg-industrial-black text-white flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+        className="fixed bottom-[168px] right-6 z-[9991] w-14 h-14 rounded-full bg-industrial-black text-white flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 max-[768px]:bottom-[136px] max-[768px]:right-4 max-[768px]:w-12 max-[768px]:h-12"
         aria-label={isOpen ? 'Đóng chat' : 'Mở chat'}
         title={isOpen ? 'Đóng chat' : 'Chat với AI'}
       >
@@ -178,7 +178,7 @@ export function ChatBot() {
 
       {/* Chat panel */}
       {isOpen && (
-        <div className="fixed bottom-[160px] right-6 z-[9992] w-[360px] max-w-[calc(100vw-48px)] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden flex flex-col max-h-[520px]">
+        <div className="fixed bottom-[232px] right-6 z-[9992] w-[360px] max-w-[calc(100vw-48px)] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden flex flex-col max-h-[520px] max-[768px]:bottom-[192px] max-[768px]:right-4">
           {/* Header */}
           <div className="bg-industrial-black text-white px-5 py-4 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-3">
