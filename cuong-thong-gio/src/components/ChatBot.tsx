@@ -23,7 +23,7 @@ interface ChatMessage {
 
 const API_URL = import.meta.env.VITE_NOTIONCHAT_URL || '/api/chat/v1';
 const API_KEY = import.meta.env.VITE_NOTIONCHAT_API_KEY || 'sk-notionchat';
-const MODEL = import.meta.env.VITE_NOTIONCHAT_MODEL || 'Gemini 3.5 Flash';
+const MODEL = import.meta.env.VITE_NOTIONCHAT_MODEL || 'GPT-5.6 Sol';
 const STORAGE_KEY = 'ctg_chat_history';
 
 function generateId() {
