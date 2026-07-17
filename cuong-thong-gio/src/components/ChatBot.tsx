@@ -12,6 +12,7 @@ import {
   User,
   Loader2,
   Sparkles,
+  Trash2,
 } from 'lucide-react';
 
 interface ChatMessage {
@@ -150,6 +151,7 @@ export function ChatBot() {
   };
 
   const clearHistory = () => {
+    if (!window.confirm('Xóa toàn bộ lịch sử chat?')) return;
     const welcome: ChatMessage = {
       id: generateId(),
       role: 'assistant',
@@ -196,10 +198,11 @@ export function ChatBot() {
             <div className="flex items-center gap-1">
               <button
                 onClick={clearHistory}
-                className="p-1.5 rounded-lg text-white/50 hover:text-white hover:bg-white/10 transition-colors text-[10px] font-medium"
-                title="Xóa lịch sử"
+                className="p-1.5 rounded-lg text-white/50 hover:text-red-400 hover:bg-white/10 transition-colors"
+                title="Xóa lịch sử chat"
+                aria-label="Xóa lịch sử"
               >
-                Xóa
+                <Trash2 className="w-4 h-4" />
               </button>
               <button
                 onClick={() => setIsOpen(false)}
