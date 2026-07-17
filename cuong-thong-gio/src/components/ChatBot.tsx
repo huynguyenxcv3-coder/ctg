@@ -23,7 +23,7 @@ interface ChatMessage {
 
 const API_URL = import.meta.env.VITE_CHAT_API_URL || '/api/chat/v1';
 const API_KEY = import.meta.env.VITE_CHAT_API_KEY || 'sk-local';
-const MODEL = import.meta.env.VITE_CHAT_MODEL || 'google/gemma-4-31b-it:free';
+const MODEL = import.meta.env.VITE_CHAT_MODEL || 'meta-llama/llama-3.1-8b-instruct';
 const STORAGE_KEY = 'ctg_chat_history';
 
 function generateId() {

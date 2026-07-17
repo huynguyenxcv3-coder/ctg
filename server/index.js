@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import serverless from 'serverless-http';
 import http from 'http';
+import https from 'https';
 import { spawn } from 'child_process';
 
 const app = express();
@@ -656,7 +657,7 @@ app.use('/api/chat', (req, res) => {
     headers,
   };
 
-  const proxyReq = require('https').request(options, (proxyRes) => {
+  const proxyReq = https.request(options, (proxyRes) => {
     res.writeHead(proxyRes.statusCode, proxyRes.headers);
     proxyRes.pipe(res);
   });
